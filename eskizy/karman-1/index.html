@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru" data-region="ca">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBC Global: складская недвижимость Центральной Азии</title>
+<!-- Набросок концепции karman-1 «Карточка», 05.11.2026. Не боевая страница: файл контакта, «Поделиться» и QR здесь условные. -->
+<style>
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+
+:root{--navy:#0A1358;--burg:#6A0108;--gray:#E9EAEF;--line:#CFD3DC;--white:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--white);color:var(--navy);font:400 16px/24px "Lato",sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{display:block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:square;stroke-linejoin:miter}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.sq{display:inline-block;width:6px;height:6px;background:var(--navy);flex:none}
+.wrap{padding:0 16px}
+
+/* Стол: светло-серая подложка первого экрана, на ней белая карточка */
+.desk{background:var(--gray)}
+.top{height:64px;display:flex;align-items:center;justify-content:space-between}
+.hours{display:flex;align-items:center;gap:8px;font-size:13px;line-height:16px}
+.lang{display:flex}
+.lang a{width:44px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;line-height:18px;background:var(--white)}
+.lang a.on{background:var(--navy);color:var(--white)}
+
+.card{position:relative;background:var(--white);height:199px;padding:20px 16px 18px;display:flex;flex-direction:column}
+.card-top{height:24px;display:flex;align-items:flex-end;justify-content:space-between}
+.bar{width:28px;height:3px;background:var(--burg);margin-bottom:2px}
+.logo{display:block;height:24px;width:auto}
+.card-title{font-weight:700;font-size:20px;line-height:26px;margin-top:16px;letter-spacing:-.003em}
+.card-contacts{margin-top:auto;display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:15px;line-height:20px;white-space:nowrap}
+.card-contacts .dot{color:var(--burg)}
+.mail{color:var(--burg)}
+
+.what{font-size:15px;line-height:22px;margin-top:24px}
+.tabs{display:flex;margin-top:24px}
+.tab{flex:1;height:44px;font-weight:700;font-size:15px;line-height:20px;text-align:center;position:relative}
+.tab[aria-selected="true"]{background:var(--white)}
+.tab[aria-selected="true"]::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--navy)}
+.tab[aria-selected="false"]{font-weight:400}
+
+.cover{display:none}
+
+/* Действия: на чистом белом, одна рамка на экране (у «Сохранить контакт») */
+.actions{padding-top:24px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tile{height:88px;background:var(--gray);display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px 12px;font-weight:700;font-size:14px;line-height:18px}
+.tile svg{width:24px;height:24px}
+.tile.main{background:var(--navy);color:var(--white)}
+.tile.wa{order:1}.tile.call{order:2}.tile.mailto{order:3}
+.save{margin-top:8px;height:56px;border:2px solid var(--navy);display:flex;align-items:center;gap:12px;padding:0 14px;font-weight:700;font-size:16px;line-height:20px}
+.save svg{width:24px;height:24px}
+.save .go{margin-left:auto;width:20px;height:20px}
+.share{margin-top:8px;height:44px;display:inline-flex;align-items:center;gap:8px;color:var(--burg);font-weight:700;font-size:15px;line-height:20px}
+.share svg{width:20px;height:20px}
+.ru-note{display:none;font-size:15px;line-height:20px;margin-top:8px}
+.ru-note a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--burg)}
+.qr{display:none}
+
+/* Список ниже: спокойные строки */
+.list{padding-top:40px}
+.block+.block{margin-top:32px}
+.label{display:flex;align-items:center;gap:8px;font-weight:900;font-size:12px;line-height:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--burg)}
+.label .sq{background:var(--burg)}
+.rows{list-style:none;margin-top:12px;border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row>a{display:flex;align-items:center;gap:16px;min-height:64px;padding:8px 0}
+.pic{width:72px;height:48px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--gray)}
+.pic img{width:72px;height:48px;display:block;object-fit:cover}
+.pic svg{width:24px;height:24px}
+.txt{flex:1;min-width:0}
+.txt b{display:block;font-weight:700;font-size:16px;line-height:20px}
+.txt small{display:block;font-size:13px;line-height:18px;margin-top:2px}
+.chev{width:20px;height:20px;flex:none}
+.date{width:72px;flex:none;display:flex;flex-direction:column;align-items:flex-start}
+.date .d{font-weight:900;font-size:28px;line-height:30px;font-variant-numeric:tabular-nums lining-nums}
+.date .m{font-weight:900;font-size:12px;line-height:16px;letter-spacing:.04em;color:var(--burg);text-transform:uppercase}
+.caws-sq{display:inline-block;width:8px;height:8px;background:#EE2722;margin-right:6px;vertical-align:1px}
+.ph{font-size:13px;line-height:18px;letter-spacing:.01em}
+footer{padding:40px 0 32px;font-size:13px;line-height:18px}
+
+/* Регион «Россия» (меняет набросок скрипт; без скрипта стоит Центральная Азия) */
+[data-region="ru"] .tile.wa{order:2;background:var(--gray);color:var(--navy)}
+[data-region="ru"] .tile.call{order:1;background:var(--navy);color:var(--white)}
+[data-region="ru"] .ru-note{display:block}
+
+/* Узкие телефоны: карточка растет по тексту, номер и почта не вылезают за край */
+@media (max-width:389px){
+  .card{height:auto;min-height:199px}
+  .card-contacts{padding-top:12px;flex-wrap:wrap;row-gap:0}
+}
+@media (max-width:359px){
+  .card-title{font-size:18px;line-height:24px}
+  .card-contacts{column-gap:16px}
+  .card-contacts .dot{display:none}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .card{animation:rise .2s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+
+/* Компьютер: слева карточка и связь, справа презентация и списки */
+@media (min-width:1024px){
+  .wrap{max-width:1184px;margin:0 auto;padding:0 32px}
+  .top{height:72px}
+  .hours{font-size:14px;line-height:18px}
+  .desk-grid{display:grid;grid-template-columns:minmax(0,480fr) minmax(0,560fr);column-gap:min(80px,5.6vw)}
+  .card{height:267px;padding:28px 28px 24px}
+  .card-top{height:40px}
+  .bar{width:30px;height:4px;margin-bottom:4px}
+  .logo{height:40px}
+  .card-title{font-size:min(26px,2.1vw);line-height:1.230769;margin-top:24px}
+  .card-contacts{font-size:17px;line-height:24px;gap:10px}
+  .what{font-size:17px;line-height:26px;margin-top:20px}
+  .tabs{margin-top:24px}
+  .tab{height:48px;font-size:16px}
+  .cover{display:flex;flex-direction:column;align-self:stretch}
+  .cover img{display:block;flex:1 1 0;min-height:0;height:0;width:100%;object-fit:cover;object-position:28% 40%}
+  .cover-cap{height:48px;display:flex;align-items:center;gap:12px;margin-top:24px}
+  .cover-cap b{display:block;font-weight:700;font-size:17px;line-height:22px}
+  .cover-cap small{display:block;font-size:14px;line-height:20px}
+  .cover-cap .chev{margin-left:auto}
+  .main-grid{display:grid;grid-template-columns:minmax(0,480fr) minmax(0,560fr);column-gap:min(80px,5.6vw);align-items:start}
+  .actions{padding-top:24px}
+  .tiles{gap:12px}
+  .tile{height:96px;padding:16px 14px 14px;font-size:15px;line-height:20px}
+  .qr{display:flex;gap:20px;align-items:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+  .qr-box{width:120px;height:120px;flex:none;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:10px}
+  .qr p{font-size:15px;line-height:22px}
+  .list{padding-top:24px}
+  .row.pres{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="desk">
+  <div class="wrap">
+    <header class="top">
+      <p class="hours"><span class="sq" aria-hidden="true"></span><span>Алматы · <span class="num">пн-пт 9:00-18:00</span></span></p>
+      <nav class="lang" aria-label="Язык"><a class="on" href="#" aria-current="page">RU</a><a href="#" lang="en">EN</a></nav>
+    </header>
+
+    <div class="desk-grid">
+      <div class="desk-left">
+        <article class="card" aria-label="IBC Global">
+          <div class="card-top">
+            <span class="bar" aria-hidden="true"></span>
+            <img class="logo" src="../../assets/data/brand/ibc/ibc_wordmark_05.png" alt="IBC Global" width="523" height="76">
+          </div>
+          <h1 class="card-title">Ведущий консультант и&nbsp;брокер<br>в&nbsp;сфере складской недвижимости<br>Центральной Азии</h1>
+          <p class="card-contacts">
+            <a class="num" data-f="phone" href="tel:+77088587024">+7 708 858 70 24</a>
+            <span class="dot" aria-hidden="true">·</span>
+            <a class="mail" data-f="mail" href="mailto:leads@ibc-global.asia">leads@ibc-global.asia</a>
+          </p>
+        </article>
+        <p class="what">Аренда, BTS, аналитика, CAWS</p>
+        <div class="tabs" role="tablist" aria-label="Регион">
+          <button class="tab" role="tab" data-r="ca" aria-selected="true">Центральная Азия</button>
+          <button class="tab" role="tab" data-r="ru" aria-selected="false">Россия</button>
+        </div>
+      </div>
+
+      <a class="cover" href="https://drive.google.com/file/d/1dgn6hayCDD1ml1VlcxIprNeSFlVj64vf/view?usp=drive_link">
+        <img src="kubiki-oblozhka.jpg" alt="Обложка презентации о компании: кубики I, B, C" width="1120" height="600">
+        <span class="cover-cap">
+          <span><b>Презентация о компании</b><small class="num">PDF, 11 страниц, 2,9 МБ</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap main-grid">
+  <section class="actions" aria-label="Связь">
+    <div class="tiles">
+      <a class="tile wa main" data-f="wa" href="https://wa.me/77088587024">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.1a8.9 8.9 0 0 0-7.7 13.35L3.1 20.9l4.6-1.15A8.9 8.9 0 1 0 12 3.1Z"/><path d="M9.15 7.75c.27-.21.67-.17.88.1l1.08 1.5c.2.29.16.68-.1.9l-.64.56a5.2 5.2 0 0 0 2.92 2.92l.56-.64c.22-.26.61-.3.9-.1l1.5 1.08c.27.21.31.61.1.88-.56.72-1.53 1.08-2.45.82a7.45 7.45 0 0 1-4.72-4.72c-.26-.92.1-1.89.82-2.45Z" fill="currentColor" stroke="none"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a class="tile call" data-f="tel" href="tel:+77088587024">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 16.1v2.9a1.7 1.7 0 0 1-1.85 1.7A16.9 16.9 0 0 1 3.3 5.25 1.7 1.7 0 0 1 5 3.4h2.9l1.5 4.3-2.05 1.5a12.2 12.2 0 0 0 7.45 7.45l1.5-2.05Z"/></svg>
+        <span>Позвонить</span>
+      </a>
+      <a class="tile mailto" data-f="mailto" href="mailto:leads@ibc-global.asia">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="m4 6.5 8 6.25 8-6.25"/></svg>
+        <span>Почта</span>
+      </a>
+    </div>
+    <p class="ru-note"><a href="https://ibc-global.pro/">Сайт IBC Global (Россия): ibc-global.pro</a></p>
+    <a class="save" download="ibc-global.vcf" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AFN%3AIBC%20Global%0D%0AORG%3AIBC%20Global%0D%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B77088587024%0D%0AEMAIL%3BTYPE%3DWORK%3Aleads%40ibc-global.asia%0D%0AEND%3AVCARD%0D%0A">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.5h17v15h-17z"/><circle cx="9" cy="10.25" r="2.25"/><path d="M5.75 16.5c.5-1.7 1.75-2.6 3.25-2.6s2.75.9 3.25 2.6"/><path d="M14.75 9.5h3M14.75 13h3"/></svg>
+      <span>Сохранить контакт</span>
+      <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5v11M7.5 11 12 15.5l4.5-4.5M5 19.5h14"/></svg>
+    </a>
+    <a class="share" href="#">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14V3.75M8 7.5l4-3.75 4 3.75"/><path d="M8.5 10H5v10h14V10h-3.5"/></svg>
+      <span>Поделиться</span>
+    </a>
+    <div class="qr">
+      <div class="qr-box"><span class="ph">[QR после выбора адреса]</span></div>
+      <p>QR-код этой страницы</p>
+    </div>
+  </section>
+
+  <section class="list">
+    <div class="block">
+      <h2 class="label"><span class="sq" aria-hidden="true"></span>О компании</h2>
+      <ul class="rows">
+        <li class="row pres"><a href="https://drive.google.com/file/d/1dgn6hayCDD1ml1VlcxIprNeSFlVj64vf/view?usp=drive_link">
+          <span class="pic"><img src="kubiki-mini.jpg" alt="" width="288" height="192"></span>
+          <span class="txt"><b>Презентация о компании</b><small class="num">PDF, 11 страниц, 2,9 МБ</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+        <li class="row"><a href="https://t.me/SkladAsia">
+          <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.75 3.75 3 10.6l6.1 2.25 2.25 6.4 3.3-3.85 4.35 3.35Z"/><path d="m9.1 12.85 11.65-9.1"/></svg></span>
+          <span class="txt"><b>Telegram-канал</b><small>IBC Global: инвестиции в&nbsp;склады</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+        <li class="row"><a href="https://docs.google.com/presentation/d/1k0nZ_isnOhWpNJdTyWRAi2Hz6INPUImnQvkTpNqY3Qo/preview">
+          <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.5h17v15h-17z"/><path d="M7 8.5h10M7 12h10M7 15.5h6"/></svg></span>
+          <span class="txt"><b>О нас пишут</b><small>Forbes Казахстан, Gazeta.uz, Daryo</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2 class="label"><span class="sq" aria-hidden="true"></span>Мероприятия</h2>
+      <ul class="rows">
+        <li class="row"><a href="https://invest-zavtrak-ibc.ru/">
+          <span class="date"><span class="d">25</span><span class="m">ноя</span></span>
+          <span class="txt"><b>Бизнес-завтраки IBC Global</b><small class="num">Душанбе, 25 ноября 2026, 9:30-13:00, Crowne Plaza Dushanbe</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+        <li class="row"><a href="https://invest-zavtrak-ibc.ru/">
+          <span class="date"><span class="d">16</span><span class="m">мар</span></span>
+          <span class="txt"><b>Бизнес-завтраки IBC Global</b><small class="num">Астана, 16 марта 2027</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+        <li class="row"><a href="https://invest-zavtrak-ibc.ru/">
+          <span class="date"><span class="d">18</span><span class="m">мар</span></span>
+          <span class="txt"><b>Бизнес-завтраки IBC Global</b><small class="num">Атырау, 18 марта 2027</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+        <li class="row"><a href="https://caws.asia/">
+          <span class="date"><span class="d">2027</span><span class="m">апр · окт</span></span>
+          <span class="txt"><b><span class="caws-sq" aria-hidden="true"></span>Central Asia Warehouse Summit (CAWS)</b><small class="num">Ташкент, 15 апреля 2027 · Алматы, 7 октября 2027</small><small class="ph">[дату Алматы утвердить]</small></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </a></li>
+      </ul>
+    </div>
+    <footer>© IBC Global</footer>
+  </section>
+</div>
+
+<script>
+(function () {
+  var R = {
+    ca: { phone: "+7 708 858 70 24", tel: "tel:+77088587024", mail: "leads@ibc-global.asia", wa: "https://wa.me/77088587024" },
+    ru: { phone: "8 800 201-15-55", tel: "tel:+78002011555", mail: "info@ibc-global.pro", wa: "https://wa.me/79512415254" }
+  };
+  var tabs = document.querySelectorAll(".tab");
+  function set(k) {
+    var d = R[k];
+    document.documentElement.setAttribute("data-region", k);
+    for (var i = 0; i < tabs.length; i++) tabs[i].setAttribute("aria-selected", tabs[i].getAttribute("data-r") === k ? "true" : "false");
+    var p = document.querySelector('[data-f="phone"]'); p.textContent = d.phone; p.href = d.tel;
+    var m = document.querySelector('[data-f="mail"]'); m.textContent = d.mail; m.href="mailto:" + d.mail;
+    document.querySelector('[data-f="wa"]').href = d.wa;
+    document.querySelector('[data-f="tel"]').href = d.tel;
+    document.querySelector('[data-f="mailto"]').href="mailto:" + d.mail;
+    document.querySelector(".tile.wa").classList.toggle("main", k === "ca");
+    document.querySelector(".tile.call").classList.toggle("main", k === "ru");
+  }
+  for (var i = 0; i < tabs.length; i++) tabs[i].addEventListener("click", function () { set(this.getAttribute("data-r")); });
+})();
+</script>
+</body>
+</html>

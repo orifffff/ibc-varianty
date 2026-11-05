@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBC Global: складская недвижимость Центральной Азии</title>
+<meta name="description" content="Консалтинг и брокеридж складской недвижимости в Центральной Азии. Контакты, WhatsApp, презентация компании, саммит CAWS и бизнес-завтраки.">
+<!-- Набросок концепции vesti-1 «Двуязычный указатель». Статичная страница, без скриптов и запросов в интернет. -->
+<style>
+@font-face { font-family: "Lato"; font-weight: 400; font-style: normal; font-display: block;
+  src: url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-weight: 600; font-style: normal; font-display: block;
+  src: url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-weight: 600; font-style: italic; font-display: block;
+  src: url("../../assets/data/brand/ibc/fonts/lato-semibolditalic.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-weight: 900; font-style: normal; font-display: block;
+  src: url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype"); }
+
+:root {
+  --navy: #0A1358;
+  --burg: #6A0108;
+  --white: #FFFFFF;
+  --gray: #E9EAEF;
+  --line: #CFD3DC;
+  --m: 24px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--navy);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+ul { list-style: none; margin: 0; padding: 0; }
+.en { font-weight: 400; }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.ph { font-size: 12px; line-height: 16px; letter-spacing: 0.02em; white-space: nowrap; }
+
+.page { max-width: 390px; margin: 0 auto; padding: 0 var(--m) 40px; }
+
+/* 0. Шапка */
+.top { height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: block; }
+.logo img { display: block; height: 28px; width: auto; }
+.lang { display: flex; border: 1px solid var(--line); }
+.lang a { width: 44px; height: 38px; display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 14px; letter-spacing: 0.06em; }
+.lang a[aria-current="page"] { background: var(--navy); color: var(--white); }
+
+/* Слоган на двух языках */
+.hero { padding-top: 16px; }
+.hero h1 { margin: 0; font-weight: 600; font-size: 27px; line-height: 32px; letter-spacing: -0.005em; }
+.hero .tag-en { margin: 8px 0 0; font-weight: 600; font-style: italic; font-size: 15px; line-height: 20px; }
+
+/* Подписи разделов */
+.sec { display: flex; align-items: center; height: 16px; margin: 24px 0 8px;
+  font-weight: 900; font-size: 12px; line-height: 16px; letter-spacing: 0.08em;
+  text-transform: uppercase; font-feature-settings: "case" 1; }
+.sec .sq { width: 8px; height: 8px; background: var(--burg); margin-right: 8px; flex: none; }
+.sec .no { color: var(--burg); margin-right: 10px; font-variant-numeric: tabular-nums lining-nums; }
+.sec .en { font-weight: 400; margin-left: 8px; }
+
+/* Переключатель региона */
+.region { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+.region a { position: relative; display: flex; flex-direction: column; justify-content: center; height: 48px; }
+.region a + a { padding-left: 16px; border-left: 1px solid var(--line); }
+.region .ru { font-size: 15px; line-height: 20px; }
+.region .en { font-size: 13px; line-height: 16px; }
+.region a[aria-selected="true"] .ru { font-weight: 600; }
+.region a[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px;
+  height: 2px; background: var(--navy); }
+
+/* Строки указателя */
+.rows { margin-top: 8px; }
+.row { display: flex; align-items: center; min-height: 64px; border-bottom: 1px solid var(--line); }
+.row .go { flex: 1; min-width: 0; display: flex; align-items: center; min-height: 64px; }
+.ico { width: 20px; height: 20px; flex: none; margin-right: 16px; }
+.ico svg, .act svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor;
+  stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+.txt { flex: 1; min-width: 0; }
+.lbl { display: block; font-weight: 600; font-size: 17px; line-height: 22px; white-space: nowrap; }
+.lbl .en { font-size: 14px; margin-left: 8px; }
+.val { display: block; font-size: 15px; line-height: 20px; margin-top: 1px; }
+.act { width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: flex-end; }
+
+/* Главная строка WhatsApp: малая плашка */
+.row.main { background: var(--navy); color: var(--white); border-bottom: 0; margin: 0 -12px; padding: 0 12px; }
+
+/* События */
+.evs li:first-child .ev { border-top: 1px solid var(--line); }
+.ev { display: grid; grid-template-columns: 72px 1fr; padding: 9px 0 8px; border-bottom: 1px solid var(--line); }
+.ev .d { display: block; font-weight: 900; font-size: 20px; line-height: 22px; letter-spacing: 0.01em; }
+.ev .y { display: block; font-size: 12px; line-height: 16px; margin-top: 2px; }
+.ev .h { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.ev .city { font-weight: 600; font-size: 17px; line-height: 22px; white-space: nowrap; }
+.ev .city .en { font-size: 14px; margin-left: 8px; }
+.ev .city.wrap { white-space: normal; }
+.ev .soon { color: var(--burg); font-weight: 900; font-size: 11px; line-height: 16px; letter-spacing: 0.08em;
+  text-transform: uppercase; white-space: nowrap; }
+.ev .m { display: block; font-size: 14px; line-height: 18px; margin-top: 1px; }
+.ev .m2 { display: block; font-size: 13px; line-height: 16px; }
+
+/* О компании */
+.lead { margin: 0; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lead .ru { display: block; font-weight: 600; font-size: 17px; line-height: 22px; }
+.lead .en { display: block; font-size: 14px; line-height: 18px; margin-top: 4px; }
+.fact { display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.fact .mk { width: 8px; height: 8px; background: var(--burg); flex: none; margin-right: 16px; }
+.fact .t { display: block; font-weight: 600; font-size: 15px; line-height: 20px; }
+.fact .t .en { display: block; font-size: 13px; line-height: 18px; }
+.fact.wait .t { font-weight: 400; }
+
+.desk-no { display: none; }
+
+/* Узкие телефоны (меньше 360 px): слоган мельче, строка события переносится */
+@media (max-width: 359px) {
+  .hero h1 { font-size: 22px; line-height: 28px; }
+  .ev { grid-template-columns: 60px minmax(0, 1fr); }
+  .ev .h { flex-wrap: wrap; row-gap: 0; }
+  .ev .city { white-space: normal; }
+  .lbl { white-space: normal; }
+  .top img { height: 24px; width: auto; }
+}
+
+/* Компьютер: слева закрепленная колонка связи, справа указатель с крупными номерами на полях */
+@media (min-width: 1024px) {
+  :root { --m: 0px; }
+  .page { max-width: 1200px; padding: 0 0 64px; }
+  .top { height: 104px; }
+  .logo img { height: 40px; }
+  .lang a { width: 52px; height: 44px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start; }
+  .side { grid-column: 1 / span 5; position: sticky; top: 16px; }
+  .board { grid-column: 7 / span 6; }
+  .hero { padding-top: 8px; }
+  .hero h1 { font-size: 40px; line-height: 48px; letter-spacing: -0.01em; }
+  .hero .tag-en { font-size: 20px; line-height: 28px; margin-top: 16px; }
+  .contacts { background: var(--gray); padding: 24px 24px 16px; margin-top: 40px; }
+  .contacts .sec { margin-top: 0; }
+  .board section { position: relative; }
+  .board section + section { margin-top: 40px; }
+  .board .sec { margin-top: 0; margin-bottom: 12px; }
+  .desk-no { display: block; position: absolute; top: -14px; left: -112px; width: 100px; text-align: right;
+    font-weight: 900; font-size: 88px; line-height: 88px; letter-spacing: -0.02em; color: var(--gray);
+    font-variant-numeric: tabular-nums lining-nums; }
+  .ev { grid-template-columns: 96px 1fr; padding: 14px 0 13px; }
+  .ev .d { font-size: 24px; line-height: 28px; }
+  .ev .y { font-size: 14px; line-height: 18px; }
+  .ev .city { font-size: 20px; line-height: 28px; }
+  .ev .city .en { font-size: 16px; }
+  .ev .soon { font-size: 12px; }
+  .ev .m { font-size: 16px; line-height: 22px; }
+  .ev .m2 { font-size: 15px; line-height: 22px; }
+  .lead { padding: 16px 0; }
+  .lead .ru { font-size: 20px; line-height: 28px; }
+  .lead .en { font-size: 16px; line-height: 22px; }
+  .fact .t { font-size: 17px; line-height: 24px; }
+  .fact .t .en { display: inline; font-size: 15px; line-height: 24px; margin-left: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <a class="logo" href="./" aria-label="IBC Global">
+      <img src="../../assets/data/brand/ibc/ibc_wordmark_05.png" width="193" height="28" alt="IBC Global">
+    </a>
+    <nav class="lang" aria-label="Язык">
+      <a href="./" aria-current="page" lang="ru">RU</a>
+      <a href="#en" lang="en">EN</a>
+    </nav>
+  </header>
+
+  <main class="grid">
+    <div class="side">
+      <section class="hero">
+        <h1>Ведущий&nbsp;консультант и&nbsp;брокер&nbsp;в&nbsp;сфере складской&nbsp;недвижимости Центральной&nbsp;Азии</h1>
+        <p class="tag-en" lang="en">The leading consultant and broker in&nbsp;warehouse real&nbsp;estate across Central&nbsp;Asia</p>
+      </section>
+
+      <section class="contacts" id="kontakty" aria-labelledby="h-kontakty">
+        <h2 class="sec" id="h-kontakty"><span class="sq" aria-hidden="true"></span><span class="no">01</span>Контакты<span class="en" lang="en">Contacts</span></h2>
+
+        <div class="region" role="tablist" aria-label="Регион">
+          <a href="#kontakty" role="tab" aria-selected="true"><span class="ru">Центральная Азия</span><span class="en" lang="en">Central Asia</span></a>
+          <a href="#kontakty-rossiya" role="tab" aria-selected="false"><span class="ru">Россия</span><span class="en" lang="en">Russia</span></a>
+        </div>
+
+        <ul class="rows">
+          <li class="row main">
+            <a class="go" href="https://wa.me/77088587024">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.2 16.8l.9-3.2A7.2 7.2 0 1 1 6.6 16z"/><path d="M7.3 6.6h1.6l.8 2-1 .8c.5 1.1 1.3 1.9 2.4 2.4l.8-1 2 .8v1.6c0 .5-.4.9-.9.9A6.6 6.6 0 0 1 6.4 7.5c0-.5.4-.9.9-.9z" stroke-width="1.2"/></svg></span>
+              <span class="txt">
+                <span class="lbl">WhatsApp</span>
+                <span class="val num">+7&nbsp;708&nbsp;858&nbsp;70&nbsp;24</span>
+              </span>
+              <span class="act" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span>
+            </a>
+          </li>
+          <li class="row">
+            <a class="go" href="tel:+77088587024">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.5 2.8h3.2l1.6 4-2.1 1.3a9.2 9.2 0 0 0 4.7 4.7l1.3-2.1 4 1.6v3.2c0 .9-.7 1.7-1.7 1.7A14.6 14.6 0 0 1 2.8 4.5c0-.9.8-1.7 1.7-1.7z"/></svg></span>
+              <span class="txt">
+                <span class="lbl">Позвонить<span class="en" lang="en">Call</span></span>
+                <span class="val num">+7&nbsp;708&nbsp;858&nbsp;70&nbsp;24</span>
+              </span>
+            </a>
+            <button class="act" type="button" aria-label="Скопировать"><svg viewBox="0 0 20 20"><path d="M7 7h10v10H7z"/><path d="M13 7V3H3v10h4"/></svg></button>
+          </li>
+          <li class="row">
+            <a class="go" href="mailto:leads@ibc-global.asia">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M2.5 4.5h15v11h-15z"/><path d="M2.8 5l7.2 6 7.2-6"/></svg></span>
+              <span class="txt">
+                <span class="lbl">Почта<span class="en" lang="en">Email</span></span>
+                <span class="val">leads@ibc-global.asia</span>
+              </span>
+            </a>
+            <button class="act" type="button" aria-label="Скопировать"><svg viewBox="0 0 20 20"><path d="M7 7h10v10H7z"/><path d="M13 7V3H3v10h4"/></svg></button>
+          </li>
+          <li class="row">
+            <a class="go" href="#vcard">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M8 9.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2.5 17v-1a5.5 5.5 0 0 1 11 0v1"/><path d="M16 6v6M13 9h6"/></svg></span>
+              <span class="txt">
+                <span class="lbl">Сохранить контакт<span class="en" lang="en">Save contact</span></span>
+                <span class="val">IBC Global</span>
+              </span>
+              <span class="act" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M4 17h12"/></svg></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="board">
+      <section id="sobytiya" aria-labelledby="h-sobytiya">
+        <span class="desk-no" aria-hidden="true">02</span>
+        <h2 class="sec" id="h-sobytiya"><span class="sq" aria-hidden="true"></span><span class="no">02</span>Мероприятия<span class="en" lang="en">Events</span></h2>
+        <ul class="evs">
+          <li>
+            <a class="ev" href="https://invest-zavtrak-ibc.ru/">
+              <span class="num"><span class="d">25.11</span><span class="y">2026</span></span>
+              <span>
+                <span class="h"><span class="city">Душанбе<span class="en" lang="en">Dushanbe</span></span><span class="soon">через 20 дней</span></span>
+                <span class="m">Бизнес-завтраки IBC Global</span>
+                <span class="m2 num">9:30-13:00, Crowne Plaza Dushanbe</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="ev" href="https://invest-zavtrak-ibc.ru/">
+              <span class="num"><span class="d">16.03</span><span class="y">2027</span></span>
+              <span>
+                <span class="h"><span class="city">Астана<span class="en" lang="en">Astana</span></span></span>
+                <span class="m">Бизнес-завтраки IBC Global</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="ev" href="https://invest-zavtrak-ibc.ru/">
+              <span class="num"><span class="d">18.03</span><span class="y">2027</span></span>
+              <span>
+                <span class="h"><span class="city">Атырау<span class="en" lang="en">Atyrau</span></span></span>
+                <span class="m">Бизнес-завтраки IBC Global</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="ev" href="https://caws.asia/">
+              <span class="num"><span class="d">15.04</span><span class="y">2027</span></span>
+              <span>
+                <span class="h"><span class="city wrap">Central Asia Warehouse Summit (CAWS)</span></span>
+                <span class="m">Ташкент, 15&nbsp;апреля&nbsp;2027&nbsp;· Алматы, 7&nbsp;октября&nbsp;2027</span>
+                <span class="m2"><span class="ph">[дату Алматы утвердить]</span></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="kompaniya" aria-labelledby="h-kompaniya">
+        <span class="desk-no" aria-hidden="true">03</span>
+        <h2 class="sec" id="h-kompaniya"><span class="sq" aria-hidden="true"></span><span class="no">03</span>О компании<span class="en" lang="en">About us</span></h2>
+        <p class="lead"><span class="ru">Помогаем девелоперам и&nbsp;инвесторам реализовывать складские проекты «под&nbsp;ключ»</span><span class="en" lang="en">We help developers and investors deliver turnkey warehouse projects</span></p>
+        <ul>
+          <li class="fact"><span class="mk" aria-hidden="true"></span><span class="t">Офис в&nbsp;Алматы с&nbsp;2023&nbsp;года<span class="en" lang="en">Almaty office since 2023</span></span></li>
+          <li class="fact"><span class="mk" aria-hidden="true"></span><span class="t">CAWS ежегодно с&nbsp;2024&nbsp;года<span class="en" lang="en">CAWS every year since 2024</span></span></li>
+          <li class="fact"><span class="mk" aria-hidden="true"></span><span class="t">Саммиты в&nbsp;Алматы и&nbsp;Ташкенте<span class="en" lang="en">Summits in Almaty and Tashkent</span></span></li>
+          <li class="fact wait"><span class="mk" aria-hidden="true"></span><span class="t"><span class="ph">[цифры после утверждения]</span></span></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

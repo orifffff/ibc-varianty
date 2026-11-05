@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A1358">
+<title>IBC Global · эскиз smelo-2 «Ночная смена»</title>
+<!--
+  Эскиз концепции smelo-2 «Ночная смена»: первый экран и начало ворот 02.
+  Тексты и адреса из docs/varianty/content/content.json (ключи указаны рядом).
+  Ночь нарисована светом: ламели, рамка проема, полоса света. Фото нет.
+-->
+<style>
+@font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-semibolditalic.ttf") format("truetype"); font-weight: 600; font-style: italic; font-display: block; }
+@font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+
+:root {
+  --night: #0A1358;
+  --white: #FFFFFF;
+  --mist: #CFD3DC;
+  --bord: #6A0108;
+  --caws: #EE2722;
+  --l06: rgba(255, 255, 255, .06);
+  --l12: rgba(255, 255, 255, .12);
+  --l16: rgba(255, 255, 255, .16);
+  --l28: rgba(255, 255, 255, .28);
+  --l50: rgba(255, 255, 255, .5);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--night); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { font-family: "Lato", sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: var(--white); background: var(--night); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: square; stroke-linejoin: miter; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+.skip { position: absolute; left: 16px; top: -60px; padding: 10px 14px; background: var(--white); color: var(--night); font-weight: 700; z-index: 20; }
+.skip:focus { top: 8px; }
+
+.page { max-width: 430px; margin: 0 auto; padding: 0 16px calc(104px + env(safe-area-inset-bottom)); }
+
+/* 1. Шапка: белый знак, RU | EN, кнопка «Указатель» */
+.top { height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo img { display: block; height: 26px; width: auto; }
+.top-r { display: flex; align-items: center; gap: 8px; }
+.lang { display: flex; height: 44px; border: 1px solid var(--l28); }
+.lang a { width: 38px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; letter-spacing: .04em; color: var(--mist); }
+.lang a + a { border-left: 1px solid var(--l28); }
+.lang a.on { color: var(--white); box-shadow: inset 0 -2px 0 var(--white); }
+.idx { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--l28); }
+.idx svg { width: 22px; height: 22px; }
+.nums { display: none; }
+
+/* 2-4. Заголовок, подзаголовок, строка-маршрут */
+.hero { padding-top: 18px; }
+.h1 { font-weight: 900; font-size: 44px; line-height: 46px; letter-spacing: .01em; text-transform: uppercase; }
+.h1 span { display: block; }
+.sub { margin-top: 10px; font-weight: 600; font-size: 19px; line-height: 27px; color: var(--mist); }
+.sub span { display: block; }
+.route { margin-top: 12px; font-weight: 700; font-size: 12px; line-height: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--mist); }
+.route span { display: flex; align-items: center; gap: 10px; }
+.route i { display: block; width: 5px; height: 5px; background: var(--mist); }
+
+/* 5. Ворота: ламели, номер контуром, полоса света, освещенный проем */
+.gate { position: relative; margin-top: 22px; border: 1px solid var(--l28); }
+.door {
+  position: relative; height: 80px; overflow: hidden;
+  background: repeating-linear-gradient(to bottom, transparent 0 11px, var(--l16) 11px 12px), rgba(255, 255, 255, .035);
+}
+.door::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(255, 255, 255, .2); }
+.num { position: absolute; left: 13px; top: -11px; font-weight: 900; font-size: 96px; line-height: 96px; letter-spacing: .01em; color: transparent; -webkit-text-stroke: 1.5px var(--white); }
+.lamp { position: absolute; right: 14px; top: 14px; width: 8px; height: 8px; background: var(--white); box-shadow: 0 0 6px 1px rgba(255, 255, 255, .9), 0 0 18px 4px rgba(255, 255, 255, .35); }
+.lamp.off { background: transparent; border: 1px solid var(--l50); box-shadow: none; }
+.plate { position: absolute; right: 34px; top: 50%; transform: translateY(-50%); padding: 5px 9px; background: var(--night); border: 1px solid var(--l28); font-weight: 700; font-size: 12px; line-height: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--mist); }
+.lightbar { position: relative; z-index: 1; height: 2px; background: var(--white); box-shadow: 0 0 6px 1px rgba(255, 255, 255, .85), 0 0 22px 5px rgba(255, 255, 255, .28); }
+.bay { background: linear-gradient(to bottom, rgba(255, 255, 255, .15), rgba(255, 255, 255, .06) 42%, rgba(255, 255, 255, .025)); }
+.row { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 8px 14px 8px 16px; border-top: 1px solid var(--l12); }
+.bay > .row:first-child { border-top: 0; }
+.row:active { background: var(--l06); }
+.row .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.row .t { font-weight: 700; font-size: 16px; line-height: 20px; color: var(--white); }
+.row .m { font-size: 13px; line-height: 17px; color: var(--mist); }
+.row .m span { display: block; }
+.row > svg { flex: none; width: 20px; height: 20px; }
+.tag { flex: none; padding: 2px 6px; border: 1px solid var(--l28); font-weight: 700; font-size: 11px; line-height: 16px; letter-spacing: .06em; color: var(--mist); }
+.sq { display: inline-block; width: 8px; height: 8px; margin-right: 8px; background: var(--caws); vertical-align: 1px; }
+.floor { display: flex; border-top: 1px solid var(--l12); }
+.floor a { display: flex; align-items: center; height: 44px; padding: 0 14px 0 16px; font-weight: 700; font-size: 14px; letter-spacing: .01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.floor a + a { flex: 1; border-left: 1px solid var(--l12); }
+
+/* Разметка двора между главами: штрих 24, пробел 16 */
+.yard { height: 2px; margin: 12px -16px; background: repeating-linear-gradient(to right, rgba(255, 255, 255, .22) 0 24px, transparent 24px 40px); }
+
+/* Ворота 02 и 03: начало следующих глав */
+.gate.next { margin-top: 0; }
+.quote { padding: 20px 16px 6px; font-weight: 600; font-style: italic; font-size: 24px; line-height: 32px; }
+.ph { display: block; padding: 0 16px; font-size: 12px; line-height: 18px; color: var(--mist); }
+.fact { padding: 18px 16px 4px; font-size: 17px; line-height: 27px; color: var(--white); }
+.bay .row.link { margin-top: 14px; }
+.door.shut { height: 120px; }
+
+/* 6. Панель-док: всегда на экране */
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: 8px 16px max(8px, env(safe-area-inset-bottom)); background: rgba(10, 19, 88, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--l28); }
+.dock-in { max-width: 398px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.d { position: relative; height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid var(--l50); font-weight: 700; font-size: 13px; line-height: 16px; color: var(--white); }
+.d svg { width: 22px; height: 22px; }
+.d.wa { background: var(--white); border-color: var(--white); color: var(--night); }
+.d.wa .mk { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; background: var(--bord); }
+.d .fill { fill: currentColor; stroke: none; }
+.d:active { box-shadow: 0 0 14px 2px rgba(255, 255, 255, .45); }
+
+/* Движение: только декор, текст и кнопки видны сразу */
+@keyframes rise { from { background-position: 0 36px; } to { background-position: 0 0; } }
+@keyframes lighton { from { opacity: 0; } to { opacity: 1; } }
+.g01 .door { animation: rise .45s ease-out both; }
+.g01 .lightbar, .g01 .lamp { animation: lighton .45s .15s ease-out both; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Узкие телефоны (меньше 360 px): заголовок, номер с почтой и док помещаются в ширину */
+@media (max-width: 359px) {
+  .top { gap: 8px; }
+  .logo img { height: 20px; }
+  .top-r { gap: 6px; }
+  .h1 { font-size: 37px; line-height: 40px; }
+  .floor a { padding: 0 10px; font-size: 12px; }
+  .dock { padding-left: 8px; padding-right: 8px; }
+  .dock-in { gap: 6px; }
+  .d { font-size: 12px; }
+}
+
+/* Компьютер 1440: заголовок слева, высокие ворота справа, док капсулой */
+@media (min-width: 1024px) {
+  .page { max-width: 1440px; padding: 0 72px 140px; }
+  .top { height: 88px; }
+  .logo img { height: 36px; }
+  .nums { display: flex; gap: 4px; margin-right: 16px; }
+  .nums a { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; letter-spacing: .04em; color: var(--mist); border-bottom: 2px solid transparent; font-variant-numeric: tabular-nums; }
+  .nums a.on { color: var(--white); border-bottom-color: var(--white); }
+  .stage { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start; }
+  .hero { grid-column: 1 / span 8; padding-top: 0; align-self: center; }
+  .h1 { font-size: min(108px, calc(8.62vw - 16px)); line-height: .926; letter-spacing: .005em; }
+  .sub { margin-top: 28px; font-size: 28px; line-height: 38px; }
+  .route { margin-top: 28px; font-size: 14px; line-height: 20px; display: flex; gap: 10px; }
+  .route span { gap: 10px; }
+  .route span + span::before { content: ""; display: block; width: 5px; height: 5px; background: var(--mist); }
+  .g01 { grid-column: 9 / span 4; margin-top: 28px; }
+  .g01 .door { height: 210px; }
+  .g01 .num { font-size: min(240px, calc(23vw - 90px)); line-height: 1; top: -22px; left: 18px; -webkit-text-stroke: 2px var(--white); }
+  .g01 .lamp { top: 20px; right: 20px; }
+  .g01 .row { min-height: 64px; padding: 10px 18px 10px 20px; }
+  .g01 .row .t { font-size: 18px; line-height: 24px; }
+  .g01 .row .m { font-size: 14px; line-height: 20px; }
+  .g01 .floor a { font-size: 15px; }
+  .g01 .floor a { height: 52px; padding: 0 18px 0 20px; }
+  .yard { margin: 48px -72px 36px; }
+  .gate.next .door { height: 150px; }
+  .gate.next .num { font-size: 160px; line-height: 160px; top: -10px; left: 18px; -webkit-text-stroke: 2px var(--white); }
+  .gate.next .plate { right: 40px; }
+  .gate.next .lamp { top: 20px; right: 20px; }
+  .door.shut { height: 150px; }
+  .dock { left: 50%; right: auto; bottom: 24px; width: 560px; transform: translateX(-50%); padding: 8px; border: 1px solid var(--l28); }
+  .dock-in { max-width: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#glavnoe">Перейти к содержанию</a>
+
+<div class="page">
+  <header class="top">
+    <a class="logo" href="#" aria-label="IBC Global"><img src="../../assets/data/img/tild3439_all_ibc_logo_2.png" alt="IBC Global" width="1160" height="155"></a>
+    <div class="top-r">
+      <nav class="nums" aria-label="Меню">
+        <a class="on" href="#glavnoe" aria-current="true">01</a><a href="#vorota-02">02</a><a href="#vorota-03">03</a><a href="#vorota-03">04</a><a href="#vorota-03">05</a><a href="#vorota-03">06</a><a href="#vorota-03">07</a>
+      </nav>
+      <nav class="lang" aria-label="Язык">
+        <a class="on" href="#" aria-current="true" lang="ru">RU</a><a href="#" lang="en">EN</a>
+      </nav>
+      <button class="idx" type="button" aria-label="Открыть меню">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5h11M9.5 12h11M9.5 17.5h11"/><path class="fill" d="M3.5 5.25h2.5v2.5h-2.5zM3.5 10.75h2.5v2.5h-2.5zM3.5 16.25h2.5v2.5h-2.5z" style="fill:currentColor;stroke:none"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="glavnoe">
+    <div class="stage">
+      <section class="hero">
+        <!-- brand.positioning без слова «Ведущий», как в концепции -->
+        <h1 class="h1"><span>Консультант</span> <span>и брокер</span></h1>
+        <p class="sub">в сфере складской недвижимости <span>Центральной Азии</span></p>
+        <p class="route"><span>Казахстан<i></i>Узбекистан</span><span>Кыргызстан<i></i>Таджикистан</span></p>
+      </section>
+
+      <!-- Ворота 01: освещенный проем с главными ссылками -->
+      <section class="gate g01">
+        <div class="door" aria-hidden="true"><span class="num">01</span><span class="lamp"></span></div>
+        <div class="lightbar" aria-hidden="true"></div>
+        <div class="bay">
+          <!-- links.ru.presentation -->
+          <a class="row" href="https://drive.google.com/file/d/1dgn6hayCDD1ml1VlcxIprNeSFlVj64vf/view?usp=drive_link" target="_blank" rel="noopener">
+            <span class="txt"><span class="t">Презентация о компании</span></span>
+            <span class="tag">PDF</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
+          </a>
+          <!-- links.ru.caws_main + events.caws.caption (вариант с датами 2027) -->
+          <a class="row" href="https://caws.asia/" target="_blank" rel="noopener">
+            <span class="txt"><span class="t"><i class="sq" aria-hidden="true"></i>Central Asia Warehouse Summit</span><span class="m"><span>Ташкент, 15 апреля 2027</span><span>Алматы, 7 октября 2027</span></span></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
+          </a>
+          <!-- links.ru.breakfasts + events.breakfasts.dushanbe -->
+          <a class="row" href="https://invest-zavtrak-ibc.ru/" target="_blank" rel="noopener">
+            <span class="txt"><span class="t">Бизнес-завтраки IBC Global</span><span class="m">Душанбе, 25 ноября 2026, 9:30-13:00</span></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
+          </a>
+          <!-- links.ru.telegram + social.telegram -->
+          <a class="row" href="https://t.me/SkladAsia" target="_blank" rel="noopener">
+            <span class="txt"><span class="t">Telegram-канал</span><span class="m">«IBC Global: инвестиции в склады»</span></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
+          </a>
+          <!-- contacts.ca.phone, contacts.ca.email: совет жюри показать номер и почту текстом -->
+          <div class="floor">
+            <a href="tel:+77088587024">+7 708 858 70 24</a>
+            <a href="mailto:leads@ibc-global.asia">leads@ibc-global.asia</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="yard" aria-hidden="true"></div>
+
+    <!-- Ворота 02: начало следующей главы -->
+    <section class="gate next" id="vorota-02" aria-label="О компании">
+      <div class="door" aria-hidden="true"><span class="num">02</span><span class="plate">О компании</span><span class="lamp off"></span></div>
+      <div class="lightbar" aria-hidden="true"></div>
+      <div class="bay">
+        <!-- brand.manifesto -->
+        <blockquote class="quote">«Склады: устойчивая платформа для развития бизнеса, производства и торговли»</blockquote>
+        <!-- figures.safe.almaty_2023 -->
+        <p class="fact">Офис в Алматы с 2023 года</p>
+        <span class="ph">[цифры после утверждения]</span>
+        <!-- links.ru.site_asia -->
+        <a class="row link" href="https://ibc-global.asia/" target="_blank" rel="noopener">
+          <span class="txt"><span class="t">Сайт IBC Global Central Asia</span></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="yard" aria-hidden="true"></div>
+
+    <section class="gate next" id="vorota-03" aria-hidden="true">
+      <div class="door shut"><span class="num">03</span><span class="lamp off"></span></div>
+    </section>
+  </main>
+</div>
+
+<!-- 6. Панель-док: WhatsApp единственная белая заливка на экране -->
+<nav class="dock" aria-label="Контакты">
+  <div class="dock-in">
+    <a class="d wa" href="https://wa.me/77088587024?text=Здравствуйте!%20Пишу%20со%20страницы%20IBC%20Global." target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6a8.4 8.4 0 0 0-7.2 12.7L3.6 20.4l4.2-1.1A8.4 8.4 0 1 0 12 3.6z"/><path class="fill" d="M9.1 7.9c.3-.3.7-.3.9 0l1 1.5c.2.3.1.6-.1.9l-.5.5c.5 1.1 1.4 2 2.5 2.5l.5-.5c.3-.2.6-.3.9-.1l1.5 1c.3.2.3.6 0 .9l-.7.7c-.5.5-1.3.6-2 .3a8.6 8.6 0 0 1-4.5-4.5c-.3-.7-.2-1.5.3-2z"/></svg>
+      <span>WhatsApp</span><i class="mk" aria-hidden="true"></i>
+    </a>
+    <a class="d" href="tel:+77088587024" aria-label="Позвонить: +7 708 858 70 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.8h3l1.4 3.9-2 1.3a10.6 10.6 0 0 0 5.6 5.6l1.3-2 3.9 1.4v3a2 2 0 0 1-2.1 2A15.5 15.5 0 0 1 5 5.9a2 2 0 0 1 2-2.1z"/></svg>
+      <span>Позвонить</span>
+    </a>
+    <a class="d" href="mailto:leads@ibc-global.asia" aria-label="Написать на почту: leads@ibc-global.asia">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8h17v12.4h-17z"/><path d="M4 6.4l8 6.4 8-6.4"/></svg>
+      <span>Почта</span>
+    </a>
+    <a class="d" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AFN%3AIBC%20Global%0D%0AORG%3AIBC%20Global%0D%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B77088587024%0D%0AEMAIL%3BTYPE%3DWORK%3Aleads%40ibc-global.asia%0D%0AEND%3AVCARD%0D%0A" download="IBC-Global.vcf" aria-label="Сохранить контакт IBC Global">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.5" cy="8.5" r="3.6"/><path d="M3.2 19.8c.8-3.6 3.3-5.6 6.3-5.6s5.5 2 6.3 5.6"/><path d="M18.5 6.5v6M15.5 9.5h6"/></svg>
+      <span>Сохранить</span>
+    </a>
+  </div>
+</nav>
+</body>
+</html>

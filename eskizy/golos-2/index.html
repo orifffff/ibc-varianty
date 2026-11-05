@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBC Global: складская недвижимость Центральной Азии</title>
+<meta name="description" content="Консалтинг и брокеридж складской недвижимости в Центральной Азии. Контакты, WhatsApp, презентация компании, саммит CAWS и бизнес-завтраки.">
+<meta name="robots" content="noindex">
+<style>
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-semibolditalic.ttf") format("truetype");font-weight:600;font-style:italic;font-display:block}
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:block}
+@font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:block}
+
+/* Набросок концепции golos-2 «Первая полоса». Палитра гайда IBC 2026 */
+:root{
+  --navy:#0A1358; --bord:#6A0108; --white:#FFFFFF; --gray:#E9EAEF; --line:#CFD3DC;
+  --caws:#EE2722; /* красный CAWS: только квадрат 8x8 у саммитов, никогда текстом */
+  --pad:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:"Lato",sans-serif;color:var(--navy);background:var(--white);
+  font-size:16px;line-height:23px;-webkit-font-smoothing:antialiased;font-kerning:normal;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:8px;top:-60px;background:var(--navy);color:#fff;padding:10px 14px;font-weight:700;z-index:40}
+.skip:focus{top:8px}
+:focus-visible{outline:3px solid var(--bord);outline-offset:2px}
+.wrap{padding:0 var(--pad)}
+.ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter}
+.sq{display:inline-block;width:8px;height:8px;flex:none;background:var(--bord)}
+.sq.caws{background:var(--caws)}
+/* Заглушка того, что ждет утверждения: мелко, в квадратных скобках */
+.ph{display:inline-block;font-weight:400;font-size:11px;line-height:14px;letter-spacing:0;text-transform:none;
+  color:var(--navy);border:1px dashed var(--line);padding:1px 6px;background:var(--white)}
+/* Строки капсом: разрядка 0,02 em, case поднимает знаки к прописным, цифры одной ширины */
+.caps{text-transform:uppercase;letter-spacing:.02em;font-feature-settings:"case" 1,"lnum" 1,"tnum" 1}
+.dot{padding:0 .4em}
+
+/* ---------- Газетная шапка ---------- */
+.mast{display:grid;grid-template-columns:1fr auto;grid-template-areas:"date act" "hair hair" "logo logo";align-items:center}
+.date{grid-area:date;font-weight:700;font-size:12px;line-height:16px;height:32px;display:flex;align-items:center}
+.act{grid-area:act;display:flex;align-items:center;justify-content:flex-end;gap:16px}
+.lang{display:flex;align-items:center;font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em}
+.lang a{display:flex;align-items:center;height:32px;padding:0 8px}
+.lang a:last-child{padding-right:0}
+.lang a+a{border-left:1px solid var(--line)}
+.lang .on{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--bord)}
+.hair{grid-area:hair;height:1px;background:var(--line)}
+.logo{grid-area:logo;justify-self:center;padding:16px 0 14px;line-height:0}
+.logo img{display:block;height:36px;width:auto}
+.mast-row{display:none}
+.rule2{height:5px;border-top:2px solid var(--navy);border-bottom:1px solid var(--navy)}
+.motto{padding:12px 6px 14px;text-align:center;font-style:italic;font-weight:600;font-size:17px;line-height:22px;text-wrap:balance}
+.rule1{height:1px;background:var(--line)}
+
+/* ---------- Первая полоса ---------- */
+.front{display:flex;flex-direction:column}
+.story{order:1;padding-top:16px}
+.pulse{order:2}
+.press{order:3}
+.events{order:4}
+
+.kick{display:block;color:var(--bord);font-weight:700;font-size:12px;line-height:16px}
+.story .kick{margin-bottom:8px}
+.headline{font-weight:900;font-size:30px;line-height:32px;letter-spacing:-.004em;text-wrap:balance}
+.headline a{text-decoration:none}
+.headline a:hover{text-decoration:underline;text-decoration-color:var(--bord);text-decoration-thickness:2px;text-underline-offset:5px}
+.story .ph{margin-top:10px}
+.read{display:inline-flex;align-items:center;gap:6px;margin-top:6px;min-height:40px;color:var(--bord);font-weight:700;font-size:15px;line-height:20px}
+.read .ico{width:16px;height:16px}
+
+/* Врезка-индекс */
+.pulse{margin-top:6px;background:var(--gray);border:1px solid var(--navy);padding:14px 14px 14px 16px;
+  display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+.pulse .num{font-weight:900;font-size:64px;line-height:52px;letter-spacing:-.02em;font-feature-settings:"lnum" 1;padding-top:2px}
+.pulse .txt{font-size:14px;line-height:19px;font-variant-numeric:oldstyle-nums}
+.pulse .src{display:inline-flex;align-items:center;gap:5px;margin-top:6px;color:var(--bord);font-weight:700;font-size:11px;line-height:14px}
+.pulse .src .ico{width:12px;height:12px}
+.pulse .ph{margin-top:8px}
+
+/* Рубрика полосы */
+.rubric{display:flex;align-items:center;gap:8px;padding-top:9px;border-top:2px solid var(--navy);
+  font-weight:900;font-size:14px;line-height:18px}
+.press{margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font:inherit;font-weight:700;font-size:13px;line-height:16px;padding:7px 10px;border:1px solid var(--line);background:var(--white);color:var(--navy);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.feed{margin-top:4px}
+.feed li{padding:14px 0 15px;border-bottom:1px solid var(--line)}
+.feed h3{margin-top:5px;font-weight:700;font-size:18px;line-height:23px;text-wrap:pretty}
+.feed .en{display:inline-block;margin-left:8px;padding:0 5px;border:1px solid var(--line);color:var(--navy);font-weight:400;font-size:11px;line-height:14px;letter-spacing:0;text-transform:none;vertical-align:1px}
+
+/* Мероприятия */
+.events{margin-top:28px}
+.ev-group{margin-top:14px}
+.ev-head{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;line-height:20px;color:var(--bord)}
+.ev-head .ico{width:14px;height:14px}
+.ev-list li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:20px;font-feature-settings:"lnum" 1}
+.ev-list li .sq{transform:translateY(-1px)}
+
+/* Закрепленная панель связи (телефон) */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:1px solid var(--line);
+  padding:8px var(--pad) calc(8px + env(safe-area-inset-bottom));display:flex;gap:8px}
+.dock .wa{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;height:52px;background:var(--navy);color:var(--white);font-weight:700;font-size:16px;line-height:20px}
+.dock .wa .ico{width:22px;height:22px}
+.dock .sqb{width:68px;height:52px;border:1px solid var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-weight:700;font-size:11px;line-height:13px}
+
+/* Лист контактов: открывается якорем, без скрипта */
+.sheet{display:none;position:fixed;inset:0;z-index:30}
+.sheet:target{display:block}
+.sheet-bg{position:absolute;inset:0;background:rgba(10,19,88,.45)}
+.sheet-card{position:absolute;left:0;right:0;bottom:0;background:var(--white);border-top:2px solid var(--navy);padding:16px var(--pad) calc(20px + env(safe-area-inset-bottom))}
+.sheet-top{display:flex;justify-content:space-between;align-items:center}
+.sheet-top h2{font-weight:900;font-size:14px;line-height:18px}
+.sheet-top a{font-weight:700;font-size:14px;padding:10px 0 10px 12px;color:var(--bord)}
+.sheet li{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:20px}
+.sheet li .l{font-weight:400}
+.sheet li a{font-weight:700;color:var(--bord)}
+.sheet-card > p{margin-top:12px}
+
+.foot{margin-top:28px;padding:14px 0 24px;border-top:2px solid var(--navy);font-size:12px;line-height:16px}
+
+/* ---------- Компьютер: 12 колонок, поля 96 px ---------- */
+@media (min-width:1024px){
+  body{padding-bottom:0}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 96px}
+  .mast{grid-template-columns:1fr auto 1fr;grid-template-areas:"date logo act";min-height:112px}
+  .hair{display:none}
+  .date{height:auto;font-size:13px;line-height:18px;align-self:center}
+  .logo{padding:24px 0}
+  .logo img{height:64px}
+  .act{flex-direction:column;align-items:flex-end;gap:10px}
+  .lang a{height:24px}
+  .mast-row{display:flex;align-items:center;gap:18px}
+  .mast-tel{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;line-height:20px;font-feature-settings:"lnum" 1}
+  .mast-wa{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;background:var(--navy);color:var(--white);font-weight:700;font-size:15px;line-height:20px}
+  .mast-wa .ico{width:18px;height:18px}
+  .motto{font-size:24px;line-height:32px;padding:14px 0 16px}
+
+  .front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);column-gap:48px;
+    grid-template-areas:"story pulse" "story events" "press press";grid-template-rows:auto 1fr auto}
+  .story{grid-area:story;position:relative;padding-top:28px}
+  .story::after{content:"";position:absolute;top:28px;bottom:0;right:-24px;width:1px;background:var(--line)}
+  .story .kick{font-size:13px;line-height:18px;margin-bottom:14px}
+  .headline{font-size:68px;line-height:70px;letter-spacing:-.008em;text-wrap:wrap}
+  .story .ph{margin-top:20px;font-size:12px;line-height:16px}
+  .read{margin-top:12px;font-size:16px}
+  .pulse{grid-area:pulse;margin-top:28px}
+  .pulse .num{font-size:80px;line-height:64px}
+  .pulse .txt{font-size:15px;line-height:21px}
+  .events{grid-area:events;margin-top:22px}
+  .ev-group{margin-top:10px}
+  .ev-head{font-size:14px;line-height:18px}
+  .ev-list li{padding:5px 0;font-size:14px;line-height:19px}
+  .press{grid-area:press;margin-top:32px}
+  .press-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;border-top:2px solid var(--navy)}
+  .press-top .rubric{border-top:0}
+  .press-top .chips{margin-top:6px}
+  .chip{font-size:12px;padding:5px 9px}
+  .feed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:48px;margin-top:6px}
+  .feed li{position:relative;padding:16px 0 18px}
+  .feed li:not(:nth-child(3n+1))::before{content:"";position:absolute;left:-24px;top:16px;bottom:16px;width:1px;background:var(--line)}
+  .feed h3{font-size:22px;line-height:28px}
+  .dock{display:none}
+  .sheet-card{left:auto;right:96px;bottom:auto;top:120px;width:420px;border:1px solid var(--navy);border-top:2px solid var(--navy)}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="wrap">
+  <div class="mast">
+    <p class="date caps"><time id="today" datetime="2026-11-05">Четверг, 5 ноября 2026</time></p>
+    <div class="act">
+      <nav class="lang" aria-label="Язык">
+        <a class="on" href="#top" aria-current="page" lang="ru">RU</a><a href="https://skladasia.tilda.ws/en" lang="en">EN</a>
+      </nav>
+      <div class="mast-row">
+        <a class="mast-tel" href="tel:+77088587024">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +7 708 858 70 24</a>
+        <a class="mast-wa" href="https://wa.me/77088587024" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 18.93A8 8 0 1 0 5.07 16L3.8 20.2z"/><path transform="translate(6.6 6.6) scale(.45)" style="fill:currentColor;stroke:none" d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.98.98 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+          Написать в WhatsApp</a>
+      </div>
+    </div>
+    <div class="hair" aria-hidden="true"></div>
+    <div class="logo"><img src="../../assets/data/brand/ibc/ibc_wordmark_05.png" width="523" height="76" alt="IBC Global"></div>
+  </div>
+  <div class="rule2" aria-hidden="true"></div>
+  <p class="motto">Ведущий консультант и&nbsp;брокер в&nbsp;сфере складской недвижимости Центральной Азии</p>
+  <div class="rule1" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="front">
+
+    <article class="story" aria-labelledby="h-main">
+      <p class="kick caps">О нас пишут<span class="dot">·</span>Forbes Казахстан<span class="dot">·</span>22.10.2026</p>
+      <h1 class="headline" id="h-main"><a href="https://forbes.kz/articles/investory-zayavili-o-planah-vlozhit-165-mlrd-v-sklady-tsentralnoy-azii-e9fe87" target="_blank" rel="noopener">Инвесторы заявили о&nbsp;планах вложить $1,65&nbsp;млрд в&nbsp;склады Центральной Азии</a></h1>
+      <a class="read" href="https://forbes.kz/articles/investory-zayavili-o-planah-vlozhit-165-mlrd-v-sklady-tsentralnoy-azii-e9fe87" target="_blank" rel="noopener">Читать
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg><span class="vh">Forbes Казахстан. Откроется в новой вкладке</span></a>
+    </article>
+
+    <aside class="pulse" aria-label="Индекс «Пульс складского рынка Центральной Азии»">
+      <p class="num" aria-hidden="true">48</p>
+      <div>
+        <p class="txt">Индекс «Пульс складского рынка Центральной Азии»: 48&nbsp;баллов, более 100&nbsp;компаний из&nbsp;4&nbsp;стран</p>
+        <a class="src caps" href="https://businessmir.kz/2026/10/16/puls-na-otmetke-48-ibc-global-izmerila-ozhidaniya-skladskogo-rynka/" target="_blank" rel="noopener"><span>Бизнес-мир<span class="dot">·</span>16.10.2026</span>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
+        <p><span class="ph">[шкала и методика: после утверждения]</span></p>
+      </div>
+    </aside>
+
+    <section class="press" aria-labelledby="h-press">
+      <div class="press-top">
+        <h2 class="rubric caps" id="h-press"><span class="sq" aria-hidden="true"></span>О нас пишут</h2>
+        <div class="chips" role="group" aria-label="О нас пишут">
+          <button class="chip" type="button" aria-pressed="true">Все публикации</button>
+          <button class="chip" type="button" aria-pressed="false">Казахстан</button>
+          <button class="chip" type="button" aria-pressed="false">Узбекистан</button>
+          <button class="chip" type="button" aria-pressed="false">Кыргызстан</button>
+          <button class="chip" type="button" aria-pressed="false">Россия</button>
+          <button class="chip" type="button" aria-pressed="false" lang="en">English</button>
+        </div>
+      </div>
+      <ul class="feed">
+        <li><a href="https://kapital.kz/business/150570/v-razvitie-skladskoj-infrastruktury-kostanaya-investiruyut-dollar25-mln.html" target="_blank" rel="noopener">
+          <span class="kick caps">Kapital.kz<span class="dot">·</span>Казахстан<span class="dot">·</span>17.07.2026</span>
+          <h3>В&nbsp;развитие складской инфраструктуры Костаная инвестируют $25&nbsp;млн</h3></a></li>
+        <li><a href="https://daryo.uz/en/2026/04/23/uzbekistan-ranks-7th-globally-in-warehouse-development-potential-as-caws-2026-highlights-logistics-boom-in-tashkent/" target="_blank" rel="noopener">
+          <span class="kick caps">Daryo<span class="dot">·</span>Узбекистан<span class="dot">·</span>23.04.2026<span class="en">на английском языке</span></span>
+          <h3 lang="en">Uzbekistan ranks 7th globally in warehouse development potential as CAWS 2026 highlights logistics boom in Tashkent</h3></a></li>
+        <li><a href="https://www.gazeta.uz/ru/2026/04/17/caws/" target="_blank" rel="noopener">
+          <span class="kick caps">Gazeta.uz<span class="dot">·</span>Узбекистан<span class="dot">·</span>17.04.2026</span>
+          <h3>Что происходит на&nbsp;рынке складской недвижимости в&nbsp;Узбекистане и&nbsp;регионе? Проблемы и&nbsp;перспективы</h3></a></li>
+        <li><a href="https://www.kommersant.ru/doc/8422426" target="_blank" rel="noopener">
+          <span class="kick caps">Коммерсантъ<span class="dot">·</span>Россия<span class="dot">·</span>12.02.2026</span>
+          <h3>Удачно складываются</h3></a></li>
+        <li><a href="https://forbes.kz/articles/pochemu-rost-skladov-v-kazahstane-ne-reshaet-problemu-multitemperaturnyh-habov-e85755" target="_blank" rel="noopener">
+          <span class="kick caps">Forbes Казахстан<span class="dot">·</span>Казахстан<span class="dot">·</span>12.01.2026</span>
+          <h3>Почему рост складов в&nbsp;Казахстане не&nbsp;решает проблему мультитемпературных хабов</h3></a></li>
+        <li><a href="https://en.trend.az/casia/kyrgyzstan/4058754.html" target="_blank" rel="noopener">
+          <span class="kick caps">Trend<span class="dot">·</span>Азербайджан<span class="dot">·</span>18.06.2025<span class="en">на английском языке</span></span>
+          <h3 lang="en">IBC Global forecasts warehouse market hike in Kyrgyzstan</h3></a></li>
+      </ul>
+    </section>
+
+    <section class="events" aria-labelledby="h-events">
+      <h2 class="rubric caps" id="h-events"><span class="sq" aria-hidden="true"></span>Мероприятия</h2>
+      <div class="ev-group">
+        <a class="ev-head" href="https://invest-zavtrak-ibc.ru/" target="_blank" rel="noopener">Бизнес-завтраки IBC Global
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
+        <ul class="ev-list">
+          <li><span class="sq" aria-hidden="true"></span><span>Душанбе, 25&nbsp;ноября 2026, 9:30-13:00, Crowne Plaza Dushanbe</span></li>
+          <li><span class="sq" aria-hidden="true"></span><span>Астана, 16&nbsp;марта 2027</span></li>
+          <li><span class="sq" aria-hidden="true"></span><span>Атырау, 18&nbsp;марта 2027</span></li>
+        </ul>
+      </div>
+      <div class="ev-group">
+        <a class="ev-head" href="https://caws.asia/" target="_blank" rel="noopener">Central Asia Warehouse Summit (CAWS)
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg></a>
+        <ul class="ev-list">
+          <li><span class="sq caws" aria-hidden="true"></span><span>Ташкент, 15&nbsp;апреля 2027, Hyatt Regency Tashkent</span></li>
+          <li><span class="sq caws" aria-hidden="true"></span><span>Алматы, 7&nbsp;октября 2027, отель Ritz-Carlton <span class="ph">[дата и отель: утвердить]</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+  <footer class="foot">© IBC Global</footer>
+</main>
+
+<!-- Закрепленная панель связи на телефоне -->
+<nav class="dock" aria-label="Контакты">
+  <a class="wa" href="https://wa.me/77088587024" target="_blank" rel="noopener">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 18.93A8 8 0 1 0 5.07 16L3.8 20.2z"/><path transform="translate(6.6 6.6) scale(.45)" style="fill:currentColor;stroke:none" d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.98.98 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+    Написать в WhatsApp</a>
+  <a class="sqb" href="tel:+77088587024">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Позвонить</a>
+  <a class="sqb" href="#kontakty">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><circle cx="9" cy="10.5" r="2.25"/><path d="M5.5 16.5c.6-1.7 1.9-2.6 3.5-2.6s2.9.9 3.5 2.6M15 10h4M15 13.5h3"/></svg>
+    Контакты</a>
+</nav>
+
+<!-- Лист контактов (открывается кнопкой «Контакты», закрывается ссылкой «Закрыть») -->
+<div class="sheet" id="kontakty" role="dialog" aria-modal="true" aria-labelledby="h-sheet">
+  <a class="sheet-bg" href="#top" tabindex="-1" aria-hidden="true"></a>
+  <div class="sheet-card">
+    <div class="sheet-top">
+      <h2 class="caps" id="h-sheet">Контакты в Центральной Азии</h2>
+      <a href="#top">Закрыть</a>
+    </div>
+    <ul>
+      <li><span class="l">Телефон</span><a href="tel:+77088587024">+7 708 858 70 24</a></li>
+      <li><span class="l">WhatsApp</span><a href="https://wa.me/77088587024" target="_blank" rel="noopener">Написать в WhatsApp</a></li>
+      <li><span class="l">Почта</span><a href="mailto:leads@ibc-global.asia">leads@ibc-global.asia</a></li>
+      <li><span class="l">Офис</span><span><span class="ph">[адрес офиса после утверждения]</span></span></li>
+    </ul>
+    <p><span class="ph">[кнопка «Сохранить контакт» (vCard) после утверждения]</span></p>
+  </div>
+</div>
+
+<script>
+/* Мелочь из концепции: в строке даты сегодняшняя дата с телефона. Без скрипта остается дата наброска */
+(function(){
+  var t=document.getElementById('today'); if(!t) return;
+  var d=new Date();
+  var w=['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+  var m=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  t.textContent=w[d.getDay()]+', '+d.getDate()+' '+m[d.getMonth()]+' '+d.getFullYear();
+  t.setAttribute('datetime',d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2));
+})();
+</script>
+</body>
+</html>
