@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IBC Global: складская недвижимость Центральной Азии</title>
-<!-- Набросок концепции karman-1 «Карточка», 05.11.2026. Не боевая страница: файл контакта, «Поделиться» и QR здесь условные. -->
+
 <style>
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
@@ -21,7 +21,7 @@ svg{display:block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap
 .sq{display:inline-block;width:6px;height:6px;background:var(--navy);flex:none}
 .wrap{padding:0 16px}
 
-/* Стол: светло-серая подложка первого экрана, на ней белая карточка */
+
 .desk{background:var(--gray)}
 .top{height:64px;display:flex;align-items:center;justify-content:space-between}
 .hours{display:flex;align-items:center;gap:8px;font-size:13px;line-height:16px}
@@ -47,7 +47,7 @@ svg{display:block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap
 
 .cover{display:none}
 
-/* Действия: на чистом белом, одна рамка на экране (у «Сохранить контакт») */
+
 .actions{padding-top:24px}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .tile{height:88px;background:var(--gray);display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px 12px;font-weight:700;font-size:14px;line-height:18px}
@@ -63,7 +63,7 @@ svg{display:block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap
 .ru-note a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--burg)}
 .qr{display:none}
 
-/* Список ниже: спокойные строки */
+
 .list{padding-top:40px}
 .block+.block{margin-top:32px}
 .label{display:flex;align-items:center;gap:8px;font-weight:900;font-size:12px;line-height:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--burg)}
@@ -85,12 +85,12 @@ svg{display:block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap
 .ph{font-size:13px;line-height:18px;letter-spacing:.01em}
 footer{padding:40px 0 32px;font-size:13px;line-height:18px}
 
-/* Регион «Россия» (меняет набросок скрипт; без скрипта стоит Центральная Азия) */
+
 [data-region="ru"] .tile.wa{order:2;background:var(--gray);color:var(--navy)}
 [data-region="ru"] .tile.call{order:1;background:var(--navy);color:var(--white)}
 [data-region="ru"] .ru-note{display:block}
 
-/* Узкие телефоны: карточка растет по тексту, номер и почта не вылезают за край */
+
 @media (max-width:389px){
   .card{height:auto;min-height:199px}
   .card-contacts{padding-top:12px;flex-wrap:wrap;row-gap:0}
@@ -106,7 +106,7 @@ footer{padding:40px 0 32px;font-size:13px;line-height:18px}
   @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 }
 
-/* Компьютер: слева карточка и связь, справа презентация и списки */
+
 @media (min-width:1024px){
   .wrap{max-width:1184px;margin:0 auto;padding:0 32px}
   .top{height:72px}

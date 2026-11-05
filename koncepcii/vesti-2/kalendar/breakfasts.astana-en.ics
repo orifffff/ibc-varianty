@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IBC Global//skladasia-sait//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:events.breakfasts.astana@ibc-global.asia
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270316
+DTEND;VALUE=DATE:20270317
+SUMMARY:IBC Global business breakfasts: Astana
+LOCATION:Astana
+DESCRIPTION:Closed-door meetings on regional warehouse real estate for busi
+ ness leaders and investors. Places are limited.\nhttps://invest-zavtrak-ib
+ c.ru/
+URL:https://invest-zavtrak-ibc.ru/
+END:VEVENT
+END:VCALENDAR

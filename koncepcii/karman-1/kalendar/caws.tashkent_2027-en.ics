@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IBC Global//skladasia-sait//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:events.caws.tashkent_2027@ibc-global.asia
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:Central Asia Warehouse Summit (CAWS): Tashkent
+LOCATION:Hyatt Regency Tashkent\, Tashkent
+DESCRIPTION:The leading event in Central Asian warehouse real estate\, host
+ ed by IBC Global every year since 2024.
+END:VEVENT
+END:VCALENDAR

@@ -27,14 +27,14 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 
 .wrap { max-width: 430px; margin: 0 auto; padding: 0 16px; }
 
-/* Шапка: язык слева, мастер-логотип справа */
+
 .top { height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .lang { display: flex; height: 36px; border: 1px solid var(--navy); }
 .lang a { width: 43px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; letter-spacing: .02em; text-decoration: none; }
 .lang a.on { background: var(--navy); color: #FFFFFF; }
 .logo img { display: block; height: 28px; width: auto; }
 
-/* Лестница 3x3 по знаку: 1 бордовый, 2 темно-синих, 3 светлых */
+
 .ladder { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-content: start; align-self: center; gap: 8px; margin-top: 8px; }
 .sq { position: relative; min-width: 0; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; text-decoration: none; transition: transform 120ms ease, filter 120ms ease; }
 .sq:active { transform: scale(.97); filter: brightness(.88); }
@@ -54,7 +54,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 .pres { grid-area: 2 / 3; }
 .caws { grid-area: 1 / 3; }
 
-/* Текст в пустоте лестницы */
+
 .h-m { grid-area: 1 / 1 / 2 / 3; align-self: end; font-weight: 900; font-size: min(19px, calc((100vw - 32px) * .053)); line-height: 1.16; white-space: nowrap; margin-bottom: -4px; }
 .dot { display: inline-block; width: 6px; height: 6px; background: var(--bord); margin-left: 2px; }
 .slogan { display: none; }
@@ -64,7 +64,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 .stamp .hrs { display: block; font-size: 13px; line-height: 16px; margin-top: 2px; }
 .nw { white-space: nowrap; }
 
-/* Под лестницей: номер, почта, Россия, пересылка */
+
 .strip { margin-top: 20px; }
 .strip-top { display: flex; align-items: center; justify-content: space-between; height: 20px; }
 .kick { font-weight: 900; font-size: 12px; line-height: 16px; letter-spacing: .02em; text-transform: uppercase; color: var(--bord); }
@@ -82,7 +82,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 .qr { display: none; }
 .intro { display: none; }
 
-/* Следующий блок */
+
 .band { padding-bottom: 8px; }
 .sec { margin-top: 20px; }
 .sec-h { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 12px; line-height: 16px; letter-spacing: .02em; text-transform: uppercase; color: var(--bord); }
@@ -105,7 +105,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 .clist a { font-weight: 700; text-decoration: none; }
 .foot { padding-top: 16px; padding-bottom: 104px; font-size: 13px; border-top: 1px solid var(--line); }
 
-/* Бордовый квадрат-спутник: появляется, когда лестница ушла с экрана */
+
 .fab { position: fixed; right: 16px; bottom: 16px; width: 56px; height: 56px; background: var(--bord); color: #FFFFFF; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; z-index: 5; }
 .fab svg { width: 26px; height: 26px; }
 @supports (animation-timeline: scroll()) {
@@ -113,7 +113,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 }
 @keyframes fab-in { from { opacity: 0; visibility: hidden; } to { opacity: 1; visibility: visible; } }
 
-/* Квадраты складываются в порядке знака, от бордового вверх */
+
 @media (prefers-reduced-motion: no-preference) {
   .ladder .sq { animation: fold 240ms cubic-bezier(.2, .7, .2, 1) backwards; }
   .wa { animation-delay: 0ms; } .call { animation-delay: 40ms; } .vcf { animation-delay: 80ms; }
@@ -121,7 +121,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
 }
 @keyframes fold { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-/* Узкие телефоны (меньше 360 px): номер и почта в две строки, кнопки под лестницей не наезжают */
+
 @media (max-width: 359px) {
   .strip-row { flex-wrap: wrap; row-gap: 0; }
   .ph, .em { font-size: 15px; }
@@ -129,7 +129,7 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.75; stro
   .tools button { font-size: 14px; }
 }
 
-/* Компьютер: лестница растет в плакат, как обложка презентации */
+
 @media (min-width: 1024px) {
   body { font-size: 18px; line-height: 28px; }
   .m-only { display: none; }

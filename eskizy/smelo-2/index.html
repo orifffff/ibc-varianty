@@ -6,11 +6,7 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0A1358">
 <title>IBC Global · эскиз smelo-2 «Ночная смена»</title>
-<!--
-  Эскиз концепции smelo-2 «Ночная смена»: первый экран и начало ворот 02.
-  Тексты и адреса из docs/varianty/content/content.json (ключи указаны рядом).
-  Ночь нарисована светом: ламели, рамка проема, полоса света. Фото нет.
--->
+
 <style>
 @font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
 @font-face { font-family: "Lato"; src: url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: block; }
@@ -42,7 +38,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 
 .page { max-width: 430px; margin: 0 auto; padding: 0 16px calc(104px + env(safe-area-inset-bottom)); }
 
-/* 1. Шапка: белый знак, RU | EN, кнопка «Указатель» */
+
 .top { height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .logo img { display: block; height: 26px; width: auto; }
 .top-r { display: flex; align-items: center; gap: 8px; }
@@ -54,7 +50,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 .idx svg { width: 22px; height: 22px; }
 .nums { display: none; }
 
-/* 2-4. Заголовок, подзаголовок, строка-маршрут */
+
 .hero { padding-top: 18px; }
 .h1 { font-weight: 900; font-size: 44px; line-height: 46px; letter-spacing: .01em; text-transform: uppercase; }
 .h1 span { display: block; }
@@ -64,7 +60,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 .route span { display: flex; align-items: center; gap: 10px; }
 .route i { display: block; width: 5px; height: 5px; background: var(--mist); }
 
-/* 5. Ворота: ламели, номер контуром, полоса света, освещенный проем */
+
 .gate { position: relative; margin-top: 22px; border: 1px solid var(--l28); }
 .door {
   position: relative; height: 80px; overflow: hidden;
@@ -91,10 +87,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 .floor a { display: flex; align-items: center; height: 44px; padding: 0 14px 0 16px; font-weight: 700; font-size: 14px; letter-spacing: .01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .floor a + a { flex: 1; border-left: 1px solid var(--l12); }
 
-/* Разметка двора между главами: штрих 24, пробел 16 */
+
 .yard { height: 2px; margin: 12px -16px; background: repeating-linear-gradient(to right, rgba(255, 255, 255, .22) 0 24px, transparent 24px 40px); }
 
-/* Ворота 02 и 03: начало следующих глав */
+
 .gate.next { margin-top: 0; }
 .quote { padding: 20px 16px 6px; font-weight: 600; font-style: italic; font-size: 24px; line-height: 32px; }
 .ph { display: block; padding: 0 16px; font-size: 12px; line-height: 18px; color: var(--mist); }
@@ -102,7 +98,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 .bay .row.link { margin-top: 14px; }
 .door.shut { height: 120px; }
 
-/* 6. Панель-док: всегда на экране */
+
 .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: 8px 16px max(8px, env(safe-area-inset-bottom)); background: rgba(10, 19, 88, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--l28); }
 .dock-in { max-width: 398px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 .d { position: relative; height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid var(--l50); font-weight: 700; font-size: 13px; line-height: 16px; color: var(--white); }
@@ -112,14 +108,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 .d .fill { fill: currentColor; stroke: none; }
 .d:active { box-shadow: 0 0 14px 2px rgba(255, 255, 255, .45); }
 
-/* Движение: только декор, текст и кнопки видны сразу */
+
 @keyframes rise { from { background-position: 0 36px; } to { background-position: 0 0; } }
 @keyframes lighton { from { opacity: 0; } to { opacity: 1; } }
 .g01 .door { animation: rise .45s ease-out both; }
 .g01 .lightbar, .g01 .lamp { animation: lighton .45s .15s ease-out both; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
-/* Узкие телефоны (меньше 360 px): заголовок, номер с почтой и док помещаются в ширину */
+
 @media (max-width: 359px) {
   .top { gap: 8px; }
   .logo img { height: 20px; }
@@ -131,7 +127,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
   .d { font-size: 12px; }
 }
 
-/* Компьютер 1440: заголовок слева, высокие ворота справа, док капсулой */
+
 @media (min-width: 1024px) {
   .page { max-width: 1440px; padding: 0 72px 140px; }
   .top { height: 88px; }
@@ -188,39 +184,39 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
   <main id="glavnoe">
     <div class="stage">
       <section class="hero">
-        <!-- brand.positioning без слова «Ведущий», как в концепции -->
+        
         <h1 class="h1"><span>Консультант</span> <span>и брокер</span></h1>
         <p class="sub">в сфере складской недвижимости <span>Центральной Азии</span></p>
         <p class="route"><span>Казахстан<i></i>Узбекистан</span><span>Кыргызстан<i></i>Таджикистан</span></p>
       </section>
 
-      <!-- Ворота 01: освещенный проем с главными ссылками -->
+      
       <section class="gate g01">
         <div class="door" aria-hidden="true"><span class="num">01</span><span class="lamp"></span></div>
         <div class="lightbar" aria-hidden="true"></div>
         <div class="bay">
-          <!-- links.ru.presentation -->
+          
           <a class="row" href="https://drive.google.com/file/d/1dgn6hayCDD1ml1VlcxIprNeSFlVj64vf/view?usp=drive_link" target="_blank" rel="noopener">
             <span class="txt"><span class="t">Презентация о компании</span></span>
             <span class="tag">PDF</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
           </a>
-          <!-- links.ru.caws_main + events.caws.caption (вариант с датами 2027) -->
+          
           <a class="row" href="https://caws.asia/" target="_blank" rel="noopener">
             <span class="txt"><span class="t"><i class="sq" aria-hidden="true"></i>Central Asia Warehouse Summit</span><span class="m"><span>Ташкент, 15 апреля 2027</span><span>Алматы, 7 октября 2027</span></span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
           </a>
-          <!-- links.ru.breakfasts + events.breakfasts.dushanbe -->
+          
           <a class="row" href="https://invest-zavtrak-ibc.ru/" target="_blank" rel="noopener">
             <span class="txt"><span class="t">Бизнес-завтраки IBC Global</span><span class="m">Душанбе, 25 ноября 2026, 9:30-13:00</span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
           </a>
-          <!-- links.ru.telegram + social.telegram -->
+          
           <a class="row" href="https://t.me/SkladAsia" target="_blank" rel="noopener">
             <span class="txt"><span class="t">Telegram-канал</span><span class="m">«IBC Global: инвестиции в склады»</span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
           </a>
-          <!-- contacts.ca.phone, contacts.ca.email: совет жюри показать номер и почту текстом -->
+          
           <div class="floor">
             <a href="tel:+77088587024">+7 708 858 70 24</a>
             <a href="mailto:leads@ibc-global.asia">leads@ibc-global.asia</a>
@@ -231,17 +227,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
 
     <div class="yard" aria-hidden="true"></div>
 
-    <!-- Ворота 02: начало следующей главы -->
+    
     <section class="gate next" id="vorota-02" aria-label="О компании">
       <div class="door" aria-hidden="true"><span class="num">02</span><span class="plate">О компании</span><span class="lamp off"></span></div>
       <div class="lightbar" aria-hidden="true"></div>
       <div class="bay">
-        <!-- brand.manifesto -->
+        
         <blockquote class="quote">«Склады: устойчивая платформа для развития бизнеса, производства и торговли»</blockquote>
-        <!-- figures.safe.almaty_2023 -->
+        
         <p class="fact">Офис в Алматы с 2023 года</p>
         <span class="ph">[цифры после утверждения]</span>
-        <!-- links.ru.site_asia -->
+        
         <a class="row link" href="https://ibc-global.asia/" target="_blank" rel="noopener">
           <span class="txt"><span class="t">Сайт IBC Global Central Asia</span></span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></svg>
@@ -257,7 +253,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline
   </main>
 </div>
 
-<!-- 6. Панель-док: WhatsApp единственная белая заливка на экране -->
+
 <nav class="dock" aria-label="Контакты">
   <div class="dock-in">
     <a class="d wa" href="https://wa.me/77088587024?text=Здравствуйте!%20Пишу%20со%20страницы%20IBC%20Global." target="_blank" rel="noopener" aria-label="Написать в WhatsApp">

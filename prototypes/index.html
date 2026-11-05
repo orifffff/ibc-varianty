@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="robots" content="noindex">
+<title>Прототипы новой страницы IBC Global</title>
+<link rel="icon" href="../_shared/icons/favicon.ico">
+<style>
+@font-face{font-family:"Lato";src:url("../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Lato";src:url("../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+:root{--navy:#0A1358;--wine:#6A0108;--gray:#E9EAEF;--line:#CFD3DC;color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#FFFFFF;color:var(--navy);font-family:"Lato",Arial,sans-serif;font-size:16px;line-height:1.45}
+a{color:var(--navy)}
+a:focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.label{font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em;text-transform:uppercase;color:var(--wine)}
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.top img{display:block;height:28px;width:auto}
+.bar{width:40px;height:8px;background:var(--wine);margin:32px 0 20px}
+h1{font-weight:700;font-size:28px;line-height:1.15;margin:0 0 12px}
+.lead{margin:0 0 8px;max-width:40em}
+.back{display:inline-block;min-height:44px;padding:12px 0;font-weight:700}
+ol.list{list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--navy)}
+ol.list > li{border-bottom:1px solid var(--line);padding:20px 0;display:grid;grid-template-columns:48px 1fr;gap:0 8px}
+.num{font-weight:700;font-size:24px;line-height:30px;color:var(--wine);font-variant-numeric:tabular-nums lining-nums}
+h2{font-weight:700;font-size:22px;line-height:30px;margin:0}
+.folder{font-size:13px;margin:2px 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 18px;border:1px solid var(--navy);font-weight:700;text-decoration:none;color:var(--navy);background:#FFFFFF}
+.btn.primary{background:var(--navy);color:#FFFFFF}
+.btn:hover{background:var(--gray)}
+.btn.primary:hover{background:var(--navy);text-decoration:underline}
+.sub{list-style:none;margin:0;padding:0;font-size:14px;line-height:20px}
+.sub li{padding:0}
+.sub a{display:inline-block;min-height:44px;padding:12px 0}
+.sub .k{font-weight:700}
+footer{margin-top:40px;border-top:1px solid var(--line);padding:20px 0 40px;font-size:14px}
+@media (min-width:600px){.wrap{padding:0 32px}}
+@media (min-width:1024px){.top img{height:40px}.top .wrap{min-height:80px}h1{font-size:36px}ol.list > li{grid-template-columns:64px 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="label">Служебная страница</span>
+    <img src="../_shared/logo/ibc-logo-color.png" width="523" height="76" alt="IBC&nbsp;Global">
+  </div>
+</header>
+<main class="wrap">
+  <div class="bar" aria-hidden="true"></div>
+  <h1>Прототипы новой страницы</h1>
+  <p class="lead">Три варианта новой страницы IBC&nbsp;Global, собранные из одного файла content.json. Каждая страница открывается с диска, без интернета.</p>
+  <a class="back" href="../index.html">Сравнение и рекомендация</a>
+
+  <ol class="list">
+    <li>
+      <span class="num">01</span>
+      <div>
+        <h2>«Фирменный бланк»</h2>
+        <p class="folder">папка v1-blank · спокойный</p>
+        <div class="btns">
+          <a class="btn primary" href="v1-blank/index.html">Открыть RU</a>
+          <a class="btn" href="v1-blank/en.html">Открыть EN</a>
+        </div>
+        <ul class="sub">
+          <li><span class="k">Для сравнения:</span></li>
+          <li><span class="k">Отчеты:</span></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <div>
+        <h2>«Афиша рынка»</h2>
+        <p class="folder">папка v2-afisha · средний</p>
+        <div class="btns">
+          <a class="btn primary" href="v2-afisha/index.html">Открыть RU</a>
+          <a class="btn" href="v2-afisha/en.html">Открыть EN</a>
+        </div>
+        <ul class="sub">
+          <li><span class="k">Для сравнения:</span> <a href="v2-afisha/noch.html">ночная версия, RU</a> · <a href="v2-afisha/noch-en.html">ночная версия, EN</a> (вопрос&nbsp;15)</li>
+          <li><span class="k">Отчеты:</span></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <span class="num">03</span>
+      <div>
+        <h2>«Ступени»</h2>
+        <p class="folder">папка v3-stupeni · смелый</p>
+        <div class="btns">
+          <a class="btn primary" href="v3-stupeni/index.html">Открыть RU</a>
+          <a class="btn" href="v3-stupeni/en.html">Открыть EN</a>
+        </div>
+        <ul class="sub">
+          <li><span class="k">Для сравнения:</span> <a href="v3-stupeni/setka.html">ровная сетка 2x3, RU</a> · <a href="v3-stupeni/setka-en.html">ровная сетка 2x3, EN</a> (вопрос&nbsp;16)</li>
+          <li><span class="k">Отчеты:</span></li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+
+  <ul class="sub" style="margin-top:16px">
+    <li><span class="k">Служебно:</span></li>
+  </ul>
+</main>
+<footer>
+  <div class="wrap">Служебная страница прототипов: не публикуется, перед выкладкой не нужна.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//IBC Global//skladasia-sait//EN
+N:IBC Global;;;;
+FN:IBC Global
+ORG:IBC Global
+X-ABShowAs:COMPANY
+TEL;TYPE=WORK,VOICE,PREF:+77088587024
+EMAIL;TYPE=INTERNET,WORK,PREF:leads@ibc-global.asia
+ADR;TYPE=WORK:;;7 Al-Farabi Avenue\, Nurly Tau BC (5A)\, 6th floor\, office
+  140\, Almaty 050059\, Kazakhstan;;;;
+item1.URL;TYPE=pref:https://ibc-global.asia/en/
+item1.X-ABLabel:IBC Global Central Asia website
+item2.URL:https://wa.me/77088587024
+item2.X-ABLabel:WhatsApp
+REV:2026-11-05
+END:VCARD

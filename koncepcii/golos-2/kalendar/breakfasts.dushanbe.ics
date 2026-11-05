@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IBC Global//skladasia-sait//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:events.breakfasts.dushanbe@ibc-global.asia
+DTSTAMP:20261105T000000Z
+DTSTART:20261125T043000Z
+DTEND:20261125T080000Z
+SUMMARY:Бизнес-завтраки IBC Global: Душанбе
+LOCATION:Crowne Plaza Dushanbe\, улица Низома Гянджеви\,
+  1\, Душанбе
+DESCRIPTION:Закрытые встречи о складской недв
+ ижимости в регионах для лидеров бизнеса 
+ и инвесторов. Количество участников огр
+ аничено.\nhttps://invest-zavtrak-ibc.ru/
+URL:https://invest-zavtrak-ibc.ru/
+END:VEVENT
+END:VCALENDAR

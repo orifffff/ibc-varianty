@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IBC Global: складская недвижимость Центральной Азии</title>
-<!-- Набросок концепции smelo-1 «Кубики»: первый экран телефона и начало следующего блока. Статичный файл, запросов в сеть нет. -->
+
 <style>
 @font-face{font-family:"Lato";font-style:normal;font-weight:400;font-display:block;src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype")}
 @font-face{font-family:"Lato";font-style:normal;font-weight:600;font-display:block;src:url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype")}
@@ -13,7 +13,7 @@
 
 :root{
   --blue:#0A1358; --bur:#6A0108; --gray:#E9EAEF; --line:#CFD3DC; --caws:#EE2722;
-  /* модуль стеллажа: 3 ячейки + 2 промежутка = колонка 358 px на экране 390 px */
+  
   --m:112px; --g:11px; --u:1px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}
 a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .wrap{max-width:390px;margin:0 auto;padding:0 16px}
 
-/* шапка */
+
 .top{height:56px;display:flex;align-items:center;justify-content:space-between}
 .logo img{display:block;height:28px;width:auto}
 .lang{display:flex;border:2px solid var(--blue)}
@@ -31,12 +31,12 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .lang a::after{content:"";position:absolute;left:0;right:0;top:-7px;bottom:-7px}
 .lang a[aria-current]{background:var(--blue);color:#fff}
 
-/* слово-плакат */
+
 .word{margin-top:10px;font-weight:900;font-size:72px;line-height:65px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
 .dot{display:inline-block;width:13px;height:13px;margin-left:5px;background:var(--bur)}
 .lead{margin-top:12px;font-weight:600;font-size:19px;line-height:26px}
 
-/* стеллаж: одна ячейка = один модуль */
+
 .rack{display:grid;grid-template-columns:repeat(3,var(--m));grid-auto-rows:var(--m);gap:var(--g);margin-top:20px}
 .cell{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;background:var(--gray);color:var(--blue);transition:transform .12s ease-out}
 .cell:active,.strip:active{transform:translateY(2px)}
@@ -58,7 +58,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .caws-mark{position:absolute;top:13px;right:13px;width:10px;height:10px;background:var(--caws)}
 .only-desk{display:none}
 
-/* две широкие полосы */
+
 .strips{display:grid;gap:var(--g);margin-top:var(--g)}
 .strip{position:relative;display:flex;align-items:center;gap:12px;height:56px;padding:0 14px;transition:transform .12s ease-out}
 .strip .ico{position:static;flex:none}
@@ -71,7 +71,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .s-zavtrak .lbl{font-size:15px;line-height:19px}
 .when{margin-left:auto;flex:none;font-size:12px;line-height:15px;font-weight:700}
 
-/* следующий блок: объекты в масштабе */
+
 .h2{font-weight:900;font-size:28px;line-height:32px;letter-spacing:.02em;text-transform:uppercase}
 .objects{margin-top:34px}
 .floors{margin-top:14px}
@@ -86,7 +86,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .objects .ph{margin-top:10px}
 .more{display:inline-block;margin-top:10px;font-weight:700;font-size:14px;line-height:20px;border-bottom:2px solid var(--blue)}
 
-/* контакты в России и подвал */
+
 .russia{margin-top:40px}
 .rows{list-style:none;margin-top:12px}
 .rows li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:16px;line-height:20px}
@@ -94,12 +94,12 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .foot{margin:40px auto 0;padding:20px 16px 96px;border-top:2px solid var(--blue);font-size:13px;line-height:18px}
 .foot p + p{margin-top:6px}
 
-/* квадрат-спутник: появляется, когда стеллаж ушел вверх */
+
 .sputnik{position:fixed;right:16px;bottom:16px;width:56px;height:56px;display:grid;place-items:center;background:var(--bur);color:#fff;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s}
 .sputnik.on{opacity:1;visibility:visible;transform:none}
 .sputnik .ico{position:static;width:28px;height:28px}
 
-/* узкие телефоны (360 px): модуль и слово-плакат сжимаются вместе с экраном */
+
 @media (max-width:389px){
   :root{--m:calc((100vw - 54px) / 3);--u:calc((100vw - 32px) / 358)}
   .word{font-size:calc((100vw - 32px) / 4.97);line-height:.9}
@@ -107,7 +107,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
   .c-pdf .lbl{font-size:13px;line-height:16px}
 }
 
-/* совсем узкие телефоны (меньше 360 px): подписи мельче, чтобы не наезжать на адрес ячейки */
+
 @media (max-width:359px){
   .cell{padding:8px}
   .addr{top:8px;left:8px;font-size:10px;line-height:12px}
@@ -125,7 +125,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
   .when{font-size:11px}
 }
 
-/* сборка стеллажа при первом открытии */
+
 @media (prefers-reduced-motion:no-preference){
   .rack .cell,.strip{animation:rise .32s cubic-bezier(.2,.7,.2,1) backwards}
   .c-wa{animation-delay:0s}.c-call{animation-delay:.04s}.c-mail{animation-delay:.08s}
@@ -136,7 +136,7 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
   @keyframes drop{from{opacity:0;transform:translateY(-36px)}}
 }
 
-/* компьютер: видимая сетка-стеллаж, ячейка 86 + 24 = 110 px */
+
 @media (min-width:1360px){
   .wrap{max-width:none;width:1296px;padding:0}
   .top{height:110px}
@@ -321,19 +321,19 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 
 <script>
 (function(){
-  /* подпись «через N дней» у ближайшего события; прошедшее событие подпись теряет */
+  
   var w=document.querySelector('[data-date]');
   if(w){
     var t=new Date(w.getAttribute('data-date')+'T00:00:00'),n=new Date();n.setHours(0,0,0,0);
     var d=Math.round((t-n)/864e5),a=d%10,b=d%100;
     if(d<1){w.hidden=true}else{w.textContent='через '+d+' '+(a===1&&b!==11?'день':(a>=2&&a<=4&&(b<12||b>14)?'дня':'дней'))}
   }
-  /* квадрат-спутник */
+  
   var s=document.querySelector('.sputnik'),r=document.querySelector('.rack .c-wa');
   if(s&&r&&'IntersectionObserver' in window){
     new IntersectionObserver(function(e){var on=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;s.classList.toggle('on',on);s.tabIndex=on?0:-1}).observe(r);
   }
-  /* на компьютере «Позвонить» и «Почта» копируют номер и адрес */
+  
   var mq=window.matchMedia('(min-width:1360px)');
   Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'),function(el){
     el.addEventListener('click',function(ev){

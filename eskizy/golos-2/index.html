@@ -12,10 +12,10 @@
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:block}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:block}
 
-/* Набросок концепции golos-2 «Первая полоса». Палитра гайда IBC 2026 */
+
 :root{
   --navy:#0A1358; --bord:#6A0108; --white:#FFFFFF; --gray:#E9EAEF; --line:#CFD3DC;
-  --caws:#EE2722; /* красный CAWS: только квадрат 8x8 у саммитов, никогда текстом */
+  --caws:#EE2722; 
   --pad:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,14 +35,14 @@ ul{list-style:none}
 .ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter}
 .sq{display:inline-block;width:8px;height:8px;flex:none;background:var(--bord)}
 .sq.caws{background:var(--caws)}
-/* Заглушка того, что ждет утверждения: мелко, в квадратных скобках */
+
 .ph{display:inline-block;font-weight:400;font-size:11px;line-height:14px;letter-spacing:0;text-transform:none;
   color:var(--navy);border:1px dashed var(--line);padding:1px 6px;background:var(--white)}
-/* Строки капсом: разрядка 0,02 em, case поднимает знаки к прописным, цифры одной ширины */
+
 .caps{text-transform:uppercase;letter-spacing:.02em;font-feature-settings:"case" 1,"lnum" 1,"tnum" 1}
 .dot{padding:0 .4em}
 
-/* ---------- Газетная шапка ---------- */
+
 .mast{display:grid;grid-template-columns:1fr auto;grid-template-areas:"date act" "hair hair" "logo logo";align-items:center}
 .date{grid-area:date;font-weight:700;font-size:12px;line-height:16px;height:32px;display:flex;align-items:center}
 .act{grid-area:act;display:flex;align-items:center;justify-content:flex-end;gap:16px}
@@ -59,7 +59,7 @@ ul{list-style:none}
 .motto{padding:12px 6px 14px;text-align:center;font-style:italic;font-weight:600;font-size:17px;line-height:22px;text-wrap:balance}
 .rule1{height:1px;background:var(--line)}
 
-/* ---------- Первая полоса ---------- */
+
 .front{display:flex;flex-direction:column}
 .story{order:1;padding-top:16px}
 .pulse{order:2}
@@ -75,7 +75,7 @@ ul{list-style:none}
 .read{display:inline-flex;align-items:center;gap:6px;margin-top:6px;min-height:40px;color:var(--bord);font-weight:700;font-size:15px;line-height:20px}
 .read .ico{width:16px;height:16px}
 
-/* Врезка-индекс */
+
 .pulse{margin-top:6px;background:var(--gray);border:1px solid var(--navy);padding:14px 14px 14px 16px;
   display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
 .pulse .num{font-weight:900;font-size:64px;line-height:52px;letter-spacing:-.02em;font-feature-settings:"lnum" 1;padding-top:2px}
@@ -84,7 +84,7 @@ ul{list-style:none}
 .pulse .src .ico{width:12px;height:12px}
 .pulse .ph{margin-top:8px}
 
-/* Рубрика полосы */
+
 .rubric{display:flex;align-items:center;gap:8px;padding-top:9px;border-top:2px solid var(--navy);
   font-weight:900;font-size:14px;line-height:18px}
 .press{margin-top:22px}
@@ -96,7 +96,7 @@ ul{list-style:none}
 .feed h3{margin-top:5px;font-weight:700;font-size:18px;line-height:23px;text-wrap:pretty}
 .feed .en{display:inline-block;margin-left:8px;padding:0 5px;border:1px solid var(--line);color:var(--navy);font-weight:400;font-size:11px;line-height:14px;letter-spacing:0;text-transform:none;vertical-align:1px}
 
-/* Мероприятия */
+
 .events{margin-top:28px}
 .ev-group{margin-top:14px}
 .ev-head{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;line-height:20px;color:var(--bord)}
@@ -104,14 +104,14 @@ ul{list-style:none}
 .ev-list li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:20px;font-feature-settings:"lnum" 1}
 .ev-list li .sq{transform:translateY(-1px)}
 
-/* Закрепленная панель связи (телефон) */
+
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:1px solid var(--line);
   padding:8px var(--pad) calc(8px + env(safe-area-inset-bottom));display:flex;gap:8px}
 .dock .wa{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;height:52px;background:var(--navy);color:var(--white);font-weight:700;font-size:16px;line-height:20px}
 .dock .wa .ico{width:22px;height:22px}
 .dock .sqb{width:68px;height:52px;border:1px solid var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-weight:700;font-size:11px;line-height:13px}
 
-/* Лист контактов: открывается якорем, без скрипта */
+
 .sheet{display:none;position:fixed;inset:0;z-index:30}
 .sheet:target{display:block}
 .sheet-bg{position:absolute;inset:0;background:rgba(10,19,88,.45)}
@@ -126,7 +126,7 @@ ul{list-style:none}
 
 .foot{margin-top:28px;padding:14px 0 24px;border-top:2px solid var(--navy);font-size:12px;line-height:16px}
 
-/* ---------- Компьютер: 12 колонок, поля 96 px ---------- */
+
 @media (min-width:1024px){
   body{padding-bottom:0}
   .wrap{max-width:1440px;margin:0 auto;padding:0 96px}
@@ -278,7 +278,7 @@ ul{list-style:none}
   <footer class="foot">© IBC Global</footer>
 </main>
 
-<!-- Закрепленная панель связи на телефоне -->
+
 <nav class="dock" aria-label="Контакты">
   <a class="wa" href="https://wa.me/77088587024" target="_blank" rel="noopener">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 18.93A8 8 0 1 0 5.07 16L3.8 20.2z"/><path transform="translate(6.6 6.6) scale(.45)" style="fill:currentColor;stroke:none" d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.98.98 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
@@ -291,7 +291,7 @@ ul{list-style:none}
     Контакты</a>
 </nav>
 
-<!-- Лист контактов (открывается кнопкой «Контакты», закрывается ссылкой «Закрыть») -->
+
 <div class="sheet" id="kontakty" role="dialog" aria-modal="true" aria-labelledby="h-sheet">
   <a class="sheet-bg" href="#top" tabindex="-1" aria-hidden="true"></a>
   <div class="sheet-card">
@@ -310,7 +310,7 @@ ul{list-style:none}
 </div>
 
 <script>
-/* Мелочь из концепции: в строке даты сегодняшняя дата с телефона. Без скрипта остается дата наброска */
+
 (function(){
   var t=document.getElementById('today'); if(!t) return;
   var d=new Date();

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IBC Global//skladasia-sait//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:events.caws.almaty_2027@ibc-global.asia
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20271007
+DTEND;VALUE=DATE:20271008
+SUMMARY:Central Asia Warehouse Summit (CAWS): Almaty
+LOCATION:Ritz-Carlton hotel\, Almaty
+DESCRIPTION:The leading event in Central Asian warehouse real estate\, host
+ ed by IBC Global every year since 2024.\nhttps://caws.asia/en/kazakhstan-e
+ n/
+URL:https://caws.asia/en/kazakhstan-en/
+END:VEVENT
+END:VCALENDAR

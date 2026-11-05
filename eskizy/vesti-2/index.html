@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IBC Global: складская недвижимость Центральной Азии</title>
 <meta name="description" content="Консалтинг и брокеридж складской недвижимости в Центральной Азии. Контакты, WhatsApp, презентация компании, саммит CAWS и бизнес-завтраки.">
-<!-- Набросок концепции vesti-2 «Кубики» (05.11.2026). Статичный файл, запросов в интернет нет. -->
+
 <style>
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
@@ -14,7 +14,7 @@
 
 :root{
   --navy:#0A1358; --bord:#6A0108; --gray:#E9EAEF; --line:#CFD3DC; --caws:#EE2722;
-  --m:min(171px, calc((100vw - 48px) / 2)); /* модуль: квадрат 171 px на экране 390 */
+  --m:min(171px, calc((100vw - 48px) / 2)); 
   --gap:8px; --pad:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -24,12 +24,12 @@ a{color:inherit;text-decoration:none}
 a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .num{font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
 
-/* Страница: одна модульная сетка */
+
 .page{display:grid;grid-template-columns:var(--m) var(--m);gap:var(--gap);justify-content:center;max-width:390px;margin:0 auto;padding:0 0 48px}
 .hero,.region,.sec,.note,.foot{grid-column:1 / -1}
 .cover,.sec-desk{display:none}
 
-/* Шапка и слоган */
+
 .top{height:56px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:block;height:28px;width:auto}
 .lang{display:flex;align-items:center;margin-right:-8px}
@@ -37,17 +37,17 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .lang a.on{font-weight:700}
 .lang a.on::after{content:"";position:absolute;left:11px;right:11px;bottom:8px;height:2px;background:var(--navy)}
 .lang i{display:block;width:1px;height:16px;background:var(--line)}
-.slogan{margin-top:8px;font-weight:600;font-size:21px;line-height:28px} /* 21, а не 22: при 22 px вторая строка шире 350 px на 1 px и слоган уходит в 4 строки */
+.slogan{margin-top:8px;font-weight:600;font-size:21px;line-height:28px} 
 .lead{display:none}
 
-/* Переключатель региона: меняет содержимое тех же 4 кубиков связи */
+
 .region{display:flex;align-items:stretch;height:44px;margin-top:4px;border-bottom:1px solid var(--line)}
 .region a{position:relative;display:flex;align-items:center;font-size:15px;line-height:20px}
 .region a.on{font-weight:700}
 .region a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--navy)}
 .region .sq{align-self:center;width:4px;height:4px;margin:0 14px;background:var(--navy)}
 
-/* Кубик: метка слева вверху, значок справа вверху, главное слева внизу */
+
 .k{position:relative;display:flex;flex-direction:column;justify-content:space-between;height:var(--m);padding:var(--pad);background:var(--gray);overflow:hidden}
 .k.w2{grid-column:span 2}
 .k-navy{background:var(--navy);color:#fff}
@@ -66,16 +66,16 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .corner.caws{background:var(--caws)}
 .k:active{transform:scale(.98)}
 
-/* «Скоро»: ближайшее событие само становится крупным кубиком */
+
 .soon-link::after{content:"";position:absolute;inset:0}
 .soon-main{display:flex;align-items:flex-end;gap:16px}
 .soon-main .k-city{margin-top:0}
 .soon-date .k-sm{margin-top:4px}
 .cal{position:absolute;z-index:2;top:10px;right:var(--pad);display:flex;align-items:center;gap:8px;height:36px;padding:0 12px 0 10px;background:#fff;font-weight:600;font-size:13px;line-height:16px}
-.cal::before{content:"";position:absolute;left:0;right:0;top:-4px;bottom:-4px} /* зона нажатия 44 px */
+.cal::before{content:"";position:absolute;left:0;right:0;top:-4px;bottom:-4px} 
 .cal .ico{width:20px;height:20px}
 
-/* CAWS 2027 и «О компании»: две даты в одном кубике */
+
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 
 .note{margin-top:8px;font-size:12px;line-height:16px}
@@ -83,11 +83,11 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 
 @media (max-width:380px){ .slogan{font-size:19px;line-height:26px} }
 @media (max-width:359px){ .k-act{font-size:19px;line-height:23px} .date{font-size:38px;line-height:40px} }
-/* Узкие телефоны: текст в кубиках событий не обрезается краем кубика */
+
 @media (max-width:380px){ :root{--pad:14px} .ev .date,.caws-k .date{font-size:38px;line-height:40px} }
 @media (max-width:359px){ .k{height:auto;min-height:var(--m)} .ev .date,.caws-k .date{font-size:32px;line-height:34px} .soon .k-label{white-space:normal;max-width:48%} }
 
-/* Компьютер 1440: 8 колонок по 144 px, зазор 16 px, поля 88 px */
+
 @media (min-width:1200px){
   :root{--m:144px; --gap:16px}
   .page{max-width:none;grid-template-columns:repeat(8, var(--m));grid-template-rows:var(--m) var(--m) 44px var(--m) var(--m) auto auto auto;padding:40px 0 64px}
@@ -147,7 +147,7 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
   </nav>
   <div class="sec-desk"><span class="sq" aria-hidden="true"></span>Мероприятия</div>
 
-  <!-- 1. Связь: 4 кубика 1x1, ровно один темно-синий -->
+  
   <a class="k k-navy wa" href="https://wa.me/77088587024">
     <span class="k-head">
       <span class="k-label">WhatsApp</span>
@@ -192,7 +192,7 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
     </span>
   </a>
 
-  <!-- 2. События: ближайшее 2x1 «Скоро», дальше 1x1 по датам -->
+  
   <div class="k w2 soon">
     <span class="corner" aria-hidden="true"></span>
     <span class="k-head">
@@ -239,7 +239,7 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
     </span>
   </a>
 
-  <!-- Одна кнопка CAWS про саммиты 2027 года -->
+  
   <a class="k w2 caws-k" href="https://caws.asia/">
     <span class="corner caws" aria-hidden="true"></span>
     <span class="k-head">
@@ -260,7 +260,7 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
     </span>
   </a>
 
-  <!-- 3. Компания: годы как графика, без спорного года основания -->
+  
   <div class="k w2 about">
     <span class="k-head">
       <span class="k-label">О компании</span>
@@ -292,7 +292,7 @@ a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 </main>
 
 <script>
-/* Мелочь: «через N дней» считается от сегодняшней даты; без JS остается текст на 05.11.2026 */
+
 (function(){
   var el=document.getElementById('soon-left'); if(!el) return;
   var t=new Date(), a=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()), b=Date.UTC(2026,10,25);

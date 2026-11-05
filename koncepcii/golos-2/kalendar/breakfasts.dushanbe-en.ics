@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IBC Global//skladasia-sait//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:events.breakfasts.dushanbe@ibc-global.asia
+DTSTAMP:20261105T000000Z
+DTSTART:20261125T043000Z
+DTEND:20261125T080000Z
+SUMMARY:IBC Global business breakfasts: Dushanbe
+LOCATION:Crowne Plaza Dushanbe\, Dushanbe
+DESCRIPTION:Closed-door meetings on regional warehouse real estate for busi
+ ness leaders and investors. Places are limited.\nhttps://invest-zavtrak-ib
+ c.ru/
+URL:https://invest-zavtrak-ibc.ru/
+END:VEVENT
+END:VCALENDAR

@@ -1,222 +1,331 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>10 концепций новой страницы</title>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="robots" content="noindex">
+<title>Три варианта новой страницы IBC Global: сравнение</title>
+<link rel="icon" href="_shared/icons/favicon.ico">
 <style>
-@font-face{font-family:Lato;src:url("assets/data/brand/ibc/fonts/lato-regular.ttf");font-weight:400}
-@font-face{font-family:Lato;src:url("assets/data/brand/ibc/fonts/lato-bold.ttf");font-weight:700}
-@font-face{font-family:Lato;src:url("assets/data/brand/ibc/fonts/lato-black.ttf");font-weight:900}
-:root{--navy:#0A1358;--wine:#6A0108;--bg:#F4F5F8;--line:#CFD3DC;--ink:#1B1F33;--muted:#5A607A}
-*{box-sizing:border-box} body{margin:0;font-family:Lato,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-header{background:#fff;border-bottom:1px solid var(--line);padding:28px 0} .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-h1{font-weight:900;color:var(--navy);margin:0 0 8px;font-size:28px} .lead{color:var(--muted);max-width:780px}
-.tw{overflow-x:auto} table{width:100%;border-collapse:collapse;background:#fff;margin:20px 0;font-size:15px} th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left} th{color:var(--muted);font-weight:700}
-a{color:var(--navy)} .card{background:#fff;border:1px solid var(--line);margin:22px 0;padding:22px}
-.head{display:flex;gap:14px;align-items:center} .num{background:var(--navy);color:#fff;font-weight:900;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none}
-h2{margin:0;color:var(--navy);font-weight:900;font-size:24px} .meta{color:var(--muted);font-size:14px}
-.body{display:grid;grid-template-columns:280px minmax(0,1fr);gap:26px;margin-top:18px} .body>*{min-width:0} .text,.jur,details,li{overflow-wrap:anywhere} td a{white-space:nowrap}
-@media(max-width:760px){.body{grid-template-columns:minmax(0,1fr)} .card{padding:16px} h1{font-size:24px}}
-.sketch{margin:0} .sketch img{width:100%;border:1px solid var(--line);display:block} .sketch figcaption{font-size:13px;color:var(--muted);margin-top:6px}
-.sketch .ph{display:none} .sketch.none img,.sketch.none figcaption{display:none} .sketch.none .ph{display:flex;height:420px;border:1px dashed var(--line);align-items:center;justify-content:center;color:var(--muted);background:#FAFAFC}
-.idea{font-size:18px;font-weight:700;color:var(--navy)} h3{font-size:15px;margin:16px 0 4px;color:var(--wine)} p{margin:0 0 8px}
-.jur{border-left:3px solid var(--line);padding:4px 10px;margin:6px 0;font-size:14px} .jur span{display:block;color:var(--muted)}
-details{border-top:1px solid var(--line);padding:8px 0} summary{cursor:pointer;font-weight:700;color:var(--navy);min-height:28px}
-.sk-links{display:flex;flex-direction:column;gap:6px;margin-top:10px;font-size:14px} .sk-links a{min-height:24px}
-.badge{margin-top:10px;background:var(--wine);color:#fff;font-size:13px;padding:6px 10px;font-weight:700}
-.top-links{margin:14px 0 0;font-size:16px} .top-links a{font-weight:700}
-</style></head><body>
-<header><div class="wrap"><h1>10 концепций новой страницы IBC Global</h1>
-<p class="lead"><b>Черновик для обсуждения внутри IBC Global.</b> Идеи, как может выглядеть и работать страница вместо skladasia.tilda.ws. Их придумали 5 помощников-дизайнеров, каждый со своей стороны, по 2 идеи. Потом 3 помощника-жюри оценили их с точки зрения клиента, техники и красоты. Три из них собираются полными прототипами (отмечены бордовым). У каждой идеи слева набросок первого экрана телефона. Собрано 05.11.2026.</p><p class="top-links"><a href="10-koncepcij-IBC.pdf">PDF для пересылки (11 листов)</a> · <a href="eskizy/index.html">Все 10 набросков в рамке телефона, их можно листать</a></p></div></header>
-<main class="wrap">
-<div class="tw"><table><tr><th>№</th><th>Концепция</th><th>Смелость</th><th>Клиент</th><th>Техника</th><th>Красота</th><th>Средний</th></tr><tr><td>1</td><td><a href="#karman-1">Карточка</a></td><td>2</td><td>7.8</td><td>8.1</td><td>6.2</td><td><b>7.4</b></td></tr><tr><td>2</td><td><a href="#karman-2">Ступени</a></td><td>4</td><td>8.3</td><td>8.4</td><td>8.2</td><td><b>8.3</b></td></tr><tr><td>3</td><td><a href="#doverie-1">Фирменный бланк</a></td><td>2</td><td>7.7</td><td>8.9</td><td>6.3</td><td><b>7.6</b></td></tr><tr><td>4</td><td><a href="#doverie-2">Профиль компании</a></td><td>4</td><td>7.3</td><td>7.9</td><td>6.8</td><td><b>7.3</b></td></tr><tr><td>5</td><td><a href="#smelo-1">Кубики</a></td><td>3</td><td>7.8</td><td>7.6</td><td>7.8</td><td><b>7.8</b></td></tr><tr><td>6</td><td><a href="#smelo-2">Ночная смена</a></td><td>4</td><td>8.2</td><td>6.4</td><td>7.5</td><td><b>7.3</b></td></tr><tr><td>7</td><td><a href="#vesti-1">Двуязычный указатель</a></td><td>2</td><td>7.2</td><td>8.6</td><td>6.0</td><td><b>7.3</b></td></tr><tr><td>8</td><td><a href="#vesti-2">Кубики</a></td><td>3</td><td>7.5</td><td>7.5</td><td>6.5</td><td><b>7.2</b></td></tr><tr><td>9</td><td><a href="#golos-1">Афиша рынка</a></td><td>3</td><td>7.7</td><td>7.2</td><td>7.7</td><td><b>7.5</b></td></tr><tr><td>10</td><td><a href="#golos-2">Первая полоса</a></td><td>4</td><td>7.8</td><td>7.1</td><td>7.2</td><td><b>7.4</b></td></tr></table></div>
-<p><b>Кого жюри предлагали для прототипов:</b></p><ul><li><b>клиент и бизнес:</b> спокойная (смелость 2): белая визитка компании, связь с первого экрана: Карточка; средняя (смелость 3): белая модульная сетка-стеллаж с крупной типографикой: Кубики; смелая (смелость 4): темная история с воротами дока: Ночная смена</li><li><b>дизайн и техника:</b> спокойная (смелость 2): Фирменный бланк; средняя (смелость 3): Афиша рынка; смелая (смелость 4): Ступени</li><li><b>красота:</b> спокойная (смелость 1-2): Фирменный бланк; средняя (смелость 3): Афиша рынка; смелая (смелость 4-5): Ступени</li></ul>
-<section class="card" id="karman-1">
-<div class="head"><span class="num">1</span><div><h2>Карточка</h2><div class="meta">Угол: «Визитка в кармане» · смелость 2 из 5 · средний балл жюри 7.4</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/karman-1/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#karman-1">листать в рамке телефона</a><a href="eskizy/karman-1/index.html">открыть набросок отдельно</a><a href="eskizy/karman-1/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Страница и есть визитка компании, положенная в телефон. Первым человек видит не столбик кнопок, а карточку IBC Global в пропорции бумажной визитки: логотип в правом верхнем углу, одна строка «кто мы», телефон и почта нижней строкой. Под ней ряд действий, как в карточке контакта на телефоне (WhatsApp, Позвонить, Почта), и крупная кнопка «Сохранить в контакты». Центральная Азия и Россия не две стопки кнопок, а один переключатель региона; люди, презентация, события, услуги, сайты и соцсети идут ниже спокойным списком, а главные действия после прокрутки остаются под пальцем в закрепленной нижней панели.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Страница начинается с предмета, а не со списка: карточка в пропорции визитки, мастер-логотип в правом верхнем углу, как его ставит гайд, бордовая черта как на обложке гайда (в паспорте: accent_bar), телефон и почта нижней строкой, как на бумажной визитке. Человек видит ту же семью, что держит в руке: визитку и презентацию.<br>2) Квадратная геометрия везде: нулевые скругления у кнопок, плиток, аватаров и переключателей, волосяные линии 1 px #CFD3DC, ритм 8 px. Это читается как архитектура и перекликается с квадратами знака IBC, а не как «таблетки» конструктора мультиссылок.<br>3) Типографика вместо украшений: один Lato в трех начертаниях и пяти размерах, номера цифрами одинаковой ширины, почты бордовым Bold по гайду, подписи разделов мелкими прописными бордовым с квадратом впереди, без висячих предлогов (неразрывные пробелы после «в», «и», «по», как в rules.md).<br>4) События как календарь: крупное число дня Lato Black 28, месяц мелкими прописными бордовым, справа город и площадка; прошедшие исчезают сами, и страница больше никогда не обещает «событие 2026 года» после самого события.<br>5) Сдержанное движение: двигается только то, что помогает (карточка встает на место, панель выезжает, когда нужна, строка «Скопировано»), и ничего не двигается при «уменьшить движение».</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.8 · дизайн и техника 8.1 · красота 6.2</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="karman-2">
-<div class="head"><span class="num">2</span><div><h2>Ступени</h2><div class="meta">Угол: «Визитка в кармане» · смелость 4 из 5 · средний балл жюри 8.3</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/karman-2/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#karman-2">листать в рамке телефона</a><a href="eskizy/karman-2/index.html">открыть набросок отдельно</a><a href="eskizy/karman-2/desktop.png">как на компьютере</a></div><div class="badge">Собираем полный прототип: v3-stupeni «Ступени»</div></figure>
-<div class="text">
-<p class="idea">Первый экран сам становится знаком IBC: шесть квадратов-кнопок стоят лесенкой 1-2-3, как квадраты в логотипе, и единственный бордовый квадрат, как в знаке, это главное действие: WhatsApp. В пустом углу лесенки набрано, кто мы, во второй пустой клетке штамп «На рынке с 2005». Нижняя ступень это «связаться сейчас» (WhatsApp, Позвонить, В контакты), средняя «узнать» (Почта, Презентация), на вершине саммит CAWS 2027: Summit на вершине лестницы. Все главное на одном экране без прокрутки, остальное ниже коротким списком, а бордовый квадрат WhatsApp после прокрутки едет за человеком в углу экрана.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Интерфейс сделан из знака: шесть квадратов в лесенке 1-2-3, распределение цвета как в логотипе (1 бордовый, 2 темно-синих, 3 светлых), а бордовый квадрат WhatsApp стоит там же, где бордовый квадрат в знаке. Логотип в шапке и лестница под ним рифмуются, и это узнается без единого слова.<br>2) Текст в пустоте: заголовок прижат к низу пустого угла и стоит на темно-синей ступени, штамп «2005» Lato Black заполняет вторую пустую клетку; первый экран складывается в один квадратный плакат без «плавающих» элементов.<br>3) Смысл ступеней: внизу «сделать сейчас», в середине «узнать», на вершине Summit; красная полоска CAWS на верхнем квадрате работает как флажок на вершине, единственная яркая точка экрана.<br>4) Анимация складывания коробок в порядке знака за 0,4 секунды один раз за сеанс: склад, рост и бренд в одном жесте, без задержки нажатия.<br>5) На компьютере лестница растет до плаката 552 px, в ее пустом углу слоган компании курсивом Lato SemiBold, слева тихая колонка текста: это ожившая обложка презентации, которую человек только что держал в руках, но плоская, четкая и нажимаемая.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 8.3 · дизайн и техника 8.4 · красота 8.2</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="doverie-1">
-<div class="head"><span class="num">3</span><div><h2>Фирменный бланк</h2><div class="meta">Угол: «Бренд и доверие» · смелость 2 из 5 · средний балл жюри 7.6</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/doverie-1/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#doverie-1">листать в рамке телефона</a><a href="eskizy/doverie-1/index.html">открыть набросок отдельно</a><a href="eskizy/doverie-1/desktop.png">как на компьютере</a></div><div class="badge">Собираем полный прототип: v1-blank «Фирменный бланк»</div></figure>
-<div class="text">
-<p class="idea">Страница как официальный документ IBC Global в цифровом виде: белый лист по гайду 2026, мастер-знак, бордовая черта, разделы с номерами и сносками. Это не набор кнопок, а единый реестр утвержденных контактов, сайтов и каналов компании с датой обновления: каждая строка честно говорит, куда ведет, на каком языке и что там. Доверие строится на точности и порядке, как в отчете международного консультанта, а не на картинках.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Иерархия без серого: весь текст темно-синий, как требует гайд, а уровни задают только размер и насыщенность Lato (600, 700, 400). Получается строгая монохромная полоса, как в отчетах международных консультантов, вместо четырех цветов кнопок. 2) Указатель вместо кнопок: бордовые табличные номера 01-09 в своей колонке, название Bold, строка пояснения и метка «домен · язык», волосяные линии #CFD3DC, все на шаге 8 px: ритм оглавления годового отчета. 3) Обложка ровно по гайду и без единой картинки: градиент от белого к #E9EAEF, мастер-знак с охранным полем, бордовая черта 40x6 px, как на обложке гайда. 4) Сноски «¹ по состоянию на ..., источник ...» и штамп «Обновлено ...»: деталь, которая говорит «мы аналитики», и которой нет ни у одного конструктора мультиссылок. 5) Прямые углы плашек и кнопок в рифму с квадратами знака, одна толщина линий, один набор значков в цвет текста; типографская чистка по правилам гайда: «елочки», неразрывный пробел после коротких предлогов и между числом и единицей, поэтому «в» не висит в конце строки, как сейчас на телефоне (05, раздел 2.1), а «7 октября» не разрывается.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.7 · дизайн и техника 8.9 · красота 6.3</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="doverie-2">
-<div class="head"><span class="num">4</span><div><h2>Профиль компании</h2><div class="meta">Угол: «Бренд и доверие» · смелость 4 из 5 · средний балл жюри 7.3</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/doverie-2/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#doverie-2">листать в рамке телефона</a><a href="eskizy/doverie-2/index.html">открыть набросок отдельно</a><a href="eskizy/doverie-2/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Вместо списка ссылок короткий профиль компании, как его делают международные консультанты (Company Profile): вертикальная история из шести глав, каждая доказывает одно утверждение: кто мы, сколько сделали, что делаем, кто нам доверяет и что о нас пишут, кто за этим стоит, где встретиться. Связь не теряется ни на секунду: панель WhatsApp, звонок и почта закреплены снизу на любом месте страницы, а все ссылки собраны в указателе в конце. По сути это презентация о компании, которую не нужно скачивать: тот же бренд, что на бумаге, но живой, быстрый и одинаковый на RU и EN.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Обложка как обложка бумажной презентации: кадр кубиков I, B, C во всю ширину, под ним знак и бордовый слоган SemiBold. Человек с визиткой или PDF в руках видит тот же бренд, а не «другой сайт». 2) Цифры по правилам гайда: Lato Regular 400 крупно, подписи мелко, вертикальные волосяные линии между ними, как на стр. 3 презентации, и сноска с датой; без бегущих счетчиков: спокойная уверенность. 3) Бордовые квадратные номера 1-7 у направлений: квадрат как модуль лесенки знака IBC, белая цифра Bold; знак и содержание говорят на одном языке. 4) Пресса как цитаты: SemiBold Italic (роль цитат гайда), бордовые «елочки», издание и дата Bold; логотипы клиентов одного цвета и одной оптической высоты в сетке 4x4 вместо пестрой стены. 5) Ритм глав: один заголовок Lato Black прописными на экран, много белого, одна деталь акцента; страница читается как короткий отчет консультанта, а не как лента.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.3 · дизайн и техника 7.9 · красота 6.8</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="smelo-1">
-<div class="head"><span class="num">5</span><div><h2>Кубики</h2><div class="meta">Угол: «Смелая подача» · смелость 3 из 5 · средний балл жюри 7.8</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/smelo-1/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#smelo-1">листать в рамке телефона</a><a href="eskizy/smelo-1/index.html">открыть набросок отдельно</a><a href="eskizy/smelo-1/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Вся страница собрана из одного модуля: квадрата, из которого сложены знак IBC Global (лесенка квадратов) и обложка презентации (кубики I, B, C). Каждый контакт, ссылка, объект и издание занимает одну или несколько ячеек видимой сетки, как коробка на стеллаже с адресом ячейки (A1, B2...), а у цвета появляется смысл: бордовый квадрат всегда одно главное действие, темно-синий значит «связаться», светло-серый «открыть». Вместо 21 одинаковой кнопки человек видит ту же компанию, что в презентации, и с первого экрана пишет, звонит или открывает нужное.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Одна единица на всю страницу: ячейка 112 px на телефоне (86 + 24 на компьютере); кнопки, отступы, подписи и даже инфографика кратны ей, поэтому страница выглядит построенной, а не собранной из блоков конструктора. 2) Типографский жест: огромное «СКЛАДЫ» Lato Black с бордовым квадратом вместо точки; тот же квадрат становится главной кнопкой, а потом «спутником» в углу. 3) Цвет с правилом: на экране всегда один бордовый элемент, и это то, что нужно сделать сейчас; темно-синий значит «связаться», светло-серый «открыть» (сейчас у 4 цветов кнопок смысла нет, 05, р. 4). 4) Честная инфографика из квадратов: шесть объектов с площадью в масштабе, от Global Hub (около 132 000 м²) до А-Сталь Азия (11 000 м²): размах компании виден без единой картинки. 5) Детали для своих: адреса ячеек A1, B2 мелким шрифтом, как на стеллаже с адресным хранением, видимая сетка тонкими линиями #CFD3DC на компьютере и ячейка, которая проседает на 2 px при нажатии, как клавиша.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.8 · дизайн и техника 7.6 · красота 7.8</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="smelo-2">
-<div class="head"><span class="num">6</span><div><h2>Ночная смена</h2><div class="meta">Угол: «Смелая подача» · смелость 4 из 5 · средний балл жюри 7.3</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/smelo-2/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#smelo-2">листать в рамке телефона</a><a href="eskizy/smelo-2/index.html">открыть набросок отдельно</a><a href="eskizy/smelo-2/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Страница рассказывает IBC Global как ночную смену большого склада: темно-синий двор и ряд пронумерованных ворот, и каждая глава 01-07 открывается, как поднимаются секционные ворота дока: связь, кто мы, хроника 2005-2027, направления, табло событий, пресса, указатель ссылок. Ночь нарисована светом (тонкие ламели ворот, полоса света под ними), а не картинкой ИИ, а контакты все время горят в нижней панели-доке, поэтому история не мешает тому, кто пришел только написать. В конце смена заканчивается «утром»: последний блок с контактами и людьми белый, по гайду.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Ночь из света, а не из картинки: ламели ворот 1 px через 12 px, рамка проема и полоса света 2 px с мягким свечением; ни одной фотографии ИИ, экран резкий на любом телефоне. 2) Свет равен действию: единственная белая заливка на темном экране у кнопки WhatsApp в доке, как открытые освещенные ворота на темном дворе; все остальное контуром и полутоном #CFD3DC. 3) Номера ворот как ритм и навигация: огромные контурные цифры 01-07 Lato Black, на компьютере те же номера в шапке; страница читается как ряд доков. 4) Хроника кадрами: год 120-240 px залипает и сменяется 2005, 2023, 2024, 2025, 2026, 2027; прошедшие залиты белым, будущий 2027 нарисован контуром, как план рядом с построенным. 5) Рассвет в конце: после ворот 07 страница впервые становится белой, по гайду, с портретами и контактами, как последняя страница презентации «Спасибо за внимание».</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 8.2 · дизайн и техника 6.4 · красота 7.5</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="vesti-1">
-<div class="head"><span class="num">7</span><div><h2>Двуязычный указатель</h2><div class="meta">Угол: «Удобно вести» · смелость 2 из 5 · средний балл жюри 7.3</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/vesti-1/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#vesti-1">листать в рамке телефона</a><a href="eskizy/vesti-1/index.html">открыть набросок отдельно</a><a href="eskizy/vesti-1/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Страница как двуязычный указатель, вроде табличек в аэропорту или музейных этикеток: строгий список строк, где каждая строка страницы это ровно одна строка таблицы ukazatel.csv, а русский и английский стоят в ней рядом. На экране тоже оба языка: крупно язык страницы, мелко второй; переключатель RU|EN только меняет их местами, поэтому английская версия не может отстать: пустая английская клетка сразу видна и на странице, и в проверке. Восемь типов строк (связь, событие, ссылка, документ, публикация, канал, факт, услуга) с датами «с» и «до»: прошедшее прячется само, а звонок, WhatsApp и файл контакта собираются из одного номера.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Двуязычная типографика как подпись бренда: главный язык Lato SemiBold, второй Regular меньше и на той же сетке 8 px, английский слоган SemiBold Italic: страница выглядит как музейная этикетка или указатель международного аэропорта, а не как столбик кнопок. 2) Ритм указателя: строки 56-64 px, тонкие линии #CFD3DC, телефоны и даты в одной колонке табличными цифрами Lato: аккуратность годового отчета, где все стоит по линейке. 3) Бордовый только как знак препинания: номера разделов 01-07 и квадраты ▪ (паспорт: маркеры квадраты #6A0108), не больше 3% площади; темно-синий говорит, бордовый отмечает. 4) Ни одного фото: воздух и шрифт делают всю работу, страница грузится мгновенно и не показывает несуществующий склад (итог, раздел 6, № 24); на компьютере огромные светло-серые номера разделов на полях работают как знаки навигации. 5) Встроенный типограф: неразрывные пробелы после предлогов, «елочки», неразрывные пробелы в номерах: даже наспех вписанная строка выглядит набранной профессионально.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.2 · дизайн и техника 8.6 · красота 6.0</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="vesti-2">
-<div class="head"><span class="num">8</span><div><h2>Кубики</h2><div class="meta">Угол: «Удобно вести» · смелость 3 из 5 · средний балл жюри 7.2</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/vesti-2/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#vesti-2">листать в рамке телефона</a><a href="eskizy/vesti-2/index.html">открыть набросок отдельно</a><a href="eskizy/vesti-2/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Страница как модульная сетка квадратных кубиков, родня ступенчатым квадратам знака IBC и кубикам с обложки презентации: каждый кубик это одна карточка в текстовом файле kubiki.txt, где каждое поле записано «RU | EN» в одной строке. Ариф не раскладывает страницу, а только добавляет карточки с датами: правила сами делают ближайшее событие большим кубиком «Скоро», прошедшее превращают в «Фото и видео» и потом убирают, а одиночный кубик в ряду растягивают, чтобы сетка всегда была ровной. Закрытый набор из восьми типов кубиков (связь, событие, документ, сайт, публикация, канал, факт, направления) и один квадратный модуль делают любую комбинацию собранной, как стеллаж на складе.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Один модуль на все: любой кубик кратен одному квадрату, поэтому любая комбинация карточек складывается в ровную, «архитектурную» сетку, как план склада или стеллаж, и ее не может испортить ни новая публикация, ни пятое событие. 2) Логика знака IBC: в знаке один бордовый квадрат среди синих; на странице так же ровно один бордовый акцент и один темно-синий кубик на экран, остальное белое и светло-серое: узнаваемая и строгая пропорция. 3) Даты и годы как графика: «25.11», «15.04», «2005» набраны Lato Black 44-64 px табличными цифрами и становятся лицом кубика: страница читается одновременно как календарь и как летопись компании. 4) Плоско и точно: без теней, скруглений и градиентов, рамки 1 px, одно и то же поле 16 px и одно положение метки в каждом кубике: это система, а не набор разноцветных кнопок, как сейчас (итог, раздел 6, № 23). 5) Движение со смыслом: укладка кубиков при первом заходе за 0,4 с повторяет идею «из модулей в целое», а на компьютере рядом стоит обложка с теми же кубиками: страница и презентация выглядят одной семьей.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.5 · дизайн и техника 7.5 · красота 6.5</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="golos-1">
-<div class="head"><span class="num">9</span><div><h2>Афиша рынка</h2><div class="meta">Угол: «Голос рынка» · смелость 3 из 5 · средний балл жюри 7.5</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/golos-1/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#golos-1">листать в рамке телефона</a><a href="eskizy/golos-1/index.html">открыть набросок отдельно</a><a href="eskizy/golos-1/desktop.png">как на компьютере</a></div><div class="badge">Собираем полный прототип: v2-afisha «Афиша рынка»</div></figure>
-<div class="text">
-<p class="idea">Страница как афиша складского рынка Центральной Азии, которую ведет IBC Global: первым экраном не столбик кнопок, а «билет» на ближайшую встречу рынка (сейчас бизнес-завтрак в Душанбе 25.11.2026, дальше Астана 16.03.2027, Атырау 18.03.2027, CAWS в Ташкенте 15.04.2027 и в Алматы 07.10.2027; 00-ИТОГ, 4.6; 03, разделы 2-3). Компания показана как та, кто собирает рынок: сезон событий, итоги CAWS 2026 с «голосом зала», три сильные публикации и аналитика, а связаться можно из любой точки страницы закрепленной панелью. Ближайшая дата и обратный отсчет выбираются сами по календарю, прошедшие события уходят в архив без участия Арифа, поэтому страница не устареет так, как нынешняя подпись «главное складское событие 2026 года» (00-ИТОГ, раздел 6, № 3).</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Дата как главный герой: «25» набрано Lato Black 112 px на телефоне и 200 px на компьютере, цифры одной ширины (в Lato 2.015 есть функции tnum и lnum, проверено по таблице GSUB файла data/brand/ibc/fonts/Lato-Black.ttf), месяц и город рядом мельче: это афиша из одной гарнитуры и двух цветов, без фото со стока.<br>2) Билет с перфорацией из квадратиков 2x2 px и квадратными вырезами по краям: тот же модуль, что «ступеньки» знака IBC; перфорация разделяет смысл: сверху что и где, снизу действия; прямые углы, без теней и градиентов.<br>3) Расписание как печатная программка: даты в колонке одной ширины выстраиваются в ровный столбец, базовая сетка с шагом 8 px, линии #CFD3DC толщиной 1 px; список всегда начинается с ближайшей даты, прошлое свернуто.<br>4) «Голос зала» диаграммами из квадратов: 100, 92 и 72 квадрата, закрашены 52, 51 и 25; та же геометрия, что в знаке, и правила гайда для диаграмм (квадратные маркеры, без скруглений).<br>5) Цвет как код события и одно точное движение: темно-синий IBC, бордовый квадрат у бизнес-завтраков, красный квадрат CAWS у саммитов; при первом заходе дата на билете один раз перещелкивает, как табло отправлений в логистике, и замирает.</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.7 · дизайн и техника 7.2 · красота 7.7</p>
-
-
-
-
-
-
-
-</div></div></section>
-<section class="card" id="golos-2">
-<div class="head"><span class="num">10</span><div><h2>Первая полоса</h2><div class="meta">Угол: «Голос рынка» · смелость 4 из 5 · средний балл жюри 7.4</div></div></div>
-<div class="body">
-<figure class="sketch"><img src="eskizy/golos-2/mobile.png" alt="Набросок первого экрана на телефоне" onerror="this.closest('figure').classList.add('none')"><figcaption>Набросок первого экрана на телефоне</figcaption><div class="ph">Набросок готовится</div><div class="sk-links"><a href="eskizy/index.html#golos-2">листать в рамке телефона</a><a href="eskizy/golos-2/index.html">открыть набросок отдельно</a><a href="eskizy/golos-2/desktop.png">как на компьютере</a></div></figure>
-<div class="text">
-<p class="idea">Страница как первая полоса деловой газеты о складском рынке Центральной Азии, где IBC Global одновременно героиня заголовков и источник цифр: газетная шапка с датой, главная публикация о компании, врезка с собственным индексом компании «Пульс складского рынка Центральной Азии», лента заголовков из изданий шести стран, графика номера из 307 квадратов-публикаций, анонсы событий и контакты. Доверие строится не словами о себе, а тем, что о компании пишут Forbes Казахстан, Gazeta.uz, Daryo, Trend, Коммерсантъ и другие (10, раздел 2.2). Связаться можно в одно нажатие с закрепленной панели: газета только подводит к контакту.</p>
-
-
-
-<h3>Почему это будет красиво</h3><p>1) Газетная шапка: строка даты капсом, логотип по центру и двойная линейка 2 px и 1 px; вся иерархия собрана одной гарнитурой Lato в четырех начертаниях, как в хорошей деловой газете, и ни одной картинки.<br>2) Редакторская типографика: заголовки Lato Black с межстрочным 1,05-1,1, девиз и подзаголовки SemiBold Italic (гайд: 600 Italic для лидов и слоганов), старинные цифры в тексте и табличные в датах (функции onum и tnum есть в Lato 2.015), в строках капсом функция case поднимает дефисы и скобки к высоте прописных, «елочки», неразрывные пробелы перед «млн» и «м²», без висячих предлогов.<br>3) «Лесенка публикаций»: 307 квадратов, по одному на публикацию, сложены по месяцам с 10.2023 по 10.2026 той же формой, что «ступеньки» знака IBC; темно-синие российские издания и бордовые издания региона, и на глаз видно, как региональных становится больше: 1 в 2023 году, 12 в 2024, 33 в 2025, 38 в 2026 по 24.10 [расчет по katalog.csv].<br>4) Ритм колонок: на компьютере 12 колонок с волосяными линиями, главная публикация на 8 колонок, врезка и анонсы на 4; на телефоне одна колонка, но с теми же кикерами и линейками, поэтому это читается как первая полоса, а не как лента кнопок.<br>5) Цвет как редакторская пометка: бордовый только у кикеров «ИЗДАНИЕ · СТРАНА · ДАТА», ссылок и одной серии графика, все остальное темно-синее на белом (контраст 16,8:1; бордовый на белом около 13:1).</p>
-<h3>Оценки жюри (из 10)</h3><p>клиент и бизнес 7.8 · дизайн и техника 7.1 · красота 7.2</p>
-
-
-
-
-
-
-
-</div></div></section>
-</main></body></html>
+@font-face{font-family:"Lato";src:url("assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Lato";src:url("assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+:root{--navy:#0A1358;--wine:#6A0108;--gray:#E9EAEF;--line:#CFD3DC;--caws:#EE2722;color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#FFFFFF;color:var(--navy);font-family:"Lato",Arial,sans-serif;font-size:16px;line-height:1.45;font-variant-numeric:lining-nums}
+a{color:var(--navy)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.label{font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em;text-transform:uppercase;color:var(--wine)}
+.sq::before{content:"";display:inline-block;width:6px;height:6px;background:var(--wine);margin-right:8px;vertical-align:2px}
+
+
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.top img{display:block;height:24px;width:auto}
+
+
+.hero{padding:32px 0 8px}
+.bar{width:40px;height:8px;background:var(--wine);margin:0 0 20px}
+h1{font-weight:700;font-size:28px;line-height:1.15;margin:0 0 16px;max-width:20em}
+.lead{font-size:17px;line-height:1.5;margin:0 0 16px;max-width:44em}
+.howto{list-style:none;margin:0;padding:0;display:grid;gap:6px;max-width:52em}
+.howto li{padding-left:16px;position:relative;font-size:15px;line-height:1.45}
+.howto li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;background:var(--wine)}
+
+
+section{padding:40px 0 0}
+h2{font-weight:700;font-size:24px;line-height:1.2;margin:8px 0 20px}
+.cards{display:grid;grid-template-columns:1fr;gap:24px;max-width:720px}
+.card{border:1px solid var(--line);display:flex;flex-direction:column;background:#FFFFFF;position:relative}
+.card.rec{border:2px solid var(--navy)}
+.kick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0}
+.badge{display:inline-block;background:var(--wine);color:#FFFFFF;font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em;text-transform:uppercase;padding:4px 8px}
+.shots{background:var(--gray);padding:16px 16px 4px;display:flex;flex-direction:column;gap:14px;margin:0}
+.shot{margin:0}
+.shot a{display:block;text-decoration:none}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#FFFFFF}
+.shot figcaption{font-size:13px;line-height:16px;margin-top:6px}
+.shot.ph{width:72%;max-width:240px;align-self:center}
+.shot.pc{width:100%}
+.full{font-size:13px;line-height:18px;margin:0}
+.full a{display:inline-block;min-height:44px;padding:12px 0}
+.cbody{padding:20px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.name{font-weight:700;font-size:24px;line-height:1.2;margin:0}
+.folder{font-size:13px;line-height:16px;margin:0}
+.idea{margin:0;font-size:16px;line-height:1.45}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border:1px solid var(--navy);font-weight:700;font-size:16px;line-height:20px;text-decoration:none;color:var(--navy);background:#FFFFFF}
+.btn.primary{background:var(--navy);color:#FFFFFF}
+.btn:hover{background:var(--gray)}
+.btn.primary:hover{background:var(--navy);text-decoration:underline}
+.extra{font-size:14px;line-height:20px;margin:0}
+.extra a{display:inline-block;min-height:44px;padding:12px 0}
+
+
+.tbl{border-top:1px solid var(--navy)}
+table.cmp{width:100%;border-collapse:collapse}
+.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:12px;vertical-align:top;text-align:left;font-size:15px;line-height:1.4}
+.cmp thead th{font-weight:700;font-size:15px;border-bottom:1px solid var(--navy)}
+.cmp th[scope=row]{font-weight:700;width:17%}
+.cmp .v3{background:var(--gray)}
+.note{font-size:14px;line-height:1.45;margin:12px 0 0;max-width:60em}
+
+
+.recbox{background:var(--gray);padding:24px 16px;border-top:8px solid var(--wine)}
+.recbox .main{font-weight:700;font-size:20px;line-height:1.35;margin:0 0 16px;max-width:40em}
+.recbox ol{margin:0;padding-left:1.4em;display:grid;gap:10px;max-width:56em}
+.recbox li{font-size:16px;line-height:1.45}
+.recbox .reserve{margin:16px 0 0;font-size:15px;max-width:56em}
+
+
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:60em}
+.todo li{padding-left:16px;position:relative;font-size:15px;line-height:1.45}
+.todo li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;background:var(--wine)}
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.links li{border-bottom:1px solid var(--line)}
+.links a{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;min-height:52px;padding:14px 0;text-decoration:none}
+.links a:hover .t{text-decoration:underline}
+.links .t{font-weight:700;font-size:16px}
+.links .d{font-size:13px}
+.nw{white-space:nowrap}
+.cols{display:grid;grid-template-columns:1fr;gap:32px}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;line-height:1.5}
+footer p{margin:0 0 6px}
+
+@media (min-width:600px){
+  .wrap{padding:0 32px}
+  .top img{height:28px}
+}
+@media (max-width:899px){
+  .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+  .cmp tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  .cmp th[scope=row]{border:0;padding:0 0 6px;width:auto;font-size:16px}
+  .cmp td{border:0;padding:4px 8px;display:grid;grid-template-columns:7.5em 1fr;gap:10px}
+  .cmp td::before{content:attr(data-v);font-weight:700;font-size:14px}
+  .tbl{border-top:1px solid var(--navy)}
+}
+@media (min-width:1024px){
+  .wrap{padding:0 48px}
+  .top .wrap{min-height:80px}
+  .top img{height:40px}
+  .hero{padding:48px 0 8px}
+  h1{font-size:44px;line-height:1.1}
+  .lead{font-size:19px}
+  section{padding:64px 0 0}
+  h2{font-size:32px}
+  .cards{grid-template-columns:repeat(3,1fr);max-width:none}
+  .recbox{padding:32px}
+  .cols{grid-template-columns:1fr 1fr;gap:48px}
+}
+@media print{
+  .btns,.extra,.full{display:none}
+  .card{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="label">Служебная страница</span>
+    <img src="_shared/logo/ibc-logo-color.png" width="523" height="76" alt="IBC&nbsp;Global">
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+  <div class="bar" aria-hidden="true"></div>
+  <h1>Три варианта новой страницы IBC&nbsp;Global</h1>
+  <p class="lead">Новая страница с контактами и ссылками компании вместо skladasia.tilda.ws (RU и EN). Здесь три готовых прототипа в разных стилях, их сравнение и рекомендация.</p>
+  <ul class="howto">
+    <li>Все три собраны из одного файла content.json, у всех полная английская версия. Проверка 05.11.2026: ошибок и замечаний нет.</li>
+    <li>Кнопки «Открыть RU» и «Открыть EN» открывают прототип в новой вкладке. Работает с диска, без интернета; ничего не опубликовано.</li>
+    <li>Подробное сравнение простым языком: (открывается Блокнотом).</li>
+  </ul>
+</div>
+
+<section aria-labelledby="h-var">
+  <h2 id="h-var">Варианты</h2>
+  <div class="cards">
+
+    <article class="card">
+      <div class="shots">
+        <figure class="shot ph">
+          <a href="prototypes/v1-blank/ru-mobile-full.png" target="_blank" rel="noopener"><img src="prototypes/v1-blank/mobile-first.png" width="780" height="1688" alt="«Фирменный бланк»: первый экран на телефоне"></a>
+          <figcaption>Телефон, первый экран</figcaption>
+        </figure>
+        <figure class="shot pc">
+          <a href="prototypes/v1-blank/ru-desktop-full.png" target="_blank" rel="noopener"><img src="prototypes/v1-blank/desktop-first.png" width="1440" height="900" alt="«Фирменный бланк»: первый экран на компьютере"></a>
+          <figcaption>Компьютер, первый экран</figcaption>
+        </figure>
+        <p class="full">Вся страница: <a href="prototypes/v1-blank/ru-mobile-full.png" target="_blank" rel="noopener">телефон</a> · <a href="prototypes/v1-blank/ru-desktop-full.png" target="_blank" rel="noopener">компьютер</a></p>
+      </div>
+      <div class="cbody">
+        <span class="label">01 · спокойный</span>
+        <h3 class="name">«Фирменный бланк»</h3>
+        <p class="folder">папка v1-blank</p>
+        <p class="idea">Страница как официальный документ IBC&nbsp;Global: реестр контактов и указатель всех ссылок 01-08 с доменом и языком. Строго по фирменному стилю 2026.</p>
+        <div class="btns">
+          <a class="btn primary" href="prototypes/v1-blank/index.html" target="_blank" rel="noopener">Открыть RU</a>
+          <a class="btn" href="prototypes/v1-blank/en.html" target="_blank" rel="noopener">Открыть EN</a>
+        </div>
+        <p class="extra">Для сравнения: (вопрос&nbsp;18)</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shots">
+        <figure class="shot ph">
+          <a href="prototypes/v2-afisha/ru-mobile-full.png" target="_blank" rel="noopener"><img src="prototypes/v2-afisha/mobile-first.png" width="780" height="1688" alt="«Афиша рынка»: первый экран на телефоне"></a>
+          <figcaption>Телефон, первый экран</figcaption>
+        </figure>
+        <figure class="shot pc">
+          <a href="prototypes/v2-afisha/ru-desktop-full.png" target="_blank" rel="noopener"><img src="prototypes/v2-afisha/desktop-first.png" width="1440" height="900" alt="«Афиша рынка»: первый экран на компьютере"></a>
+          <figcaption>Компьютер, первый экран</figcaption>
+        </figure>
+        <p class="full">Вся страница: <a href="prototypes/v2-afisha/ru-mobile-full.png" target="_blank" rel="noopener">телефон</a> · <a href="prototypes/v2-afisha/ru-desktop-full.png" target="_blank" rel="noopener">компьютер</a></p>
+      </div>
+      <div class="cbody">
+        <span class="label">02 · средний</span>
+        <h3 class="name">«Афиша рынка»</h3>
+        <p class="folder">папка v2-afisha</p>
+        <p class="idea">После строки «кто мы» билет на ближайшую встречу рынка (сейчас бизнес-завтрак в Душанбе, 25 ноября 2026). Связь всегда в нижней панели.</p>
+        <div class="btns">
+          <a class="btn primary" href="prototypes/v2-afisha/index.html" target="_blank" rel="noopener">Открыть RU</a>
+          <a class="btn" href="prototypes/v2-afisha/en.html" target="_blank" rel="noopener">Открыть EN</a>
+          <a class="btn" href="prototypes/v2-afisha/noch.html" target="_blank" rel="noopener">Ночная версия</a>
+        </div>
+        <p class="extra">Для сравнения: <a href="prototypes/v2-afisha/noch-en.html" target="_blank" rel="noopener">ночная версия, EN</a> (вопрос&nbsp;15)</p>
+      </div>
+    </article>
+
+    <article class="card rec">
+      <div class="shots">
+        <figure class="shot ph">
+          <a href="prototypes/v3-stupeni/ru-mobile-full.png" target="_blank" rel="noopener"><img src="prototypes/v3-stupeni/mobile-first.png" width="780" height="1688" alt="«Ступени»: первый экран на телефоне"></a>
+          <figcaption>Телефон, первый экран</figcaption>
+        </figure>
+        <figure class="shot pc">
+          <a href="prototypes/v3-stupeni/ru-desktop-full.png" target="_blank" rel="noopener"><img src="prototypes/v3-stupeni/desktop-first.png" width="1440" height="900" alt="«Ступени»: первый экран на компьютере"></a>
+          <figcaption>Компьютер, первый экран</figcaption>
+        </figure>
+        <p class="full">Вся страница: <a href="prototypes/v3-stupeni/ru-mobile-full.png" target="_blank" rel="noopener">телефон</a> · <a href="prototypes/v3-stupeni/ru-desktop-full.png" target="_blank" rel="noopener">компьютер</a></p>
+      </div>
+      <div class="cbody">
+        <p class="kick"><span class="label">03 · смелый</span><span class="badge">Рекомендую</span></p>
+        <h3 class="name">«Ступени»</h3>
+        <p class="folder">папка v3-stupeni</p>
+        <p class="idea">Первый экран сам становится знаком IBC: шесть кнопок-квадратов лесенкой, бордовый квадрат = WhatsApp. Все главные действия без прокрутки.</p>
+        <div class="btns">
+          <a class="btn primary" href="prototypes/v3-stupeni/index.html" target="_blank" rel="noopener">Открыть RU</a>
+          <a class="btn" href="prototypes/v3-stupeni/en.html" target="_blank" rel="noopener">Открыть EN</a>
+        </div>
+        <p class="extra">Для сравнения: <a href="prototypes/v3-stupeni/setka.html" target="_blank" rel="noopener">сетка 2x3, RU</a> · <a href="prototypes/v3-stupeni/setka-en.html" target="_blank" rel="noopener">сетка 2x3, EN</a> (вопрос&nbsp;16)</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section aria-labelledby="h-cmp">
+  <h2 id="h-cmp">Сравнение</h2>
+  <div class="tbl">
+  <table class="cmp">
+    <thead>
+      <tr><th scope="col"><span class="label">Что</span></th><th scope="col">v1 «Фирменный бланк»</th><th scope="col">v2 «Афиша рынка»</th><th scope="col" class="v3">v3 «Ступени»</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Идея</th><td data-v="v1 «Бланк»">официальный документ: реестр контактов и указатель ссылок 01-08</td><td data-v="v2 «Афиша»">афиша рынка: билет на ближайшую встречу</td><td class="v3" data-v="v3 «Ступени»">первый экран как знак IBC: 6 кнопок-квадратов лесенкой</td></tr>
+      <tr><th scope="row">Смелость</th><td data-v="v1 «Бланк»">спокойный</td><td data-v="v2 «Афиша»">средний</td><td class="v3" data-v="v3 «Ступени»">смелый</td></tr>
+      <tr><th scope="row">Первый экран телефона</th><td data-v="v1 «Бланк»">слоган, его английская строка, WhatsApp, звонок, почта, контакт, офис</td><td data-v="v2 «Афиша»">кто мы, билет на ближайшую встречу; внизу панель связи</td><td class="v3" data-v="v3 «Ступени»">все 6 главных действий без прокрутки</td></tr>
+      <tr><th scope="row">WhatsApp</th><td data-v="v1 «Бланк»">темно-синяя плашка в верхней половине экрана</td><td data-v="v2 «Афиша»">кнопка в нижней панели, всегда на экране</td><td class="v3" data-v="v3 «Ступени»">единственный бордовый квадрат, после прокрутки квадрат-спутник</td></tr>
+      <tr><th scope="row">Фирменный стиль IBC 2026</th><td data-v="v1 «Бланк»">строго по паспорту стиля</td><td data-v="v2 «Афиша»">близко; темный билет, Black в заголовках, кадр кубиков; ночная версия против гайда</td><td class="v3" data-v="v3 «Ступени»">цвета и шрифт по гайду; лестницу и долю акцентов согласовать с маркетингом</td></tr>
+      <tr><th scope="row">Красота по оценке жюри (из 10)</th><td data-v="v1 «Бланк»">6,33</td><td data-v="v2 «Афиша»">7,67</td><td class="v3" data-v="v3 «Ступени»">8,17</td></tr>
+      <tr><th scope="row">Средний балл трех жюри</th><td data-v="v1 «Бланк»">7,63</td><td data-v="v2 «Афиша»">7,53</td><td class="v3" data-v="v3 «Ступени»">8,29</td></tr>
+      <tr><th scope="row">Длина страницы на телефоне</th><td data-v="v1 «Бланк»">около 5,6&nbsp;экрана</td><td data-v="v2 «Афиша»">около 6,3&nbsp;экрана</td><td class="v3" data-v="v3 «Ступени»">около 7,3&nbsp;экрана</td></tr>
+      <tr><th scope="row">Особое</th><td data-v="v1 «Бланк»">английская строка слогана, миниатюра презентации, печать A4</td><td data-v="v2 «Афиша»">билет сам меняется по датам, «В календарь», задачи в WhatsApp, ночная версия</td><td class="v3" data-v="v3 «Ступени»">QR страницы, задачи в WhatsApp, проекты в масштабе, запасная сетка 2x3</td></tr>
+      <tr><th scope="row">Ведение</th><td data-v="v1 «Бланк»">только тексты в content.json</td><td data-v="v2 «Афиша»">тексты и даты встреч заранее, иначе вместо билета пустое место</td><td class="v3" data-v="v3 «Ступени»">тексты; 6 мест лестницы постоянные</td></tr>
+      <tr><th scope="row">Учет нажатий</th><td data-v="v1 «Бланк»">60&nbsp;меток</td><td data-v="v2 «Афиша»">91&nbsp;метка</td><td class="v3" data-v="v3 «Ступени»">91&nbsp;метка</td></tr>
+      <tr><th scope="row">Главный риск</th><td data-v="v1 «Бланк»">покажется слишком простым</td><td data-v="v2 «Афиша»">событие отвлекает от связи, зависимость от дат</td><td class="v3" data-v="v3 «Ступени»">маркетинг может не согласовать лестницу (готова сетка 2x3)</td></tr>
+      <tr><th scope="row">Своя работа до запуска [мнение]</th><td data-v="v1 «Бланк»">малая, около 2-3&nbsp;часов</td><td data-v="v2 «Афиша»">средняя, около 4-6&nbsp;часов</td><td class="v3" data-v="v3 «Ступени»">средняя, около 4-6&nbsp;часов</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Одинаково у всех трех: один content.json, сборка двойным щелчком, полная EN, работа без интернета и без JavaScript, переход со старых адресов через Tilda, проверка 05.11.2026 без ошибок и замечаний. Оценки жюри даны концепциям до верстки (бриф, раздел 1.2).</p>
+</section>
+
+<section aria-labelledby="h-rec">
+  <h2 id="h-rec">Рекомендация</h2>
+  <div class="recbox">
+    <p class="main">Рекомендую v3 «Ступени», взяв из v2 подпись «через N дней» у ближайшего события в «Мероприятиях».</p>
+    <ol>
+      <li><strong>Главный сценарий.</strong> v3 показывает все шесть главных действий на первом экране без прокрутки, WhatsApp выделен единственным бордовым квадратом, а после прокрутки остается под пальцем квадратом-спутником.</li>
+      <li><strong>«Очень красиво».</strong> Это самая узнаваемая подача: первый экран повторяет знак IBC. По красоте у жюри 8,17, в среднем 8,29, и это единственная концепция, которую все три жюри оценили выше 8.</li>
+      <li><strong>Риск с маркетингом закрыт заранее.</strong> Если маркетинг не согласует лестницу (вопрос&nbsp;16), тем же шаблоном и тем же содержанием уже собрана ровная сетка 2x3: переход без новой верстки.</li>
+      <li><strong>Ведет один Ариф.</strong> Так же, как остальные: один content.json и build.bat. В отличие от v2, первый экран не зависит от того, внесены ли новые даты встреч.</li>
+      <li><strong>Деталь из v2.</strong> Подпись «через N дней» у ближайшего события оживляет «Мероприятия», но не делает первый экран зависимым от дат.</li>
+    </ol>
+    <p class="reserve">Что держать в запасе: v1 «Фирменный бланк», если маркетинг захочет строго по паспорту стиля и не согласует ни лестницу, ни сетку. v2 хорош для сезона мероприятий, но требует дисциплины дат и согласования темного билета.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-todo">
+  <h2 id="h-todo">Что решить до запуска</h2>
+  <ul class="todo">
+    <li><strong>Выбор варианта.</strong> Для v3 еще вопрос&nbsp;16: показать маркетингу лестницу и сетку 2x3.</li>
+    <li><strong>Вопрос 12:</strong> постоянный адрес (поддомен <span class="nw">ibc-global.asia</span>) для RU и EN.</li>
+    <li><strong>Вопрос 14:</strong> считать ли нажатия и чем.</li>
+    <li><strong>Контакты:</strong> вопросы&nbsp;27, 28, 29. <strong>Кнопки:</strong> вопросы&nbsp;21, 22, 23, 24.</li>
+    <li><strong>Подтвердить ответы по умолчанию:</strong> 9, 17, 18, 19, 25, 31, 33, 35, 40; утвердить тексты со статусом «need» (заголовок вкладки, описание, первая фраза WhatsApp, новые слова).</li>
+    <li><strong>Старые адреса (отчет 11):</strong> вопрос в поддержку Tilda (вопрос&nbsp;3), статистика «до» (вопрос&nbsp;5), меры по аккаунту (вопрос&nbsp;42).</li>
+    <li><strong>До запуска поправить связанное:</strong> 26, 30, 32, 39. Разрешение выложить выбранный вариант на тестовый адрес для живых телефонов.</li>
+  </ul>
+  <p class="note">Подробно, с объемом работы и предложенными правками content.json:, разделы 7 и 8.</p>
+</section>
+
+<section aria-labelledby="h-more">
+  <h2 id="h-more">Другие концепции</h2>
+  <div class="cols">
+    <div>
+      <p class="label sq">Все 10 концепций</p>
+      <ul class="links">
+        <li><a href="vse-koncepcii.html" target="_blank" rel="noopener"><span class="t">Все концепции одной страницей</span><span class="d">все-концепции.html</span></a></li>
+        <li><a href="eskizy/index.html" target="_blank" rel="noopener"><span class="t">Наброски 10 концепций</span><span class="d">eskizy/index.html</span></a></li>
+        <li><a href="koncepcii/index.html" target="_blank" rel="noopener"><span class="t">Папка с полными страницами концепций</span><span class="d">koncepcii</span></a></li>
+        <li><a href="prototypes/index.html"><span class="t">Список трех прототипов и их отчетов</span><span class="d">prototypes/index.html</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="label sq">Полные страницы остальных 7 концепций</p>
+      <ul class="links">
+        <li><a href="koncepcii/karman-1/index.html" target="_blank" rel="noopener"><span class="t">«Карточка»</span><span class="d">karman-1</span></a></li>
+        <li><a href="koncepcii/doverie-2/index.html" target="_blank" rel="noopener"><span class="t">«Профиль компании»</span><span class="d">doverie-2</span></a></li>
+        <li><a href="koncepcii/smelo-1/index.html" target="_blank" rel="noopener"><span class="t">«Кубики», смелая подача</span><span class="d">smelo-1</span></a></li>
+        <li><a href="koncepcii/smelo-2/index.html" target="_blank" rel="noopener"><span class="t">«Ночная смена»</span><span class="d">smelo-2</span></a></li>
+        <li><a href="koncepcii/vesti-1/index.html" target="_blank" rel="noopener"><span class="t">«Двуязычный указатель»</span><span class="d">vesti-1</span></a></li>
+        <li><a href="koncepcii/vesti-2/index.html" target="_blank" rel="noopener"><span class="t">«Кубики», удобно вести</span><span class="d">vesti-2</span></a></li>
+        <li><a href="koncepcii/golos-2/index.html" target="_blank" rel="noopener"><span class="t">«Первая полоса»</span><span class="d">golos-2</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Служебная страница проекта skladasia-sait для выбора варианта, 05.11.2026. Не публикуется и не делает запросов в интернет.</p>
+    <p>Три варианта выше выросли из концепций doverie-1, golos-1 и karman-2. Брифы:.</p>
+  </div>
+</footer>
+
+</body>
+</html>

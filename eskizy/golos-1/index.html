@@ -13,7 +13,7 @@
 
 :root{
   --navy:#0A1358; --bord:#6A0108; --white:#FFFFFF; --gray:#E9EAEF; --line:#CFD3DC;
-  --caws:#EE2722; /* красный CAWS: только квадрат 8x8, никогда текстом */
+  --caws:#EE2722; 
   --pad:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -34,7 +34,7 @@ ul,ol{list-style:none}
 .ph{font-weight:400;font-size:11px;line-height:14px;letter-spacing:0;text-transform:none}
 .ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:square;stroke-linejoin:miter}
 
-/* Шапка */
+
 .top{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:var(--white)}
 .logo{display:block;line-height:0}
 .logo img{display:block;height:32px;width:auto}
@@ -50,14 +50,14 @@ ul,ol{list-style:none}
 .lang .on{background:var(--navy);color:var(--white)}
 .lang > :last-child{border-left:0}
 
-/* Первый экран */
+
 .stage{padding:0 var(--pad)}
 .hero{padding:8px 0 0}
 h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .legend{margin-top:10px;display:flex;flex-direction:column;gap:2px;font-weight:700;font-size:13px;line-height:18px}
 .legend li{display:flex;align-items:center;gap:8px}
 
-/* Билет */
+
 .ticket{margin-top:16px;position:relative}
 .plate{background:var(--navy);color:var(--white);padding:16px 16px 16px}
 .t-kick{font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em;text-transform:uppercase;display:flex;flex-wrap:wrap;gap:0 6px}
@@ -69,7 +69,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 }
 .t-num span{display:block;transform-origin:50% 58%;animation:flap .6s cubic-bezier(.2,.75,.25,1) both}
 .t-num span + span{animation-delay:.09s}
-/* шов табло отправлений: тонкая линия поперек цифр */
+
 .t-num::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;height:2px;margin-top:-2px;background:var(--navy)}
 @keyframes flap{
   0%{transform:rotateX(88deg);opacity:.2}
@@ -82,7 +82,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .t-info{font-size:15px;line-height:20px;margin-top:6px}
 .t-info span{display:block}
 
-/* перфорация: квадратные вырезы по краям и ряд квадратиков 2x2 */
+
 .perf{height:12px;display:flex;background:var(--gray)}
 .perf::before,.perf::after{content:"";width:12px;flex:none;background:var(--white)}
 .perf i{flex:1;margin:0 6px;background-image:linear-gradient(90deg,var(--navy) 2px,transparent 2px);background-size:6px 2px;background-repeat:repeat-x;background-position:0 50%}
@@ -96,7 +96,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .btn:active{transform:translateY(1px)}
 .btn.fill{background:var(--navy);color:var(--white)}
 
-/* Дальше в сезоне */
+
 .next{margin-top:20px}
 .kick{font-weight:700;font-size:12px;line-height:16px;letter-spacing:.02em;text-transform:uppercase;color:var(--bord)}
 .chips{margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -107,7 +107,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .chip .c-d{display:flex;align-items:center;gap:8px;font-weight:900;font-size:16px;line-height:18px;margin-bottom:2px}
 .chip .c-d .ph{margin-left:auto;white-space:nowrap}
 
-/* Нижняя панель связи */
+
 .dock{
   position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:1px solid var(--line);
   padding:8px var(--pad) calc(8px + env(safe-area-inset-bottom));
@@ -116,7 +116,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .dock .btn{padding:0 6px}
 .dock .two{font-size:14px;line-height:16px}
 
-/* Начало следующего блока: сезон */
+
 .season{padding:28px var(--pad) 0}
 .season h2{font-weight:900;font-size:28px;line-height:32px;margin-top:4px}
 .prog{margin-top:16px;border-top:1px solid var(--line)}
@@ -132,7 +132,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 .caws-one .btn{width:100%;justify-content:space-between;padding:0 14px}
 .end{padding:20px var(--pad) 8px}
 
-/* Кнопки корешка билета в одну строку на телефонах 360-380 px и уже */
+
 @media (max-width:380px){
   .stub .btn{font-size:15px;gap:6px;padding:0 6px;white-space:nowrap}
 }
@@ -150,7 +150,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
   .btn:active{transform:none}
 }
 
-/* Компьютер */
+
 @media (min-width:1100px){
   body{padding-bottom:0}
   .dock{display:none}
@@ -340,7 +340,7 @@ h1{font-weight:700;font-size:22px;line-height:27px;letter-spacing:-.002em}
 </nav>
 
 <script>
-/* мелочь: «через N дней» по времени Алматы; без скрипта стоит число на 05.11.2026 */
+
 (function(){
   try{
     var now=new Date(Date.now()+5*3600*1000);

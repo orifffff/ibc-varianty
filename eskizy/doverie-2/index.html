@@ -6,17 +6,17 @@
 <title>IBC Global: складская недвижимость Центральной Азии</title>
 <meta name="description" content="Консалтинг и брокеридж складской недвижимости в Центральной Азии. Контакты, WhatsApp, презентация компании, саммит CAWS и бизнес-завтраки.">
 <style>
-/* Набросок первого экрана: концепция doverie-2 «Профиль компании». Lato своими файлами, без запросов в интернет. */
+
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:block}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-semibold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:block}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:block}
 @font-face{font-family:"Lato";src:url("../../assets/data/brand/ibc/fonts/lato-black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:block}
 
 :root{
-  --navy:#0A1358;      /* весь текст и плашки */
-  --burgundy:#6A0108;  /* слоган, акценты */
-  --gray:#E9EAEF;      /* подложки, заглушки */
-  --line:#CFD3DC;      /* волосяные линии */
+  --navy:#0A1358;      
+  --burgundy:#6A0108;  
+  --gray:#E9EAEF;      
+  --line:#CFD3DC;      
   --dock:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -31,11 +31,11 @@ svg{display:block;flex:none}
 .skip{position:absolute;left:-9999px;top:0}
 .skip:focus{left:8px;top:8px;z-index:10;background:#fff;padding:8px 12px}
 
-/* Метка заглушки: то, что ждет утверждения */
+
 .ph{display:inline-block;font-size:12px;line-height:20px;font-weight:400;letter-spacing:0;
   padding:0 6px;background:var(--gray);color:var(--navy);white-space:nowrap;vertical-align:1px}
 
-/* 1. Белая строка 48 px */
+
 .top{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 4px 0 8px;background:#fff}
 .menu{display:flex;align-items:center;gap:8px;height:44px;padding:0 8px;font-size:15px;line-height:20px;font-weight:700}
 .menu .sq{fill:var(--burgundy)}
@@ -46,13 +46,13 @@ svg{display:block;flex:none}
 .lang .on::after{content:"";position:absolute;left:13px;right:13px;bottom:7px;height:2px;background:var(--burgundy)}
 .lang i{width:1px;height:16px;background:var(--line)}
 
-/* 2. Кадр обложки презентации */
+
 .cover{position:relative;height:220px;background:var(--gray);overflow:hidden}
 .cover img{display:block;width:100%;height:100%;object-fit:cover;animation:show .3s ease-out both}
 .cover figcaption{position:absolute;right:8px;bottom:8px;font-size:11px;line-height:16px;padding:0 6px;background:rgba(255,255,255,.88)}
 @keyframes show{from{opacity:0}to{opacity:1}}
 
-/* 3-6. Знак, слоган, три факта, презентация */
+
 .intro{padding:24px 16px 0}
 .logo{display:block;width:330px;max-width:100%;height:auto}
 .slogan{margin-top:16px;font-size:20px;line-height:24px;font-weight:600;color:var(--burgundy)}
@@ -67,14 +67,14 @@ svg{display:block;flex:none}
 .pdf-t{flex:1;font-size:15px;line-height:20px;font-weight:700}
 .pdf-m{font-size:13px;line-height:16px}
 
-/* Начало следующей главы */
+
 .chapter{padding:64px 16px 96px}
 .bar{display:block;width:32px;height:4px;background:var(--burgundy);margin-bottom:16px}
 .chapter h2{font-size:26px;line-height:29px;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
 .chapter p{margin-top:12px}
 .chapter .ph{font-size:13px}
 
-/* 7. Закрепленная панель связи */
+
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:5;background:#fff;border-top:1px solid var(--line);
   display:flex;gap:2px;padding:7px 8px calc(8px + env(safe-area-inset-bottom))}
 .dock a,.dock button{flex:1 1 auto;height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
@@ -83,7 +83,7 @@ svg{display:block;flex:none}
 .wa b{display:block;font-size:15px;line-height:18px;font-weight:700}
 .wa small{display:block;font-size:12px;line-height:15px;font-weight:400}
 
-/* Компьютер 1440: обложка разворотом */
+
 @media (min-width:1024px){
   body{padding-bottom:0}
   .dock{display:none}
@@ -117,14 +117,14 @@ svg{display:block;flex:none}
   .chapter p{grid-column:2;margin-top:0;margin-bottom:16px;font-size:18px;line-height:24px}
   .chapter p:first-of-type{margin-top:20px}
 }
-/* Узкие телефоны (меньше 360 px): панель связи помещается в ширину */
+
 @media (max-width:359px){
   .dock{gap:0;padding-left:4px;padding-right:4px}
   .dock .wa{width:auto;padding:0 10px;gap:6px}
   .dock .wa small{display:none}
   .dock a,.dock button{font-size:12px}
 }
-/* Компьютер 1024-1279: шапка уже, чтобы оглавление и связь помещались */
+
 @media (min-width:1024px) and (max-width:1279px){
   .top{padding:0 24px}
   .hcontacts{gap:12px}
@@ -132,7 +132,7 @@ svg{display:block;flex:none}
   .intro{padding:0 24px 0 48px}
   .chapter{grid-template-columns:320px minmax(0,1fr);padding:80px 48px 96px}
 }
-/* Оглавление в шапке помещается в одну строку только с 1366 px */
+
 @media (min-width:1024px) and (max-width:1365px){.toc{display:none}}
 @media (prefers-reduced-motion:reduce){.cover img{animation:none}html{scroll-behavior:auto}}
 </style>
@@ -226,7 +226,7 @@ svg{display:block;flex:none}
 </nav>
 
 <script>
-/* Мелочь: «Поделиться» открывает системное меню телефона, на компьютере копирует ссылку */
+
 document.querySelectorAll("[data-share]").forEach(function (b) {
   b.addEventListener("click", function () {
     var url = location.href;

@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//IBC Global//skladasia-sait//RU
+N:IBC Global;;;;
+FN:IBC Global
+ORG:IBC Global
+X-ABShowAs:COMPANY
+TEL;TYPE=WORK,VOICE,PREF:+77088587024
+EMAIL;TYPE=INTERNET,WORK,PREF:leads@ibc-global.asia
+ADR;TYPE=WORK:;;Алматы\, БЦ Нурлы Тау (5А)\, проспе
+ кт Аль-Фараби\, 7\, 6 этаж\, офис 140\, 050059;;;;
+item1.URL;TYPE=pref:https://ibc-global.asia/
+item1.X-ABLabel:Сайт IBC Global Central Asia
+item2.URL:https://wa.me/77088587024
+item2.X-ABLabel:WhatsApp
+REV:2026-11-05
+END:VCARD
