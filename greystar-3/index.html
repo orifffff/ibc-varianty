@@ -249,10 +249,12 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 @media (max-height: 760px) and (min-width: 1001px) {
   .sec { padding-top: clamp(52px, 5.2vw, 76px); padding-bottom: clamp(52px, 5.2vw, 76px); }
   .h2 { font-size: clamp(30px, 3.5vw, 46px); margin-top: 20px; } .lead { margin-top: 16px; }
+  .hero__in { padding-top: calc(var(--top) + 30px); padding-bottom: 36px; } .hero h1 { font-size: clamp(40px, 5.4vw, 74px); margin-top: 16px; }
+  .hero__lead { margin-top: 16px; } .hero__cta { margin-top: 22px; } .hero__by { margin-top: 16px; }
 }
 /* невысокий экран: плашка цифр в два столбца, чтобы не закрывать фото и подпись корпуса */
 @media (max-height: 840px) and (min-width: 1001px) {
-  .plate { width: 420px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
+  .plate { width: 452px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
   .plate div:nth-child(even) { border-left: 1px solid var(--lw); } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
 }
 @media (max-width: 1260px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
@@ -567,7 +569,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 <script id="i18n">
 /* Тексты, которые подставляет скрипт. При сборке английской и узбекской страниц этот блок заменяется целиком. */
 window.TLH_TEXT = {
-  sep: ' ', sqm: 'м²', m: 'м',
+  sep: '\u00a0', sqm: 'м²', m: 'м',
   scheme: 'Схема: четыре блока комплекса',
   blockWord: 'Блок',
   blockTitle: function (id, area, docks, w, d) { return 'Блок ' + id + ': ' + area + ' м², доков: ' + docks + ', ' + w + ' × ' + d + ' м'; },

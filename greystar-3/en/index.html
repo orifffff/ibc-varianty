@@ -215,9 +215,11 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 @media (max-height: 760px) and (min-width: 1001px) {
   .sec { padding-top: clamp(52px, 5.2vw, 76px); padding-bottom: clamp(52px, 5.2vw, 76px); }
   .h2 { font-size: clamp(30px, 3.5vw, 46px); margin-top: 20px; } .lead { margin-top: 16px; }
+  .hero__in { padding-top: calc(var(--top) + 30px); padding-bottom: 36px; } .hero h1 { font-size: clamp(40px, 5.4vw, 74px); margin-top: 16px; }
+  .hero__lead { margin-top: 16px; } .hero__cta { margin-top: 22px; } .hero__by { margin-top: 16px; }
 }
 @media (max-height: 840px) and (min-width: 1001px) {
-  .plate { width: 420px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
+  .plate { width: 452px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
   .plate div:nth-child(even) { border-left: 1px solid var(--lw); } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
 }
 @media (max-width: 1260px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
@@ -272,7 +274,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   <nav aria-label="Sections">
     <a href="#calc">Units and rent</a>
     <a href="#spec">Specifications</a>
-    <a href="#views">Renderings</a>
+    <a href="#views">Visualisations</a>
     <a href="#location">Location</a>
     <a href="#terms">Terms</a>
   </nav>
@@ -299,7 +301,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     <div class="hero__tx">
       <div class="eye up" style="--d:.15s">Warehouse for lease · Tashkent</div>
       <h1 class="up" style="--d:.25s">Tashkent<span>Logistics Hub</span></h1>
-      <p class="hero__lead up" style="--d:.4s">Class A with direct access to the Tashkent Ring Road M39. Four units that can be combined: ambient, chilled or frozen storage.</p>
+      <p class="hero__lead up" style="--d:.4s">Class A space with direct access to the M39 Tashkent Ring Road. Four units that can be combined: ambient, chilled or frozen storage.</p>
       <div class="hero__cta up" style="--d:.55s">
         <a class="btn btn--wine" href="#calc">Calculate rent<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
         <a class="btn btn--line" href="#ask" data-ask="deck">Get the brochure</a>
@@ -355,7 +357,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
         </div>
         <b class="res__rent" id="r-rent">$149,940</b>
         <p class="res__line" id="r-line"><span id="r-label">Our pick</span>: <b id="r-names">unit B</b>, <span id="r-area">12,240</span>&nbsp;m², <span id="r-docks">30 docks</span></p>
-        <p class="res__line" id="r-none" hidden>No units selected. Click a unit on the plan.</p>
+        <p class="res__line" id="r-none" hidden>No units selected. Choose one on the plan.</p>
         <div class="res__go">
           <a class="btn btn--wine" href="#ask" data-ask="calc">Send this estimate<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
           <button class="link" type="button" id="share">Copy a link to this estimate</button>
@@ -364,7 +366,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     </div>
     <div class="cell box__plan">
       <div class="plan__head">
-        <span class="mono">Click a unit to add or remove it</span>
+        <span class="mono">Select a unit to add or remove it</span>
         <div class="seg seg--view" id="view" role="group" aria-label="Plan view">
           <button type="button" data-v="3d" aria-pressed="true">3D</button>
           <button type="button" data-v="plan" aria-pressed="false">Plan</button>
@@ -374,12 +376,12 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div class="chips" id="chips"></div>
     </div>
   </div>
-  <p class="fine"><span id="r-mode">Ambient storage: +16…+25&nbsp;°C.</span> Access for fit-out from June 2027, completion in October 2027. The estimate is indicative and uses a base rent of $132 and a service charge of $15 per m² per year. The units are divisible; the exact split is agreed in the proposal. The plan is schematic.</p>
+  <p class="fine"><span id="r-mode">Ambient storage: +16…+25&nbsp;°C.</span> Access for fit-out from June 2027, completion in October 2027. The estimate is indicative and uses a base rent of $132 and a service charge of $15 per m² per year. The units are divisible; the exact split will be agreed in the proposal. The plan is schematic.</p>
 </section>
 
 <section class="sec sec--paper" id="spec">
   <div class="eye rv">Specifications</div>
-  <h2 class="h2 rv">Class A<span>in twelve figures</span></h2>
+  <h2 class="h2 rv">Class A<span>in twelve key figures</span></h2>
   <div class="spec__lay rv">
   <div class="draw"><svg viewBox="-52 20 872 300" role="img" aria-label="Schematic cross-section of the warehouse: 12 m clear height, 12 by 24 m column grid, floor load of 8 tonnes per square metre, 35 m truck court, mezzanine offices, a truck at the dock"><line class="d s2" pathLength="1" x1="-52" y1="253" x2="820" y2="253"/><rect class="plinth f" style="--dl:.2s" x="60" y="240" width="420" height="13"/><line class="d s2" pathLength="1" x1="60" y1="240" x2="480" y2="240" style="--dl:0.1s"/><line class="d s2" pathLength="1" x1="60" y1="240" x2="60" y2="93" style="--dl:0.2s"/><line class="d s2" pathLength="1" x1="480" y1="196" x2="480" y2="93" style="--dl:0.2s"/><polyline class="d s2" pathLength="1" style="--dl:.35s" points="52,94 270,84 488,94"/><line class="d s1" pathLength="1" x1="60" y1="108" x2="480" y2="108" style="--dl:0.45s"/><polyline class="d s0" pathLength="1" style="--dl:.55s" points="60,108 95,92.0 130,108 165,88.8 200,108 235,85.6 270,108 305,85.6 340,108 375,88.8 410,108 445,92.0 480,108"/><rect class="col f" style="--dl:.5s" x="197.5" y="108" width="5" height="132"/><rect class="col f" style="--dl:.5s" x="337.5" y="108" width="5" height="132"/><rect class="col f" style="--dl:.5s" x="477.5" y="108" width="5" height="88"/><g class="f" style="--dl:0.70s"><rect class="rack" x="72" y="124" width="22" height="116"/><line class="rack" x1="72" y1="147" x2="94" y2="147"/><line class="rack" x1="72" y1="170" x2="94" y2="170"/><rect class="pal" x="75" y="155" width="16" height="15"/><line class="rack" x1="72" y1="193" x2="94" y2="193"/><rect class="pal" x="75" y="182" width="16" height="11"/><line class="rack" x1="72" y1="216" x2="94" y2="216"/><rect class="pal" x="75" y="201" width="16" height="15"/><rect class="pal" x="75" y="229" width="16" height="11"/></g><g class="f" style="--dl:0.76s"><rect class="rack" x="98" y="124" width="22" height="116"/><line class="rack" x1="98" y1="147" x2="120" y2="147"/><rect class="pal" x="101" y="132" width="16" height="15"/><line class="rack" x1="98" y1="170" x2="120" y2="170"/><rect class="pal" x="101" y="159" width="16" height="11"/><line class="rack" x1="98" y1="193" x2="120" y2="193"/><line class="rack" x1="98" y1="216" x2="120" y2="216"/><rect class="pal" x="101" y="205" width="16" height="11"/><rect class="pal" x="101" y="225" width="16" height="15"/></g><g class="f" style="--dl:0.82s"><rect class="rack" x="146" y="124" width="22" height="116"/><line class="rack" x1="146" y1="147" x2="168" y2="147"/><rect class="pal" x="149" y="136" width="16" height="11"/><line class="rack" x1="146" y1="170" x2="168" y2="170"/><rect class="pal" x="149" y="155" width="16" height="15"/><line class="rack" x1="146" y1="193" x2="168" y2="193"/><rect class="pal" x="149" y="182" width="16" height="11"/><line class="rack" x1="146" y1="216" x2="168" y2="216"/><rect class="pal" x="149" y="201" width="16" height="15"/></g><g class="f" style="--dl:0.88s"><rect class="rack" x="172" y="124" width="22" height="116"/><line class="rack" x1="172" y1="147" x2="194" y2="147"/><rect class="pal" x="175" y="132" width="16" height="15"/><line class="rack" x1="172" y1="170" x2="194" y2="170"/><line class="rack" x1="172" y1="193" x2="194" y2="193"/><rect class="pal" x="175" y="178" width="16" height="15"/><line class="rack" x1="172" y1="216" x2="194" y2="216"/><rect class="pal" x="175" y="205" width="16" height="11"/><rect class="pal" x="175" y="225" width="16" height="15"/></g><g class="f" style="--dl:0.94s"><rect class="rack" x="212" y="124" width="22" height="116"/><line class="rack" x1="212" y1="147" x2="234" y2="147"/><rect class="pal" x="215" y="136" width="16" height="11"/><line class="rack" x1="212" y1="170" x2="234" y2="170"/><rect class="pal" x="215" y="155" width="16" height="15"/><line class="rack" x1="212" y1="193" x2="234" y2="193"/><rect class="pal" x="215" y="182" width="16" height="11"/><line class="rack" x1="212" y1="216" x2="234" y2="216"/><rect class="pal" x="215" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.00s"><rect class="rack" x="238" y="124" width="22" height="116"/><line class="rack" x1="238" y1="147" x2="260" y2="147"/><line class="rack" x1="238" y1="170" x2="260" y2="170"/><rect class="pal" x="241" y="159" width="16" height="11"/><line class="rack" x1="238" y1="193" x2="260" y2="193"/><rect class="pal" x="241" y="178" width="16" height="15"/><line class="rack" x1="238" y1="216" x2="260" y2="216"/><rect class="pal" x="241" y="205" width="16" height="11"/><rect class="pal" x="241" y="225" width="16" height="15"/></g><g class="f" style="--dl:1.06s"><rect class="rack" x="286" y="124" width="22" height="116"/><line class="rack" x1="286" y1="147" x2="308" y2="147"/><rect class="pal" x="289" y="136" width="16" height="11"/><line class="rack" x1="286" y1="170" x2="308" y2="170"/><rect class="pal" x="289" y="155" width="16" height="15"/><line class="rack" x1="286" y1="193" x2="308" y2="193"/><line class="rack" x1="286" y1="216" x2="308" y2="216"/><rect class="pal" x="289" y="201" width="16" height="15"/><rect class="pal" x="289" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.12s"><rect class="rack" x="312" y="124" width="22" height="116"/><line class="rack" x1="312" y1="147" x2="334" y2="147"/><rect class="pal" x="315" y="132" width="16" height="15"/><line class="rack" x1="312" y1="170" x2="334" y2="170"/><rect class="pal" x="315" y="159" width="16" height="11"/><line class="rack" x1="312" y1="193" x2="334" y2="193"/><rect class="pal" x="315" y="178" width="16" height="15"/><line class="rack" x1="312" y1="216" x2="334" y2="216"/><rect class="pal" x="315" y="205" width="16" height="11"/></g><g class="f" style="--dl:1.18s"><rect class="rack" x="350" y="124" width="22" height="116"/><line class="rack" x1="350" y1="147" x2="372" y2="147"/><rect class="pal" x="353" y="136" width="16" height="11"/><line class="rack" x1="350" y1="170" x2="372" y2="170"/><line class="rack" x1="350" y1="193" x2="372" y2="193"/><rect class="pal" x="353" y="182" width="16" height="11"/><line class="rack" x1="350" y1="216" x2="372" y2="216"/><rect class="pal" x="353" y="201" width="16" height="15"/><rect class="pal" x="353" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.24s"><rect class="rack" x="376" y="124" width="22" height="116"/><line class="rack" x1="376" y1="147" x2="398" y2="147"/><rect class="pal" x="379" y="132" width="16" height="15"/><line class="rack" x1="376" y1="170" x2="398" y2="170"/><rect class="pal" x="379" y="159" width="16" height="11"/><line class="rack" x1="376" y1="193" x2="398" y2="193"/><rect class="pal" x="379" y="178" width="16" height="15"/><line class="rack" x1="376" y1="216" x2="398" y2="216"/><rect class="pal" x="379" y="225" width="16" height="15"/></g><line class="spr f" style="--dl:1.2s" x1="66" y1="114" x2="474" y2="114"/><g class="f" style="--dl:1.3s"><circle class="drop" cx="80" cy="117.5" r="1.7"/><circle class="drop" cx="110" cy="117.5" r="1.7"/><circle class="drop" cx="140" cy="117.5" r="1.7"/><circle class="drop" cx="170" cy="117.5" r="1.7"/><circle class="drop" cx="200" cy="117.5" r="1.7"/><circle class="drop" cx="230" cy="117.5" r="1.7"/><circle class="drop" cx="260" cy="117.5" r="1.7"/><circle class="drop" cx="290" cy="117.5" r="1.7"/><circle class="drop" cx="320" cy="117.5" r="1.7"/><circle class="drop" cx="350" cy="117.5" r="1.7"/><circle class="drop" cx="380" cy="117.5" r="1.7"/><circle class="drop" cx="410" cy="117.5" r="1.7"/><circle class="drop" cx="440" cy="117.5" r="1.7"/></g><g class="f" style="--dl:1.1s"><rect class="mez" x="402" y="150" width="76" height="40"/><rect class="win" x="411" y="160" width="14" height="18"/><rect class="win" x="433" y="160" width="14" height="18"/><rect class="win" x="455" y="160" width="14" height="18"/><line class="s1l" x1="402" y1="190" x2="402" y2="240"/><rect class="pal" x="414" y="224" width="18" height="16"/><rect class="pal" x="438" y="228" width="18" height="12"/><rect class="pal" x="438" y="214" width="18" height="12"/></g><rect class="shelter f" style="--dl:1.2s" x="476" y="194" width="10" height="47"/><g class="truck"><rect class="tr" x="490" y="198" width="112" height="42"/><path class="tr" d="M606 214h16l8 10v16h-24z"/><circle class="wh" cx="512" cy="246" r="6.5"/><circle class="wh" cx="528" cy="246" r="6.5"/><circle class="wh" cx="590" cy="246" r="6.5"/><circle class="wh" cx="620" cy="246" r="6.5"/></g><g class="f" style="--dl:1.5s"><rect class="tr2" x="712" y="212" width="60" height="28"/><path class="tr2" d="M775 220h11l6 8v12h-17z"/><circle class="wh2" cx="726" cy="246" r="6"/><circle class="wh2" cx="760" cy="246" r="6"/><circle class="wh2" cx="784" cy="246" r="6"/></g><line class="d dim" pathLength="1" x1="38" y1="108" x2="38" y2="240" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="33" y1="108" x2="43" y2="108" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="33" y1="240" x2="43" y2="240" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="200" y1="276" x2="340" y2="276" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="200" y1="271" x2="200" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="340" y1="271" x2="340" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="480" y1="276" x2="684" y2="276" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="480" y1="271" x2="480" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="684" y1="271" x2="684" y2="281" style="--dl:1.0s"/><line class="d lead" pathLength="1" x1="200" y1="253" x2="200" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="340" y1="253" x2="340" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="684" y1="253" x2="684" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="133" y1="284" x2="133" y2="250" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="130" y1="66" x2="130" y2="113" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="290" y1="66" x2="290" y2="128" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="440" y1="66" x2="440" y2="150" style="--dl:1.2s"/><g class="f" style="--dl:1.6s"><rect class="pt" x="130" y="247" width="6" height="6"/><rect class="pt" x="287" y="126" width="6" height="6"/></g><g class="f" style="--dl:1.3s" text-anchor="middle"><text class="n" x="-8" y="172">12 m</text><text class="c" x="-8" y="188">Clear</text><text class="c" x="-8" y="200">height</text></g><g class="f" style="--dl:1.4s" text-anchor="middle"><text class="n" x="133" y="300">8 t/m²</text><text class="c" x="133" y="316">Floor load</text></g><g class="f" style="--dl:1.5s" text-anchor="middle"><text class="n" x="270" y="300">12 × 24 m</text><text class="c" x="270" y="316">Column grid</text></g><g class="f" style="--dl:1.6s" text-anchor="middle"><text class="n" x="582" y="300">35 m</text><text class="c" x="582" y="316">Truck court</text></g><g class="f" style="--dl:1.7s" text-anchor="middle"><text class="n" x="748" y="300">47</text><text class="c" x="748" y="316">Truck parking bays</text></g><g class="f" style="--dl:1.5s" text-anchor="middle"><text class="n" x="130" y="44">ESFR</text><text class="c" x="130" y="60">Sprinklers to NFPA</text></g><g class="f" style="--dl:1.6s" text-anchor="middle"><text class="n" x="290" y="44">+16…+25 °C</text><text class="c" x="290" y="60">Ambient storage</text></g><g class="f" style="--dl:1.7s" text-anchor="middle"><text class="n" x="440" y="44">up to 500 m²</text><text class="c" x="440" y="60">Offices per unit</text></g></svg></div>
   <div class="grid4">
@@ -400,7 +402,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   <p class="draw__note mono rv">Schematic section, not to scale</p>
   <div class="green rv">
     <div>
-      <span class="mono">Green standard</span>
+      <span class="mono">Green certification</span>
       <h3>EDGE Advanced and BREEAM Good</h3>
       <p>Dual certification lowers tenant costs by $1.5–2.0 per m² per year. Proven at the Korzinka distribution centre (49,684&nbsp;m²).</p>
     </div>
@@ -408,20 +410,20 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div><b>−41%</b><span>Energy</span></div>
       <div><b>−30%</b><span>Water</span></div>
       <div><b>−31%</b><span>Carbon</span></div>
-      <div><b>2,300+</b><span>Tonnes of CO₂ a year</span></div>
+      <div><b>2,300+</b><span>Tonnes of CO₂ per year</span></div>
     </div>
   </div>
 </section>
 
 <section class="sec" id="views">
-  <div class="eye rv">Renderings</div>
+  <div class="eye rv">Visualisations</div>
   <h2 class="h2 rv">How it<span>will look</span></h2>
   <div class="strip rv">
     <button class="shot" type="button" data-full="../img/entry.webp"><img src="../img/entry.webp" alt="The main entrance and office block at dusk" loading="lazy" width="1680" height="898"><div><b>Main entrance</b><span>Office block and facade</span></div></button>
     <button class="shot" type="button" data-full="../img/docks.webp"><img src="../img/docks.webp" alt="Trucks at the dock doors" loading="lazy" width="1716" height="916"><div><b>Loading docks</b><span>102 docks, 35 m truck court</span></div></button>
     <button class="shot" type="button" data-full="../img/aerial.webp"><img src="../img/aerial.webp" alt="The complex from the air" loading="lazy" width="1716" height="916"><div><b>From the air</b><span>7.10 ha site</span></div></button>
   </div>
-  <p class="strip__note mono rv">Click an image to view it full size · developer’s renderings</p>
+  <p class="strip__note mono rv">Select an image to view it full size · developer’s visualisations</p>
 </section>
 
 <section class="sec sec--paper" id="location">
@@ -434,7 +436,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   </div>
   <div class="ruler" id="ruler"><u></u><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><span class="run" aria-hidden="true"><svg viewBox="0 0 34 18" fill="currentColor"><rect x="0" y="1" width="21" height="11"/><path d="M23 4h6l4 4v4H23z"/><circle cx="6" cy="14.6" r="2.6"/><circle cx="15" cy="14.6" r="2.6"/><circle cx="28" cy="14.6" r="2.6"/></svg></span></div>
   <div class="grid5">
-    <div class="rv" style="--n:0"><b>0<i>KM</i></b><span>Tashkent Ring Road M39</span><small>direct exit from the site</small></div>
+    <div class="rv" style="--n:0"><b>0<i>KM</i></b><span>M39 Tashkent Ring Road</span><small>direct access from the site</small></div>
     <div class="rv" style="--dl:.06s;--n:1"><b><em data-to="8" style="font-style:normal">8</em><i>KM</i></b><span>Dry port and customs terminal</span></div>
     <div class="rv" style="--dl:.12s;--n:2"><b><em data-to="12" style="font-style:normal">12</em><i>KM</i></b><span>City centre</span></div>
     <div class="rv" style="--dl:.18s;--n:3"><b><em data-to="15" style="font-style:normal">15</em><i>KM</i></b><span>Rail freight hub</span><small>Trans-Caspian and Trans-Siberian corridors</small></div>
@@ -448,7 +450,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div class="eye rv">Terms</div>
       <h2 class="h2 rv">All terms<span>on one screen</span></h2>
       <p class="lead rv" style="--dl:.1s">Triple-net (NNN) structure: the tenant pays base rent and a service charge. Taxes, insurance and maintenance are paid separately. Currency: US dollars.</p>
-      <a class="btn btn--dark rv" style="--dl:.15s" href="#calc">Calculate for your area</a>
+      <a class="btn btn--dark rv" style="--dl:.15s" href="#calc">Calculate for your space</a>
     </div>
     <dl class="rv" style="--dl:.1s">
       <div class="big"><dt>Base rent per m² per year, first year</dt><dd>$132</dd></div>
@@ -463,10 +465,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   </div>
   <div class="plan-h rv"><h3>Four steps to the keys</h3><span class="mono" style="color:var(--steel)">Project schedule</span></div>
   <div class="steps rv" id="steps">
-    <div data-at="2026-06-01" style="--i:0"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l d" pathLength="1" d="M26 8H118L132 22V64H26Z"/><path class="l t d" pathLength="1" d="M118 8V22H132"/><path class="l t d" pathLength="1" d="M38 20H66V36H38Z M70 20H108V36H70Z M34 40H66V54H34Z M70 40H108V54H70Z"/><path class="l t d" pathLength="1" d="M34 60H108 M34 57V63 M108 57V63"/><path class="ac fd" d="M139 30l7 7-17 17-9 2 2-9z"/></svg><i class="bar"></i><b>June 2026</b><span>Design</span><em>Stage per schedule</em></div>
-    <div data-at="2026-10-01" style="--i:1"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="l d" pathLength="1" d="M30 70V34 M63 70V34 M96 70V34 M129 70V34"/><path class="l t d" pathLength="1" d="M30 34H129"/><path class="l d" pathLength="1" d="M26 30L79.5 22 133 30"/><path class="l t d" pathLength="1" d="M30 34L46.5 27 63 34 79.5 22.5 96 34 112.5 27 129 34"/><rect class="ac fd" x="25" y="66" width="10" height="5"/><rect class="ac fd" x="58" y="66" width="10" height="5"/><rect class="ac fd" x="91" y="66" width="10" height="5"/><rect class="ac fd" x="124" y="66" width="10" height="5"/></svg><i class="bar"></i><b>October 2026</b><span>Construction</span><em>Stage per schedule</em></div>
-    <div data-at="2027-06-01" style="--i:2"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M30 70V30L79.5 22 129 30V70Z"/><path class="l d" pathLength="1" d="M30 70V30L79.5 22 129 30V70"/><path class="l t d" pathLength="1" d="M40 38H54V70H40Z M40 46H54 M40 54H54 M40 62H54 M60 38H74V70H60Z M60 46H74 M60 54H74 M60 62H74 M80 38H94V70H80Z M80 46H94 M80 54H94 M80 62H94"/><rect class="ac fd" x="43" y="63" width="8" height="6"/><rect class="ac fd" x="63" y="55" width="8" height="6"/><rect class="ac fd" x="83" y="63" width="8" height="6"/><rect class="ac fd" x="83" y="47" width="8" height="6"/><rect class="ac fd" x="43" y="47" width="8" height="6"/><rect class="ac fd" x="104" y="58" width="14" height="12"/></svg><i class="bar"></i><b>June 2027</b><span>Access for fit-out</span><em>Stage per schedule</em></div>
-    <div data-at="2027-10-01" style="--i:3"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M18 70V30L62 22 106 30V70Z"/><path class="l d" pathLength="1" d="M18 70V30L62 22 106 30V70"/><path class="l t d" pathLength="1" d="M18 40H106"/><path class="l t d" pathLength="1" d="M28 70V52H40V70 M48 70V52H60V70 M68 70V52H80V70 M88 70V52H100V70"/><g class="fd"><rect class="ac" x="110" y="48" width="28" height="17"/><path class="ac" d="M140 54h7l5 5v6h-12z"/><circle class="wh" cx="118" cy="67" r="3.4"/><circle class="wh" cx="131" cy="67" r="3.4"/><circle class="wh" cx="146" cy="67" r="3.4"/></g></svg><i class="bar"></i><b>October 2027</b><span>Completion and handover</span><em>Stage per schedule</em></div>
+    <div data-at="2026-06-01" style="--i:0"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l d" pathLength="1" d="M26 8H118L132 22V64H26Z"/><path class="l t d" pathLength="1" d="M118 8V22H132"/><path class="l t d" pathLength="1" d="M38 20H66V36H38Z M70 20H108V36H70Z M34 40H66V54H34Z M70 40H108V54H70Z"/><path class="l t d" pathLength="1" d="M34 60H108 M34 57V63 M108 57V63"/><path class="ac fd" d="M139 30l7 7-17 17-9 2 2-9z"/></svg><i class="bar"></i><b>June 2026</b><span>Design</span><em>Current stage per schedule</em></div>
+    <div data-at="2026-10-01" style="--i:1"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="l d" pathLength="1" d="M30 70V34 M63 70V34 M96 70V34 M129 70V34"/><path class="l t d" pathLength="1" d="M30 34H129"/><path class="l d" pathLength="1" d="M26 30L79.5 22 133 30"/><path class="l t d" pathLength="1" d="M30 34L46.5 27 63 34 79.5 22.5 96 34 112.5 27 129 34"/><rect class="ac fd" x="25" y="66" width="10" height="5"/><rect class="ac fd" x="58" y="66" width="10" height="5"/><rect class="ac fd" x="91" y="66" width="10" height="5"/><rect class="ac fd" x="124" y="66" width="10" height="5"/></svg><i class="bar"></i><b>October 2026</b><span>Construction</span><em>Current stage per schedule</em></div>
+    <div data-at="2027-06-01" style="--i:2"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M30 70V30L79.5 22 129 30V70Z"/><path class="l d" pathLength="1" d="M30 70V30L79.5 22 129 30V70"/><path class="l t d" pathLength="1" d="M40 38H54V70H40Z M40 46H54 M40 54H54 M40 62H54 M60 38H74V70H60Z M60 46H74 M60 54H74 M60 62H74 M80 38H94V70H80Z M80 46H94 M80 54H94 M80 62H94"/><rect class="ac fd" x="43" y="63" width="8" height="6"/><rect class="ac fd" x="63" y="55" width="8" height="6"/><rect class="ac fd" x="83" y="63" width="8" height="6"/><rect class="ac fd" x="83" y="47" width="8" height="6"/><rect class="ac fd" x="43" y="47" width="8" height="6"/><rect class="ac fd" x="104" y="58" width="14" height="12"/></svg><i class="bar"></i><b>June 2027</b><span>Access for fit-out</span><em>Current stage per schedule</em></div>
+    <div data-at="2027-10-01" style="--i:3"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M18 70V30L62 22 106 30V70Z"/><path class="l d" pathLength="1" d="M18 70V30L62 22 106 30V70"/><path class="l t d" pathLength="1" d="M18 40H106"/><path class="l t d" pathLength="1" d="M28 70V52H40V70 M48 70V52H60V70 M68 70V52H80V70 M88 70V52H100V70"/><g class="fd"><rect class="ac" x="110" y="48" width="28" height="17"/><path class="ac" d="M140 54h7l5 5v6h-12z"/><circle class="wh" cx="118" cy="67" r="3.4"/><circle class="wh" cx="131" cy="67" r="3.4"/><circle class="wh" cx="146" cy="67" r="3.4"/></g></svg><i class="bar"></i><b>October 2027</b><span>Completion and handover</span><em>Current stage per schedule</em></div>
   </div>
 </section>
 
@@ -477,7 +479,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     <div class="rv"><b>Pharmaceuticals</b><span>Units ready for GDP licensing: cold and ambient storage, ESFR, access control.</span></div>
     <div class="rv" style="--dl:.06s"><b>Cold chain</b><span>Separate chilled and frozen units with independent climate control.</span></div>
     <div class="rv" style="--dl:.12s"><b>FMCG and retail</b><span>Divisible units and a 35 m truck court for fast cross-docking.</span></div>
-    <div class="rv"><b>E-commerce</b><span>A 12 m clear height for high-bay storage. The ring road is next door, which suits city deliveries.</span></div>
+    <div class="rv"><b>E-commerce</b><span>12 m clear height for high-bay storage. The ring road is close by, which suits city deliveries.</span></div>
     <div class="rv" style="--dl:.06s"><b>3PL operators</b><span>Units can be divided between several clients. Floors are ready for WMS integration.</span></div>
     <div class="rv" style="--dl:.12s"><b>Light industry</b><span>A production complex next door: 8.6 m height, premises from 540 m².</span></div>
   </div>
@@ -495,7 +497,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       </div>
       <div class="deck rv" style="--dl:.15s">
         <button class="btn btn--line" type="button" data-ask="deck">Get the brochure</button>
-        <span class="mono">Sent by email</span>
+        <span class="mono">We’ll email it</span>
       </div>
     </div>
     <form class="form rv" style="--dl:.1s" id="form" novalidate>
@@ -520,10 +522,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 <footer class="foot">
   <div class="foot__in">
     <div><img src="../img/logo-white.svg" alt="IBC Global" width="170" height="24"><p>Warehouse and industrial real estate consultant in Central Asia.</p></div>
-    <div><b>Tashkent Logistics Hub</b><a href="#calc">Units and rent calculator</a><a href="#spec">Specifications</a><a href="#views">Renderings</a><a href="#location">Location</a><a href="#terms">Terms and schedule</a></div>
+    <div><b>Tashkent Logistics Hub</b><a href="#calc">Units and rent calculator</a><a href="#spec">Specifications</a><a href="#views">Visualisations</a><a href="#location">Location</a><a href="#terms">Terms and schedule</a></div>
     <div><b>Get in touch</b><a href="#ask" data-ask="offer">Request a proposal</a><a href="#ask" data-ask="deck">Get the brochure</a><a href="https://ibc-global.asia/">ibc-global.asia</a></div>
   </div>
-  <div class="foot__end">Developer: Greystar Real Estate Partners. The information on this page does not constitute a public offer. The unit plan is schematic. Images of the complex are the developer’s renderings.</div>
+  <div class="foot__end">Developer: Greystar Real Estate Partners. The information on this page does not constitute a public offer. The unit plan is schematic. Images of the complex are the developer’s visualisations.</div>
 </footer>
 
 <dialog class="lb" id="lb"><img alt="" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></dialog>
@@ -543,7 +545,7 @@ window.TLH_TEXT = {
   mode: {
     dry: ['ambient', 'Ambient storage: +16…+25 °C.'],
     cool: ['chilled', 'Chilled mode, +2…+6 °C: the unit is fitted out on request and the rent is quoted separately.'],
-    frozen: ['frozen', 'Frozen mode, −25 °C, with independent climate control; the rent is quoted separately.']
+    frozen: ['frozen', 'Frozen mode, −25 °C, with independent climate control: the rent is quoted separately.']
   },
   pick: function (title, area, docks, mode, rent) { return '<span class="mono">Your estimate will be sent with the request</span><b>' + title + ', ' + area + ' m²</b>, ' + docks + ', ' + mode + ' storage. Indicative rent: <b>' + rent + ' per month</b> including the service charge.'; },
   nopick: '<span class="mono">No estimate yet</span><a href="#calc" style="color:inherit;font-weight:600">Build a warehouse and calculate the rent</a>',
