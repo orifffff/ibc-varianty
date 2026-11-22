@@ -286,10 +286,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     <svg viewBox="0 0 1716 916" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
       <polygon class="mk-area" points="266,524 578,499 1288,604 1288,634 1142,664 1016,676 652,742"/>
       <g class="mk" id="mk">
-        <line id="mk-line" x1="1010" y1="588" x2="1010" y2="404"/><rect class="dot" x="1003" y="581" width="14" height="14"/>
+        <line id="mk-line" x1="930" y1="574" x2="930" y2="400"/><rect class="dot" x="923" y="567" width="14" height="14"/>
         <g id="mk-label">
-          <rect class="box" x="1010" y="340" width="330" height="64"/>
-          <text x="1028" y="367">TASHKENT LOGISTICS HUB</text><text class="s" x="1028" y="389">четыре блока · класс A</text>
+          <rect class="box" x="930" y="336" width="330" height="64"/>
+          <text x="948" y="363">TASHKENT LOGISTICS HUB</text><text class="s" x="948" y="385">четыре блока · класс A</text>
         </g>
       </g>
     </svg>
@@ -560,10 +560,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       return r.height > 0 && all.some(function (q) { return hit(r, q, 12); });
     }
     function place() {
-      mk.style.display = ''; lab.removeAttribute('transform'); line.setAttribute('y2', 404);
+      mk.style.display = ''; lab.removeAttribute('transform'); line.setAttribute('y2', 400);
       if (crossed()) { mk.style.display = 'none'; return; }
       if (!busy()) return;
-      lab.setAttribute('transform', 'translate(-330 -64)'); line.setAttribute('y2', 340);
+      lab.setAttribute('transform', 'translate(-330 -64)'); line.setAttribute('y2', 336);
       if (busy()) mk.style.display = 'none';
     }
     var tm; window.addEventListener('resize', function () { clearTimeout(tm); tm = setTimeout(place, 150); });
