@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tashkent Logistics Hub: Class A warehouse for lease</title>
+<link rel="stylesheet" href="../kit/ibc-kit.css">
+<style>
+:root {
+  --navy: #071357; --deep: #050c3c; --wine: #690107; --steel: #6984a1; --ice: #a8c3ee; --paper: #f3f5f8; --ink: #0b1233; --body: #3b4263;
+  --line: rgba(7,19,87,0.14); --lw: rgba(255,255,255,0.17); --px: clamp(20px, 5.8vw, 84px); --top: 68px; --m1: var(--wine); --m2: var(--navy);
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, monospace; --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+html { scroll-padding-top: var(--top); }
+body { background: #fff; color: var(--ink); font-size: 17px; line-height: 1.55; overflow-x: clip; }
+h1, h2, h3 { color: inherit; text-wrap: balance; }
+button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
+.mono { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+.eye { display: flex; align-items: center; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
+.eye::before { content: ''; flex: none; width: 5px; height: 5px; margin-right: 28px; transform: translateY(6px); background: var(--m1); box-shadow: 6px 0 0 var(--m2), 12px 0 0 var(--m2), 6px -6px 0 var(--m2), 12px -6px 0 var(--m2), 12px -12px 0 var(--m2); }
+.h2 { font-size: clamp(32px, 4.3vw, 60px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 300; margin-top: 26px; color: var(--navy); }
+.h2 span { display: block; font-weight: 600; }
+.lead { margin-top: 24px; max-width: 34em; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.5; color: var(--body); }
+.sec { padding: clamp(72px, 9.5vw, 144px) var(--px); position: relative; }
+.sec--navy { background: var(--navy); color: #fff; --m1: #fff; --m2: var(--ice); } .sec--navy .eye { color: var(--ice); } .sec--navy .h2 { color: #fff; } .sec--navy .lead { color: rgba(255,255,255,0.84); }
+.sec--paper { background: var(--paper); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 14px; height: 54px; padding: 0 26px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; border: 1px solid transparent; background: none; cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.btn svg { width: 16px; height: 16px; flex: none; transition: transform .25s ease; } .btn:hover svg { transform: translateX(4px); }
+.btn--wine { background: var(--wine); color: #fff; } .btn--wine:hover { background: #8a0a12; }
+.btn--line { border-color: rgba(255,255,255,0.5); color: #fff; } .btn--line:hover { background: #fff; color: var(--navy); border-color: #fff; }
+.btn--white { background: #fff; color: var(--navy); } .btn--white:hover { background: var(--ice); }
+.btn--dark { border-color: var(--navy); color: var(--navy); } .btn--dark:hover { background: var(--navy); color: #fff; }
+.btn--sm { height: 42px; padding: 0 18px; font-size: 14px; }
+.rv { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease) var(--dl, 0s), transform .8s var(--ease) var(--dl, 0s); }
+.rv.in { opacity: 1; transform: none; }
+.top { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--top); padding: 0 var(--px); display: flex; align-items: center; gap: 16px; color: #fff; transition: background-color .3s ease, color .3s ease, box-shadow .3s ease; }
+.top__logo { position: relative; flex: none; width: 150px; height: 22px; } .top__logo img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .3s ease; } .top__logo .c { opacity: 0; }
+.top__name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; opacity: 0.9; }
+.top nav { margin-left: auto; display: flex; gap: clamp(14px, 1.7vw, 28px); }
+.top nav a { font-size: 14.5px; text-decoration: none; white-space: nowrap; opacity: 0.86; transition: opacity .25s; } .top nav a:hover { opacity: 1; }
+.lang { display: flex; margin-left: 4px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; }
+.lang a { padding: 6px 6px; text-decoration: none; opacity: 0.6; transition: opacity .25s; } .lang a:hover { opacity: 1; } .lang a.on { opacity: 1; box-shadow: inset 0 -1px 0 currentColor; }
+.top .btn { background: var(--wine); color: #fff; margin-left: 4px; } .top .btn .sm { display: none; } .top .btn:hover { background: #8a0a12; }
+.top.is-solid { background: #fff; color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+.top.is-solid .top__logo .w { opacity: 0; } .top.is-solid .top__logo .c { opacity: 1; }
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; color: #fff; background: var(--deep); overflow: hidden; --m1: #fff; --m2: var(--ice); }
+.hero__media { position: absolute; inset: -3%; animation: drift 30s ease-in-out infinite alternate; }
+.hero__media img, .hero__media svg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; }
+.hero__media img { object-fit: cover; object-position: 100% 50%; }
+@keyframes drift { from { transform: scale(1) translate(0.8%, 0.4%); } to { transform: scale(1.07) translate(-1%, -0.8%); } }
+.mk-area { fill: rgba(255,255,255,0.1); stroke: #fff; stroke-width: 2.5; stroke-linejoin: round; stroke-dasharray: 3200; stroke-dashoffset: 3200; animation: draw 2.6s var(--ease) 0.9s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.mk { opacity: 0; animation: fade 0.9s ease 2.2s forwards; }
+.mk line { stroke: #fff; stroke-width: 1.5; } .mk .dot { fill: var(--wine); stroke: #fff; stroke-width: 2; }
+.mk .box { fill: #fff; } .mk text { font-family: var(--mono); font-size: 15px; letter-spacing: 1.2px; fill: var(--navy); font-weight: 600; } .mk text.s { fill: var(--steel); font-size: 13.5px; font-weight: 400; }
+@keyframes fade { to { opacity: 1; } }
+.hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,12,60,0.88) 0%, rgba(5,12,60,0.52) 42%, rgba(5,12,60,0.06) 74%), linear-gradient(0deg, rgba(5,12,60,0.72) 0%, rgba(5,12,60,0) 40%), linear-gradient(180deg, rgba(5,12,60,0.6) 0%, rgba(5,12,60,0) 22%); }
+.hero__in { position: relative; width: 100%; padding: calc(var(--top) + 80px) var(--px) clamp(40px, 5.4vw, 76px); display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+.hero__tx { max-width: 760px; }
+.hero .eye { color: #fff; }
+.hero h1 { margin-top: 22px; font-size: clamp(42px, 6.6vw, 96px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 300; }
+.hero h1 span { display: block; font-weight: 600; }
+.hero__lead { margin-top: 26px; max-width: 33em; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.45; color: rgba(255,255,255,0.88); }
+.hero__cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__by { margin-top: 26px; font-size: 14px; color: rgba(255,255,255,0.72); } .hero__by b { color: #fff; font-weight: 600; }
+.plate { flex: none; width: 272px; background: rgba(5,12,60,0.74); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--lw); }
+.plate div { padding: 18px 22px 19px; } .plate div + div { border-top: 1px solid var(--lw); }
+.plate b { display: block; font-size: 34px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.05; white-space: nowrap; } .plate b small { font-size: 0.5em; margin-left: 6px; letter-spacing: 0; }
+.plate span { display: block; margin-top: 7px; color: var(--ice); font-size: 10.5px; }
+.up { opacity: 0; transform: translateY(22px); animation: up 1s var(--ease) forwards; animation-delay: var(--d, .2s); }
+@keyframes up { to { opacity: 1; transform: none; } }
+.why3 { margin-top: clamp(40px, 5vw, 68px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(28px, 4vw, 64px); }
+.why3 > div { padding-top: 30px; border-top: 2px solid var(--navy); }
+.why3 b { display: block; font-size: clamp(54px, 6vw, 88px); font-weight: 300; letter-spacing: -0.045em; line-height: 1; color: var(--navy); white-space: nowrap; }
+.why3 b i { font-family: var(--mono); font-style: normal; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel); margin-left: 12px; }
+.why3 h3 { margin-top: 26px; font-size: clamp(20px, 1.9vw, 26px); font-weight: 600; letter-spacing: -0.025em; color: var(--navy); } .why3 p { margin-top: 12px; color: var(--body); }
+.box { margin-top: clamp(36px, 4.6vw, 64px); display: grid; grid-template-columns: 372px 1fr; border: 1px solid var(--lw); scroll-margin-top: 8px; }
+.box__set { display: flex; flex-direction: column; border-right: 1px solid var(--lw); }
+.cell { padding: 20px 22px; min-width: 0; } .box__set .cell + .cell { border-top: 1px solid var(--lw); }
+.cell > span.mono, .cell label.mono { color: rgba(255,255,255,0.62); display: block; }
+.need-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.need { font-size: clamp(32px, 3vw, 42px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+.need small { font-size: 0.5em; margin-left: 8px; letter-spacing: 0; opacity: 0.8; }
+input[type=range] { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 26px; margin: 12px 0 4px; background: transparent; cursor: pointer; }
+input[type=range]::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(90deg, #fff var(--p, 30%), rgba(255,255,255,0.28) var(--p, 30%)); }
+input[type=range]::-moz-range-track { height: 2px; background: linear-gradient(90deg, #fff var(--p, 30%), rgba(255,255,255,0.28) var(--p, 30%)); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; margin-top: -7px; border-radius: 0; background: #fff; border: 0; box-shadow: 0 0 0 4px var(--navy); }
+input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 0; background: #fff; border: 0; box-shadow: 0 0 0 4px var(--navy); }
+input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
+.minmax { display: flex; justify-content: space-between; color: rgba(255,255,255,0.55); }
+.seg { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { height: 38px; padding: 0 11px; border: 1px solid var(--lw); background: transparent; color: #fff; font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.seg button:hover { border-color: rgba(255,255,255,0.6); } .seg button[aria-pressed=true] { background: #fff; border-color: #fff; color: var(--navy); }
+.res { flex: 1; display: flex; flex-direction: column; background: rgba(255,255,255,0.045); }
+.res__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; } .res__head .mono { color: var(--ice); }
+.seg--mini { margin: 0; gap: 0; flex: none; flex-wrap: nowrap; } .seg--mini button { height: 28px; padding: 0 10px; font-size: 12.5px; } .seg--mini button + button { border-left: 0; }
+.res__rent { display: block; margin-top: 10px; font-size: clamp(34px, 3.2vw, 46px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; white-space: nowrap; }
+.res__line { margin-top: 10px; font-size: 14.5px; line-height: 1.45; color: rgba(255,255,255,0.8); } .res__line b { color: #fff; font-weight: 600; }
+.res__go { margin-top: auto; padding-top: 16px; display: grid; gap: 12px; justify-items: start; } .res__go .btn { width: 100%; height: 48px; }
+.link { background: none; border: 0; padding: 0; font-size: 14px; color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,0.4); cursor: pointer; }
+.box__plan { display: flex; flex-direction: column; }
+.plan__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; } .plan__head .mono { color: var(--ice); }
+.seg--view { margin: 0; gap: 0; flex: none; flex-wrap: nowrap; } .seg--view button { height: 32px; padding: 0 14px; font-size: 13px; } .seg--view button + button { border-left: 0; }
+#plan { width: 100%; max-width: min(760px, max(330px, calc((100vh - 250px) * 1.5))); margin: 12px auto 0; flex: 1; display: flex; align-items: center; } #plan svg { flex: 1; }
+#plan .pb:focus-visible polygon:last-of-type, #plan .pb:focus-visible rect { stroke: #fff; stroke-width: 1.6; }
+.chips { display: none; border-top: 1px solid var(--lw); }
+.chips button { padding: 14px 14px 16px; text-align: left; background: transparent; border: 0; color: #fff; cursor: pointer; transition: background-color .25s ease, color .25s ease; } .chips button + button { border-left: 1px solid var(--lw); }
+.chips b { display: block; font-size: 15px; font-weight: 600; } .chips span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; opacity: 0.66; }
+.chips button[aria-pressed=true] { background: #fff; color: var(--navy); } .chips button[aria-pressed=true] span { opacity: 0.8; }
+.fine { margin-top: 16px; font-size: 13px; opacity: 0.62; max-width: 76em; }
+.grid4 { margin-top: clamp(36px, 4.4vw, 60px); display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
+.grid4 div { padding: 22px 18px 24px; min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.grid4 b { display: block; font-size: clamp(22px, 2.05vw, 34px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.05; color: var(--navy); white-space: nowrap; }
+.grid4 b i { font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: 0.06em; margin-left: 6px; vertical-align: 0.9em; color: var(--steel); }
+.grid4 span { display: block; margin-top: 12px; color: var(--steel); line-height: 1.5; }
+.spec__lay { margin-top: clamp(32px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) 240px; background: #fff; border: 1px solid var(--line); }
+.draw { padding: 14px 22px 8px; border-right: 1px solid var(--line); min-width: 0; display: flex; align-items: center; } .draw svg { width: 100%; height: auto; overflow: visible; }
+.draw .s2 { stroke: var(--navy); stroke-width: 1.6; fill: none; } .draw .s1 { stroke: var(--navy); stroke-width: 1; fill: none; } .draw .s0 { stroke: var(--steel); stroke-width: 0.7; fill: none; }
+.draw .plinth { fill: rgba(7,19,87,0.12); } .draw .col { fill: var(--navy); }
+.draw .rack { fill: none; stroke: var(--steel); stroke-width: 0.8; } .draw .pal { fill: rgba(105,132,161,0.36); }
+.draw .spr { stroke: var(--steel); stroke-width: 0.8; stroke-dasharray: 3 3; } .draw .drop { fill: var(--wine); }
+.draw .mez { fill: #fff; stroke: var(--navy); stroke-width: 1.2; } .draw .win { fill: rgba(168,195,238,0.7); } .draw .s1l { stroke: var(--navy); stroke-width: 1; }
+.draw .shelter { fill: none; stroke: var(--wine); stroke-width: 1.6; }
+.draw .tr { fill: var(--wine); } .draw .wh { fill: var(--navy); stroke: #fff; stroke-width: 1.5; } .draw .tr2 { fill: rgba(105,132,161,0.5); } .draw .wh2 { fill: var(--steel); stroke: #fff; stroke-width: 1.5; }
+.draw .dim { stroke: var(--steel); stroke-width: 0.9; } .draw .lead { stroke: var(--steel); stroke-width: 0.7; } .draw .pt { fill: var(--wine); }
+.draw .n { font-size: 21px; font-weight: 300; letter-spacing: -0.02em; fill: var(--navy); } .draw .c { font-family: var(--mono); font-size: 9.2px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--steel); }
+.draw .d { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s var(--ease) var(--dl, 0s); }
+.draw .f { opacity: 0; transition: opacity .7s ease var(--dl, .8s); }
+.draw .truck { transform: translateX(170px); opacity: 0; transition: transform 2s var(--ease) 1.1s, opacity .5s ease 1.1s; }
+.spec__lay.in .d { stroke-dashoffset: 0; } .spec__lay.in .f { opacity: 1; } .spec__lay.in .truck { transform: none; opacity: 1; }
+.spec__lay .grid4 { margin: 0; grid-template-columns: 1fr; border: 0; background: none; align-content: stretch; } .spec__lay .grid4 div { border-right: 0; display: flex; flex-direction: column; justify-content: center; padding: 12px 20px; } .spec__lay .grid4 span { margin-top: 8px; }
+.spec__lay .grid4 div:nth-child(11) { border-bottom: 0; } .spec__lay .on-draw { display: none !important; }
+.draw__note { margin-top: 12px; color: var(--steel); font-size: 10.5px; }
+.green { margin-top: 28px; display: grid; grid-template-columns: 1.1fr 1fr; background: var(--navy); color: #fff; }
+.green > div { padding: clamp(26px, 3.2vw, 44px); } .green .mono { color: var(--ice); }
+.green h3 { margin-top: 14px; font-size: clamp(22px, 2.1vw, 30px); font-weight: 600; letter-spacing: -0.025em; } .green p { margin-top: 12px; opacity: 0.82; font-size: 16px; max-width: 34em; }
+.green__n { display: grid; grid-template-columns: repeat(4, 1fr); align-items: start; align-content: center; gap: 16px; border-left: 1px solid var(--lw); }
+.green__n b { display: block; font-size: clamp(24px, 2.5vw, 36px); font-weight: 300; letter-spacing: -0.03em; white-space: nowrap; } .green__n span { display: block; margin-top: 8px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.66; }
+.strip { margin: clamp(40px, 5vw, 68px) calc(var(--px) * -1) 0; display: flex; gap: 4px; height: clamp(260px, 37vw, min(580px, calc(100vh - 262px))); }
+.shot { position: relative; flex: 1 1 0; min-width: 0; padding: 0; border: 0; background: var(--deep); overflow: hidden; cursor: zoom-in; text-align: left; color: #fff; transition: flex-grow .7s var(--ease); }
+.shot:nth-child(1) { flex-grow: 1.5; } .shot:nth-child(3) { flex-grow: 1.25; }
+@media (hover: hover) and (min-width: 761px) { .strip:hover .shot { flex-grow: 1; } .strip .shot:hover { flex-grow: 2.3; } }
+.shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.shot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,12,60,0.8), rgba(5,12,60,0) 42%); }
+.shot div { position: absolute; left: clamp(18px, 2vw, 28px); right: 18px; bottom: 20px; z-index: 1; white-space: nowrap; } .shot b { display: block; font-size: 19px; font-weight: 600; letter-spacing: -0.02em; } .shot span { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+.strip__note { margin-top: 16px; color: var(--steel); }
+.loc__head { display: grid; grid-template-columns: 1.15fr 1fr; gap: 30px clamp(32px, 6vw, 96px); align-items: end; } .loc__head .lead { margin: 0; }
+.ruler { position: relative; height: 34px; margin-top: clamp(40px, 5vw, 68px); border-bottom: 1px solid var(--navy); }
+.ruler i { position: absolute; bottom: -5px; left: calc(var(--n) * 20%); width: 9px; height: 9px; background: var(--navy); transform: scale(0); transition: transform .5s var(--ease) calc(var(--n) * .14s + .3s); } .ruler i:first-of-type { background: var(--wine); }
+.ruler u { position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--wine); transition: width 1.5s var(--ease) .2s; }
+.ruler.in i { transform: none; animation: ping 9s ease-out calc(1.8s + var(--n) * 1.8s) infinite; } .ruler.in u { width: 100%; }
+.ruler .run { position: absolute; left: 0; bottom: 0; width: 44px; height: 23px; color: var(--wine); opacity: 0; }
+.ruler.in .run { animation: ride 9s linear 1.8s infinite; }
+@keyframes ride { 0% { left: 0; opacity: 0; } 3% { opacity: 1; } 95% { opacity: 1; } 100% { left: calc(100% - 44px); opacity: 0; } }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(105,1,7,0.55); background: var(--wine); } 14% { box-shadow: 0 0 0 10px rgba(105,1,7,0); } 22%, 100% { box-shadow: 0 0 0 0 rgba(105,1,7,0); } }
+.grid5 .rv.in b { animation: tint 9s linear calc(1.8s + var(--n) * 1.8s) infinite; }
+@keyframes tint { 0%, 12% { color: var(--wine); } 22%, 100% { color: var(--navy); } }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); }
+.grid5 div { padding: 28px 20px 4px 0; min-width: 0; } .grid5 div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.grid5 b { display: block; font-size: clamp(30px, 3vw, 44px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; color: var(--navy); white-space: nowrap; } .grid5 b i { font-family: var(--mono); font-style: normal; font-size: 11px; margin-left: 6px; color: var(--steel); vertical-align: 0.9em; }
+.grid5 span { display: block; margin-top: 16px; font-weight: 600; color: var(--navy); line-height: 1.3; } .grid5 small { display: block; margin-top: 6px; font-size: 14px; color: var(--steel); line-height: 1.4; }
+.terms__in { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px clamp(32px, 7vw, 120px); }
+.terms .btn { margin-top: 28px; }
+.terms dl { margin: 0; border-top: 2px solid var(--navy); }
+.terms dl div { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.terms dt { color: var(--steel); } .terms dd { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--navy); text-align: right; }
+.terms dl div.big { padding: 18px 0; } .terms dl div.big dd { font-size: clamp(40px, 4.4vw, 62px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
+.plan-h { margin-top: clamp(64px, 8vw, 112px); display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.plan-h h3 { font-size: clamp(24px, 2.4vw, 34px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); }
+.steps { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); }
+.steps div { position: relative; padding: 0 20px 0 0; color: #b4bed5; } .steps div.done { color: var(--navy); }
+.steps .pic { display: block; width: min(100%, 200px); height: auto; margin-bottom: 14px; overflow: visible; }
+.pic .l { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; } .pic .t { stroke-width: 1; }
+.pic .fl { fill: currentColor; opacity: 0.1; } .pic .ac { fill: currentColor; } .steps div.done .pic .ac { fill: var(--wine); } .pic .wh { fill: #fff; stroke: currentColor; stroke-width: 1.4; } .steps div.done .pic .wh { stroke: var(--navy); }
+.pic .d { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease) calc(var(--i) * .35s + .15s); } .steps.in .pic .d { stroke-dashoffset: 0; }
+.pic .fd { opacity: 0; transition: opacity .6s ease calc(var(--i) * .35s + .9s); } .steps.in .pic .fd { opacity: 1; } .steps.in .pic .fl { opacity: 0.1; }
+.steps .bar { display: block; position: relative; height: 2px; margin-bottom: 22px; background: var(--line); }
+.steps .bar::before { content: ''; position: absolute; left: 0; top: -4px; width: 10px; height: 10px; background: #c3cbdd; }
+.steps div.done .bar { background: var(--navy); } .steps div.done .bar::before { background: var(--navy); }
+.steps div.now .bar { background: var(--line); } .steps div.now .bar::before { background: var(--wine); box-shadow: 0 0 0 4px rgba(105,1,7,0.16); }
+.steps b { display: block; font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em; color: var(--navy); } .steps span { display: block; margin-top: 6px; color: var(--steel); }
+.steps em { display: none; margin-top: 10px; font-family: var(--mono); font-style: normal; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wine); } .steps div.now em { display: block; }
+.grid3 { margin-top: clamp(40px, 5vw, 68px); display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--navy); }
+.grid3 div { position: relative; padding: 30px 26px 32px 22px; border-bottom: 1px solid var(--line); } .grid3 div:not(:nth-child(3n+1)) { padding-left: 48px; border-left: 1px solid var(--line); }
+.grid3 div::before { content: ''; position: absolute; left: 0; top: 39px; width: 7px; height: 7px; background: var(--wine); } .grid3 div:not(:nth-child(3n+1))::before { left: 26px; }
+.grid3 b { display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em; color: var(--navy); } .grid3 span { display: block; margin-top: 8px; color: var(--body); font-size: 16px; }
+.ask__in { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 56px clamp(32px, 7vw, 120px); }
+.people { margin-top: 26px; border-top: 1px solid var(--lw); }
+.people a { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--lw); text-decoration: none; }
+.people img { width: 56px; height: 56px; object-fit: cover; } .people b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; } .people span span { display: block; margin-top: 3px; font-size: 14px; opacity: 0.7; line-height: 1.35; }
+.people .qr { display: grid; justify-items: center; gap: 5px; } .people .qr img { width: 70px; height: 70px; padding: 3px; background: #fff; object-fit: contain; }
+.people u { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ice); }
+.deck { margin-top: 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; } .deck .mono { opacity: 0.6; }
+.form { background: #fff; color: var(--ink); padding: clamp(22px, 2.4vw, 36px); align-self: start; }
+.form h3 { font-size: clamp(24px, 2.3vw, 32px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); } .form > p { margin-top: 6px; font-size: 15px; color: var(--body); max-width: 30em; }
+.pick { margin-top: 16px; padding: 12px 16px; background: var(--paper); border-left: 3px solid var(--wine); font-size: 14.5px; line-height: 1.5; color: var(--body); } .pick b { color: var(--navy); font-weight: 600; } .pick .mono { display: block; margin-bottom: 6px; color: var(--steel); }
+.form__grid { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fld { display: grid; gap: 8px; } .fld--wide { grid-column: 1 / -1; } .fld label { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+.fld input, .fld textarea { width: 100%; padding: 13px 14px; background: #fff; border: 1px solid rgba(7,19,87,0.28); color: var(--ink); font-size: 16px; outline: none; transition: border-color .25s ease, box-shadow .25s ease; }
+.fld textarea { height: 50px; min-height: 50px; resize: vertical; line-height: 1.4; } .fld input:focus, .fld textarea:focus { border-color: var(--navy); box-shadow: inset 0 0 0 1px var(--navy); }
+.agree { margin-top: 14px; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--body); cursor: pointer; } .agree input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--navy); flex: none; }
+.form__go { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.form__ok { display: none; font-size: 14.5px; font-weight: 600; color: var(--wine); } .form.is-sent .form__ok { display: block; }
+.foot { background: var(--deep); color: rgba(255,255,255,0.74); padding: clamp(48px, 6vw, 80px) var(--px) 30px; font-size: 15px; }
+.foot__in { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 44px; border-bottom: 1px solid var(--lw); }
+.foot img { width: 170px; height: auto; } .foot p { margin-top: 18px; max-width: 26em; } .foot b { display: block; margin-bottom: 14px; color: #fff; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; }
+.foot a { display: block; padding: 4px 0; text-decoration: none; transition: color .25s; } .foot a:hover { color: #fff; }
+.foot__end { padding-top: 22px; font-size: 12.5px; opacity: 0.7; max-width: 74em; }
+dialog.lb { padding: 0; border: 0; background: transparent; max-width: 94vw; max-height: 92vh; } dialog.lb::backdrop { background: rgba(5,12,60,0.92); }
+dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cursor: zoom-out; }
+.toast { position: fixed; left: 50%; bottom: 26px; z-index: 80; transform: translate(-50%, 20px); padding: 13px 20px; background: #fff; color: var(--navy); font-size: 14.5px; font-weight: 600; box-shadow: 0 10px 40px rgba(5,12,60,0.35); opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease; max-width: calc(100vw - 32px); }
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 1400px) { .top__name { display: none; } }
+@media (max-height: 760px) and (min-width: 1001px) {
+  .sec { padding-top: clamp(52px, 5.2vw, 76px); padding-bottom: clamp(52px, 5.2vw, 76px); }
+  .h2 { font-size: clamp(30px, 3.5vw, 46px); margin-top: 20px; } .lead { margin-top: 16px; }
+}
+@media (max-height: 840px) and (min-width: 1001px) {
+  .plate { width: 420px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
+  .plate div:nth-child(even) { border-left: 1px solid var(--lw); } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
+}
+@media (max-width: 1260px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1180px) {
+  .top nav { display: none; } .lang { margin-left: auto; }
+}
+@media (max-width: 1000px) {
+  .why3 { grid-template-columns: 1fr; gap: 44px; } .terms__in, .ask__in, .green, .loc__head { grid-template-columns: 1fr; }
+  .box { display: flex; flex-direction: column; } .box__set { display: contents; }
+  .box .cell { border-top: 1px solid var(--lw); } .box .cell:first-child { border-top: 0; }
+  .box__set .cell:nth-child(1) { order: 1; } .box__set .cell:nth-child(2) { order: 2; } .box__plan { order: 3; } .box .res { order: 4; }
+  #plan { max-width: 640px; margin-bottom: 12px; }
+  .grid4 { grid-template-columns: repeat(2, 1fr); } .green__n { border-left: 0; border-top: 1px solid var(--lw); }
+  .spec__lay { display: block; border: 0; background: none; } .draw, .draw__note { display: none; }
+  .spec__lay .grid4 { grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
+  .spec__lay .grid4 div, .spec__lay .grid4 div:nth-child(11) { display: block; padding: 22px 18px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); } .spec__lay .grid4 span { margin-top: 12px; } .spec__lay .on-draw { display: block !important; }
+  .grid3 { grid-template-columns: 1fr 1fr; } .grid3 div, .grid3 div:not(:nth-child(3n+1)) { padding-left: 22px; border-left: 0; } .grid3 div::before, .grid3 div:not(:nth-child(3n+1))::before { left: 0; }
+  .mk { display: none; } .hero__in { flex-direction: column; align-items: stretch; } .plate { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); } .plate div + div { border-top: 0; border-left: 1px solid var(--lw); } .plate b { font-size: 26px; }
+  .ruler { display: none; } .grid5 { margin-top: 36px; grid-template-columns: 1fr; border-top: 2px solid var(--navy); }
+  .grid5 div, .grid5 div + div { display: grid; grid-template-columns: 96px 1fr; column-gap: 12px; padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); } .grid5 b { grid-row: span 2; font-size: 30px; } .grid5 span { margin-top: 2px; } .grid5 small { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .top { gap: 10px; } .top__name { display: none; } .top__logo { width: 118px; height: 17px; } .top .btn .lg { display: none; } .top .btn .sm { display: inline; } .top .btn { padding: 0 14px; }
+  .hero__in { padding-top: calc(var(--top) + 60px); gap: 28px; }
+  .hero__media img { object-position: 42% 50%; } .hero__media svg { display: none; }
+  .hero__shade { background: linear-gradient(0deg, rgba(5,12,60,0.97) 0%, rgba(5,12,60,0.78) 38%, rgba(5,12,60,0.34) 66%, rgba(5,12,60,0.2) 100%); }
+  .hero__cta .btn { flex: 1 1 100%; }
+  .plate { grid-template-columns: 1fr 1fr; } .plate div { padding: 14px 16px 15px; } .plate div:nth-child(3) { border-left: 0; } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
+  .box { margin-left: calc(var(--px) * -1 + 8px); margin-right: calc(var(--px) * -1 + 8px); }
+  .cell { padding: 20px 16px; } .chips { display: grid; grid-template-columns: 1fr 1fr; margin: 4px -16px -20px; } .chips button:nth-child(3) { border-left: 0; } .chips button:nth-child(n+3) { border-top: 1px solid var(--lw); }
+  .people a { padding: 16px 0; }
+  .grid4 div { padding: 20px 14px 22px; } .green__n { grid-template-columns: 1fr 1fr; }
+  .grid3 { grid-template-columns: 1fr; }
+  .strip { height: 62vw; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .strip::-webkit-scrollbar { display: none; } .strip .shot, .strip .shot:nth-child(n) { flex: 0 0 86vw; scroll-snap-align: center; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 30px 0; }
+  .terms dd { font-size: 18px; }
+  .people .qr img { display: none; }
+  .form__grid { grid-template-columns: 1fr; } .form__go .btn { flex: 1 1 100%; }
+  .foot__in { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__media { animation: none; } .draw .d { stroke-dashoffset: 0; transition: none; } .pic .d { stroke-dashoffset: 0; transition: none; } .pic .fd { opacity: 1; transition: none; } .pic .fl { opacity: 0.1; } .draw .f, .draw .truck { opacity: 1; transform: none; transition: none; } .ruler .run { display: none; } .ruler.in i, .grid5 .rv.in b { animation: none; } .rv, .up { opacity: 1; transform: none; transition: none; animation: none; } .mk-area { stroke-dashoffset: 0; animation: none; } .mk { opacity: 1; animation: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="top__logo" href="https://ibc-global.asia/" aria-label="IBC Global"><img class="w" src="../img/logo-white.svg" alt="IBC Global"><img class="c" src="../img/logo-color.svg" alt=""></a>
+  <span class="top__name">Tashkent Logistics Hub</span>
+  <nav aria-label="Sections">
+    <a href="#calc">Units and rent</a>
+    <a href="#spec">Specifications</a>
+    <a href="#views">Renderings</a>
+    <a href="#location">Location</a>
+    <a href="#terms">Terms</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language"><a href="../">RU</a><a class="on" href="./" aria-current="true">EN</a><a href="../uz/">UZ</a></div>
+  <a class="btn btn--sm" href="#ask" data-ask="offer"><span class="lg">Request a proposal</span><span class="sm">Enquire</span></a>
+</header>
+
+<section class="hero">
+  <div class="hero__media">
+    <img src="../img/aerial.webp" alt="The warehouse complex at dusk, aerial view" width="1716" height="916" fetchpriority="high">
+    <svg viewBox="0 0 1716 916" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <polygon class="mk-area" points="266,524 578,499 1288,604 1288,634 1142,664 1016,676 652,742"/>
+      <g class="mk" id="mk">
+        <line id="mk-line" x1="930" y1="574" x2="930" y2="400"/><rect class="dot" x="923" y="567" width="14" height="14"/>
+        <g id="mk-label">
+          <rect class="box" x="930" y="336" width="330" height="64"/>
+          <text x="948" y="363">TASHKENT LOGISTICS HUB</text><text class="s" x="948" y="385">four units · Class A</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__shade"></div>
+  <div class="hero__in">
+    <div class="hero__tx">
+      <div class="eye up" style="--d:.15s">Warehouse for lease · Tashkent</div>
+      <h1 class="up" style="--d:.25s">Tashkent<span>Logistics Hub</span></h1>
+      <p class="hero__lead up" style="--d:.4s">Class A with direct access to the Tashkent Ring Road M39. Four units that can be combined: ambient, chilled or frozen storage.</p>
+      <div class="hero__cta up" style="--d:.55s">
+        <a class="btn btn--wine" href="#calc">Calculate rent<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
+        <a class="btn btn--line" href="#ask" data-ask="deck">Get the brochure</a>
+      </div>
+      <p class="hero__by up" style="--d:.7s">Developer: <b>Greystar Real Estate Partners</b> · Leasing consultant: <b>IBC Global</b></p>
+    </div>
+    <div class="plate up" style="--d:.7s">
+      <div><b>37,524<small>m²</small></b><span class="mono">Total area</span></div>
+      <div><b>from 7,140<small>m²</small></b><span class="mono">One unit</span></div>
+      <div><b>$132</b><span class="mono">Per m² per year</span></div>
+      <div><b>Oct 2027</b><span class="mono">Completion</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="eye rv">At a glance</div>
+  <h2 class="h2 rv">Three reasons<span>to view this warehouse</span></h2>
+  <div class="why3">
+    <div class="rv"><b>4<i>units</i></b><h3>Space sized to your needs</h3><p>From 7,140 to 37,524&nbsp;m². Adjacent units can be combined, and each one can be split between several tenants.</p></div>
+    <div class="rv" style="--dl:.08s"><b>3<i>storage modes</i></b><h3>Ambient, chilled, frozen</h3><p>Ambient storage at +16…+25&nbsp;°C. On request, a unit can be fitted out as chilled (+2…+6&nbsp;°C) or frozen (−25&nbsp;°C) with independent climate control. The units are ready for GDP licensing.</p></div>
+    <div class="rv" style="--dl:.16s"><b>$147<i>per m² per year</i></b><h3>Pricing stated upfront</h3><p>Base rent of $132 plus a $15 service charge. A 10-year lease, 3% annual indexation, triple-net structure.</p></div>
+  </div>
+</section>
+
+<section class="sec sec--navy" id="blocks">
+  <div class="eye rv">Units and rent</div>
+  <h2 class="h2 rv">Build your warehouse<span>and see the rent</span></h2>
+  <p class="lead rv" style="--dl:.1s">Set the area and storage mode. The page selects suitable adjacent units and calculates the rent right away.</p>
+
+  <div class="box rv" id="calc">
+    <div class="box__set">
+      <div class="cell">
+        <div class="need-row"><label class="mono" for="area">Warehouse area</label><output class="need" id="need" for="area">12,000<small>m²</small></output></div>
+        <input type="range" id="area" min="5000" max="37524" step="500" value="12000">
+        <div class="minmax mono"><span>5,000</span><span>37,524 m²</span></div>
+      </div>
+      <div class="cell">
+        <span class="mono">Storage mode</span>
+        <div class="seg" id="mode" role="group" aria-label="Storage mode">
+          <button type="button" data-v="dry" aria-pressed="true">Ambient</button>
+          <button type="button" data-v="cool" aria-pressed="false">Chilled</button>
+          <button type="button" data-v="frozen" aria-pressed="false">Frozen</button>
+        </div>
+      </div>
+      <div class="cell res">
+        <div class="res__head">
+          <span class="mono">Rent</span>
+          <div class="seg seg--mini" id="per" role="group" aria-label="Calculation period">
+            <button type="button" data-v="month" aria-pressed="true">per month</button>
+            <button type="button" data-v="year" aria-pressed="false">per year</button>
+          </div>
+        </div>
+        <b class="res__rent" id="r-rent">$149,940</b>
+        <p class="res__line" id="r-line"><span id="r-label">Our pick</span>: <b id="r-names">unit B</b>, <span id="r-area">12,240</span>&nbsp;m², <span id="r-docks">30 docks</span></p>
+        <p class="res__line" id="r-none" hidden>No units selected. Click a unit on the plan.</p>
+        <div class="res__go">
+          <a class="btn btn--wine" href="#ask" data-ask="calc">Send this estimate<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
+          <button class="link" type="button" id="share">Copy a link to this estimate</button>
+        </div>
+      </div>
+    </div>
+    <div class="cell box__plan">
+      <div class="plan__head">
+        <span class="mono">Click a unit to add or remove it</span>
+        <div class="seg seg--view" id="view" role="group" aria-label="Plan view">
+          <button type="button" data-v="3d" aria-pressed="true">3D</button>
+          <button type="button" data-v="plan" aria-pressed="false">Plan</button>
+        </div>
+      </div>
+      <div id="plan"></div>
+      <div class="chips" id="chips"></div>
+    </div>
+  </div>
+  <p class="fine"><span id="r-mode">Ambient storage: +16…+25&nbsp;°C.</span> Access for fit-out from June 2027, completion in October 2027. The estimate is indicative and uses a base rent of $132 and a service charge of $15 per m² per year. The units are divisible; the exact split is agreed in the proposal. The plan is schematic.</p>
+</section>
+
+<section class="sec sec--paper" id="spec">
+  <div class="eye rv">Specifications</div>
+  <h2 class="h2 rv">Class A<span>in twelve figures</span></h2>
+  <div class="spec__lay rv">
+  <div class="draw"><svg viewBox="-52 20 872 300" role="img" aria-label="Schematic cross-section of the warehouse: 12 m clear height, 12 by 24 m column grid, floor load of 8 tonnes per square metre, 35 m truck court, mezzanine offices, a truck at the dock"><line class="d s2" pathLength="1" x1="-52" y1="253" x2="820" y2="253"/><rect class="plinth f" style="--dl:.2s" x="60" y="240" width="420" height="13"/><line class="d s2" pathLength="1" x1="60" y1="240" x2="480" y2="240" style="--dl:0.1s"/><line class="d s2" pathLength="1" x1="60" y1="240" x2="60" y2="93" style="--dl:0.2s"/><line class="d s2" pathLength="1" x1="480" y1="196" x2="480" y2="93" style="--dl:0.2s"/><polyline class="d s2" pathLength="1" style="--dl:.35s" points="52,94 270,84 488,94"/><line class="d s1" pathLength="1" x1="60" y1="108" x2="480" y2="108" style="--dl:0.45s"/><polyline class="d s0" pathLength="1" style="--dl:.55s" points="60,108 95,92.0 130,108 165,88.8 200,108 235,85.6 270,108 305,85.6 340,108 375,88.8 410,108 445,92.0 480,108"/><rect class="col f" style="--dl:.5s" x="197.5" y="108" width="5" height="132"/><rect class="col f" style="--dl:.5s" x="337.5" y="108" width="5" height="132"/><rect class="col f" style="--dl:.5s" x="477.5" y="108" width="5" height="88"/><g class="f" style="--dl:0.70s"><rect class="rack" x="72" y="124" width="22" height="116"/><line class="rack" x1="72" y1="147" x2="94" y2="147"/><line class="rack" x1="72" y1="170" x2="94" y2="170"/><rect class="pal" x="75" y="155" width="16" height="15"/><line class="rack" x1="72" y1="193" x2="94" y2="193"/><rect class="pal" x="75" y="182" width="16" height="11"/><line class="rack" x1="72" y1="216" x2="94" y2="216"/><rect class="pal" x="75" y="201" width="16" height="15"/><rect class="pal" x="75" y="229" width="16" height="11"/></g><g class="f" style="--dl:0.76s"><rect class="rack" x="98" y="124" width="22" height="116"/><line class="rack" x1="98" y1="147" x2="120" y2="147"/><rect class="pal" x="101" y="132" width="16" height="15"/><line class="rack" x1="98" y1="170" x2="120" y2="170"/><rect class="pal" x="101" y="159" width="16" height="11"/><line class="rack" x1="98" y1="193" x2="120" y2="193"/><line class="rack" x1="98" y1="216" x2="120" y2="216"/><rect class="pal" x="101" y="205" width="16" height="11"/><rect class="pal" x="101" y="225" width="16" height="15"/></g><g class="f" style="--dl:0.82s"><rect class="rack" x="146" y="124" width="22" height="116"/><line class="rack" x1="146" y1="147" x2="168" y2="147"/><rect class="pal" x="149" y="136" width="16" height="11"/><line class="rack" x1="146" y1="170" x2="168" y2="170"/><rect class="pal" x="149" y="155" width="16" height="15"/><line class="rack" x1="146" y1="193" x2="168" y2="193"/><rect class="pal" x="149" y="182" width="16" height="11"/><line class="rack" x1="146" y1="216" x2="168" y2="216"/><rect class="pal" x="149" y="201" width="16" height="15"/></g><g class="f" style="--dl:0.88s"><rect class="rack" x="172" y="124" width="22" height="116"/><line class="rack" x1="172" y1="147" x2="194" y2="147"/><rect class="pal" x="175" y="132" width="16" height="15"/><line class="rack" x1="172" y1="170" x2="194" y2="170"/><line class="rack" x1="172" y1="193" x2="194" y2="193"/><rect class="pal" x="175" y="178" width="16" height="15"/><line class="rack" x1="172" y1="216" x2="194" y2="216"/><rect class="pal" x="175" y="205" width="16" height="11"/><rect class="pal" x="175" y="225" width="16" height="15"/></g><g class="f" style="--dl:0.94s"><rect class="rack" x="212" y="124" width="22" height="116"/><line class="rack" x1="212" y1="147" x2="234" y2="147"/><rect class="pal" x="215" y="136" width="16" height="11"/><line class="rack" x1="212" y1="170" x2="234" y2="170"/><rect class="pal" x="215" y="155" width="16" height="15"/><line class="rack" x1="212" y1="193" x2="234" y2="193"/><rect class="pal" x="215" y="182" width="16" height="11"/><line class="rack" x1="212" y1="216" x2="234" y2="216"/><rect class="pal" x="215" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.00s"><rect class="rack" x="238" y="124" width="22" height="116"/><line class="rack" x1="238" y1="147" x2="260" y2="147"/><line class="rack" x1="238" y1="170" x2="260" y2="170"/><rect class="pal" x="241" y="159" width="16" height="11"/><line class="rack" x1="238" y1="193" x2="260" y2="193"/><rect class="pal" x="241" y="178" width="16" height="15"/><line class="rack" x1="238" y1="216" x2="260" y2="216"/><rect class="pal" x="241" y="205" width="16" height="11"/><rect class="pal" x="241" y="225" width="16" height="15"/></g><g class="f" style="--dl:1.06s"><rect class="rack" x="286" y="124" width="22" height="116"/><line class="rack" x1="286" y1="147" x2="308" y2="147"/><rect class="pal" x="289" y="136" width="16" height="11"/><line class="rack" x1="286" y1="170" x2="308" y2="170"/><rect class="pal" x="289" y="155" width="16" height="15"/><line class="rack" x1="286" y1="193" x2="308" y2="193"/><line class="rack" x1="286" y1="216" x2="308" y2="216"/><rect class="pal" x="289" y="201" width="16" height="15"/><rect class="pal" x="289" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.12s"><rect class="rack" x="312" y="124" width="22" height="116"/><line class="rack" x1="312" y1="147" x2="334" y2="147"/><rect class="pal" x="315" y="132" width="16" height="15"/><line class="rack" x1="312" y1="170" x2="334" y2="170"/><rect class="pal" x="315" y="159" width="16" height="11"/><line class="rack" x1="312" y1="193" x2="334" y2="193"/><rect class="pal" x="315" y="178" width="16" height="15"/><line class="rack" x1="312" y1="216" x2="334" y2="216"/><rect class="pal" x="315" y="205" width="16" height="11"/></g><g class="f" style="--dl:1.18s"><rect class="rack" x="350" y="124" width="22" height="116"/><line class="rack" x1="350" y1="147" x2="372" y2="147"/><rect class="pal" x="353" y="136" width="16" height="11"/><line class="rack" x1="350" y1="170" x2="372" y2="170"/><line class="rack" x1="350" y1="193" x2="372" y2="193"/><rect class="pal" x="353" y="182" width="16" height="11"/><line class="rack" x1="350" y1="216" x2="372" y2="216"/><rect class="pal" x="353" y="201" width="16" height="15"/><rect class="pal" x="353" y="229" width="16" height="11"/></g><g class="f" style="--dl:1.24s"><rect class="rack" x="376" y="124" width="22" height="116"/><line class="rack" x1="376" y1="147" x2="398" y2="147"/><rect class="pal" x="379" y="132" width="16" height="15"/><line class="rack" x1="376" y1="170" x2="398" y2="170"/><rect class="pal" x="379" y="159" width="16" height="11"/><line class="rack" x1="376" y1="193" x2="398" y2="193"/><rect class="pal" x="379" y="178" width="16" height="15"/><line class="rack" x1="376" y1="216" x2="398" y2="216"/><rect class="pal" x="379" y="225" width="16" height="15"/></g><line class="spr f" style="--dl:1.2s" x1="66" y1="114" x2="474" y2="114"/><g class="f" style="--dl:1.3s"><circle class="drop" cx="80" cy="117.5" r="1.7"/><circle class="drop" cx="110" cy="117.5" r="1.7"/><circle class="drop" cx="140" cy="117.5" r="1.7"/><circle class="drop" cx="170" cy="117.5" r="1.7"/><circle class="drop" cx="200" cy="117.5" r="1.7"/><circle class="drop" cx="230" cy="117.5" r="1.7"/><circle class="drop" cx="260" cy="117.5" r="1.7"/><circle class="drop" cx="290" cy="117.5" r="1.7"/><circle class="drop" cx="320" cy="117.5" r="1.7"/><circle class="drop" cx="350" cy="117.5" r="1.7"/><circle class="drop" cx="380" cy="117.5" r="1.7"/><circle class="drop" cx="410" cy="117.5" r="1.7"/><circle class="drop" cx="440" cy="117.5" r="1.7"/></g><g class="f" style="--dl:1.1s"><rect class="mez" x="402" y="150" width="76" height="40"/><rect class="win" x="411" y="160" width="14" height="18"/><rect class="win" x="433" y="160" width="14" height="18"/><rect class="win" x="455" y="160" width="14" height="18"/><line class="s1l" x1="402" y1="190" x2="402" y2="240"/><rect class="pal" x="414" y="224" width="18" height="16"/><rect class="pal" x="438" y="228" width="18" height="12"/><rect class="pal" x="438" y="214" width="18" height="12"/></g><rect class="shelter f" style="--dl:1.2s" x="476" y="194" width="10" height="47"/><g class="truck"><rect class="tr" x="490" y="198" width="112" height="42"/><path class="tr" d="M606 214h16l8 10v16h-24z"/><circle class="wh" cx="512" cy="246" r="6.5"/><circle class="wh" cx="528" cy="246" r="6.5"/><circle class="wh" cx="590" cy="246" r="6.5"/><circle class="wh" cx="620" cy="246" r="6.5"/></g><g class="f" style="--dl:1.5s"><rect class="tr2" x="712" y="212" width="60" height="28"/><path class="tr2" d="M775 220h11l6 8v12h-17z"/><circle class="wh2" cx="726" cy="246" r="6"/><circle class="wh2" cx="760" cy="246" r="6"/><circle class="wh2" cx="784" cy="246" r="6"/></g><line class="d dim" pathLength="1" x1="38" y1="108" x2="38" y2="240" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="33" y1="108" x2="43" y2="108" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="33" y1="240" x2="43" y2="240" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="200" y1="276" x2="340" y2="276" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="200" y1="271" x2="200" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="340" y1="271" x2="340" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="480" y1="276" x2="684" y2="276" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="480" y1="271" x2="480" y2="281" style="--dl:1.0s"/><line class="d dim" pathLength="1" x1="684" y1="271" x2="684" y2="281" style="--dl:1.0s"/><line class="d lead" pathLength="1" x1="200" y1="253" x2="200" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="340" y1="253" x2="340" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="684" y1="253" x2="684" y2="271" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="133" y1="284" x2="133" y2="250" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="130" y1="66" x2="130" y2="113" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="290" y1="66" x2="290" y2="128" style="--dl:1.2s"/><line class="d lead" pathLength="1" x1="440" y1="66" x2="440" y2="150" style="--dl:1.2s"/><g class="f" style="--dl:1.6s"><rect class="pt" x="130" y="247" width="6" height="6"/><rect class="pt" x="287" y="126" width="6" height="6"/></g><g class="f" style="--dl:1.3s" text-anchor="middle"><text class="n" x="-8" y="172">12 m</text><text class="c" x="-8" y="188">Clear</text><text class="c" x="-8" y="200">height</text></g><g class="f" style="--dl:1.4s" text-anchor="middle"><text class="n" x="133" y="300">8 t/m²</text><text class="c" x="133" y="316">Floor load</text></g><g class="f" style="--dl:1.5s" text-anchor="middle"><text class="n" x="270" y="300">12 × 24 m</text><text class="c" x="270" y="316">Column grid</text></g><g class="f" style="--dl:1.6s" text-anchor="middle"><text class="n" x="582" y="300">35 m</text><text class="c" x="582" y="316">Truck court</text></g><g class="f" style="--dl:1.7s" text-anchor="middle"><text class="n" x="748" y="300">47</text><text class="c" x="748" y="316">Truck parking bays</text></g><g class="f" style="--dl:1.5s" text-anchor="middle"><text class="n" x="130" y="44">ESFR</text><text class="c" x="130" y="60">Sprinklers to NFPA</text></g><g class="f" style="--dl:1.6s" text-anchor="middle"><text class="n" x="290" y="44">+16…+25 °C</text><text class="c" x="290" y="60">Ambient storage</text></g><g class="f" style="--dl:1.7s" text-anchor="middle"><text class="n" x="440" y="44">up to 500 m²</text><text class="c" x="440" y="60">Offices per unit</text></g></svg></div>
+  <div class="grid4">
+    <div class="on-draw"><b>12<i>M</i></b><span class="mono">Clear height</span></div>
+    <div class="on-draw"><b>8<i>T/M²</i></b><span class="mono">Floor load</span></div>
+    <div class="on-draw"><b>12 × 24<i>M</i></b><span class="mono">Column grid</span></div>
+    <div><b>102</b><span class="mono">Dock doors</span></div>
+    <div class="on-draw"><b>35<i>M</i></b><span class="mono">Truck court</span></div>
+    <div class="on-draw"><b>47</b><span class="mono">Truck parking bays</span></div>
+    <div class="on-draw"><b>up to 500<i>M²</i></b><span class="mono">Offices per unit</span></div>
+    <div><b>7.10<i>HA</i></b><span class="mono">Site</span></div>
+    <div class="on-draw"><b>+16…+25<i>°C</i></b><span class="mono">Ambient storage</span></div>
+    <div><b>+2…+6<i>°C</i></b><span class="mono">Chilled, on request</span></div>
+    <div><b>−25<i>°C</i></b><span class="mono">Frozen, on request</span></div>
+    <div class="on-draw"><b>ESFR</b><span class="mono">Sprinklers to NFPA</span></div>
+  </div>
+  </div>
+  <p class="draw__note mono rv">Schematic section, not to scale</p>
+  <div class="green rv">
+    <div>
+      <span class="mono">Green standard</span>
+      <h3>EDGE Advanced and BREEAM Good</h3>
+      <p>Dual certification lowers tenant costs by $1.5–2.0 per m² per year. Proven at the Korzinka distribution centre (49,684&nbsp;m²).</p>
+    </div>
+    <div class="green__n">
+      <div><b>−41%</b><span>Energy</span></div>
+      <div><b>−30%</b><span>Water</span></div>
+      <div><b>−31%</b><span>Carbon</span></div>
+      <div><b>2,300+</b><span>Tonnes of CO₂ a year</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="views">
+  <div class="eye rv">Renderings</div>
+  <h2 class="h2 rv">How it<span>will look</span></h2>
+  <div class="strip rv">
+    <button class="shot" type="button" data-full="../img/entry.webp"><img src="../img/entry.webp" alt="The main entrance and office block at dusk" loading="lazy" width="1680" height="898"><div><b>Main entrance</b><span>Office block and facade</span></div></button>
+    <button class="shot" type="button" data-full="../img/docks.webp"><img src="../img/docks.webp" alt="Trucks at the dock doors" loading="lazy" width="1716" height="916"><div><b>Loading docks</b><span>102 docks, 35 m truck court</span></div></button>
+    <button class="shot" type="button" data-full="../img/aerial.webp"><img src="../img/aerial.webp" alt="The complex from the air" loading="lazy" width="1716" height="916"><div><b>From the air</b><span>7.10 ha site</span></div></button>
+  </div>
+  <p class="strip__note mono rv">Click an image to view it full size · developer’s renderings</p>
+</section>
+
+<section class="sec sec--paper" id="location">
+  <div class="loc__head">
+    <div>
+      <div class="eye rv">Location</div>
+      <h2 class="h2 rv">Direct access<span>to the M39 ring road</span></h2>
+    </div>
+    <p class="lead rv" style="--dl:.1s">Tashkent’s main transport artery. The park’s infrastructure is fully connected: power from a dedicated substation, water, sewerage and telecoms.</p>
+  </div>
+  <div class="ruler" id="ruler"><u></u><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><span class="run" aria-hidden="true"><svg viewBox="0 0 34 18" fill="currentColor"><rect x="0" y="1" width="21" height="11"/><path d="M23 4h6l4 4v4H23z"/><circle cx="6" cy="14.6" r="2.6"/><circle cx="15" cy="14.6" r="2.6"/><circle cx="28" cy="14.6" r="2.6"/></svg></span></div>
+  <div class="grid5">
+    <div class="rv" style="--n:0"><b>0<i>KM</i></b><span>Tashkent Ring Road M39</span><small>direct exit from the site</small></div>
+    <div class="rv" style="--dl:.06s;--n:1"><b><em data-to="8" style="font-style:normal">8</em><i>KM</i></b><span>Dry port and customs terminal</span></div>
+    <div class="rv" style="--dl:.12s;--n:2"><b><em data-to="12" style="font-style:normal">12</em><i>KM</i></b><span>City centre</span></div>
+    <div class="rv" style="--dl:.18s;--n:3"><b><em data-to="15" style="font-style:normal">15</em><i>KM</i></b><span>Rail freight hub</span><small>Trans-Caspian and Trans-Siberian corridors</small></div>
+    <div class="rv" style="--dl:.24s;--n:4"><b><em data-to="18" style="font-style:normal">18</em><i>KM</i></b><span>International airport</span><small>about 25 minutes</small></div>
+  </div>
+</section>
+
+<section class="sec terms" id="terms">
+  <div class="terms__in">
+    <div>
+      <div class="eye rv">Terms</div>
+      <h2 class="h2 rv">All terms<span>on one screen</span></h2>
+      <p class="lead rv" style="--dl:.1s">Triple-net (NNN) structure: the tenant pays base rent and a service charge. Taxes, insurance and maintenance are paid separately. Currency: US dollars.</p>
+      <a class="btn btn--dark rv" style="--dl:.15s" href="#calc">Calculate for your area</a>
+    </div>
+    <dl class="rv" style="--dl:.1s">
+      <div class="big"><dt>Base rent per m² per year, first year</dt><dd>$132</dd></div>
+      <div><dt>Service charge (OPEX) per m² per year</dt><dd>$15</dd></div>
+      <div><dt>Lease term</dt><dd>10 years</dd></div>
+      <div><dt>Indexation</dt><dd>3% per year</dd></div>
+      <div><dt>Lease structure</dt><dd>Triple-net</dd></div>
+      <div><dt>Deposit</dt><dd>12 months</dd></div>
+      <div><dt>Rent-free period</dt><dd>During fit-out</dd></div>
+      <div><dt>Handover</dt><dd>October 2027</dd></div>
+    </dl>
+  </div>
+  <div class="plan-h rv"><h3>Four steps to the keys</h3><span class="mono" style="color:var(--steel)">Project schedule</span></div>
+  <div class="steps rv" id="steps">
+    <div data-at="2026-06-01" style="--i:0"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l d" pathLength="1" d="M26 8H118L132 22V64H26Z"/><path class="l t d" pathLength="1" d="M118 8V22H132"/><path class="l t d" pathLength="1" d="M38 20H66V36H38Z M70 20H108V36H70Z M34 40H66V54H34Z M70 40H108V54H70Z"/><path class="l t d" pathLength="1" d="M34 60H108 M34 57V63 M108 57V63"/><path class="ac fd" d="M139 30l7 7-17 17-9 2 2-9z"/></svg><i class="bar"></i><b>June 2026</b><span>Design</span><em>Stage per schedule</em></div>
+    <div data-at="2026-10-01" style="--i:1"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="l d" pathLength="1" d="M30 70V34 M63 70V34 M96 70V34 M129 70V34"/><path class="l t d" pathLength="1" d="M30 34H129"/><path class="l d" pathLength="1" d="M26 30L79.5 22 133 30"/><path class="l t d" pathLength="1" d="M30 34L46.5 27 63 34 79.5 22.5 96 34 112.5 27 129 34"/><rect class="ac fd" x="25" y="66" width="10" height="5"/><rect class="ac fd" x="58" y="66" width="10" height="5"/><rect class="ac fd" x="91" y="66" width="10" height="5"/><rect class="ac fd" x="124" y="66" width="10" height="5"/></svg><i class="bar"></i><b>October 2026</b><span>Construction</span><em>Stage per schedule</em></div>
+    <div data-at="2027-06-01" style="--i:2"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M30 70V30L79.5 22 129 30V70Z"/><path class="l d" pathLength="1" d="M30 70V30L79.5 22 129 30V70"/><path class="l t d" pathLength="1" d="M40 38H54V70H40Z M40 46H54 M40 54H54 M40 62H54 M60 38H74V70H60Z M60 46H74 M60 54H74 M60 62H74 M80 38H94V70H80Z M80 46H94 M80 54H94 M80 62H94"/><rect class="ac fd" x="43" y="63" width="8" height="6"/><rect class="ac fd" x="63" y="55" width="8" height="6"/><rect class="ac fd" x="83" y="63" width="8" height="6"/><rect class="ac fd" x="83" y="47" width="8" height="6"/><rect class="ac fd" x="43" y="47" width="8" height="6"/><rect class="ac fd" x="104" y="58" width="14" height="12"/></svg><i class="bar"></i><b>June 2027</b><span>Access for fit-out</span><em>Stage per schedule</em></div>
+    <div data-at="2027-10-01" style="--i:3"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M18 70V30L62 22 106 30V70Z"/><path class="l d" pathLength="1" d="M18 70V30L62 22 106 30V70"/><path class="l t d" pathLength="1" d="M18 40H106"/><path class="l t d" pathLength="1" d="M28 70V52H40V70 M48 70V52H60V70 M68 70V52H80V70 M88 70V52H100V70"/><g class="fd"><rect class="ac" x="110" y="48" width="28" height="17"/><path class="ac" d="M140 54h7l5 5v6h-12z"/><circle class="wh" cx="118" cy="67" r="3.4"/><circle class="wh" cx="131" cy="67" r="3.4"/><circle class="wh" cx="146" cy="67" r="3.4"/></g></svg><i class="bar"></i><b>October 2027</b><span>Completion and handover</span><em>Stage per schedule</em></div>
+  </div>
+</section>
+
+<section class="sec sec--paper">
+  <div class="eye rv">Tenants</div>
+  <h2 class="h2 rv">Who the property<span>is designed for</span></h2>
+  <div class="grid3">
+    <div class="rv"><b>Pharmaceuticals</b><span>Units ready for GDP licensing: cold and ambient storage, ESFR, access control.</span></div>
+    <div class="rv" style="--dl:.06s"><b>Cold chain</b><span>Separate chilled and frozen units with independent climate control.</span></div>
+    <div class="rv" style="--dl:.12s"><b>FMCG and retail</b><span>Divisible units and a 35 m truck court for fast cross-docking.</span></div>
+    <div class="rv"><b>E-commerce</b><span>A 12 m clear height for high-bay storage. The ring road is next door, which suits city deliveries.</span></div>
+    <div class="rv" style="--dl:.06s"><b>3PL operators</b><span>Units can be divided between several clients. Floors are ready for WMS integration.</span></div>
+    <div class="rv" style="--dl:.12s"><b>Light industry</b><span>A production complex next door: 8.6 m height, premises from 540 m².</span></div>
+  </div>
+</section>
+
+<section class="sec sec--navy" id="ask">
+  <div class="ask__in">
+    <div>
+      <div class="eye rv">Contacts</div>
+      <h2 class="h2 rv">Let’s discuss<span>your space</span></h2>
+      <p class="lead rv" style="--dl:.08s">The property is handled by IBC Global consultants. We will share the layouts, answer your questions and prepare a proposal.</p>
+      <div class="people rv" style="--dl:.1s">
+        <a href="https://card.ibc-global.asia/assel/"><img src="../img/asel.jpg" alt="" width="56" height="56"><span><b>Assel Zhunussova</b><span>Business Development Director, IBC Global Central Asia</span></span><span class="qr"><img src="../img/qr-assel.svg" alt="QR code for Assel Zhunussova’s business card" width="72" height="72" loading="lazy"><u>Business card</u></span></a>
+        <a href="https://card.ibc-global.asia/roman/"><img src="../img/roman.jpg" alt="" width="56" height="56"><span><b>Roman Pak</b><span>Director, IBC Global Central Asia</span></span><span class="qr"><img src="../img/qr-roman.svg" alt="QR code for Roman Pak’s business card" width="72" height="72" loading="lazy"><u>Business card</u></span></a>
+      </div>
+      <div class="deck rv" style="--dl:.15s">
+        <button class="btn btn--line" type="button" data-ask="deck">Get the brochure</button>
+        <span class="mono">Sent by email</span>
+      </div>
+    </div>
+    <form class="form rv" style="--dl:.1s" id="form" novalidate>
+      <h3 id="f-title">Request a proposal</h3>
+      <p id="f-text">We reply within one working day.</p>
+      <div class="pick" id="pick"></div>
+      <div class="form__grid">
+        <div class="fld"><label for="f-name">Your name</label><input id="f-name" autocomplete="name"></div>
+        <div class="fld"><label for="f-co">Company</label><input id="f-co" autocomplete="organization"></div>
+        <div class="fld"><label for="f-contact">Phone or email</label><input id="f-contact" autocomplete="email"></div>
+        <div class="fld"><label for="f-note">Additional details</label><input id="f-note" placeholder="For example, move-in date"></div>
+      </div>
+      <label class="agree"><input type="checkbox" id="f-agree"><span>I consent to the processing of my personal data</span></label>
+      <div class="form__go">
+        <button class="btn btn--wine" type="submit" id="f-btn">Send request</button>
+        <div class="form__ok" role="status">This is a prototype: the request has not been sent anywhere.</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div><img src="../img/logo-white.svg" alt="IBC Global" width="170" height="24"><p>Warehouse and industrial real estate consultant in Central Asia.</p></div>
+    <div><b>Tashkent Logistics Hub</b><a href="#calc">Units and rent calculator</a><a href="#spec">Specifications</a><a href="#views">Renderings</a><a href="#location">Location</a><a href="#terms">Terms and schedule</a></div>
+    <div><b>Get in touch</b><a href="#ask" data-ask="offer">Request a proposal</a><a href="#ask" data-ask="deck">Get the brochure</a><a href="https://ibc-global.asia/">ibc-global.asia</a></div>
+  </div>
+  <div class="foot__end">Developer: Greystar Real Estate Partners. The information on this page does not constitute a public offer. The unit plan is schematic. Images of the complex are the developer’s renderings.</div>
+</footer>
+
+<dialog class="lb" id="lb"><img alt="" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script id="i18n">
+window.TLH_TEXT = {
+  sep: ',', sqm: 'm²', m: 'm',
+  scheme: 'Plan: the four units of the complex',
+  blockWord: 'Unit',
+  blockTitle: function (id, area, docks, w, d) { return 'Unit ' + id + ': ' + area + ' m², ' + docks + ' dock doors, ' + w + ' × ' + d + ' m'; },
+  docks: function (n) { return n + (n === 1 ? ' dock' : ' docks'); },
+  blocks: function (names, many) { return (many ? 'units ' : 'unit ') + names; },
+  Blocks: function (names, many) { return (many ? 'Units ' : 'Unit ') + names; },
+  our: 'Our pick', yours: 'Your selection',
+  rent: function (sum, from) { return (from ? 'from ' : '') + sum; },
+  mode: {
+    dry: ['ambient', 'Ambient storage: +16…+25 °C.'],
+    cool: ['chilled', 'Chilled mode, +2…+6 °C: the unit is fitted out on request and the rent is quoted separately.'],
+    frozen: ['frozen', 'Frozen mode, −25 °C, with independent climate control; the rent is quoted separately.']
+  },
+  pick: function (title, area, docks, mode, rent) { return '<span class="mono">Your estimate will be sent with the request</span><b>' + title + ', ' + area + ' m²</b>, ' + docks + ', ' + mode + ' storage. Indicative rent: <b>' + rent + ' per month</b> including the service charge.'; },
+  nopick: '<span class="mono">No estimate yet</span><a href="#calc" style="color:inherit;font-weight:600">Build a warehouse and calculate the rent</a>',
+  toastPick: 'Select units first', toastCopied: 'Link to the estimate copied', toastBar: 'The link to the estimate is in the address bar',
+  ask: {
+    offer: ['Request a proposal', 'We reply within one working day.', 'Send request'],
+    calc: ['Send this estimate', 'A consultant will check the estimate, confirm the terms and send exact figures.', 'Send estimate'],
+    deck: ['Get the brochure', 'We will send the property brochure: layouts, specifications, lease terms and timeline.', 'Get the brochure']
+  }
+};
+</script>
+<script src="../plan.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); }, T = window.TLH_TEXT;
+  var top = $('top');
+  function onScroll() { top.classList.toggle('is-solid', (window.scrollY || 0) > 60); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  
+  (function () {
+    var mk = $('mk'), lab = $('mk-label'), line = $('mk-line'), plate = document.querySelector('.plate');
+    function rects() {
+      var out = [].map.call(document.querySelectorAll('.hero__cta .btn'), function (n) { return n.getBoundingClientRect(); });
+      [].forEach.call(document.querySelectorAll('.hero .eye, .hero h1, .hero__lead'), function (n) {
+        var w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT), t, r = document.createRange();
+        while ((t = w.nextNode())) { r.selectNodeContents(t); [].push.apply(out, r.getClientRects()); }
+      });
+      return out;
+    }
+    function hit(a, b, m) { return !(a.right + m < b.left || a.left - m > b.right || a.bottom + m < b.top || a.top - m > b.bottom); }
+    function busy() {
+      var r = lab.getBoundingClientRect();
+      if (r.width === 0) return false;
+      return hit(r, plate.getBoundingClientRect(), 30) || rects().some(function (q) { return hit(r, q, 24); });
+    }
+    function crossed() {
+      var r = line.getBoundingClientRect(), all = rects().concat([plate.getBoundingClientRect()]);
+      return r.height > 0 && all.some(function (q) { return hit(r, q, 12); });
+    }
+    function place() {
+      mk.style.display = ''; lab.removeAttribute('transform'); line.setAttribute('y2', 400);
+      if (crossed()) { mk.style.display = 'none'; return; }
+      if (!busy()) return;
+      lab.setAttribute('transform', 'translate(-330 -64)'); line.setAttribute('y2', 336);
+      if (busy()) mk.style.display = 'none';
+    }
+    var tm; window.addEventListener('resize', function () { clearTimeout(tm); tm = setTimeout(place, 150); });
+    place(); setTimeout(place, 1900);
+  })();
+  
+  var P = window.TLHPlan, B = P.BLOCKS, fmt = P.fmt, range = $('area');
+  var st = { picked: [], mode: 'dry', per: 'month', auto: true };
+  var MODE = T.mode, dk = T.docks;
+  var plan = P.create($('plan'), toggle), chips = {};
+  B.forEach(function (b) {
+    var c = document.createElement('button'); c.type = 'button'; c.setAttribute('aria-pressed', 'false');
+    c.innerHTML = '<b>' + T.Blocks(b.id, false) + '</b><span>' + fmt(b.area) + ' ' + T.sqm + ' · ' + dk(b.docks) + '</span>';
+    c.addEventListener('click', function () { toggle(b.id); });
+    $('chips').appendChild(c); chips[b.id] = c;
+  });
+  var combos = [];
+  for (var m = 1; m < 16; m++) {
+    var ids = [], area = 0;
+    B.forEach(function (b, i) { if (m & (1 << i)) { ids.push(b.id); area += b.area; } });
+    var key = ids.join('');
+    if (key !== 'AD' && key !== 'BC') combos.push({ ids: ids, area: area });
+  }
+  combos.sort(function (a, b) { return a.area - b.area || a.ids.length - b.ids.length; });
+  function fit(need) { for (var i = 0; i < combos.length; i++) if (combos[i].area >= need) return combos[i].ids.slice(); return ['A', 'B', 'C', 'D']; }
+  function sum(k) { return B.reduce(function (s, b) { return s + (st.picked.indexOf(b.id) !== -1 ? b[k] : 0); }, 0); }
+  function render() {
+    var need = +range.value, area = sum('area'), docks = sum('docks'), names = st.picked.slice().sort().join(' + ');
+    var month = Math.round(area * 147 / 12), rent = st.per === 'month' ? month : area * 147, from = st.mode !== 'dry';
+    var many = st.picked.length > 1;
+    range.style.setProperty('--p', ((need - range.min) / (range.max - range.min) * 100) + '%');
+    $('need').innerHTML = fmt(need) + '<small>' + T.sqm + '</small>';
+    plan.setActive(st.picked);
+    for (var k in chips) chips[k].setAttribute('aria-pressed', st.picked.indexOf(k) !== -1);
+    $('r-label').textContent = st.auto ? T.our : T.yours;
+    $('r-line').hidden = !st.picked.length; $('r-none').hidden = !!st.picked.length;
+    $('r-names').textContent = T.blocks(names, many);
+    $('r-area').textContent = fmt(area);
+    $('r-docks').textContent = dk(docks);
+    $('r-rent').textContent = T.rent('$' + fmt(rent), from);
+    $('r-mode').textContent = MODE[st.mode][1];
+    $('pick').innerHTML = st.picked.length
+      ? T.pick(T.Blocks(names, many), fmt(area), dk(docks), MODE[st.mode][0], T.rent('$' + fmt(month), from))
+      : T.nopick;
+  }
+  function toggle(id) {
+    var i = st.picked.indexOf(id); if (i === -1) st.picked.push(id); else st.picked.splice(i, 1);
+    st.auto = false;
+    var a = sum('area'); if (a) range.value = Math.min(+range.max, Math.max(+range.min, a));
+    render();
+  }
+  function setSeg(id, v) { [].forEach.call($(id).querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', x.dataset.v === v); }); }
+  function seg(id, key, after) {
+    $(id).addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      setSeg(id, b.dataset.v); if (key) st[key] = b.dataset.v; if (after) after(b.dataset.v); render();
+    });
+  }
+  seg('mode', 'mode'); seg('per', 'per'); seg('view', null, function (v) { plan.setView(v); });
+  range.addEventListener('input', function () { st.picked = fit(+range.value); st.auto = true; render(); });
+  
+  function readHash() {
+    var h = location.hash; if (h.indexOf('#v=') !== 0) return false;
+    var q = {}; h.slice(1).split('&').forEach(function (s) { var p = s.split('='); q[p[0]] = p[1] || ''; });
+    var ids = B.map(function (b) { return b.id; }).filter(function (id) { return q.v.indexOf(id) !== -1; });
+    if (!ids.length) return false;
+    st.picked = ids; st.auto = false;
+    if (MODE[q.m]) { st.mode = q.m; setSeg('mode', q.m); }
+    if (q.p === 'year' || q.p === 'month') { st.per = q.p; setSeg('per', q.p); }
+    range.value = Math.min(+range.max, Math.max(+range.min, sum('area')));
+    return true;
+  }
+  var toastT;
+  function toast(s) { var t = $('toast'); t.textContent = s; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('on'); }, 2600); }
+  $('share').addEventListener('click', function () {
+    if (!st.picked.length) { toast(T.toastPick); return; }
+    var hash = '#v=' + st.picked.slice().sort().join('') + '&m=' + st.mode + '&p=' + st.per, url = location.href.split('#')[0] + hash;
+    try { history.replaceState(null, '', hash); } catch (e) {}
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { toast(T.toastCopied); }, function () { toast(T.toastBar); });
+    else toast(T.toastBar);
+  });
+  if (readHash()) { render(); setTimeout(function () { $('calc').scrollIntoView(); }, 60); } else { st.picked = fit(+range.value); render(); }
+  
+  var ASK = T.ask;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-ask]'); if (!a) return;
+    var t = ASK[a.dataset.ask]; $('f-title').textContent = t[0]; $('f-text').textContent = t[1]; $('f-btn').textContent = t[2];
+    if (a.tagName === 'BUTTON') $('form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+  $('form').addEventListener('submit', function (e) { e.preventDefault(); this.classList.add('is-sent'); });
+  
+  [].forEach.call(document.querySelectorAll('.lang a'), function (a) {
+    a.addEventListener('click', function () { if (location.hash.indexOf('#v=') === 0) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+  });
+  
+  var lb = $('lb');
+  [].forEach.call(document.querySelectorAll('.shot'), function (s) {
+    s.addEventListener('click', function () { $('lb-img').src = s.dataset.full; $('lb-img').alt = s.querySelector('img').alt; if (lb.showModal) lb.showModal(); });
+  });
+  lb.addEventListener('click', function () { lb.close(); });
+  
+  var steps = [].slice.call($('steps').children), now = Date.now(), last = -1;
+  steps.forEach(function (d, i) { if (new Date(d.dataset.at + 'T00:00:00').getTime() <= now) { d.classList.add('done'); last = i; } });
+  if (last > -1 && last < steps.length - 1) steps[last].classList.add('now');
+  
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el) {
+    var to = +el.dataset.to, t0 = null;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 1300); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (!still) [].forEach.call(e.target.querySelectorAll('[data-to]'), count);
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  [].forEach.call(document.querySelectorAll('.rv, .ruler'), function (n) { io.observe(n); });
+})();
+</script>
+</body>
+</html>

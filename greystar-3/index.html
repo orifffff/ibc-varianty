@@ -41,12 +41,14 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 .rv.in { opacity: 1; transform: none; }
 
 /* шапка */
-.top { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--top); padding: 0 var(--px); display: flex; align-items: center; gap: 22px; color: #fff; transition: background-color .3s ease, color .3s ease, box-shadow .3s ease; }
+.top { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--top); padding: 0 var(--px); display: flex; align-items: center; gap: 16px; color: #fff; transition: background-color .3s ease, color .3s ease, box-shadow .3s ease; }
 .top__logo { position: relative; flex: none; width: 150px; height: 22px; } .top__logo img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .3s ease; } .top__logo .c { opacity: 0; }
 .top__name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; opacity: 0.9; }
-.top nav { margin-left: auto; display: flex; gap: clamp(16px, 2.2vw, 32px); }
+.top nav { margin-left: auto; display: flex; gap: clamp(14px, 1.7vw, 28px); }
 .top nav a { font-size: 14.5px; text-decoration: none; white-space: nowrap; opacity: 0.86; transition: opacity .25s; } .top nav a:hover { opacity: 1; }
-.top .btn { background: var(--wine); color: #fff; margin-left: 8px; } .top .btn:hover { background: #8a0a12; }
+.lang { display: flex; margin-left: 4px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; }
+.lang a { padding: 6px 6px; text-decoration: none; opacity: 0.6; transition: opacity .25s; } .lang a:hover { opacity: 1; } .lang a.on { opacity: 1; box-shadow: inset 0 -1px 0 currentColor; }
+.top .btn { background: var(--wine); color: #fff; margin-left: 4px; } .top .btn .sm { display: none; } .top .btn:hover { background: #8a0a12; }
 .top.is-solid { background: #fff; color: var(--ink); box-shadow: 0 1px 0 var(--line); }
 .top.is-solid .top__logo .w { opacity: 0; } .top.is-solid .top__logo .c { opacity: 1; }
 
@@ -255,7 +257,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 }
 @media (max-width: 1260px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 1180px) {
-  .top nav { display: none; } .top .btn { margin-left: auto; }
+  .top nav { display: none; } .lang { margin-left: auto; }
 }
 @media (max-width: 1000px) {
   .why3 { grid-template-columns: 1fr; gap: 44px; } .terms__in, .ask__in, .green, .loc__head { grid-template-columns: 1fr; }
@@ -274,7 +276,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 }
 @media (max-width: 760px) {
   body { font-size: 16px; }
-  .top { gap: 14px; } .top__name { display: none; } .top__logo { width: 132px; height: 19px; }
+  .top { gap: 10px; } .top__name { display: none; } .top__logo { width: 118px; height: 17px; } .top .btn .lg { display: none; } .top .btn .sm { display: inline; } .top .btn { padding: 0 14px; }
   .hero__in { padding-top: calc(var(--top) + 60px); gap: 28px; }
   .hero__media img { object-position: 42% 50%; } .hero__media svg { display: none; }
   .hero__shade { background: linear-gradient(0deg, rgba(5,12,60,0.97) 0%, rgba(5,12,60,0.78) 38%, rgba(5,12,60,0.34) 66%, rgba(5,12,60,0.2) 100%); }
@@ -309,7 +311,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     <a href="#location">Место</a>
     <a href="#terms">Условия</a>
   </nav>
-  <a class="btn btn--sm" href="#ask" data-ask="offer">Запросить предложение</a>
+  <!--lang--><div class="lang" role="group" aria-label="Язык"><a class="on" href="./" aria-current="true">RU</a><a href="en/">EN</a><a href="uz/">UZ</a></div><!--/lang-->
+  <a class="btn btn--sm" href="#ask" data-ask="offer"><span class="lg">Запросить предложение</span><span class="sm">Запрос</span></a>
 </header>
 
 <section class="hero">
@@ -561,10 +564,37 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 <dialog class="lb" id="lb"><img alt="" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></dialog>
 <div class="toast" id="toast" role="status"></div>
 
+<script id="i18n">
+/* Тексты, которые подставляет скрипт. При сборке английской и узбекской страниц этот блок заменяется целиком. */
+window.TLH_TEXT = {
+  sep: ' ', sqm: 'м²', m: 'м',
+  scheme: 'Схема: четыре блока комплекса',
+  blockWord: 'Блок',
+  blockTitle: function (id, area, docks, w, d) { return 'Блок ' + id + ': ' + area + ' м², доков: ' + docks + ', ' + w + ' × ' + d + ' м'; },
+  docks: function (n) { var a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? 'док' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'дока' : 'доков'); },
+  blocks: function (names, many) { return (many ? 'блоки ' : 'блок ') + names; },
+  Blocks: function (names, many) { return (many ? 'Блоки ' : 'Блок ') + names; },
+  our: 'Наш подбор', yours: 'Ваш выбор',
+  rent: function (sum, from) { return (from ? 'от ' : '') + sum; },
+  mode: {
+    dry: ['сухой склад', 'Сухой склад: +16…+25 °C.'],
+    cool: ['холодильный', 'Холодильный режим +2…+6 °C: блок оборудуется по запросу, ставка считается отдельно.'],
+    frozen: ['морозильный', 'Морозильный режим −25 °C с независимым климат-контролем, ставка считается отдельно.']
+  },
+  pick: function (title, area, docks, mode, rent) { return '<span class="mono">Ваш расчет уйдет вместе с запросом</span><b>' + title + ', ' + area + ' м²</b>, ' + docks + ', режим: ' + mode + '. Предварительно <b>' + rent + ' в месяц</b> с сервисным сбором.'; },
+  nopick: '<span class="mono">Расчета пока нет</span><a href="#calc" style="color:inherit;font-weight:600">Собрать склад и посчитать аренду</a>',
+  toastPick: 'Сначала выберите блоки', toastCopied: 'Ссылка на расчет скопирована', toastBar: 'Ссылка на расчет в адресной строке',
+  ask: {
+    offer: ['Запросить предложение', 'Ответим в течение рабочего дня.', 'Отправить запрос'],
+    calc: ['Отправить расчет', 'Консультант проверит расчет, уточнит условия и пришлет точные цифры.', 'Отправить расчет'],
+    deck: ['Получить презентацию', 'Пришлем презентацию объекта: планировки, характеристики, условия аренды и сроки.', 'Получить презентацию']
+  }
+};
+</script>
 <script src="plan.js"></script>
 <script>
 (function () {
-  var $ = function (id) { return document.getElementById(id); };
+  var $ = function (id) { return document.getElementById(id); }, T = window.TLH_TEXT;
   var top = $('top');
   function onScroll() { top.classList.toggle('is-solid', (window.scrollY || 0) > 60); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
@@ -606,16 +636,11 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   /* блоки и расчет */
   var P = window.TLHPlan, B = P.BLOCKS, fmt = P.fmt, range = $('area');
   var st = { picked: [], mode: 'dry', per: 'month', auto: true };
-  var MODE = {
-    dry: ['сухой склад', 'Сухой склад: +16…+25 °C.'],
-    cool: ['холодильный', 'Холодильный режим +2…+6 °C: блок оборудуется по запросу, ставка считается отдельно.'],
-    frozen: ['морозильный', 'Морозильный режим −25 °C с независимым климат-контролем, ставка считается отдельно.']
-  };
-  function dk(n) { var a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? 'док' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'дока' : 'доков'); }
+  var MODE = T.mode, dk = T.docks;
   var plan = P.create($('plan'), toggle), chips = {};
   B.forEach(function (b) {
     var c = document.createElement('button'); c.type = 'button'; c.setAttribute('aria-pressed', 'false');
-    c.innerHTML = '<b>Блок ' + b.id + '</b><span>' + fmt(b.area) + ' м² · ' + dk(b.docks) + '</span>';
+    c.innerHTML = '<b>' + T.Blocks(b.id, false) + '</b><span>' + fmt(b.area) + ' ' + T.sqm + ' · ' + dk(b.docks) + '</span>';
     c.addEventListener('click', function () { toggle(b.id); });
     $('chips').appendChild(c); chips[b.id] = c;
   });
@@ -632,22 +657,22 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   function sum(k) { return B.reduce(function (s, b) { return s + (st.picked.indexOf(b.id) !== -1 ? b[k] : 0); }, 0); }
   function render() {
     var need = +range.value, area = sum('area'), docks = sum('docks'), names = st.picked.slice().sort().join(' + ');
-    var month = Math.round(area * 147 / 12), rent = st.per === 'month' ? month : area * 147, from = st.mode === 'dry' ? '' : 'от ';
-    var title = st.picked.length ? (st.picked.length > 1 ? 'Блоки ' : 'Блок ') + names : '';
+    var month = Math.round(area * 147 / 12), rent = st.per === 'month' ? month : area * 147, from = st.mode !== 'dry';
+    var many = st.picked.length > 1;
     range.style.setProperty('--p', ((need - range.min) / (range.max - range.min) * 100) + '%');
-    $('need').innerHTML = fmt(need) + '<small>м²</small>';
+    $('need').innerHTML = fmt(need) + '<small>' + T.sqm + '</small>';
     plan.setActive(st.picked);
     for (var k in chips) chips[k].setAttribute('aria-pressed', st.picked.indexOf(k) !== -1);
-    $('r-label').textContent = st.auto ? 'Наш подбор' : 'Ваш выбор';
+    $('r-label').textContent = st.auto ? T.our : T.yours;
     $('r-line').hidden = !st.picked.length; $('r-none').hidden = !!st.picked.length;
-    $('r-names').textContent = (st.picked.length > 1 ? 'блоки ' : 'блок ') + names;
+    $('r-names').textContent = T.blocks(names, many);
     $('r-area').textContent = fmt(area);
     $('r-docks').textContent = dk(docks);
-    $('r-rent').textContent = from + '$' + fmt(rent);
+    $('r-rent').textContent = T.rent('$' + fmt(rent), from);
     $('r-mode').textContent = MODE[st.mode][1];
     $('pick').innerHTML = st.picked.length
-      ? '<span class="mono">Ваш расчет уйдет вместе с запросом</span><b>' + title + ', ' + fmt(area) + ' м²</b>, ' + dk(docks) + ', режим: ' + MODE[st.mode][0] + '. Предварительно <b>' + from + '$' + fmt(month) + ' в месяц</b> с сервисным сбором.'
-      : '<span class="mono">Расчета пока нет</span><a href="#calc" style="color:inherit;font-weight:600">Собрать склад и посчитать аренду</a>';
+      ? T.pick(T.Blocks(names, many), fmt(area), dk(docks), MODE[st.mode][0], T.rent('$' + fmt(month), from))
+      : T.nopick;
   }
   function toggle(id) {
     var i = st.picked.indexOf(id); if (i === -1) st.picked.push(id); else st.picked.splice(i, 1);
@@ -680,26 +705,27 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   var toastT;
   function toast(s) { var t = $('toast'); t.textContent = s; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('on'); }, 2600); }
   $('share').addEventListener('click', function () {
-    if (!st.picked.length) { toast('Сначала выберите блоки'); return; }
+    if (!st.picked.length) { toast(T.toastPick); return; }
     var hash = '#v=' + st.picked.slice().sort().join('') + '&m=' + st.mode + '&p=' + st.per, url = location.href.split('#')[0] + hash;
     try { history.replaceState(null, '', hash); } catch (e) {}
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { toast('Ссылка на расчет скопирована'); }, function () { toast('Ссылка на расчет в адресной строке'); });
-    else toast('Ссылка на расчет в адресной строке');
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { toast(T.toastCopied); }, function () { toast(T.toastBar); });
+    else toast(T.toastBar);
   });
   if (readHash()) { render(); setTimeout(function () { $('calc').scrollIntoView(); }, 60); } else { st.picked = fit(+range.value); render(); }
 
   /* запрос */
-  var ASK = {
-    offer: ['Запросить предложение', 'Ответим в течение рабочего дня.', 'Отправить запрос'],
-    calc: ['Отправить расчет', 'Консультант проверит расчет, уточнит условия и пришлет точные цифры.', 'Отправить расчет'],
-    deck: ['Получить презентацию', 'Пришлем презентацию объекта: планировки, характеристики, условия аренды и сроки.', 'Получить презентацию']
-  };
+  var ASK = T.ask;
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-ask]'); if (!a) return;
     var t = ASK[a.dataset.ask]; $('f-title').textContent = t[0]; $('f-text').textContent = t[1]; $('f-btn').textContent = t[2];
     if (a.tagName === 'BUTTON') $('form').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
   $('form').addEventListener('submit', function (e) { e.preventDefault(); this.classList.add('is-sent'); });
+
+  /* языки: при переходе на другую версию сохраняем выбранный расчет */
+  [].forEach.call(document.querySelectorAll('.lang a'), function (a) {
+    a.addEventListener('click', function () { if (location.hash.indexOf('#v=') === 0) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+  });
 
   /* лента кадров */
   var lb = $('lb');
