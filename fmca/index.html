@@ -41,7 +41,7 @@ h1, h2, h3 { font-weight: 300; letter-spacing: -0.025em; color: inherit; }
 
 /* первый экран */
 .hero { height: calc(100svh - 2 * var(--gap)); min-height: 560px; background: #0a1238; color: #fff; display: flex; align-items: flex-end; }
-.hero__img { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; object-position: 38% 50%; animation: drift 26s ease-in-out infinite alternate; }
+.hero__img { position: absolute; inset: -4%; width: 108%; height: 108%; max-width: none; object-fit: cover; object-position: 38% 50%; animation: drift 26s ease-in-out infinite alternate; }
 @keyframes drift { from { transform: scale(1.02) translate(1.5%, 0.8%); } to { transform: scale(1.14) translate(-2.5%, -1.5%); } }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.45) 0%, rgba(7,19,87,0) 26%, rgba(7,19,87,0) 46%, rgba(7,19,87,0.82) 100%); }
 .hero__in { position: relative; z-index: 2; padding: 0 var(--px) clamp(40px, 6vw, 84px); max-width: 1100px; }

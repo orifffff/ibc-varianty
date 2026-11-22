@@ -1,0 +1,170 @@
+/* Фирменный набор для сайтов IBC Global. Версия 0.1, 22.11.2026.
+   Значения взяты с живого сайта ibc-global.asia (переменные --ibc-* темы ibc-theme).
+   Подключать первым. Свои стили сайта писать после и только через эти переменные. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/inter-cyrillic-var.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* цвета сайта */
+  --ibc-navy: #071357;
+  --ibc-navy-rgb: 7, 19, 87;
+  --ibc-burgundy: #690107;
+  --ibc-burgundy-rgb: 105, 1, 7;
+  --ibc-white: #ffffff;
+  --ibc-bg: #f4f6f8;
+  --ibc-bg-section: #c0ccd7;
+  --ibc-border: #e2e8f0;
+  --ibc-text: #0f172a;
+  --ibc-text-2: #4a5568;
+  --ibc-text-3: #718096;
+  --ibc-navy-soft: rgba(var(--ibc-navy-rgb), 0.08);
+  --ibc-burgundy-soft: rgba(var(--ibc-burgundy-rgb), 0.1);
+  --ibc-ok: #13612e;
+
+  /* шаг отступов */
+  --s4: 4px; --s8: 8px; --s12: 12px; --s16: 16px; --s24: 24px; --s32: 32px; --s48: 48px; --s64: 64px; --s96: 96px;
+
+  /* форма */
+  --ibc-radius: 12px;
+  --ibc-radius-btn: 10px;
+  --ibc-shadow: 0 2px 8px -2px rgba(7,19,87,0.06), 0 12px 32px -8px rgba(7,19,87,0.14);
+  --ibc-shadow-hover: 0 4px 12px -2px rgba(7,19,87,0.08), 0 16px 40px -8px rgba(7,19,87,0.18);
+
+  /* сетка */
+  --ibc-container: 1440px;
+  --ibc-pad: var(--s48);
+  --ibc-header-h: 88px;
+
+  --ibc-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (max-width: 1024px) { :root { --ibc-pad: var(--s32); } }
+@media (max-width: 640px)  { :root { --ibc-pad: var(--s16); --ibc-header-h: 64px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--ibc-white); color: var(--ibc-text);
+  font-family: var(--ibc-font); font-size: 16px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; font-feature-settings: "tnum" 0, "cv11" 1;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3 { color: var(--ibc-navy); line-height: 1.12; letter-spacing: -0.02em; font-weight: 700; text-wrap: balance; }
+h1 { font-size: clamp(32px, 4.4vw, 52px); }
+h2 { font-size: clamp(26px, 3vw, 40px); }
+h3 { font-size: clamp(18px, 1.6vw, 22px); letter-spacing: -0.01em; }
+p { text-wrap: pretty; }
+.num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--ibc-navy); outline-offset: 3px; border-radius: 4px; }
+
+/* контейнер и секции */
+.ibc-wrap { width: 100%; max-width: calc(var(--ibc-container) + 2 * var(--ibc-pad)); margin: 0 auto; padding: 0 var(--ibc-pad); }
+.ibc-section { padding: var(--s96) 0; }
+.ibc-section--gray { background: var(--ibc-bg); }
+.ibc-section--navy { background: var(--ibc-navy); color: rgba(255,255,255,0.86); }
+.ibc-section--navy h2, .ibc-section--navy h3 { color: #fff; }
+@media (max-width: 640px) { .ibc-section { padding: var(--s64) 0; } }
+
+.ibc-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ibc-burgundy); }
+.ibc-section--navy .ibc-eyebrow { color: rgba(255,255,255,0.6); }
+.ibc-lead { font-size: clamp(17px, 1.5vw, 20px); color: var(--ibc-text-2); max-width: 62ch; }
+.ibc-section--navy .ibc-lead { color: rgba(255,255,255,0.72); }
+
+/* кнопки */
+.ibc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; border-radius: var(--ibc-radius-btn);
+  font: 600 16px/1 var(--ibc-font); text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; transition: background .18s, color .18s, border-color .18s, transform .18s, box-shadow .18s;
+  white-space: nowrap;
+}
+.ibc-btn--primary { background: var(--ibc-burgundy); color: #fff; }
+.ibc-btn--primary:hover { background: #850109; box-shadow: var(--ibc-shadow); transform: translateY(-1px); }
+.ibc-btn--navy { background: var(--ibc-navy); color: #fff; }
+.ibc-btn--navy:hover { background: #0c1d7a; box-shadow: var(--ibc-shadow); transform: translateY(-1px); }
+.ibc-btn--ghost { background: transparent; color: var(--ibc-navy); border-color: rgba(var(--ibc-navy-rgb), 0.25); }
+.ibc-btn--ghost:hover { border-color: var(--ibc-navy); background: var(--ibc-navy-soft); }
+.ibc-btn--light { background: #fff; color: var(--ibc-navy); }
+.ibc-btn--light:hover { background: var(--ibc-bg); transform: translateY(-1px); }
+.ibc-btn--glass { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.28); backdrop-filter: blur(8px); }
+.ibc-btn--glass:hover { background: rgba(255,255,255,0.2); }
+.ibc-btn--sm { min-height: 40px; padding: 0 16px; font-size: 14px; }
+.ibc-btn svg { width: 18px; height: 18px; flex: none; }
+
+/* шапка */
+.ibc-header {
+  position: sticky; top: 0; z-index: 50; height: var(--ibc-header-h);
+  background: rgba(255,255,255,0.92); backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--ibc-border);
+}
+.ibc-header__in { height: 100%; display: flex; align-items: center; gap: var(--s32); }
+.ibc-header__logo img { height: 30px; width: auto; }
+.ibc-header__name { font-weight: 600; color: var(--ibc-navy); padding-left: var(--s16); margin-left: calc(-1 * var(--s16)); border-left: 1px solid var(--ibc-border); white-space: nowrap; }
+.ibc-nav { display: flex; gap: var(--s24); margin-left: auto; }
+.ibc-nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ibc-text-2); padding: 8px 0; border-bottom: 2px solid transparent; }
+.ibc-nav a:hover { color: var(--ibc-navy); border-color: var(--ibc-burgundy); }
+@media (max-width: 1024px) { .ibc-nav { display: none; } .ibc-header__in > .ibc-btn { margin-left: auto; } }
+@media (max-width: 640px) { .ibc-header__logo img { height: 22px; } .ibc-header__name { display: none; } }
+
+/* карточки */
+.ibc-card { background: #fff; border: 1px solid var(--ibc-border); border-radius: var(--ibc-radius); padding: var(--s24); }
+.ibc-card--lift { box-shadow: var(--ibc-shadow); border-color: transparent; }
+.ibc-card--hover { transition: box-shadow .2s, transform .2s; }
+.ibc-card--hover:hover { box-shadow: var(--ibc-shadow-hover); transform: translateY(-2px); }
+
+/* главные цифры */
+.ibc-stat__v { font-size: clamp(28px, 3vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--ibc-navy); font-variant-numeric: tabular-nums; }
+.ibc-stat__v small { font-size: 0.45em; font-weight: 600; letter-spacing: 0; margin-left: 4px; }
+.ibc-stat__l { margin-top: 8px; font-size: 14px; color: var(--ibc-text-3); }
+
+/* метки состояния */
+.ibc-tag { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--ibc-navy-soft); color: var(--ibc-navy); }
+.ibc-tag--ok { background: rgba(19,97,46,0.1); color: var(--ibc-ok); }
+.ibc-tag--ok::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.ibc-tag--accent { background: var(--ibc-burgundy-soft); color: var(--ibc-burgundy); }
+
+/* таблица характеристик */
+.ibc-spec { display: grid; grid-template-columns: 1fr auto; gap: 0 var(--s24); margin: 0; }
+.ibc-spec dt, .ibc-spec dd { padding: 14px 0; border-bottom: 1px solid var(--ibc-border); margin: 0; }
+.ibc-spec dt { color: var(--ibc-text-2); }
+.ibc-spec dd { font-weight: 600; color: var(--ibc-navy); text-align: right; }
+
+/* поля формы */
+.ibc-field { display: grid; gap: 6px; }
+.ibc-field label { font-size: 13px; font-weight: 600; color: var(--ibc-text-2); }
+.ibc-input {
+  width: 100%; min-height: 48px; padding: 0 14px; border-radius: var(--ibc-radius-btn);
+  border: 1px solid var(--ibc-border); background: #fff; color: var(--ibc-text);
+  font: 400 16px/1.3 var(--ibc-font); transition: border-color .15s, box-shadow .15s;
+}
+textarea.ibc-input { padding: 12px 14px; min-height: 96px; resize: vertical; }
+.ibc-input:focus { outline: none; border-color: var(--ibc-navy); box-shadow: 0 0 0 3px var(--ibc-navy-soft); }
+
+/* подвал */
+.ibc-footer { background: var(--ibc-navy); color: rgba(255,255,255,0.72); padding: var(--s64) 0 var(--s32); font-size: 14px; }
+.ibc-footer a { color: #fff; text-decoration: none; }
+.ibc-footer a:hover { text-decoration: underline; }
+.ibc-footer__in { display: flex; flex-wrap: wrap; gap: var(--s32) var(--s64); justify-content: space-between; align-items: flex-start; }
+.ibc-footer__logo { height: 30px; width: auto; }
+.ibc-footer__note { margin-top: var(--s48); padding-top: var(--s24); border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-size: 12px; }
+
+/* появление при прокрутке (включается классом .js на html) */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .ibc-btn, .ibc-card--hover { transition: none; }
+}

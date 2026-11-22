@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tashkent Logistics Hub: склад класса A в аренду</title>
+<link rel="stylesheet" href="kit/ibc-kit.css">
+<style>
+/* Tashkent Logistics Hub. Вид и движение в манере kurvindustrial.com, устройство по лучшим сайтам отдельных парков.
+   Цвета, шрифт, тексты, картинки и код наши. */
+:root { --navy: #071357; --wine: #690107; --steel: #6984a1; --sky: #c4d2ea; --sky-2: #dfe7f4; --paper: #f2f4f8; --gap: 4px; --r: 56px; --ease: cubic-bezier(0.25, 1, 0.33, 1); --px: clamp(20px, 5.4vw, 84px); --bar: 36px; }
+body { background: #fff; color: var(--navy); }
+h1, h2, h3 { font-weight: 300; letter-spacing: -0.025em; color: inherit; }
+.page { padding: var(--gap); display: grid; gap: var(--gap); overflow-x: clip; }
+.blk { position: relative; overflow: hidden; border-radius: 0 0 var(--r) 0; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
+
+.loader { position: fixed; inset: 0; z-index: 100; background: var(--navy); display: grid; place-items: center; transition: transform 1s var(--ease) .15s; }
+.loader img { height: 34px; width: auto; animation: breathe 1.4s ease-in-out infinite alternate; }
+@keyframes breathe { from { opacity: 0.35; } to { opacity: 1; } }
+.ready .loader { transform: translateY(-101%); }
+
+/* строка «свободно сейчас» и шапка */
+.avail { position: fixed; inset: 0 0 auto 0; z-index: 51; height: var(--bar); background: var(--wine); color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px 22px; padding: 0 16px; font-size: 13px; white-space: nowrap; overflow: hidden; }
+.avail b { font-weight: 600; } .avail i { font-style: normal; opacity: 0.55; }
+.avail a { color: #fff; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.6); }
+.avail .dot { width: 8px; height: 8px; border-radius: 50%; background: #5fe39a; box-shadow: 0 0 0 0 rgba(95,227,154,0.7); animation: live 2s infinite; flex: none; }
+@keyframes live { 70% { box-shadow: 0 0 0 9px rgba(95,227,154,0); } 100% { box-shadow: 0 0 0 0 rgba(95,227,154,0); } }
+.top { position: fixed; inset: var(--bar) 0 auto 0; z-index: 50; height: 78px; display: flex; align-items: center; gap: 30px; padding: 0 calc(var(--px) + var(--gap)); color: #fff; transition: background .45s var(--ease), color .45s var(--ease), box-shadow .45s var(--ease), height .45s var(--ease); }
+.top__logo { position: relative; display: block; height: 28px; width: 199px; flex: none; }
+.top__logo img { position: absolute; left: 0; top: 0; height: 28px; width: auto; transition: opacity .35s; } .top__logo .c { opacity: 0; }
+.top__name { font-size: 14px; font-weight: 500; padding-left: 18px; border-left: 1px solid currentColor; white-space: nowrap; opacity: 0.9; }
+.top nav { margin-left: auto; display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
+.top nav a { color: inherit; text-decoration: none; position: relative; padding: 6px 0; }
+.top nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.top nav a:hover::after { transform: scaleX(1); }
+.top.is-solid { background: rgba(255,255,255,0.96); color: var(--navy); height: 64px; box-shadow: 0 1px 0 rgba(7,19,87,0.08); backdrop-filter: blur(10px); }
+.top.is-solid .w { opacity: 0; } .top.is-solid .c { opacity: 1; }
+
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 26px; border-radius: 999px; border: 0; cursor: pointer; background: var(--sky); color: var(--navy); font: 600 14px/1 var(--ibc-font); text-decoration: none; white-space: nowrap; transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease); }
+.pill:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+.pill--wine { background: var(--wine); color: #fff; } .pill--wine:hover { background: var(--navy); }
+.pill--white { background: #fff; color: var(--navy); } .pill--white:hover { background: var(--sky); color: var(--navy); }
+.pill--sm { height: 38px; padding: 0 18px; font-size: 13px; }
+.top .pill { background: #fff; color: var(--navy); } .top.is-solid .pill { background: var(--wine); color: #fff; }
+.pill svg { width: 16px; height: 16px; }
+
+/* первый экран */
+.hero { height: calc(100svh - 2 * var(--gap)); min-height: 600px; background: #0a1238; color: #fff; display: flex; align-items: flex-end; }
+.hero__img { position: absolute; inset: -4%; width: 108%; height: 108%; max-width: none; object-fit: cover; object-position: 50% 60%; animation: drift 28s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.02) translate(1.5%, 1%); } to { transform: scale(1.13) translate(-2%, -1.5%); } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.62) 0%, rgba(7,19,87,0) 30%, rgba(7,19,87,0) 44%, rgba(7,19,87,0.86) 100%); }
+.hero__in { position: relative; z-index: 2; width: 100%; padding: 0 var(--px) clamp(36px, 5vw, 72px); display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.hero h1 { font-size: clamp(42px, 6.6vw, 104px); line-height: 0.98; color: #fff; }
+.hero__sub { margin-top: 14px; font-size: clamp(19px, 2.2vw, 34px); font-weight: 300; letter-spacing: -0.015em; color: rgba(255,255,255,0.92); }
+.hero__by { margin-top: 26px; font-size: 13px; color: rgba(255,255,255,0.78); } .hero__by b { font-weight: 600; color: #fff; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.line { display: block; overflow: hidden; padding-bottom: 0.08em; } .line > span { display: block; transform: translateY(110%); transition: transform 1.1s var(--ease); }
+.ready .line > span { transform: none; } .ready .line:nth-child(2) > span { transition-delay: .12s; }
+.fadeup { opacity: 0; transform: translateY(18px); transition: opacity 1s var(--ease) .45s, transform 1s var(--ease) .45s; } .ready .fadeup { opacity: 1; transform: none; } .ready .fadeup.d2 { transition-delay: .6s; } .ready .fadeup.d3 { transition-delay: .75s; }
+.plate { flex: none; width: 250px; background: rgba(7,19,87,0.78); backdrop-filter: blur(12px); border-radius: 0 0 28px 0; padding: 6px 26px; }
+.plate div { padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.18); } .plate div:first-child { border-top: 0; }
+.plate b { display: block; font-size: 34px; font-weight: 300; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.plate span { display: block; margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.7); }
+
+/* синий блок со словами */
+.say { background: var(--navy); color: #fff; padding: clamp(48px, 6vw, 88px) var(--px); }
+.say h2 { font-size: clamp(24px, 2.8vw, 42px); line-height: 1.16; max-width: 24em; }
+.say p { margin-top: 18px; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 60em; }
+
+/* плитки */
+.tiles { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--gap); }
+.tile { position: relative; overflow: hidden; color: #fff; display: block; background: #0a1238; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.84) 0%, rgba(7,19,87,0.2) 50%, rgba(7,19,87,0) 100%); }
+.tile:hover img { transform: scale(1.06); }
+.tile__tx { position: relative; z-index: 2; padding: 34px 40px; max-width: 480px; }
+.tile__tx b { display: block; font-size: 17px; font-weight: 600; } .tile__tx span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.9); }
+.tile--big { min-height: clamp(380px, 44vw, 640px); border-radius: 0 0 var(--r) 0; }
+.col { display: grid; grid-template-rows: minmax(220px, 0.8fr) auto; gap: var(--gap); }
+.note { background: var(--paper); padding: 40px 40px 44px; border-radius: 0 0 var(--r) 0; }
+.note b { display: block; font-size: 17px; font-weight: 600; } .note p { margin: 12px 0 26px; font-size: 14px; line-height: 1.65; color: #3d4770; }
+
+.run { background: var(--navy); color: #fff; height: 46px; display: flex; align-items: center; overflow: hidden; white-space: nowrap; }
+.run__track { display: flex; animation: run 52s linear infinite; } .run span { padding-right: 2.2em; font-size: 17px; font-weight: 300; } .run span i { font-style: normal; opacity: 0.45; padding-left: 2.2em; }
+@keyframes run { to { transform: translateX(-50%); } }
+
+/* блоки: схема, таблица, подбор */
+.plan { background: var(--sky); padding: clamp(40px, 5vw, 72px) var(--px) clamp(40px, 5vw, 64px); }
+.plan__head { text-align: center; max-width: 780px; margin: 0 auto; }
+.plan__head h2 { font-size: clamp(26px, 3vw, 44px); line-height: 1.12; margin-top: 12px; }
+.plan__head p { margin-top: 14px; font-size: 15px; color: #33407a; }
+.plan__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 48px); align-items: center; margin-top: clamp(16px, 2vw, 32px); }
+.legend { display: flex; gap: 18px; justify-content: center; font-size: 12px; color: #33407a; margin-top: 4px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: #fff; margin-right: 6px; vertical-align: -1px; box-shadow: 0 0 0 1px rgba(7,19,87,0.2); } .legend i.on { background: var(--wine); box-shadow: none; }
+.panel { background: #fff; border-radius: 0 0 36px 0; padding: 28px; display: grid; gap: 22px; box-shadow: 0 30px 60px -30px rgba(7,19,87,0.4); }
+.need { display: flex; align-items: baseline; gap: 10px; justify-content: space-between; }
+.need label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel); }
+.need output { font-size: 34px; font-weight: 300; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: transparent; margin: 0; cursor: pointer; }
+input[type=range]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--navy) var(--p, 30%), var(--sky) var(--p, 30%)); }
+input[type=range]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--sky); } input[type=range]::-moz-range-progress { height: 4px; background: var(--navy); border-radius: 2px; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 2px solid var(--navy); margin-top: -11px; box-shadow: 0 4px 12px rgba(7,19,87,0.25); transition: transform .3s var(--ease); }
+input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 2px solid var(--navy); }
+input[type=range]:active::-webkit-slider-thumb { transform: scale(1.15); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel); padding: 0 8px 10px; }
+td { padding: 12px 8px; border-top: 1px solid rgba(7,19,87,0.12); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody tr { cursor: pointer; transition: background .35s var(--ease); } tbody tr:hover { background: var(--paper); }
+tbody tr.on { background: var(--sky-2); } td:first-child b { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: var(--paper); font-weight: 600; transition: background .35s, color .35s; } tr.on td:first-child b { background: var(--wine); color: #fff; }
+.free { font-size: 12px; font-weight: 600; color: #13612e; } .free::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; vertical-align: 2px; }
+.sum { border-top: 1px solid var(--navy); padding-top: 18px; display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; }
+.sum div b { display: block; font-size: clamp(20px, 1.9vw, 28px); font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; } .sum div span { font-size: 12px; color: #5a6388; }
+.sum div:last-child b { color: var(--wine); font-weight: 500; }
+.panel small { font-size: 12px; color: #5a6388; margin-top: -8px; }
+
+/* цифры */
+.nums { display: flex; flex-wrap: wrap; align-items: center; gap: 28px clamp(24px, 4.2vw, 72px); padding: clamp(36px, 4vw, 56px) var(--px); border-radius: 0; }
+.num { padding-left: 18px; border-left: 1px solid var(--navy); }
+.num b { display: block; font-size: clamp(30px, 3.2vw, 48px); font-weight: 300; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.num b i { font-style: normal; color: var(--steel); font-size: 0.6em; margin-left: 4px; letter-spacing: 0; }
+.num span { display: block; margin-top: 10px; font-size: 13px; color: #3d4770; }
+
+/* место */
+.loc { background: var(--navy); color: #fff; padding: clamp(48px, 6vw, 96px) var(--px); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.loc .eyebrow { color: rgba(255,255,255,0.55); }
+.loc h2 { font-size: clamp(28px, 3.4vw, 52px); line-height: 1.08; margin-top: 14px; } .loc p { margin-top: 18px; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.78); max-width: 30em; }
+.route { position: relative; padding-left: 34px; }
+.route::before { content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; width: 1px; background: rgba(255,255,255,0.25); }
+.route::after { content: ""; position: absolute; left: 5px; top: 12px; width: 3px; height: calc(100% - 24px); background: #c4505a; transform: scaleY(0); transform-origin: top; transition: transform 2.2s var(--ease) .2s; }
+.route.in::after { transform: scaleY(1); }
+.stop { position: relative; display: grid; grid-template-columns: 110px 1fr; gap: 18px; align-items: baseline; padding: 15px 0; opacity: 0; transform: translateX(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i) * 0.16s + 0.2s); }
+.route.in .stop { opacity: 1; transform: none; }
+.stop::before { content: ""; position: absolute; left: -34px; top: 24px; width: 13px; height: 13px; border-radius: 50%; background: var(--navy); border: 2px solid #fff; }
+.stop:first-child::before { background: #c4505a; border-color: #c4505a; }
+.stop b { font-size: clamp(24px, 2.4vw, 36px); font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stop span { font-size: 15px; color: rgba(255,255,255,0.86); } .stop span small { display: block; font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+/* условия */
+.terms { background: var(--paper); padding: clamp(48px, 6vw, 88px) var(--px); }
+.terms h2 { font-size: clamp(26px, 3vw, 44px); margin-top: 12px; } .terms > p { margin-top: 14px; font-size: 15px; color: #3d4770; max-width: 56em; }
+.tgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px 28px; margin-top: 44px; }
+.tgrid div { padding-left: 18px; border-left: 1px solid rgba(7,19,87,0.5); }
+.tgrid b { display: block; font-size: clamp(24px, 2.4vw, 36px); font-weight: 300; letter-spacing: -0.03em; white-space: nowrap; } .tgrid .main b { color: var(--wine); font-weight: 400; }
+.tgrid span { display: block; margin-top: 8px; font-size: 13px; color: #3d4770; }
+
+/* кому подходит */
+.who { padding: clamp(48px, 6vw, 88px) var(--px); border-radius: 0; }
+.who h2 { font-size: clamp(26px, 3vw, 44px); margin-top: 12px; }
+.wgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(24px, 4vw, 64px); margin-top: 36px; }
+.wgrid div { padding: 22px 0; border-top: 1px solid rgba(7,19,87,0.16); }
+.wgrid b { display: block; font-size: 19px; font-weight: 500; letter-spacing: -0.01em; } .wgrid span { display: block; margin-top: 8px; font-size: 14px; line-height: 1.55; color: #3d4770; }
+
+/* две карточки */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+.card { position: relative; overflow: hidden; min-height: clamp(340px, 34vw, 480px); border-radius: 0 0 var(--r) 0; color: #fff; display: flex; align-items: flex-end; background: #0a1238; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.25) 0%, rgba(7,19,87,0.94) 78%); }
+.card:hover img { transform: scale(1.06); }
+.card__tx { position: relative; z-index: 2; padding: 36px 40px; width: 100%; }
+.card__tx > b { display: block; font-size: 19px; font-weight: 600; } .card__tx > span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86); max-width: 34em; }
+.mini { display: grid; grid-template-columns: repeat(4, auto); gap: 8px 26px; justify-content: start; margin-top: 22px; }
+.mini b { display: block; font-size: clamp(22px, 2.2vw, 32px); font-weight: 300; letter-spacing: -0.03em; white-space: nowrap; } .mini span { font-size: 12px; color: rgba(255,255,255,0.7); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 24px; }
+.steps div { padding: 14px 10px 0 0; border-top: 1px solid rgba(255,255,255,0.5); position: relative; }
+.steps div::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: #fff; } .steps div:last-child::before { background: #e07a84; box-shadow: 0 0 0 5px rgba(224,122,132,0.3); }
+.steps b { display: block; font-size: 15px; font-weight: 600; } .steps span { font-size: 12px; color: rgba(255,255,255,0.72); }
+
+/* запрос */
+.ask { background: var(--paper); padding: clamp(48px, 6vw, 96px) var(--px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ask h2 { font-size: clamp(30px, 3.8vw, 56px); line-height: 1.06; margin-top: 12px; }
+.pick { margin-top: 26px; padding: 16px 18px; background: #fff; border-radius: 0 0 22px 0; font-size: 14px; line-height: 1.55; color: #3d4770; } .pick b { color: var(--navy); font-weight: 600; }
+.people { display: grid; gap: 0; margin-top: 26px; }
+.people a { display: grid; grid-template-columns: 60px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(7,19,87,0.16); text-decoration: none; color: #5a6388; font-size: 13px; }
+.people img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; } .people b { display: block; color: var(--navy); font-size: 16px; font-weight: 600; }
+.people u { text-decoration: none; font-weight: 600; color: var(--navy); font-size: 13px; border-bottom: 1px solid transparent; transition: border-color .3s; } .people a:hover u { border-color: var(--navy); }
+.form { display: grid; gap: 22px; }
+.kind { display: flex; gap: 8px; flex-wrap: wrap; }
+.kind button { height: 40px; padding: 0 18px; border-radius: 999px; border: 0; cursor: pointer; background: #fff; color: var(--navy); font: 600 13px/1 var(--ibc-font); transition: background .45s var(--ease), color .45s var(--ease); }
+.kind button[aria-pressed=true] { background: var(--navy); color: #fff; }
+.form h3 { font-size: 24px; } .form > p { margin-top: -12px; font-size: 14px; color: #3d4770; min-height: 2.9em; }
+.fld { position: relative; }
+.fld input { width: 100%; height: 52px; border: 0; border-bottom: 1px solid rgba(7,19,87,0.35); background: transparent; font: 400 17px/1 var(--ibc-font); color: var(--navy); padding: 14px 0 0; outline: none; border-radius: 0; }
+.fld label { position: absolute; left: 0; top: 18px; font-size: 16px; color: var(--steel); pointer-events: none; transition: transform .35s var(--ease); transform-origin: left top; }
+.fld input:focus + label, .fld input:not(:placeholder-shown) + label { transform: translateY(-16px) scale(0.75); }
+.fld::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); } .fld:focus-within::after { transform: scaleX(1); }
+.form__ok { display: none; font-size: 14px; font-weight: 600; color: var(--ibc-ok); } .form.is-sent .form__ok { display: block; }
+
+.foot { background: var(--navy); color: rgba(255,255,255,0.78); padding: clamp(40px, 5vw, 72px) var(--px) 28px; font-size: 14px; }
+.foot__in { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; }
+.foot img { height: 30px; width: auto; } .foot p { margin-top: 16px; max-width: 30em; }
+.foot b { display: block; color: #fff; font-weight: 500; margin-bottom: 12px; }
+.foot a { display: block; color: #9fb4e0; text-decoration: none; padding: 3px 0; transition: color .3s; } .foot a:hover { color: #fff; }
+.foot__end { margin-top: 56px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 12px; color: rgba(255,255,255,0.6); }
+
+.rv { opacity: 0; transition: opacity 1.1s var(--ease), transform 1.1s var(--ease); transition-delay: var(--dl, 0s); }
+.rv[data-rv=up] { transform: translateY(46px); } .rv[data-rv=left] { transform: translateX(-60px); } .rv[data-rv=right] { transform: translateX(60px); }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 1100px) { .top nav { display: none; } .top .pill { margin-left: auto; } .plan__grid { grid-template-columns: 1fr; } .tgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  :root { --r: 34px; --bar: 32px; }
+  .avail { font-size: 11px; gap: 8px; justify-content: flex-start; } .avail .hide-s { display: none; } .avail a { margin-left: auto; }
+  .top { height: 60px; gap: 12px; } .top__name { display: none; } .top__logo, .top__logo img { height: 22px; } .top__logo { width: 156px; } .top .pill { height: 36px; padding: 0 14px; font-size: 12px; }
+  .hero__in { flex-direction: column; align-items: stretch; gap: 22px; }
+  .plate { width: auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 16px; border-radius: 0 0 20px 0; } .plate div { border-top: 0; padding: 14px 8px 14px 0; } .plate b { font-size: 21px; } .plate span { font-size: 11px; }
+  .hero__cta .pill { flex: 1 1 auto; }
+  .tiles, .pair, .ask, .loc { grid-template-columns: 1fr; }
+  .tile__tx, .card__tx { padding: 24px 22px; } .note { padding: 28px 22px 32px; } .col { grid-template-rows: 240px auto; }
+  .panel { padding: 20px 16px; } th, td { padding-left: 4px; padding-right: 4px; font-size: 13px; } .hide-s { display: none; }
+  .sum { grid-template-columns: 1fr 1fr; } .sum div:last-child { grid-column: 1 / -1; }
+  .wgrid { grid-template-columns: 1fr; } .mini { grid-template-columns: repeat(2, auto); } .steps { grid-template-columns: 1fr 1fr; gap: 18px 0; }
+  .stop { grid-template-columns: 80px 1fr; } .foot__in { grid-template-columns: 1fr; }
+  .people a { grid-template-columns: 48px 1fr; } .people img { width: 48px; height: 48px; } .people u { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__img, .run__track, .avail .dot, .loader img { animation: none; }
+  .rv, .line > span, .fadeup, .stop { opacity: 1; transform: none; transition: none; } .route::after { transform: scaleY(1); }
+}
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"><img src="img/logo-white.svg" alt=""></div>
+
+<div class="avail"><span class="dot"></span><b>Свободно сейчас: 4 блока</b><i class="hide-s">·</i><span class="hide-s">от 7&nbsp;140 до 37&nbsp;524&nbsp;м²</span><i class="hide-s">·</i><span class="hide-s">ввод в октябре 2027</span><a href="#blocks">Выбрать блок</a></div>
+
+<header class="top" id="top">
+  <a class="top__logo" href="https://ibc-global.asia/" aria-label="IBC Global"><img class="w" src="img/logo-white.svg" alt="IBC Global"><img class="c" src="img/logo-color.svg" alt=""></a>
+  <span class="top__name">Tashkent Logistics Hub</span>
+  <nav aria-label="Разделы">
+    <a href="#about">Объект</a>
+    <a href="#blocks">Блоки</a>
+    <a href="#location">Место</a>
+    <a href="#terms">Условия</a>
+    <a href="#ask">Контакты</a>
+  </nav>
+  <a class="pill pill--sm" href="#ask" data-kind="deck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Презентация</a>
+</header>
+
+<div class="page">
+
+  <section class="blk hero">
+    <img class="hero__img" src="img/hero.jpg" alt="Складской комплекс, вид с воздуха" width="1616" height="1203">
+    <div class="hero__in">
+      <div>
+        <h1><span class="line"><span>Tashkent</span></span><span class="line"><span>Logistics Hub</span></span></h1>
+        <p class="hero__sub fadeup">Склад класса A на Ташкентской кольцевой</p>
+        <div class="hero__cta fadeup d2"><a class="pill pill--wine" href="#ask" data-kind="offer">Запросить предложение</a><a class="pill pill--white" href="#blocks">Подобрать площадь</a></div>
+        <p class="hero__by fadeup d3">Девелопер: <b>Greystar Real Estate Partners</b> · Консультант по аренде: <b>IBC Global</b></p>
+      </div>
+      <div class="plate fadeup d2">
+        <div><b><em data-to="37524" data-sp="1" style="font-style:normal">37&nbsp;524</em> м²</b><span>четыре блока</span></div>
+        <div><b>$<em data-to="132" style="font-style:normal">132</em></b><span>за м² в год</span></div>
+        <div><b><em data-to="102" style="font-style:normal">102</em></b><span>доковых ворот</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk say" id="about">
+    <h2 class="rv" data-rv="up">Сухой склад, который подстроится под груз: любой блок можно сделать холодильным или морозильным.</h2>
+    <p class="rv" data-rv="up" style="--dl:.12s">Четыре делимых блока на участке 7,10 га с прямым выездом на Ташкентскую кольцевую M39. Режим хранения +16…+25&nbsp;°C, по запросу холодильная камера +2…+6&nbsp;°C или морозильная −25&nbsp;°C с независимым климат-контролем.</p>
+  </section>
+
+  <section class="tiles">
+    <div class="tile tile--big rv" data-rv="left">
+      <img src="img/docks.jpg" alt="" loading="lazy">
+      <div class="tile__tx"><b>Построен под высокий оборот</b><span>102 дока, двор маневрирования 35 м, 47 мест для большегрузов. Полы готовы к подключению WMS, блоки делятся под нескольких арендаторов.</span></div>
+    </div>
+    <div class="col">
+      <div class="tile rv" data-rv="right">
+        <img src="img/facade.jpg" alt="" loading="lazy">
+        <div class="tile__tx"><b>Готов под фармацевтику</b><span>Блоки подготовлены под лицензию GDP: спринклеры ESFR (NFPA), контроль доступа.</span></div>
+      </div>
+      <div class="note rv" data-rv="up" style="--dl:.15s">
+        <b>Вся информация в одном файле</b>
+        <p>Планировки, характеристики, условия аренды и сроки. Пришлем презентацию объекта на почту.</p>
+        <a class="pill" href="#ask" data-kind="deck">Получить презентацию</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="run" aria-hidden="true"><div class="run__track" id="run"></div></div>
+
+  <section class="blk plan" id="blocks">
+    <div class="plan__head">
+      <span class="eyebrow rv" data-rv="up">Блоки</span>
+      <h2 class="rv" data-rv="up">Четыре блока. Берите один или все</h2>
+      <p class="rv" data-rv="up" style="--dl:.1s">Подвиньте ползунок или нажмите на блоки на схеме и в таблице. Сайт подберет блоки и посчитает аренду.</p>
+    </div>
+    <div class="plan__grid">
+      <div class="rv" data-rv="left">
+        <div id="plan"></div>
+        <div class="legend"><span><i></i>свободен</span><span><i class="on"></i>выбран</span></div>
+      </div>
+      <div class="panel rv" data-rv="right">
+        <div>
+          <div class="need"><label for="range">Нужная площадь</label><output id="need" for="range">12 000 м²</output></div>
+          <input type="range" id="range" min="5000" max="37524" step="500" value="12000">
+        </div>
+        <table>
+          <thead><tr><th>Блок</th><th>Площадь</th><th>Доки</th><th class="hide-s">Размеры</th><th>Статус</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="sum">
+          <div><b id="s-area">0</b><span>выбрано</span></div>
+          <div><b id="s-docks">0</b><span>доков</span></div>
+          <div><b id="s-month">0</b><span>в месяц, первый год</span></div>
+        </div>
+        <small>Расчет предварительный: базовая ставка $132 и сервисный сбор $15 за м² в год. Блоки делимые, точную нарезку согласуем.</small>
+        <a class="pill pill--wine" href="#ask" data-kind="calc">Получить точный расчет</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk nums">
+    <div class="num rv" data-rv="up"><b><em data-to="12" style="font-style:normal">12</em><i>м</i></b><span>рабочая высота</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.08s"><b><em data-to="8" style="font-style:normal">8</em><i>т/м²</i></b><span>нагрузка на пол</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.16s"><b>12 × 24<i>м</i></b><span>сетка колонн</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.24s"><b><em data-to="35" style="font-style:normal">35</em><i>м</i></b><span>двор маневрирования</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.32s"><b><em data-to="47" style="font-style:normal">47</em></b><span>мест для большегрузов</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.4s"><b>до <em data-to="500" style="font-style:normal">500</em><i>м²</i></b><span>офисов на блок</span></div>
+  </section>
+
+  <section class="blk loc" id="location">
+    <div>
+      <span class="eyebrow rv" data-rv="up">Место</span>
+      <h2 class="rv" data-rv="up">Прямой выезд на&nbsp;кольцевую M39</h2>
+      <p class="rv" data-rv="up" style="--dl:.12s">Главная транспортная артерия Ташкента. Инфраструктура парка полностью подключена: электричество от отдельной подстанции, вода, канализация, связь.</p>
+    </div>
+    <div class="route" id="route">
+      <div class="stop" style="--i:0"><b>0 км</b><span>Ташкентская кольцевая M39<small>прямой выезд с территории</small></span></div>
+      <div class="stop" style="--i:1"><b>8 км</b><span>Сухой порт и таможенный терминал</span></div>
+      <div class="stop" style="--i:2"><b>12 км</b><span>Центр города</span></div>
+      <div class="stop" style="--i:3"><b>15 км</b><span>Грузовой железнодорожный узел<small>транскаспийский и транссибирский коридоры</small></span></div>
+      <div class="stop" style="--i:4"><b>18 км</b><span>Международный аэропорт<small>около 25 минут</small></span></div>
+    </div>
+  </section>
+
+  <section class="blk terms" id="terms">
+    <span class="eyebrow rv" data-rv="up">Условия аренды</span>
+    <h2 class="rv" data-rv="up">Все условия на одном экране</h2>
+    <p class="rv" data-rv="up" style="--dl:.1s">Структура triple-net (NNN): арендатор платит базовую ставку и сервисный сбор. Налоги, страхование и эксплуатация оплачиваются отдельно. Валюта: доллары США.</p>
+    <div class="tgrid">
+      <div class="main rv" data-rv="up"><b>$132</b><span>базовая ставка за м² в год, первый год</span></div>
+      <div class="rv" data-rv="up" style="--dl:.06s"><b>$15</b><span>сервисный сбор (OPEX) за м² в год</span></div>
+      <div class="rv" data-rv="up" style="--dl:.12s"><b>10 лет</b><span>срок аренды</span></div>
+      <div class="rv" data-rv="up" style="--dl:.18s"><b>3%</b><span>индексация в год</span></div>
+      <div class="rv" data-rv="up"><b>Triple-net</b><span>структура аренды</span></div>
+      <div class="rv" data-rv="up" style="--dl:.06s"><b>12 месяцев</b><span>депозит</span></div>
+      <div class="rv" data-rv="up" style="--dl:.12s"><b>На отделку</b><span>арендные каникулы</span></div>
+      <div class="rv" data-rv="up" style="--dl:.18s"><b>Октябрь 2027</b><span>передача объекта</span></div>
+    </div>
+  </section>
+
+  <section class="blk who">
+    <span class="eyebrow rv" data-rv="up">Кому подходит</span>
+    <h2 class="rv" data-rv="up">Под кого спроектирован объект</h2>
+    <div class="wgrid">
+      <div class="rv" data-rv="up"><b>Фармацевтика</b><span>Блоки готовы под лицензию GDP: холодное и обычное хранение, ESFR, контроль доступа.</span></div>
+      <div class="rv" data-rv="up" style="--dl:.08s"><b>Холодная цепь</b><span>Отдельные холодильные и морозильные блоки с независимым климат-контролем.</span></div>
+      <div class="rv" data-rv="up" style="--dl:.16s"><b>ТНП и розница</b><span>Делимые блоки и двор 35 м для быстрого кросс-докинга.</span></div>
+      <div class="rv" data-rv="up"><b>E-commerce</b><span>Высота 12 м для высотного хранения. Кольцевая рядом: удобно для городской доставки.</span></div>
+      <div class="rv" data-rv="up" style="--dl:.08s"><b>3PL-операторы</b><span>Блоки делятся под нескольких клиентов. Полы готовы к подключению WMS.</span></div>
+      <div class="rv" data-rv="up" style="--dl:.16s"><b>Легкая промышленность</b><span>Рядом комплекс для производства: высота 8,6 м, помещения от 540 м².</span></div>
+    </div>
+  </section>
+
+  <section class="pair">
+    <div class="card rv" data-rv="up">
+      <img src="img/yard.jpg" alt="" loading="lazy">
+      <div class="card__tx"><b>Зеленый стандарт: EDGE Advanced и BREEAM Good</b><span>Двойная сертификация снижает расходы арендатора на $1,5–2,0 за м² в год. Опыт подтвержден на распределительном центре Korzinka (49&nbsp;684&nbsp;м²).</span>
+        <div class="mini"><div><b>−41%</b><span>энергия</span></div><div><b>−30%</b><span>вода</span></div><div><b>−31%</b><span>углерод</span></div><div><b>2&nbsp;300+</b><span>тонн CO₂ в год</span></div></div>
+      </div>
+    </div>
+    <div class="card rv" data-rv="up" style="--dl:.15s">
+      <img src="img/far.jpg" alt="" loading="lazy">
+      <div class="card__tx"><b>Ключи в октябре 2027</b><span>Четыре шага от проекта до ввода в эксплуатацию.</span>
+        <div class="steps"><div><b>Июнь 2026</b><span>проектирование</span></div><div><b>Октябрь 2026</b><span>строительство</span></div><div><b>Июнь 2027</b><span>доступ для монтажа</span></div><div><b>Октябрь 2027</b><span>ввод</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk ask" id="ask">
+    <div>
+      <span class="eyebrow rv" data-rv="up">Контакты</span>
+      <h2 class="rv" data-rv="up">Обсудим Вашу площадь</h2>
+      <div class="pick rv" data-rv="up" style="--dl:.1s" id="pick"></div>
+      <div class="people rv" data-rv="up" style="--dl:.18s">
+        <a href="https://card.ibc-global.asia/assel/"><img src="img/asel.jpg" alt="" width="60" height="60"><span><b>Асель Жунусова</b>Директор по развитию, IBC Global по Центральной Азии</span><u>Визитка</u></a>
+        <a href="https://card.ibc-global.asia/roman/"><img src="img/roman.jpg" alt="" width="60" height="60"><span><b>Роман Пак</b>Директор представительства, IBC Global по Центральной Азии</span><u>Визитка</u></a>
+      </div>
+    </div>
+    <form class="form rv" data-rv="up" style="--dl:.2s" id="form" novalidate>
+      <div class="kind" id="kind" role="group" aria-label="Что нужно">
+        <button type="button" data-kind="offer" aria-pressed="true">Предложение</button>
+        <button type="button" data-kind="deck" aria-pressed="false">Презентация</button>
+        <button type="button" data-kind="calc" aria-pressed="false">Расчет по подбору</button>
+      </div>
+      <h3 id="f-title">Запросить предложение</h3>
+      <p id="f-text">Менеджер IBC Global свяжется с Вами в течение рабочего дня.</p>
+      <div class="fld"><input id="f-name" placeholder=" " autocomplete="name"><label for="f-name">Имя</label></div>
+      <div class="fld"><input id="f-phone" placeholder=" " autocomplete="tel"><label for="f-phone" id="f-phone-l">Телефон или почта</label></div>
+      <div class="fld"><input id="f-co" placeholder=" " autocomplete="organization"><label for="f-co">Компания</label></div>
+      <div><button class="pill pill--wine" type="submit" id="f-btn">Отправить запрос</button></div>
+      <div class="form__ok" role="status">Это прототип: запрос никуда не отправлен.</div>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <div class="foot__in">
+      <div><img src="img/logo-white.svg" alt="IBC Global"><p>Консультант по складской и индустриальной недвижимости в Центральной Азии.</p></div>
+      <div><b>Tashkent Logistics Hub</b><a href="#blocks">Блоки и подбор площади</a><a href="#location">Место</a><a href="#terms">Условия аренды</a></div>
+      <div><b>Связаться</b><a href="#ask" data-kind="offer">Запросить предложение</a><a href="#ask" data-kind="deck">Получить презентацию</a><a href="https://ibc-global.asia/">ibc-global.asia</a></div>
+    </div>
+    <div class="foot__end">Девелопер: Greystar Real Estate Partners. Сведения на странице не являются публичной офертой. Схема блоков условная. Изображение комплекса: визуализация.</div>
+  </footer>
+</div>
+
+<script src="plan.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function ready() { setTimeout(function () { document.body.classList.add('ready'); }, 500); }
+  if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready);
+  setTimeout(function () { document.body.classList.add('ready'); }, 3500);
+
+  // бегущая строка
+  var words = ['Tashkent Logistics Hub', 'класс A', '37 524 м²', '102 дока', 'высота 12 м', 'пол 8 т/м²', 'ввод в октябре 2027', 'EDGE Advanced и BREEAM Good'], one = '';
+  words.forEach(function (w) { one += '<span>' + w + '<i>·</i></span>'; });
+  $('run').innerHTML = one + one + one + one;
+
+  var top = $('top');
+  function onScroll() { top.classList.toggle('is-solid', (window.scrollY || 0) > 60); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // блоки, таблица, подбор
+  var P = window.TLHPlan, B = P.BLOCKS, fmt = P.fmt, range = $('range'), picked = [], rows = {};
+  var plan = P.create($('plan'), toggle);
+  B.forEach(function (b) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td><b>' + b.id + '</b></td><td>' + fmt(b.area) + ' м²</td><td>' + b.docks + '</td><td class="hide-s">' + b.size + '</td><td><span class="free">свободен</span></td>';
+    tr.addEventListener('click', function () { toggle(b.id); });
+    $('rows').appendChild(tr); rows[b.id] = tr;
+  });
+  var combos = [];
+  for (var m = 1; m < 16; m++) { var ids = [], area = 0; B.forEach(function (b, i) { if (m & (1 << i)) { ids.push(b.id); area += b.area; } }); combos.push({ ids: ids, area: area }); }
+  combos.sort(function (a, b) { return a.area - b.area || a.ids.length - b.ids.length; });
+  function fit(need) { for (var i = 0; i < combos.length; i++) if (combos[i].area >= need) return combos[i].ids.slice(); return ['A', 'B', 'C', 'D']; }
+  function sum(k) { return B.reduce(function (s, b) { return s + (picked.indexOf(b.id) !== -1 ? b[k] : 0); }, 0); }
+  function render() {
+    var need = +range.value, area = sum('area'), docks = sum('docks'), month = Math.round(area * 147 / 12), names = picked.slice().sort().join(' + ');
+    range.style.setProperty('--p', ((need - range.min) / (range.max - range.min) * 100) + '%');
+    $('need').textContent = fmt(need) + ' м²';
+    plan.setActive(picked);
+    for (var k in rows) rows[k].classList.toggle('on', picked.indexOf(k) !== -1);
+    $('s-area').textContent = fmt(area) + ' м²'; $('s-docks').textContent = docks; $('s-month').textContent = '$' + fmt(month);
+    $('pick').innerHTML = picked.length
+      ? 'Ваш подбор: <b>блоки ' + names + ', ' + fmt(area) + ' м²</b>, ' + docks + ' доков. Предварительно <b>$' + fmt(month) + ' в месяц</b> с сервисным сбором. Подбор уйдет менеджеру вместе с запросом.'
+      : 'Блоки пока не выбраны. <a href="#blocks" style="color:inherit;font-weight:600">Подобрать площадь</a>';
+  }
+  function toggle(id) {
+    var i = picked.indexOf(id); if (i === -1) picked.push(id); else picked.splice(i, 1);
+    var a = sum('area'); if (a) range.value = Math.min(+range.max, Math.max(+range.min, a));
+    render();
+  }
+  range.addEventListener('input', function () { picked = fit(+range.value); render(); });
+  picked = fit(+range.value); render();
+
+  // появление блоков и счетчики
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el) {
+    var to = +el.dataset.to, sp = el.dataset.sp, t0 = null, dur = 1700;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3), v = Math.round(to * e); el.textContent = sp ? fmt(v) : v; if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (!still) [].forEach.call(e.target.querySelectorAll('[data-to]'), count);
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px' });
+  [].forEach.call(document.querySelectorAll('.rv, .route'), function (n) { io.observe(n); });
+  if (!still) setTimeout(function () { [].forEach.call(document.querySelectorAll('.plate [data-to]'), count); }, 1500);
+
+  // форма: три вида запроса
+  var T = {
+    offer: ['Запросить предложение', 'Менеджер IBC Global свяжется с Вами в течение рабочего дня.', 'Телефон или почта', 'Отправить запрос'],
+    deck: ['Получить презентацию', 'Пришлем презентацию объекта: планировки, характеристики, условия аренды и сроки.', 'Почта', 'Получить презентацию'],
+    calc: ['Расчет по подбору', 'Менеджер проверит Ваш подбор блоков, уточнит условия и пришлет точный расчет.', 'Телефон или почта', 'Отправить подбор']
+  };
+  function set(k) {
+    [].forEach.call(document.querySelectorAll('#kind button'), function (b) { b.setAttribute('aria-pressed', b.dataset.kind === k); });
+    $('f-title').textContent = T[k][0]; $('f-text').textContent = T[k][1]; $('f-phone-l').textContent = T[k][2]; $('f-btn').textContent = T[k][3];
+  }
+  document.addEventListener('click', function (e) { var el = e.target.closest('[data-kind]'); if (el) set(el.dataset.kind); });
+  $('form').addEventListener('submit', function (e) { e.preventDefault(); this.classList.add('is-sent'); });
+})();
+</script>
+</body>
+</html>
