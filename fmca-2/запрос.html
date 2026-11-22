@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f5">
+  <title>Подготовить запрос | FMCA</title>
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="brief.css">
+  <script defer src="brief.js"></script>
+</head>
+<body>
+  <header class="masthead"><div class="container masthead-inner">
+    <a class="brand" href="index.html" aria-label="FMCA, главная"><img src="media/logo-dark.png" alt="FMCA" width="580" height="81"></a>
+    <nav class="header-links" aria-label="Навигация">
+      <a class="home-link" data-copy="home" href="index.html">На главную</a>
+      <a class="language" id="language" hreflang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </div></header>
+  <main class="container">
+    <div class="intro">
+      <h1 data-copy="title">Подготовить запрос</h1>
+      <p data-copy="intro">Выберите направление и добавьте то, что уже известно об объекте. Готовый текст можно скопировать в письмо или сохранить себе.</p>
+    </div>
+    <noscript><p class="notice">Чтобы собрать текст запроса, включите JavaScript в браузере.</p></noscript>
+    <div class="columns">
+      <section class="inputs" aria-labelledby="details">
+        <h2 id="details" data-copy="details">Ваша задача</h2>
+        <div class="field">
+        <label for="service" data-copy="serviceLabel">Направление</label>
+        <select id="service">
+          <option value="">Нужна помощь с выбором</option>
+          <option value="management">Комплексное управление объектом</option>
+          <option value="engineering">Техническая эксплуатация инженерных систем</option>
+          <option value="service">Сервисные услуги</option>
+          <option value="audit">Аудит текущего управления</option>
+          <option value="bts">Расчет тарифов для сделок build-to-suit</option>
+        </select>
+        </div>
+        <div class="field">
+          <label for="country"><span data-copy="countryLabel">Страна</span> <small data-copy="optional">по желанию</small></label>
+          <select id="country">
+            <option value="">Выберите страну</option>
+            <option value="kz">Казахстан</option>
+            <option value="kg">Кыргызстан</option>
+            <option value="uz">Узбекистан</option>
+            <option value="tj">Таджикистан</option>
+          </select>
+        </div>
+        <div class="field-row"><div class="field">
+        <label for="city"><span data-copy="cityLabel">Город</span> <small data-copy="optional">по желанию</small></label>
+        <input id="city" type="text" maxlength="100" placeholder="Например, Алматы" autocomplete="off">
+        </div><div class="field">
+        <label for="object"><span data-copy="objectLabel">Тип объекта</span> <small data-copy="optional">по желанию</small></label>
+        <input id="object" type="text" maxlength="140" placeholder="Например, склад" autocomplete="off">
+        </div></div>
+        <div class="field">
+        <label for="task"><span data-copy="taskLabel">Что нужно сделать</span> <small data-copy="optional">по желанию</small></label>
+        <textarea id="task" rows="4" maxlength="2400" placeholder="Что хотите изменить или уточнить?"></textarea>
+        </div>
+        <a href="#letter" class="preview-link" data-copy="seePreview">Посмотреть текст запроса</a>
+      </section>
+      <section class="result" id="letter" aria-labelledby="preview-title">
+        <div class="paper">
+        <h2 id="preview-title" data-copy="previewTitle">Текст запроса</h2>
+        <div class="recipient"><span data-copy="recipient">Кому</span><strong>service@fmca.asia</strong></div>
+        <div id="preview" tabindex="0" aria-labelledby="preview-title"></div>
+        </div>
+        <p class="result-note" data-copy="previewNote">Текст остается в этой вкладке до обновления страницы.</p>
+        <div class="actions">
+          <button type="button" id="copy" class="primary"><span class="copy-symbol" aria-hidden="true"></span><span data-copy="copy">Скопировать текст</span></button>
+          <button type="button" id="download"><span data-copy="download">Скачать .txt</span></button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

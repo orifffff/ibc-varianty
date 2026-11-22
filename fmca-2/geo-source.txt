@@ -1,0 +1,14 @@
+Карта присутствия FMCA
+
+Данные границ, озер и точки города Алматы взяты из Natural Earth 1:50m.
+В geo.js встроены упрощенные контуры региона в равноугольной конической проекции Ламберта.
+Точка обозначает город присутствия офиса, а не точный адрес здания.
+
+Административные границы
+https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson
+Озера
+https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_lakes.geojson
+Населенные пункты
+https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_populated_places_simple.geojson
+Условия использования геоданных
+https://www.naturalearthdata.com/about/terms-of-use/

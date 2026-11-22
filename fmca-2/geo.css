@@ -1,0 +1,53 @@
+#region-map {
+  --geo-ink: #071357;
+  --geo-wine: #690107;
+  --geo-sea: #dbe8f2;
+  --geo-land: #eaf0f3;
+  --geo-area: #8099b0;
+  color: var(--geo-ink);
+}
+#region-map .geo-board {
+  display: grid;
+  grid-template-columns: minmax(0, 2.35fr) minmax(224px, .9fr);
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--geo-sea);
+  border-radius: 0 0 clamp(22px, 3vw, 50px) 0;
+}
+#region-map .geo-art { position: relative; align-self: stretch; min-width: 0; display: grid; align-content: center; padding: 10px 0 23px; }
+#region-map .geo-svg { display: block; width: 100%; height: auto; overflow: visible; }
+#region-map .geo-neighbour { fill: var(--geo-land); stroke: #fff; stroke-width: 1; }
+#region-map .geo-country { cursor: pointer; outline: none; }
+#region-map .geo-outline { fill: var(--geo-area); stroke: #fff; stroke-width: 1.3; transition: fill .18s ease; }
+#region-map .geo-country[aria-pressed="true"] .geo-outline { fill: var(--geo-ink); }
+#region-map .geo-country:hover .geo-outline { fill: #486987; }
+#region-map .geo-country[aria-pressed="true"]:hover .geo-outline { fill: var(--geo-ink); }
+#region-map .geo-country:focus-visible .geo-outline { stroke: var(--geo-wine); stroke-width: 4; }
+#region-map .geo-water { fill: var(--geo-sea); pointer-events: none; }
+#region-map .geo-map-label { cursor: pointer; fill: #081b33; font: 650 21px Inter, Arial, sans-serif; letter-spacing: .035em; }
+#region-map .geo-map-label.is-active { fill: #fff; }
+#region-map .geo-office { fill: var(--geo-wine); stroke: white; stroke-width: 2.6; pointer-events: none; }
+#region-map .geo-legend { position: absolute; bottom: 12px; left: clamp(14px, 2vw, 30px); display: flex; align-items: center; gap: 7px; font: 500 .82rem/1.3 Inter, Arial, sans-serif; color: #1c3753; }
+#region-map .geo-legend > span:first-child { width: 9px; height: 9px; flex: none; border-radius: 50%; background: var(--geo-wine); border: 1.4px solid #fff; }
+#region-map .geo-picker { display: flex; flex-direction: column; align-items: stretch; justify-content: center; padding: clamp(18px, 3vw, 50px); background: #eff5f9; }
+#region-map .geo-prompt { margin: 0 0 12px; text-transform: none; color: #41566b; font: 550 .92rem/1.45 Inter, Arial, sans-serif; letter-spacing: 0; }
+#region-map .geo-options { border-top: 1px solid #a1b0bc; }
+#region-map .geo-options button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin: 0; padding: 12px 0; min-height: 47px; background: transparent; border: 0; border-bottom: 1px solid #b7c5cf; border-radius: 0; color: #263c51; font: 480 clamp(1rem, 1.45vw, 1.3rem)/1.32 Inter, Arial, sans-serif; text-align: left; cursor: pointer; }
+#region-map .geo-options button[aria-pressed="true"] { color: var(--geo-wine); font-weight: 650; }
+#region-map .geo-code { font: 550 .76rem/1 Inter, Arial, sans-serif; letter-spacing: .05em; }
+#region-map .geo-options button[aria-pressed="true"] .geo-code { text-decoration: underline; text-underline-offset: 4px; }
+#region-map .geo-request { align-self: flex-start; margin-top: 18px; padding: 5px 0; color: var(--geo-ink); font: 600 .96rem/1.5 Inter, Arial, sans-serif; text-decoration: underline; text-underline-offset: 4px; }
+#region-map .geo-request:hover, #region-map .geo-options button:hover { color: var(--geo-wine); }
+#region-map .geo-options button:focus-visible, #region-map .geo-request:focus-visible { outline: 2px solid var(--geo-ink); outline-offset: 2px; }
+@media (max-width: 760px) {
+  #region-map .geo-board { grid-template-columns: minmax(0, 1fr); }
+  #region-map .geo-art { padding: 5px 0 25px; }
+  #region-map .geo-legend { bottom: 6px; }
+  #region-map .geo-map-label { font-size: 25px; }
+  #region-map .geo-picker { padding: 14px 18px 18px; }
+  #region-map .geo-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
+  #region-map .geo-options button { min-height: 44px; padding: 9px 0; gap: 5px; }
+  #region-map .geo-request { margin-top: 12px; }
+}
+@media (max-width: 360px) { #region-map .geo-code { display: none; } }
+@media (prefers-reduced-motion: reduce) { #region-map .geo-outline { transition: none; } }

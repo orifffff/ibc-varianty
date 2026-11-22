@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex"><meta name="theme-color" content="#071357">
+  <title>FMCA | Эксплуатация складов в Центральной Азии</title>
+  <link rel="preload" as="image" href="media/hero.webp">
+  <link rel="stylesheet" href="page.css"><link rel="stylesheet" href="geo.css">
+  <script defer src="page.js"></script><script defer src="geo.js"></script>
+</head>
+<body id="top">
+<a class="skip" href="#main"><span data-t="skip">К содержанию</span></a>
+<header class="header" id="header">
+  <div class="header-inside">
+    <button class="menu-switch" aria-expanded="false" aria-controls="small-menu" type="button" aria-label="Меню"><i aria-hidden="true"></i></button>
+    <a class="logo" href="#top" aria-label="Facility Management Central Asia">
+      <img class="logo-light" src="media/logo-white.png" alt="FMCA" width="773" height="109">
+      <img class="logo-dark" src="media/logo-dark.png" alt="" width="580" height="81">
+    </a>
+    <nav class="nav-large" aria-label="Разделы" data-nav><a href="#about"><span data-t="aboutNav">О компании</span></a><a href="#services"><span data-t="servicesNav">Услуги</span></a><a href="#geography"><span data-t="geoNav">География</span></a><a href="#contact"><span data-t="contactNav">Контакты</span></a></nav>
+    <div class="langs"><a data-lang="ru" href="index.html" lang="ru" hreflang="ru" aria-label="Русский" aria-current="page">RU</a><a data-lang="en" href="index.html?lang=en" lang="en" hreflang="en" aria-label="English">EN</a></div>
+  </div>
+  <nav id="small-menu" class="nav-small" hidden aria-label="Разделы" data-nav><a href="#about"><span data-t="aboutNav">О компании</span></a><a href="#services"><span data-t="servicesNav">Услуги</span></a><a href="#geography"><span data-t="geoNav">География</span></a><a href="#contact"><span data-t="contactNav">Контакты</span></a></nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-poster" src="media/hero.webp" alt="" width="1600" height="900" fetchpriority="high">
+    <video class="hero-film" muted playsinline loop preload="none" aria-hidden="true" data-src="media/hero.mp4"></video>
+    <div class="hero-shade"></div>
+    <div class="hero-type">
+      <h1 id="hero-title"><span data-t="heroFirst">Эксплуатация</span> <span data-t="heroSecond">складов</span></h1>
+      <p data-t="heroSub" class="hero-sub">в Центральной Азии</p>
+      <a class="hero-link" href="#services"><span data-t="explore">Выбрать услугу</span></a>
+    </div>
+    <button class="motion" type="button" hidden aria-label="Приостановить видео"><i aria-hidden="true"></i></button>
+  </section>
+  <section class="intro frame" id="about">
+    <div class="intro-grid appear">
+      <h2 data-t="introH">От приемки здания до ежедневной эксплуатации</h2>
+      <p data-t="introP">FMCA управляет складской недвижимостью. Мы отвечаем за работу здания и инженерных систем, проверяем действующее управление и помогаем собственнику оценить расходы.</p>
+    </div>
+  </section>
+  <section class="service-section" id="services" aria-labelledby="services-title">
+    <div class="service-head"><h2 id="services-title"><span data-t="servicesNav">Услуги</span></h2></div>
+    <div class="mosaic">
+      <article class="operation tile">
+        <img src="media/operations.webp" width="1400" height="788" alt="" loading="lazy">
+        <div class="tile-ink"><h3><span data-t="operating">Действующий склад</span></h3>
+          <p data-t="operatingBody">Управление объектом и работа с арендаторами, обслуживание оборудования, диспетчеризация и сервис.</p>
+          <div class="service-links">
+            <a class="" data-brief href="запрос.html?service=management"><span data-t="management">Управление объектом</span></a>
+            <a class="" data-brief href="запрос.html?service=engineering"><span data-t="engineering">Инженерные системы</span></a>
+            <a class="" data-brief href="запрос.html?service=service"><span data-t="service">Сервисные услуги</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="audit tile">
+        <img src="media/facility.webp" alt="" loading="lazy" width="1100" height="680">
+        <div class="tile-ink"><h3><span data-t="auditTitle">Приемка объекта</span></h3>
+          <p data-t="auditBody">Проверка работы управляющей компании и эксплуатационных затрат.</p>
+          <a class="textlink" data-brief href="запрос.html?service=audit"><span data-t="auditAction">Запросить аудит</span></a>
+        </div>
+      </article>
+      <article class="bts tile">
+        <div class="tile-ink"><h3><span data-t="btsTitle">Проект build-to-suit</span></h3>
+          <p data-t="btsBody">Расчет тарифа на эксплуатацию склада под требования конкретного заказчика.</p>
+          <a class="pill" data-brief href="запрос.html?service=bts"><span data-t="btsAction">Запросить расчет</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="territory" id="geography" aria-labelledby="geo-heading">
+    <div class="territory-heading"><h2 id="geo-heading"><span data-t="geoHeading">География работы</span></h2></div>
+    <div id="region-map"><noscript>Казахстан, Кыргызстан, Узбекистан, Таджикистан.</noscript></div>
+  </section>
+</main>
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div><h2><span data-t="contactTitle">Обсудим ваш объект</span></h2>
+      <a class="pill footer-pill" data-brief href="запрос.html"><span data-t="brief">Подготовить запрос</span></a>
+    </div>
+    <address>
+      <a href="mailto:service@fmca.asia">service@fmca.asia</a>
+      <a href="tel:+77770908399">+7 (777) 090-83-99</a>
+      <p data-t="address">Алматы, проспект Абая, 44а, офис А3</p>
+    </address>
+  </div>
+  <div class="fine"><span>Facility Management Central Asia</span><span data-t="prototype">Локальный макет</span></div>
+</footer></body></html>
