@@ -219,6 +219,11 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 1400px) { .top__name { display: none; } }
+/* невысокий экран: плашка цифр в два столбца, чтобы не закрывать фото и подпись корпуса */
+@media (max-height: 840px) and (min-width: 1001px) {
+  .plate { width: 420px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
+  .plate div:nth-child(even) { border-left: 1px solid var(--lw); } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
+}
 @media (max-width: 1180px) {
   .top nav { display: none; } .top .btn { margin-left: auto; }
   .sumbar { grid-template-columns: repeat(3, 1fr); } .sumbar__rent, .sumbar__go { grid-column: 1 / -1; } .sumbar > div + div { border-left: 0; border-top: 1px solid var(--lw); } .sumbar > div:nth-child(3), .sumbar > div:nth-child(4) { border-left: 1px solid var(--lw); }
@@ -280,10 +285,12 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     <img src="img/aerial.webp" alt="Складской комплекс вечером, вид с воздуха" width="1716" height="916" fetchpriority="high">
     <svg viewBox="0 0 1716 916" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
       <polygon class="mk-area" points="266,524 578,499 1288,604 1288,634 1142,664 1016,676 652,742"/>
-      <g class="mk">
-        <line x1="1010" y1="588" x2="1010" y2="404"/><rect class="dot" x="1003" y="581" width="14" height="14"/>
-        <rect class="box" x="1010" y="340" width="330" height="64"/>
-        <text x="1028" y="367">TASHKENT LOGISTICS HUB</text><text class="s" x="1028" y="389">четыре блока · класс A</text>
+      <g class="mk" id="mk">
+        <line id="mk-line" x1="1010" y1="588" x2="1010" y2="404"/><rect class="dot" x="1003" y="581" width="14" height="14"/>
+        <g id="mk-label">
+          <rect class="box" x="1010" y="340" width="330" height="64"/>
+          <text x="1028" y="367">TASHKENT LOGISTICS HUB</text><text class="s" x="1028" y="389">четыре блока · класс A</text>
+        </g>
       </g>
     </svg>
   </div>
@@ -528,6 +535,40 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   var top = $('top');
   function onScroll() { top.classList.toggle('is-solid', (window.scrollY || 0) > 60); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* подпись корпуса на фото: справа от линии; если мешает плашке с цифрами, слева и выше; если мешает и там, скрыта */
+  (function () {
+    var mk = $('mk'), lab = $('mk-label'), line = $('mk-line'), plate = document.querySelector('.plate');
+    /* точные рамки строк текста и кнопок слева */
+    function rects() {
+      var out = [].map.call(document.querySelectorAll('.hero__cta .btn'), function (n) { return n.getBoundingClientRect(); });
+      [].forEach.call(document.querySelectorAll('.hero .eye, .hero h1, .hero__lead'), function (n) {
+        var w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT), t, r = document.createRange();
+        while ((t = w.nextNode())) { r.selectNodeContents(t); [].push.apply(out, r.getClientRects()); }
+      });
+      return out;
+    }
+    function hit(a, b, m) { return !(a.right + m < b.left || a.left - m > b.right || a.bottom + m < b.top || a.top - m > b.bottom); }
+    function busy() {
+      var r = lab.getBoundingClientRect();
+      if (r.width === 0) return false;
+      return hit(r, plate.getBoundingClientRect(), 30) || rects().some(function (q) { return hit(r, q, 24); });
+    }
+    /* сама линия с точкой не должна идти по тексту или под плашкой */
+    function crossed() {
+      var r = line.getBoundingClientRect(), all = rects().concat([plate.getBoundingClientRect()]);
+      return r.height > 0 && all.some(function (q) { return hit(r, q, 12); });
+    }
+    function place() {
+      mk.style.display = ''; lab.removeAttribute('transform'); line.setAttribute('y2', 404);
+      if (crossed()) { mk.style.display = 'none'; return; }
+      if (!busy()) return;
+      lab.setAttribute('transform', 'translate(-330 -64)'); line.setAttribute('y2', 340);
+      if (busy()) mk.style.display = 'none';
+    }
+    var tm; window.addEventListener('resize', function () { clearTimeout(tm); tm = setTimeout(place, 150); });
+    place(); setTimeout(place, 1900);
+  })();
 
   /* блоки и расчет */
   var P = window.TLHPlan, B = P.BLOCKS, fmt = P.fmt, range = $('area');
