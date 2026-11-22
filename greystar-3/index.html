@@ -190,11 +190,18 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 .terms dl div.big { padding: 18px 0; } .terms dl div.big dd { font-size: clamp(40px, 4.4vw, 62px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
 .plan-h { margin-top: clamp(64px, 8vw, 112px); display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .plan-h h3 { font-size: clamp(24px, 2.4vw, 34px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); }
-.steps { margin-top: 34px; display: grid; grid-template-columns: repeat(4, 1fr); }
-.steps div { position: relative; padding: 28px 20px 0 0; border-top: 2px solid var(--line); }
-.steps div::before { content: ''; position: absolute; left: 0; top: -6px; width: 10px; height: 10px; background: #c3cbdd; }
-.steps div.done { border-top-color: var(--navy); } .steps div.done::before { background: var(--navy); }
-.steps div.now { border-top-color: var(--line); } .steps div.now::before { background: var(--wine); box-shadow: 0 0 0 4px rgba(105,1,7,0.16); }
+.steps { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); }
+.steps div { position: relative; padding: 0 20px 0 0; color: #b4bed5; } .steps div.done { color: var(--navy); }
+/* рисунки шагов: склад «строится» слева направо; пройденные шаги темно-синие с бордовой деталью, будущие серые */
+.steps .pic { display: block; width: min(100%, 200px); height: auto; margin-bottom: 14px; overflow: visible; }
+.pic .l { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; } .pic .t { stroke-width: 1; }
+.pic .fl { fill: currentColor; opacity: 0.1; } .pic .ac { fill: currentColor; } .steps div.done .pic .ac { fill: var(--wine); } .pic .wh { fill: #fff; stroke: currentColor; stroke-width: 1.4; } .steps div.done .pic .wh { stroke: var(--navy); }
+.pic .d { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease) calc(var(--i) * .35s + .15s); } .steps.in .pic .d { stroke-dashoffset: 0; }
+.pic .fd { opacity: 0; transition: opacity .6s ease calc(var(--i) * .35s + .9s); } .steps.in .pic .fd { opacity: 1; } .steps.in .pic .fl { opacity: 0.1; }
+.steps .bar { display: block; position: relative; height: 2px; margin-bottom: 22px; background: var(--line); }
+.steps .bar::before { content: ''; position: absolute; left: 0; top: -4px; width: 10px; height: 10px; background: #c3cbdd; }
+.steps div.done .bar { background: var(--navy); } .steps div.done .bar::before { background: var(--navy); }
+.steps div.now .bar { background: var(--line); } .steps div.now .bar::before { background: var(--wine); box-shadow: 0 0 0 4px rgba(105,1,7,0.16); }
 .steps b { display: block; font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em; color: var(--navy); } .steps span { display: block; margin-top: 6px; color: var(--steel); }
 .steps em { display: none; margin-top: 10px; font-family: var(--mono); font-style: normal; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wine); } .steps div.now em { display: block; }
 
@@ -286,7 +293,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   .foot__in { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__media { animation: none; } .draw .d { stroke-dashoffset: 0; transition: none; } .draw .f, .draw .truck { opacity: 1; transform: none; transition: none; } .ruler .run { display: none; } .ruler.in i, .grid5 .rv.in b { animation: none; } .rv, .up { opacity: 1; transform: none; transition: none; animation: none; } .mk-area { stroke-dashoffset: 0; animation: none; } .mk { opacity: 1; animation: none; }
+  .hero__media { animation: none; } .draw .d { stroke-dashoffset: 0; transition: none; } .pic .d { stroke-dashoffset: 0; transition: none; } .pic .fd { opacity: 1; transition: none; } .pic .fl { opacity: 0.1; } .draw .f, .draw .truck { opacity: 1; transform: none; transition: none; } .ruler .run { display: none; } .ruler.in i, .grid5 .rv.in b { animation: none; } .rv, .up { opacity: 1; transform: none; transition: none; animation: none; } .mk-area { stroke-dashoffset: 0; animation: none; } .mk { opacity: 1; animation: none; }
 }
 </style>
 </head>
@@ -488,10 +495,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   </div>
   <div class="plan-h rv"><h3>Четыре шага до ключей</h3><span class="mono" style="color:var(--steel)">График проекта</span></div>
   <div class="steps rv" id="steps">
-    <div data-at="2026-06-01"><b>Июнь 2026</b><span>Проектирование</span><em>Этап по графику</em></div>
-    <div data-at="2026-10-01"><b>Октябрь 2026</b><span>Строительство</span><em>Этап по графику</em></div>
-    <div data-at="2027-06-01"><b>Июнь 2027</b><span>Доступ для монтажа</span><em>Этап по графику</em></div>
-    <div data-at="2027-10-01"><b>Октябрь 2027</b><span>Ввод и передача ключей</span><em>Этап по графику</em></div>
+    <div data-at="2026-06-01" style="--i:0"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l d" pathLength="1" d="M26 8H118L132 22V64H26Z"/><path class="l t d" pathLength="1" d="M118 8V22H132"/><path class="l t d" pathLength="1" d="M38 20H66V36H38Z M70 20H108V36H70Z M34 40H66V54H34Z M70 40H108V54H70Z"/><path class="l t d" pathLength="1" d="M34 60H108 M34 57V63 M108 57V63"/><path class="ac fd" d="M139 30l7 7-17 17-9 2 2-9z"/></svg><i class="bar"></i><b>Июнь 2026</b><span>Проектирование</span><em>Этап по графику</em></div>
+    <div data-at="2026-10-01" style="--i:1"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="l d" pathLength="1" d="M30 70V34 M63 70V34 M96 70V34 M129 70V34"/><path class="l t d" pathLength="1" d="M30 34H129"/><path class="l d" pathLength="1" d="M26 30L79.5 22 133 30"/><path class="l t d" pathLength="1" d="M30 34L46.5 27 63 34 79.5 22.5 96 34 112.5 27 129 34"/><rect class="ac fd" x="25" y="66" width="10" height="5"/><rect class="ac fd" x="58" y="66" width="10" height="5"/><rect class="ac fd" x="91" y="66" width="10" height="5"/><rect class="ac fd" x="124" y="66" width="10" height="5"/></svg><i class="bar"></i><b>Октябрь 2026</b><span>Строительство</span><em>Этап по графику</em></div>
+    <div data-at="2027-06-01" style="--i:2"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M30 70V30L79.5 22 129 30V70Z"/><path class="l d" pathLength="1" d="M30 70V30L79.5 22 129 30V70"/><path class="l t d" pathLength="1" d="M40 38H54V70H40Z M40 46H54 M40 54H54 M40 62H54 M60 38H74V70H60Z M60 46H74 M60 54H74 M60 62H74 M80 38H94V70H80Z M80 46H94 M80 54H94 M80 62H94"/><rect class="ac fd" x="43" y="63" width="8" height="6"/><rect class="ac fd" x="63" y="55" width="8" height="6"/><rect class="ac fd" x="83" y="63" width="8" height="6"/><rect class="ac fd" x="83" y="47" width="8" height="6"/><rect class="ac fd" x="43" y="47" width="8" height="6"/><rect class="ac fd" x="104" y="58" width="14" height="12"/></svg><i class="bar"></i><b>Июнь 2027</b><span>Доступ для монтажа</span><em>Этап по графику</em></div>
+    <div data-at="2027-10-01" style="--i:3"><svg class="pic" viewBox="0 0 160 76" aria-hidden="true"><path class="l t d" pathLength="1" d="M6 70H154"/><path class="fl fd" d="M18 70V30L62 22 106 30V70Z"/><path class="l d" pathLength="1" d="M18 70V30L62 22 106 30V70"/><path class="l t d" pathLength="1" d="M18 40H106"/><path class="l t d" pathLength="1" d="M28 70V52H40V70 M48 70V52H60V70 M68 70V52H80V70 M88 70V52H100V70"/><g class="fd"><rect class="ac" x="110" y="48" width="28" height="17"/><path class="ac" d="M140 54h7l5 5v6h-12z"/><circle class="wh" cx="118" cy="67" r="3.4"/><circle class="wh" cx="131" cy="67" r="3.4"/><circle class="wh" cx="146" cy="67" r="3.4"/></g></svg><i class="bar"></i><b>Октябрь 2027</b><span>Ввод и передача ключей</span><em>Этап по графику</em></div>
   </div>
 </section>
 
