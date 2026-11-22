@@ -85,52 +85,49 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 .why3 b i { font-family: var(--mono); font-style: normal; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel); margin-left: 12px; }
 .why3 h3 { margin-top: 26px; font-size: clamp(20px, 1.9vw, 26px); font-weight: 600; letter-spacing: -0.025em; color: var(--navy); } .why3 p { margin-top: 12px; color: var(--body); }
 
-/* расчет */
-.box { margin-top: clamp(44px, 5.5vw, 76px); display: grid; grid-template-columns: 350px 1fr; border: 1px solid var(--lw); }
+/* расчет: настройки и цена слева, схема справа; весь блок помещается в один экран */
+.box { margin-top: clamp(36px, 4.6vw, 64px); display: grid; grid-template-columns: 372px 1fr; border: 1px solid var(--lw); scroll-margin-top: 8px; }
 .box__set { display: flex; flex-direction: column; border-right: 1px solid var(--lw); }
-.cell { padding: clamp(22px, 2.4vw, 32px); min-width: 0; } .box__set .cell + .cell { border-top: 1px solid var(--lw); } .box__set .cell:last-child { flex: 1; }
+.cell { padding: 20px 22px; min-width: 0; } .box__set .cell + .cell { border-top: 1px solid var(--lw); }
 .cell > span.mono, .cell label.mono { color: rgba(255,255,255,0.62); display: block; }
-.need { margin-top: 12px; font-size: clamp(38px, 3.6vw, 50px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; display: block; }
+.need-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.need { font-size: clamp(32px, 3vw, 42px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
 .need small { font-size: 0.5em; margin-left: 8px; letter-spacing: 0; opacity: 0.8; }
-input[type=range] { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 26px; margin: 16px 0 6px; background: transparent; cursor: pointer; }
+input[type=range] { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 26px; margin: 12px 0 4px; background: transparent; cursor: pointer; }
 input[type=range]::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(90deg, #fff var(--p, 30%), rgba(255,255,255,0.28) var(--p, 30%)); }
 input[type=range]::-moz-range-track { height: 2px; background: linear-gradient(90deg, #fff var(--p, 30%), rgba(255,255,255,0.28) var(--p, 30%)); }
 input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; margin-top: -7px; border-radius: 0; background: #fff; border: 0; box-shadow: 0 0 0 4px var(--navy); }
 input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 0; background: #fff; border: 0; box-shadow: 0 0 0 4px var(--navy); }
 input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
 .minmax { display: flex; justify-content: space-between; color: rgba(255,255,255,0.55); }
-.seg { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
-.seg button { height: 40px; padding: 0 14px; border: 1px solid var(--lw); background: transparent; color: #fff; font-size: 14.5px; font-weight: 500; cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.seg { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { height: 38px; padding: 0 11px; border: 1px solid var(--lw); background: transparent; color: #fff; font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 .seg button:hover { border-color: rgba(255,255,255,0.6); } .seg button[aria-pressed=true] { background: #fff; border-color: #fff; color: var(--navy); }
+.res { flex: 1; display: flex; flex-direction: column; background: rgba(255,255,255,0.045); }
+.res__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; } .res__head .mono { color: var(--ice); }
+.seg--mini { margin: 0; gap: 0; flex: none; flex-wrap: nowrap; } .seg--mini button { height: 28px; padding: 0 10px; font-size: 12.5px; } .seg--mini button + button { border-left: 0; }
+.res__rent { display: block; margin-top: 10px; font-size: clamp(34px, 3.2vw, 46px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; white-space: nowrap; }
+.res__line { margin-top: 10px; font-size: 14.5px; line-height: 1.45; color: rgba(255,255,255,0.8); } .res__line b { color: #fff; font-weight: 600; }
+.res__go { margin-top: auto; padding-top: 16px; display: grid; gap: 12px; justify-items: start; } .res__go .btn { width: 100%; height: 48px; }
+.link { background: none; border: 0; padding: 0; font-size: 14px; color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,0.4); cursor: pointer; }
 .box__plan { display: flex; flex-direction: column; }
 .plan__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; } .plan__head .mono { color: var(--ice); }
 .seg--view { margin: 0; gap: 0; flex: none; flex-wrap: nowrap; } .seg--view button { height: 32px; padding: 0 14px; font-size: 13px; } .seg--view button + button { border-left: 0; }
-#plan { width: 100%; max-width: 760px; margin: clamp(10px, 1.6vw, 24px) auto; flex: 1; display: flex; align-items: center; } #plan svg { flex: 1; }
+/* схема подстраивается под высоту окна, чтобы расчет был виден целиком */
+#plan { width: 100%; max-width: min(760px, max(330px, calc((100vh - 250px) * 1.5))); margin: 12px auto 0; flex: 1; display: flex; align-items: center; } #plan svg { flex: 1; }
 #plan .pb:focus-visible polygon:last-of-type, #plan .pb:focus-visible rect { stroke: #fff; stroke-width: 1.6; }
-.chips { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--lw); margin: 0 calc(clamp(22px, 2.4vw, 32px) * -1) calc(clamp(22px, 2.4vw, 32px) * -1); }
+.chips { display: none; border-top: 1px solid var(--lw); }
 .chips button { padding: 14px 14px 16px; text-align: left; background: transparent; border: 0; color: #fff; cursor: pointer; transition: background-color .25s ease, color .25s ease; } .chips button + button { border-left: 1px solid var(--lw); }
 .chips b { display: block; font-size: 15px; font-weight: 600; } .chips span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; opacity: 0.66; }
-.chips button:hover { background: rgba(255,255,255,0.07); } .chips button[aria-pressed=true] { background: #fff; color: var(--navy); } .chips button[aria-pressed=true] span { opacity: 0.8; }
-.sumbar { grid-column: 1 / -1; display: grid; grid-template-columns: 1.6fr 1.1fr 0.9fr 0.5fr auto; border-top: 1px solid var(--lw); background: rgba(255,255,255,0.045); }
-.sumbar > div { padding: clamp(20px, 2.2vw, 30px) clamp(18px, 2vw, 28px); min-width: 0; } .sumbar > div + div { border-left: 1px solid var(--lw); }
-.sumbar .mono { display: block; color: var(--ice); }
-.sumbar b { display: block; margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
-#r-names { white-space: normal; }
-.sumbar__rent b { margin-top: 8px; font-size: clamp(32px, 3.1vw, 50px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; }
-.sumbar__rent small { display: block; margin-top: 8px; font-size: 13px; opacity: 0.62; }
-.sumbar__go { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
-.link { background: none; border: 0; padding: 0; font-size: 14px; color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,0.4); cursor: pointer; }
-.notes { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--lw); font-size: 14.5px; line-height: 1.45; }
-.notes li { position: relative; padding: 16px clamp(18px, 2vw, 28px) 17px calc(clamp(18px, 2vw, 28px) + 16px); opacity: 0.86; } .notes li + li { border-left: 1px solid var(--lw); }
-.notes li::before { content: ''; position: absolute; left: clamp(18px, 2vw, 28px); top: 24px; width: 5px; height: 5px; background: #fff; }
-.fine { margin-top: 18px; font-size: 13px; opacity: 0.6; max-width: 62em; }
+.chips button[aria-pressed=true] { background: #fff; color: var(--navy); } .chips button[aria-pressed=true] span { opacity: 0.8; }
+.fine { margin-top: 16px; font-size: 13px; opacity: 0.62; max-width: 76em; }
 
 /* характеристики */
-.grid4 { margin-top: clamp(40px, 5vw, 68px); display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
-.grid4 div { padding: 26px 22px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.grid4 b { display: block; font-size: clamp(27px, 2.7vw, 40px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.05; color: var(--navy); white-space: nowrap; }
+.grid4 { margin-top: clamp(36px, 4.4vw, 60px); display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
+.grid4 div { padding: 22px 18px 24px; min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.grid4 b { display: block; font-size: clamp(22px, 2.05vw, 34px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.05; color: var(--navy); white-space: nowrap; }
 .grid4 b i { font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: 0.06em; margin-left: 6px; vertical-align: 0.9em; color: var(--steel); }
-.grid4 span { display: block; margin-top: 14px; color: var(--steel); line-height: 1.5; }
+.grid4 span { display: block; margin-top: 12px; color: var(--steel); line-height: 1.5; }
 .green { margin-top: 28px; display: grid; grid-template-columns: 1.1fr 1fr; background: var(--navy); color: #fff; }
 .green > div { padding: clamp(26px, 3.2vw, 44px); } .green .mono { color: var(--ice); }
 .green h3 { margin-top: 14px; font-size: clamp(22px, 2.1vw, 30px); font-weight: 600; letter-spacing: -0.025em; } .green p { margin-top: 12px; opacity: 0.82; font-size: 16px; max-width: 34em; }
@@ -138,7 +135,7 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 .green__n b { display: block; font-size: clamp(24px, 2.5vw, 36px); font-weight: 300; letter-spacing: -0.03em; white-space: nowrap; } .green__n span { display: block; margin-top: 8px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.66; }
 
 /* лента кадров */
-.strip { margin: clamp(40px, 5vw, 68px) calc(var(--px) * -1) 0; display: flex; gap: 4px; height: clamp(300px, 37vw, 580px); }
+.strip { margin: clamp(40px, 5vw, 68px) calc(var(--px) * -1) 0; display: flex; gap: 4px; height: clamp(260px, 37vw, min(580px, calc(100vh - 262px))); }
 .shot { position: relative; flex: 1 1 0; min-width: 0; padding: 0; border: 0; background: var(--deep); overflow: hidden; cursor: zoom-in; text-align: left; color: #fff; transition: flex-grow .7s var(--ease); }
 .shot:nth-child(1) { flex-grow: 1.5; } .shot:nth-child(3) { flex-grow: 1.25; }
 @media (hover: hover) and (min-width: 761px) { .strip:hover .shot { flex-grow: 1; } .strip .shot:hover { flex-grow: 2.3; } }
@@ -168,9 +165,9 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 .terms__in { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px clamp(32px, 7vw, 120px); }
 .terms .btn { margin-top: 28px; }
 .terms dl { margin: 0; border-top: 2px solid var(--navy); }
-.terms dl div { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+.terms dl div { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
 .terms dt { color: var(--steel); } .terms dd { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--navy); text-align: right; }
-.terms dl div.big { padding: 26px 0; } .terms dl div.big dd { font-size: clamp(40px, 4.4vw, 62px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
+.terms dl div.big { padding: 18px 0; } .terms dl div.big dd { font-size: clamp(40px, 4.4vw, 62px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
 .plan-h { margin-top: clamp(64px, 8vw, 112px); display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .plan-h h3 { font-size: clamp(24px, 2.4vw, 34px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); }
 .steps { margin-top: 34px; display: grid; grid-template-columns: repeat(4, 1fr); }
@@ -189,21 +186,21 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 
 /* контакты и запрос */
 .ask__in { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 56px clamp(32px, 7vw, 120px); }
-.people { margin-top: 34px; border-top: 1px solid var(--lw); }
-.people a { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--lw); text-decoration: none; }
+.people { margin-top: 26px; border-top: 1px solid var(--lw); }
+.people a { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--lw); text-decoration: none; }
 .people img { width: 56px; height: 56px; object-fit: cover; } .people b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; } .people span span { display: block; margin-top: 3px; font-size: 14px; opacity: 0.7; line-height: 1.35; }
-.people .qr { display: grid; justify-items: center; gap: 7px; } .people .qr img { width: 84px; height: 84px; padding: 4px; background: #fff; object-fit: contain; }
+.people .qr { display: grid; justify-items: center; gap: 5px; } .people .qr img { width: 70px; height: 70px; padding: 3px; background: #fff; object-fit: contain; }
 .people u { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ice); }
-.deck { margin-top: 26px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; } .deck .mono { opacity: 0.6; }
-.form { background: #fff; color: var(--ink); padding: clamp(24px, 3vw, 44px); }
-.form h3 { font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); } .form > p { margin-top: 10px; font-size: 15.5px; color: var(--body); max-width: 30em; }
-.pick { margin-top: 22px; padding: 16px 18px; background: var(--paper); border-left: 3px solid var(--wine); font-size: 15px; line-height: 1.5; color: var(--body); } .pick b { color: var(--navy); font-weight: 600; } .pick .mono { display: block; margin-bottom: 6px; color: var(--steel); }
-.form__grid { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 14px; }
+.deck { margin-top: 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; } .deck .mono { opacity: 0.6; }
+.form { background: #fff; color: var(--ink); padding: clamp(22px, 2.4vw, 36px); align-self: start; }
+.form h3 { font-size: clamp(24px, 2.3vw, 32px); font-weight: 600; letter-spacing: -0.03em; color: var(--navy); } .form > p { margin-top: 6px; font-size: 15px; color: var(--body); max-width: 30em; }
+.pick { margin-top: 16px; padding: 12px 16px; background: var(--paper); border-left: 3px solid var(--wine); font-size: 14.5px; line-height: 1.5; color: var(--body); } .pick b { color: var(--navy); font-weight: 600; } .pick .mono { display: block; margin-bottom: 6px; color: var(--steel); }
+.form__grid { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .fld { display: grid; gap: 8px; } .fld--wide { grid-column: 1 / -1; } .fld label { font-size: 13.5px; font-weight: 600; color: var(--navy); }
 .fld input, .fld textarea { width: 100%; padding: 13px 14px; background: #fff; border: 1px solid rgba(7,19,87,0.28); color: var(--ink); font-size: 16px; outline: none; transition: border-color .25s ease, box-shadow .25s ease; }
-.fld textarea { min-height: 92px; resize: vertical; line-height: 1.45; } .fld input:focus, .fld textarea:focus { border-color: var(--navy); box-shadow: inset 0 0 0 1px var(--navy); }
-.agree { margin-top: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--body); cursor: pointer; } .agree input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--navy); flex: none; }
-.form__go { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.fld textarea { height: 50px; min-height: 50px; resize: vertical; line-height: 1.4; } .fld input:focus, .fld textarea:focus { border-color: var(--navy); box-shadow: inset 0 0 0 1px var(--navy); }
+.agree { margin-top: 14px; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--body); cursor: pointer; } .agree input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--navy); flex: none; }
+.form__go { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
 .form__ok { display: none; font-size: 14.5px; font-weight: 600; color: var(--wine); } .form.is-sent .form__ok { display: block; }
 
 /* подвал */
@@ -219,19 +216,26 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 1400px) { .top__name { display: none; } }
+/* невысокий экран: меньше пустого места, заголовки чуть мельче, чтобы каждый раздел помещался целиком */
+@media (max-height: 760px) and (min-width: 1001px) {
+  .sec { padding-top: clamp(52px, 5.2vw, 76px); padding-bottom: clamp(52px, 5.2vw, 76px); }
+  .h2 { font-size: clamp(30px, 3.5vw, 46px); margin-top: 20px; } .lead { margin-top: 16px; }
+}
 /* невысокий экран: плашка цифр в два столбца, чтобы не закрывать фото и подпись корпуса */
 @media (max-height: 840px) and (min-width: 1001px) {
   .plate { width: 420px; display: grid; grid-template-columns: 1fr 1fr; } .plate div + div { border-top: 0; }
   .plate div:nth-child(even) { border-left: 1px solid var(--lw); } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
 }
+@media (max-width: 1260px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 1180px) {
   .top nav { display: none; } .top .btn { margin-left: auto; }
-  .sumbar { grid-template-columns: repeat(3, 1fr); } .sumbar__rent, .sumbar__go { grid-column: 1 / -1; } .sumbar > div + div { border-left: 0; border-top: 1px solid var(--lw); } .sumbar > div:nth-child(3), .sumbar > div:nth-child(4) { border-left: 1px solid var(--lw); }
-  .sumbar__go { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 14px 22px; }
 }
 @media (max-width: 1000px) {
   .why3 { grid-template-columns: 1fr; gap: 44px; } .terms__in, .ask__in, .green, .loc__head { grid-template-columns: 1fr; }
-  .box { grid-template-columns: 1fr; } .box__set { border-right: 0; border-bottom: 1px solid var(--lw); flex-direction: row; flex-wrap: wrap; } .box__set .cell { flex: 1 1 50%; } .box__set .cell:first-child { flex-basis: 100%; } .box__set .cell + .cell { border-top: 1px solid var(--lw); } .box__set .cell:last-child { border-left: 1px solid var(--lw); }
+  .box { display: flex; flex-direction: column; } .box__set { display: contents; }
+  .box .cell { border-top: 1px solid var(--lw); } .box .cell:first-child { border-top: 0; }
+  .box__set .cell:nth-child(1) { order: 1; } .box__set .cell:nth-child(2) { order: 2; } .box__plan { order: 3; } .box .res { order: 4; }
+  #plan { max-width: 640px; margin-bottom: 12px; }
   .grid4 { grid-template-columns: repeat(2, 1fr); } .green__n { border-left: 0; border-top: 1px solid var(--lw); }
   .grid3 { grid-template-columns: 1fr 1fr; } .grid3 div, .grid3 div:not(:nth-child(3n+1)) { padding-left: 22px; border-left: 0; } .grid3 div::before, .grid3 div:not(:nth-child(3n+1))::before { left: 0; }
   .mk { display: none; } .hero__in { flex-direction: column; align-items: stretch; } .plate { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); } .plate div + div { border-top: 0; border-left: 1px solid var(--lw); } .plate b { font-size: 26px; }
@@ -247,10 +251,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   .hero__cta .btn { flex: 1 1 100%; }
   .plate { grid-template-columns: 1fr 1fr; } .plate div { padding: 14px 16px 15px; } .plate div:nth-child(3) { border-left: 0; } .plate div:nth-child(n+3) { border-top: 1px solid var(--lw); }
   .box { margin-left: calc(var(--px) * -1 + 8px); margin-right: calc(var(--px) * -1 + 8px); }
-  .box__set .cell { flex-basis: 100%; } .box__set .cell:last-child { border-left: 0; }
-  .cell { padding: 20px 16px; } .chips { grid-template-columns: 1fr 1fr; margin: 0 -16px -20px; } .chips button:nth-child(3) { border-left: 0; } .chips button:nth-child(n+3) { border-top: 1px solid var(--lw); }
-  .sumbar > div { padding: 18px 16px; } .sumbar__go .btn { flex: 1 1 100%; }
-  .notes { grid-template-columns: 1fr; } .notes li + li { border-left: 0; border-top: 1px solid var(--lw); } .notes li { padding-left: 32px; padding-right: 16px; } .notes li::before { left: 16px; }
+  .cell { padding: 20px 16px; } .chips { display: grid; grid-template-columns: 1fr 1fr; margin: 4px -16px -20px; } .chips button:nth-child(3) { border-left: 0; } .chips button:nth-child(n+3) { border-top: 1px solid var(--lw); }
+  .people a { padding: 16px 0; }
   .grid4 div { padding: 20px 14px 22px; } .green__n { grid-template-columns: 1fr 1fr; }
   .grid3 { grid-template-columns: 1fr; }
   .strip { height: 62vw; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .strip::-webkit-scrollbar { display: none; } .strip .shot, .strip .shot:nth-child(n) { flex: 0 0 86vw; scroll-snap-align: center; }
@@ -271,7 +273,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   <a class="top__logo" href="https://ibc-global.asia/" aria-label="IBC Global"><img class="w" src="img/logo-white.svg" alt="IBC Global"><img class="c" src="img/logo-color.svg" alt=""></a>
   <span class="top__name">Tashkent Logistics Hub</span>
   <nav aria-label="Разделы">
-    <a href="#blocks">Блоки и расчет</a>
+    <a href="#calc">Блоки и расчет</a>
     <a href="#spec">Характеристики</a>
     <a href="#views">Визуализации</a>
     <a href="#location">Место</a>
@@ -301,7 +303,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <h1 class="up" style="--d:.25s">Tashkent<span>Logistics Hub</span></h1>
       <p class="hero__lead up" style="--d:.4s">Класс A с прямым выездом на Ташкентскую кольцевую M39. Четыре блока, которые можно объединять: сухое, холодильное или морозильное хранение.</p>
       <div class="hero__cta up" style="--d:.55s">
-        <a class="btn btn--wine" href="#blocks">Посчитать аренду<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
+        <a class="btn btn--wine" href="#calc">Посчитать аренду<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
         <a class="btn btn--line" href="#ask" data-ask="deck">Получить презентацию</a>
       </div>
       <p class="hero__by up" style="--d:.7s">Девелопер: <b>Greystar Real Estate Partners</b> · Консультант по аренде: <b>IBC Global</b></p>
@@ -330,11 +332,10 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   <h2 class="h2 rv">Соберите склад<span>и узнайте цену аренды</span></h2>
   <p class="lead rv" style="--dl:.1s">Задайте площадь и режим хранения. Сайт выберет подходящие соседние блоки и сразу посчитает аренду.</p>
 
-  <div class="box rv">
+  <div class="box rv" id="calc">
     <div class="box__set">
       <div class="cell">
-        <label class="mono" for="area">Площадь склада</label>
-        <output class="need" id="need" for="area">12&nbsp;000<small>м²</small></output>
+        <div class="need-row"><label class="mono" for="area">Площадь склада</label><output class="need" id="need" for="area">12&nbsp;000<small>м²</small></output></div>
         <input type="range" id="area" min="5000" max="37524" step="500" value="12000">
         <div class="minmax mono"><span>5 000</span><span>37 524 м²</span></div>
       </div>
@@ -346,11 +347,20 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
           <button type="button" data-v="frozen" aria-pressed="false">Морозильный</button>
         </div>
       </div>
-      <div class="cell">
-        <span class="mono">Считать аренду</span>
-        <div class="seg" id="per" role="group" aria-label="Период расчета">
-          <button type="button" data-v="month" aria-pressed="true">За месяц</button>
-          <button type="button" data-v="year" aria-pressed="false">За год</button>
+      <div class="cell res">
+        <div class="res__head">
+          <span class="mono">Аренда</span>
+          <div class="seg seg--mini" id="per" role="group" aria-label="Период расчета">
+            <button type="button" data-v="month" aria-pressed="true">за месяц</button>
+            <button type="button" data-v="year" aria-pressed="false">за год</button>
+          </div>
+        </div>
+        <b class="res__rent" id="r-rent">$149 940</b>
+        <p class="res__line" id="r-line"><span id="r-label">Наш подбор</span>: <b id="r-names">блок B</b>, <span id="r-area">12 240</span>&nbsp;м², <span id="r-docks">30 доков</span></p>
+        <p class="res__line" id="r-none" hidden>Блоки не выбраны. Нажмите на блок на схеме.</p>
+        <div class="res__go">
+          <a class="btn btn--wine" href="#ask" data-ask="calc">Отправить расчет<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
+          <button class="link" type="button" id="share">Скопировать ссылку на расчет</button>
         </div>
       </div>
     </div>
@@ -365,19 +375,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div id="plan"></div>
       <div class="chips" id="chips"></div>
     </div>
-    <div class="sumbar">
-      <div class="sumbar__rent"><span class="mono" id="r-rent-l">Аренда за месяц</span><b id="r-rent">$149 940</b><small>ставка $132 и сервисный сбор $15 за м² в год</small></div>
-      <div><span class="mono" id="r-label">Блоки: наш подбор</span><b id="r-names">B</b></div>
-      <div><span class="mono">Площадь</span><b><span id="r-area">12 240</span> м²</b></div>
-      <div><span class="mono">Доки</span><b id="r-docks">30</b></div>
-      <div class="sumbar__go">
-        <a class="btn btn--wine" href="#ask" data-ask="calc">Отправить расчет<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12m0 0-4-4m4 4-4 4"/></svg></a>
-        <button class="link" type="button" id="share">Скопировать ссылку на расчет</button>
-      </div>
-    </div>
-    <ul class="notes"><li id="r-mode">Сухой склад: +16…+25&nbsp;°C.</li><li>Доступ для монтажа с июня 2027, ввод в октябре 2027.</li></ul>
   </div>
-  <p class="fine">Расчет предварительный, для сухого склада. Блоки делимые, точную нарезку и расстановку согласуем в предложении. Схема условная.</p>
+  <p class="fine"><span id="r-mode">Сухой склад: +16…+25&nbsp;°C.</span> Доступ для монтажа с июня 2027, ввод в октябре 2027. В расчете базовая ставка $132 и сервисный сбор $15 за м² в год, расчет предварительный. Блоки делимые, точную нарезку согласуем в предложении. Схема условная.</p>
 </section>
 
 <section class="sec sec--paper" id="spec">
@@ -447,7 +446,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div class="eye rv">Условия</div>
       <h2 class="h2 rv">Все условия<span>на одном экране</span></h2>
       <p class="lead rv" style="--dl:.1s">Структура triple-net (NNN): арендатор платит базовую ставку и сервисный сбор. Налоги, страхование и эксплуатация оплачиваются отдельно. Валюта: доллары США.</p>
-      <a class="btn btn--dark rv" style="--dl:.15s" href="#blocks">Посчитать для своей площади</a>
+      <a class="btn btn--dark rv" style="--dl:.15s" href="#calc">Посчитать для своей площади</a>
     </div>
     <dl class="rv" style="--dl:.1s">
       <div class="big"><dt>Базовая ставка за м² в год, первый год</dt><dd>$132</dd></div>
@@ -504,8 +503,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <div class="form__grid">
         <div class="fld"><label for="f-name">Как к Вам обращаться</label><input id="f-name" autocomplete="name"></div>
         <div class="fld"><label for="f-co">Компания</label><input id="f-co" autocomplete="organization"></div>
-        <div class="fld fld--wide"><label for="f-contact">Телефон или почта для ответа</label><input id="f-contact" autocomplete="email"></div>
-        <div class="fld fld--wide"><label for="f-note">Что еще важно учесть</label><textarea id="f-note" placeholder="Например: срок заезда, высота хранения, температурный режим"></textarea></div>
+        <div class="fld"><label for="f-contact">Телефон или почта</label><input id="f-contact" autocomplete="email"></div>
+        <div class="fld"><label for="f-note">Что еще важно учесть</label><input id="f-note" placeholder="Например, срок заезда"></div>
       </div>
       <label class="agree"><input type="checkbox" id="f-agree"><span>Согласен на обработку персональных данных</span></label>
       <div class="form__go">
@@ -519,7 +518,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 <footer class="foot">
   <div class="foot__in">
     <div><img src="img/logo-white.svg" alt="IBC Global" width="170" height="24"><p>Консультант по складской и индустриальной недвижимости в Центральной Азии.</p></div>
-    <div><b>Tashkent Logistics Hub</b><a href="#blocks">Блоки и расчет аренды</a><a href="#spec">Характеристики</a><a href="#views">Визуализации</a><a href="#location">Место</a><a href="#terms">Условия и график</a></div>
+    <div><b>Tashkent Logistics Hub</b><a href="#calc">Блоки и расчет аренды</a><a href="#spec">Характеристики</a><a href="#views">Визуализации</a><a href="#location">Место</a><a href="#terms">Условия и график</a></div>
     <div><b>Связаться</b><a href="#ask" data-ask="offer">Запросить предложение</a><a href="#ask" data-ask="deck">Получить презентацию</a><a href="https://ibc-global.asia/">ibc-global.asia</a></div>
   </div>
   <div class="foot__end">Девелопер: Greystar Real Estate Partners. Сведения на странице не являются публичной офертой. Схема блоков условная. Изображения комплекса: визуализации девелопера.</div>
@@ -605,16 +604,16 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     $('need').innerHTML = fmt(need) + '<small>м²</small>';
     plan.setActive(st.picked);
     for (var k in chips) chips[k].setAttribute('aria-pressed', st.picked.indexOf(k) !== -1);
-    $('r-label').textContent = st.picked.length ? (st.auto ? 'Блоки: наш подбор' : 'Блоки: Ваш выбор') : 'Блоки не выбраны';
-    $('r-names').textContent = names || 'Нажмите на блок';
+    $('r-label').textContent = st.auto ? 'Наш подбор' : 'Ваш выбор';
+    $('r-line').hidden = !st.picked.length; $('r-none').hidden = !!st.picked.length;
+    $('r-names').textContent = (st.picked.length > 1 ? 'блоки ' : 'блок ') + names;
     $('r-area').textContent = fmt(area);
-    $('r-docks').textContent = docks;
-    $('r-rent-l').textContent = st.per === 'month' ? 'Аренда за месяц' : 'Аренда за год';
+    $('r-docks').textContent = dk(docks);
     $('r-rent').textContent = from + '$' + fmt(rent);
     $('r-mode').textContent = MODE[st.mode][1];
     $('pick').innerHTML = st.picked.length
       ? '<span class="mono">Ваш расчет уйдет вместе с запросом</span><b>' + title + ', ' + fmt(area) + ' м²</b>, ' + dk(docks) + ', режим: ' + MODE[st.mode][0] + '. Предварительно <b>' + from + '$' + fmt(month) + ' в месяц</b> с сервисным сбором.'
-      : '<span class="mono">Расчета пока нет</span><a href="#blocks" style="color:inherit;font-weight:600">Собрать склад и посчитать аренду</a>';
+      : '<span class="mono">Расчета пока нет</span><a href="#calc" style="color:inherit;font-weight:600">Собрать склад и посчитать аренду</a>';
   }
   function toggle(id) {
     var i = st.picked.indexOf(id); if (i === -1) st.picked.push(id); else st.picked.splice(i, 1);
@@ -653,7 +652,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { toast('Ссылка на расчет скопирована'); }, function () { toast('Ссылка на расчет в адресной строке'); });
     else toast('Ссылка на расчет в адресной строке');
   });
-  if (readHash()) { render(); setTimeout(function () { $('blocks').scrollIntoView(); }, 60); } else { st.picked = fit(+range.value); render(); }
+  if (readHash()) { render(); setTimeout(function () { $('calc').scrollIntoView(); }, 60); } else { st.picked = fit(+range.value); render(); }
 
   /* запрос */
   var ASK = {

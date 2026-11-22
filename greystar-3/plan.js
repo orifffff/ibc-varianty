@@ -67,6 +67,7 @@
       g.setAttribute('class', 'pb'); g.setAttribute('data-id', b.id); g.setAttribute('tabindex', 0); g.setAttribute('role', 'button');
       g.setAttribute('aria-pressed', 'false'); g.setAttribute('aria-label', 'Блок ' + b.id + ', ' + fmt(b.area) + ' м²');
       g.style.cssText = 'cursor:pointer;outline:none;transition:transform .3s ease';
+      el('title', {}, g).textContent = 'Блок ' + b.id + ': ' + fmt(b.area) + ' м², доков: ' + b.docks + ', ' + b.w + ' × ' + b.d + ' м';
       g.addEventListener('click', function () { if (onToggle) onToggle(b.id); });
       g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (onToggle) onToggle(b.id); } });
       var side = { stroke: C.line, 'stroke-width': 0.5, 'stroke-linejoin': 'round' };
