@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>FMCA: управление складской недвижимостью в Центральной Азии</title>
+<link rel="stylesheet" href="kit/ibc-kit.css">
+<style>
+/* fmca.asia в манере kurvindustrial.com: устройство страницы и движение оттуда, цвета, шрифт, тексты и картинки наши */
+:root { --navy: #071357; --wine: #690107; --steel: #6984a1; --sky: #c4d2ea; --sky-2: #dfe7f4; --paper: #f2f4f8; --gap: 4px; --r: 56px; --ease: cubic-bezier(0.25, 1, 0.33, 1); --px: clamp(20px, 5.4vw, 84px); }
+body { background: #fff; color: var(--navy); }
+h1, h2, h3 { font-weight: 300; letter-spacing: -0.025em; color: inherit; }
+.page { padding: var(--gap); display: grid; gap: var(--gap); overflow-x: clip; }
+.blk { position: relative; overflow: hidden; border-radius: 0 0 var(--r) 0; }
+
+/* заставка при загрузке */
+.loader { position: fixed; inset: 0; z-index: 100; background: var(--navy); display: grid; place-items: center; transition: transform 1s var(--ease) .15s; }
+.loader img { height: 44px; width: auto; animation: breathe 1.4s ease-in-out infinite alternate; }
+@keyframes breathe { from { opacity: 0.35; } to { opacity: 1; } }
+.ready .loader { transform: translateY(-101%); }
+
+/* шапка */
+.top { position: fixed; inset: 0 0 auto 0; z-index: 50; height: 78px; display: flex; align-items: center; gap: 30px; padding: 0 calc(var(--px) + var(--gap)); color: #fff; transition: background .45s var(--ease), color .45s var(--ease), box-shadow .45s var(--ease), height .45s var(--ease); }
+.top__logo { position: relative; display: block; height: 38px; width: 268px; }
+.top__logo img { position: absolute; left: 0; top: 0; height: 38px; width: auto; transition: opacity .35s; }
+.top__logo .c { opacity: 0; }
+.top nav { margin-left: auto; display: flex; gap: 28px; font-size: 14px; font-weight: 500; }
+.top nav a { color: inherit; text-decoration: none; position: relative; padding: 6px 0; }
+.top nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.top nav a:hover::after { transform: scaleX(1); }
+.lang { font-size: 13px; font-weight: 600; display: flex; gap: 10px; } .lang a { color: inherit; text-decoration: none; opacity: 0.55; } .lang a[aria-current] { opacity: 1; }
+.top.is-solid { background: rgba(255,255,255,0.96); color: var(--navy); height: 64px; box-shadow: 0 1px 0 rgba(7,19,87,0.08); backdrop-filter: blur(10px); }
+.top.is-solid .w { opacity: 0; } .top.is-solid .c { opacity: 1; }
+
+/* кнопка-пилюля */
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 28px; border-radius: 999px; border: 0; cursor: pointer; background: var(--sky); color: var(--navy); font: 600 14px/1 var(--ibc-font); text-decoration: none; transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease); }
+.pill:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+.pill--wine { background: var(--wine); color: #fff; } .pill--wine:hover { background: var(--navy); }
+.pill--line { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6); } .pill--line:hover { background: #fff; color: var(--navy); }
+
+/* первый экран */
+.hero { height: calc(100svh - 2 * var(--gap)); min-height: 560px; background: #0a1238; color: #fff; display: flex; align-items: flex-end; }
+.hero__img { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; object-position: 38% 50%; animation: drift 26s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.02) translate(1.5%, 0.8%); } to { transform: scale(1.14) translate(-2.5%, -1.5%); } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.45) 0%, rgba(7,19,87,0) 26%, rgba(7,19,87,0) 46%, rgba(7,19,87,0.82) 100%); }
+.hero__in { position: relative; z-index: 2; padding: 0 var(--px) clamp(40px, 6vw, 84px); max-width: 1100px; }
+.hero h1 { font-size: clamp(40px, 5.6vw, 84px); line-height: 1.02; color: #fff; }
+.hero__sub { margin-top: 14px; font-size: clamp(20px, 2.4vw, 36px); font-weight: 300; letter-spacing: -0.015em; color: rgba(255,255,255,0.92); }
+.hero__lands { margin-top: 30px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.8); }
+.hero__lands b { display: block; font-weight: 500; font-size: 12px; opacity: 0.7; margin-bottom: 6px; }
+.line { display: block; overflow: hidden; } .line > span { display: block; transform: translateY(110%); transition: transform 1.1s var(--ease); }
+.ready .line > span { transform: none; } .ready .line:nth-child(2) > span { transition-delay: .12s; }
+.fadeup { opacity: 0; transform: translateY(18px); transition: opacity 1s var(--ease) .45s, transform 1s var(--ease) .45s; } .ready .fadeup { opacity: 1; transform: none; } .ready .fadeup.d2 { transition-delay: .65s; }
+
+/* синий блок со словами */
+.say { background: var(--navy); color: #fff; padding: clamp(48px, 6vw, 88px) var(--px); }
+.say h2 { font-size: clamp(24px, 2.7vw, 40px); line-height: 1.18; max-width: 26em; }
+.say p { margin-top: 18px; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 62em; }
+
+/* плитки */
+.tiles { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--gap); }
+.tile { position: relative; overflow: hidden; color: #fff; display: block; text-decoration: none; background: #0a1238; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0.78) 0%, rgba(7,19,87,0.18) 46%, rgba(7,19,87,0) 100%); transition: opacity .6s; }
+.tile:hover img { transform: scale(1.06); }
+.tile__tx { position: relative; z-index: 2; padding: 34px 40px; max-width: 460px; }
+.tile__tx b { display: block; font-size: 17px; font-weight: 600; }
+.tile__tx span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.88); }
+.tile--big { min-height: clamp(380px, 46vw, 660px); border-radius: 0 0 var(--r) 0; }
+.col { display: grid; grid-template-rows: minmax(220px, 0.8fr) auto; gap: var(--gap); }
+.note { background: var(--paper); padding: 40px 40px 44px; border-radius: 0 0 var(--r) 0; }
+.note b { display: block; font-size: 17px; font-weight: 600; } .note p { margin: 12px 0 26px; font-size: 14px; line-height: 1.65; color: #3d4770; }
+
+/* бегущая строка */
+.run { background: var(--navy); color: #fff; height: 46px; display: flex; align-items: center; overflow: hidden; white-space: nowrap; border-radius: 0; }
+.run__track { display: flex; animation: run 46s linear infinite; }
+.run span { padding-right: 3em; font-size: 17px; font-weight: 300; letter-spacing: -0.005em; }
+@keyframes run { to { transform: translateX(-50%); } }
+
+/* карта */
+.geo { background: var(--sky); padding: clamp(40px, 5vw, 72px) var(--px) 0; text-align: center; }
+.geo h2 { font-size: clamp(20px, 2.1vw, 30px); line-height: 1.3; max-width: 24em; margin: 0 auto; }
+.map { position: relative; width: min(100%, 1040px); margin: clamp(10px, 2vw, 28px) auto 0; aspect-ratio: 860 / 579; }
+.map > img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.82; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%), linear-gradient(90deg, transparent 0%, #000 14%, #000 88%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(180deg, transparent 0%, #000 30%), linear-gradient(90deg, transparent 0%, #000 14%, #000 88%, transparent 100%); mask-composite: intersect; }
+.dot { position: absolute; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 5px rgba(7,19,87,0.2); transform: scale(0); transition: transform .9s var(--ease); }
+.dot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--navy); opacity: 0; animation: ping 2.6s ease-out infinite; animation-delay: var(--d, 0s); }
+@keyframes ping { 0% { transform: scale(0.6); opacity: 0.7; } 100% { transform: scale(2.6); opacity: 0; } }
+.dot--main { background: var(--wine); box-shadow: 0 0 0 5px rgba(105,1,7,0.2); } .dot--main::before { border-color: var(--wine); }
+.tag { position: absolute; transform: translate(-50%, 0) scale(0.8); opacity: 0; background: #fff; color: var(--navy); border-radius: 999px; padding: 7px 14px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 6px 18px rgba(7,19,87,0.16); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.map.in .dot { transform: scale(1); } .map.in .tag { opacity: 1; transform: translate(-50%, 0); }
+.map.in .n2 { transition-delay: .18s; } .map.in .n3 { transition-delay: .36s; } .map.in .n4 { transition-delay: .54s; }
+
+/* цифры */
+.nums { display: flex; flex-wrap: wrap; align-items: center; gap: 28px clamp(28px, 5vw, 84px); padding: clamp(36px, 4vw, 56px) var(--px); border-radius: 0; }
+.num { padding-left: 18px; border-left: 1px solid var(--navy); }
+.num b { display: block; font-size: clamp(34px, 3.4vw, 50px); font-weight: 300; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.num b i { font-style: normal; color: var(--steel); margin-left: 3px; }
+.num span { display: block; margin-top: 10px; font-size: 13px; color: #3d4770; max-width: 15em; }
+.nums .pill { margin-left: auto; }
+
+/* две карточки */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+.card { position: relative; overflow: hidden; min-height: clamp(300px, 30vw, 440px); border-radius: 0 0 var(--r) 0; color: #fff; display: flex; align-items: flex-end; text-decoration: none; background: #0a1238; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,19,87,0) 30%, rgba(7,19,87,0.92) 100%); }
+.card:hover img { transform: scale(1.06); }
+.card__tx { position: relative; z-index: 2; padding: 36px 40px; max-width: 520px; transition: transform .6s var(--ease); }
+.card:hover .card__tx { transform: translateY(-8px); }
+.card__tx b { display: block; font-size: 19px; font-weight: 600; } .card__tx span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.88); }
+.card__tx u { display: inline-block; margin-top: 16px; text-decoration: none; font-size: 13px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.6); padding-bottom: 3px; }
+
+/* заявка */
+.ask { background: var(--paper); padding: clamp(48px, 6vw, 96px) var(--px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ask h2 { font-size: clamp(30px, 3.8vw, 56px); line-height: 1.06; }
+.ask dl { margin: 36px 0 0; display: grid; gap: 0; }
+.ask dl div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid rgba(7,19,87,0.16); font-size: 15px; }
+.ask dt { color: var(--steel); } .ask dd { margin: 0; } .ask dd a { color: inherit; text-decoration: none; font-weight: 600; }
+.form { display: grid; gap: 22px; }
+.kind { display: flex; gap: 8px; flex-wrap: wrap; }
+.kind button { height: 40px; padding: 0 18px; border-radius: 999px; border: 0; cursor: pointer; background: #fff; color: var(--navy); font: 600 13px/1 var(--ibc-font); transition: background .45s var(--ease), color .45s var(--ease); }
+.kind button[aria-pressed=true] { background: var(--navy); color: #fff; }
+.form h3 { font-size: 24px; } .form > p { margin-top: -12px; font-size: 14px; color: #3d4770; min-height: 2.9em; }
+.fld { position: relative; }
+.fld input { width: 100%; height: 52px; border: 0; border-bottom: 1px solid rgba(7,19,87,0.35); background: transparent; font: 400 17px/1 var(--ibc-font); color: var(--navy); padding: 14px 0 0; outline: none; transition: border-color .3s; border-radius: 0; }
+.fld label { position: absolute; left: 0; top: 18px; font-size: 16px; color: var(--steel); pointer-events: none; transition: transform .35s var(--ease), font-size .35s var(--ease); transform-origin: left top; }
+.fld input:focus, .fld input:not(:placeholder-shown) { border-color: var(--navy); }
+.fld input:focus + label, .fld input:not(:placeholder-shown) + label { transform: translateY(-16px) scale(0.75); }
+.fld::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.fld:focus-within::after { transform: scaleX(1); }
+.agree { display: flex; gap: 10px; font-size: 12px; color: #5a6388; align-items: flex-start; } .agree input { margin-top: 2px; accent-color: var(--navy); }
+.form__ok { display: none; font-size: 14px; font-weight: 600; color: var(--ibc-ok); } .form.is-sent .form__ok { display: block; }
+
+/* подвал */
+.foot { background: var(--navy); color: rgba(255,255,255,0.78); padding: clamp(40px, 5vw, 72px) var(--px) 28px; border-radius: 0; font-size: 14px; }
+.foot__in { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 32px; }
+.foot img { height: 40px; width: auto; }
+.foot b { display: block; color: #fff; font-weight: 500; margin-bottom: 12px; }
+.foot a { display: block; color: #9fb4e0; text-decoration: none; padding: 3px 0; transition: color .3s; } .foot a:hover { color: #fff; }
+.foot__end { margin-top: 56px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 12px; color: rgba(255,255,255,0.6); }
+
+/* появление при прокрутке */
+.rv { opacity: 0; transition: opacity 1.1s var(--ease), transform 1.1s var(--ease); transition-delay: var(--dl, 0s); }
+.rv[data-rv=up] { transform: translateY(46px); } .rv[data-rv=left] { transform: translateX(-60px); } .rv[data-rv=right] { transform: translateX(60px); }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  :root { --r: 34px; }
+  .top { height: 62px; gap: 14px; } .top nav { display: none; } .lang { margin-left: auto; } .top__logo, .top__logo img { height: 28px; } .top__logo { width: 198px; }
+  .tiles, .pair, .ask { grid-template-columns: 1fr; }
+  .tile__tx, .card__tx { padding: 24px 22px; } .note { padding: 28px 22px 32px; }
+  .col { grid-template-rows: 240px auto; }
+  .nums .pill { margin-left: 0; }
+  .tag { font-size: 10px; padding: 5px 9px; } .tag.n3 { left: calc(64.5% + 50px) !important; } .dot { width: 14px; height: 14px; margin: -7px 0 0 -7px; }
+  .foot__in { grid-template-columns: 1fr 1fr; }
+  .ask dl div { grid-template-columns: 1fr; gap: 2px; }
+  .run span { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__img, .run__track, .dot::before, .loader img { animation: none; }
+  .rv, .line > span, .fadeup { opacity: 1; transform: none; transition: none; }
+  .dot { transform: scale(1); } .tag { opacity: 1; transform: translate(-50%, 0); }
+}
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"><img src="img/logo.png" alt=""></div>
+
+<header class="top" id="top">
+  <a class="top__logo" href="#" aria-label="Facility Management Central Asia">
+    <img class="w" src="img/logo.png" alt="FMCA">
+    <img class="c" src="img/logo-footer.png" alt="">
+  </a>
+  <nav aria-label="Разделы">
+    <a href="#about">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#geo">География</a>
+    <a href="#ask">Контакты</a>
+  </nav>
+  <div class="lang"><a href="#" aria-current="true">RU</a><a href="#">EN</a></div>
+</header>
+
+<div class="page">
+
+  <section class="blk hero">
+    <img class="hero__img" src="img/hero.jpg" alt="Складской комплекс вечером" width="1440" height="759">
+    <div class="hero__in">
+      <h1><span class="line"><span>Управляем складами</span></span><span class="line"><span>Центральной Азии</span></span></h1>
+      <p class="hero__sub fadeup">Чтобы Ваш объект приносил больше</p>
+      <p class="hero__lands fadeup d2"><b>Работаем в четырех странах</b>Казахстан · Кыргызстан · Узбекистан · Таджикистан</p>
+    </div>
+  </section>
+
+  <section class="blk say" id="about">
+    <h2 class="rv" data-rv="up">FMCA управляет складской недвижимостью, обслуживает ее инженерные системы и помогает собственникам зарабатывать больше.</h2>
+    <p class="rv" data-rv="up" style="--dl:.12s">Совместный проект профессионалов в сфере Facility Management и экспертов-консультантов международного уровня в области складской недвижимости. Опыт команды: управление складами в 7 регионах России и около 200 проектов в брокеридже, инвестиционном и стратегическом консалтинге в России и странах СНГ.</p>
+  </section>
+
+  <section class="tiles" id="services">
+    <a class="tile tile--big rv" data-rv="left" href="#ask" data-kind="contact">
+      <img src="img/docks.jpg" alt="" loading="lazy">
+      <div class="tile__tx"><b>Комплексное управление объектом</b><span>Весь жизненный цикл объекта: от работы с арендаторами и собственниками до управления эксплуатацией здания и его систем.</span></div>
+    </a>
+    <div class="col">
+      <a class="tile rv" data-rv="right" href="#ask" data-kind="contact">
+        <img src="img/office.jpg" alt="" loading="lazy">
+        <div class="tile__tx"><b>Техническая эксплуатация</b><span>Плановое и оперативное обслуживание, диагностика, ремонт и модернизация инженерных сетей.</span></div>
+      </a>
+      <div class="note rv" data-rv="up" style="--dl:.15s">
+        <b>Сервисные услуги</b>
+        <p>Уборка территории и помещений, круглосуточный диспетчерский контроль, реагирование на аварии, бесперебойная работа систем автоматизации и безопасности.</p>
+        <a class="pill" href="#ask" data-kind="contact">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="run" aria-hidden="true"><div class="run__track" id="run"></div></div>
+
+  <section class="blk geo" id="geo">
+    <h2 class="rv" data-rv="up">Управляем складскими комплексами в четырех странах Центральной Азии</h2>
+    <div class="map" id="map">
+      <img src="img/map-ca.png" alt="Карта Центральной Азии" loading="lazy">
+      <i class="dot dot--main" style="left:67%;top:63%"></i><span class="tag" style="left:67%;top:calc(63% - 44px)">Казахстан · офис в Алматы</span>
+      <i class="dot n2" style="left:39%;top:67%;--d:.5s"></i><span class="tag n2" style="left:39%;top:calc(67% + 18px)">Узбекистан</span>
+      <i class="dot n3" style="left:64.5%;top:70.5%;--d:1s"></i><span class="tag n3" style="left:calc(64.5% + 74px);top:calc(70.5% - 4px)">Кыргызстан</span>
+      <i class="dot n4" style="left:56.5%;top:80%;--d:1.5s"></i><span class="tag n4" style="left:56.5%;top:calc(80% + 18px)">Таджикистан</span>
+    </div>
+  </section>
+
+  <section class="blk nums">
+    <div class="num rv" data-rv="up"><b><em data-to="700" style="font-style:normal">0</em> тыс.<i>+</i></b><span>квадратных метров складов под управлением членов команды</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.1s"><b><em data-to="7" style="font-style:normal">0</em></b><span>регионов России</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.2s"><b><em data-to="200" style="font-style:normal">0</em><i>+</i></b><span>проектов в брокеридже и консалтинге</span></div>
+    <div class="num rv" data-rv="up" style="--dl:.3s"><b><em data-to="420" style="font-style:normal">0</em><i>+</i></b><span>лет совокупного опыта команды</span></div>
+    <a class="pill rv" data-rv="up" style="--dl:.45s" href="#ask" data-kind="contact">Связаться с нами</a>
+  </section>
+
+  <section class="pair">
+    <a class="card rv" data-rv="up" href="#ask" data-kind="audit">
+      <img src="img/data.jpg" alt="" loading="lazy">
+      <div class="card__tx"><b>Аудит текущего управления</b><span>Проанализируем эффективность Вашей управляющей компании, предложим, как сократить затраты на содержание объекта, и поможем это внедрить.</span><u>Запросить аудит</u></div>
+    </a>
+    <a class="card rv" data-rv="up" style="--dl:.15s" href="#ask" data-kind="tariff">
+      <img src="img/trucks.jpg" alt="" loading="lazy">
+      <div class="card__tx"><b>Тарифы на эксплуатацию для build-to-suit</b><span>Строите новый склад? Рассчитаем тарифы на эксплуатацию складского комплекса под Вашу специфику.</span><u>Получить тарифы</u></div>
+    </a>
+  </section>
+
+  <section class="blk ask" id="ask">
+    <div>
+      <h2 class="rv" data-rv="up">Расскажите о&nbsp;Вашем складе</h2>
+      <dl class="rv" data-rv="up" style="--dl:.12s">
+        <div><dt>Телефон</dt><dd><a href="tel:+77770908399">+7 (777) 090-83-99</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:service@fmca.asia">service@fmca.asia</a></dd></div>
+        <div><dt>Адрес</dt><dd>Республика Казахстан, г. Алматы, Бостандыкский район, 050022, проспект Абая 44а, офис А3</dd></div>
+      </dl>
+    </div>
+    <form class="form rv" data-rv="up" style="--dl:.2s" id="form" novalidate>
+      <div class="kind" id="kind" role="group" aria-label="Тема заявки">
+        <button type="button" data-kind="contact" aria-pressed="true">Связаться</button>
+        <button type="button" data-kind="audit" aria-pressed="false">Аудит</button>
+        <button type="button" data-kind="tariff" aria-pressed="false">Тарифы</button>
+      </div>
+      <h3 id="f-title">Связаться с нами</h3>
+      <p id="f-text">Оставьте контакты, и мы перезвоним.</p>
+      <div class="fld"><input id="f-name" placeholder=" " autocomplete="name"><label for="f-name">Имя</label></div>
+      <div class="fld"><input id="f-phone" placeholder=" " autocomplete="tel" inputmode="tel"><label for="f-phone">Телефон</label></div>
+      <div class="fld"><input id="f-place" placeholder=" "><label for="f-place" id="f-place-l">Город и название компании</label></div>
+      <label class="agree"><input type="checkbox" checked> <span>Согласен на обработку персональных данных согласно политике конфиденциальности</span></label>
+      <div><button class="pill pill--wine" type="submit" id="f-btn">Отправить заявку</button></div>
+      <div class="form__ok" role="status">Это прототип: заявка никуда не отправлена.</div>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <div class="foot__in">
+      <div><img src="img/logo.png" alt="Facility Management Central Asia"></div>
+      <div><b>Услуги</b><a href="#services">Управление объектом</a><a href="#services">Техническая эксплуатация</a><a href="#services">Сервисные услуги</a><a href="#ask" data-kind="audit">Аудит управления</a><a href="#ask" data-kind="tariff">Тарифы для build-to-suit</a></div>
+      <div><b>Компания</b><a href="#about">О нас</a><a href="#geo">География</a><a href="#ask">Контакты</a></div>
+      <div><b>Контакты</b><a href="tel:+77770908399">+7 (777) 090-83-99</a><a href="mailto:service@fmca.asia">service@fmca.asia</a><span style="display:block;padding-top:6px">г. Алматы, проспект Абая 44а, офис А3</span></div>
+    </div>
+    <div class="foot__end">© 2026 ТОО «Facility Management Central Asia». Все права защищены. Сайт не является публичной офертой.</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  // заставка уходит, когда страница загрузилась
+  function ready() { setTimeout(function () { document.body.classList.add('ready'); }, 500); }
+  if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready);
+  setTimeout(function () { document.body.classList.add('ready'); }, 3500);
+
+  // бегущая строка
+  var t = 'FMCA: управление, техническая эксплуатация и сервис складских комплексов в Казахстане, Кыргызстане, Узбекистане и Таджикистане.';
+  var run = document.getElementById('run'), html = '';
+  for (var i = 0; i < 6; i++) html += '<span>' + t + '</span>';
+  run.innerHTML = html;
+
+  // шапка
+  var top = document.getElementById('top');
+  function onScroll() { top.classList.toggle('is-solid', (window.scrollY || 0) > 60); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // появление блоков, карта, цифры
+  function count(el) {
+    var to = +el.dataset.to, t0 = null, dur = 1700;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e); if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      [].forEach.call(e.target.querySelectorAll('[data-to]'), function (n) { if (still) n.textContent = n.dataset.to; else count(n); });
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px' });
+  [].forEach.call(document.querySelectorAll('.rv, .map'), function (n) { io.observe(n); });
+
+  // форма: три темы заявки
+  var T = {
+    contact: ['Связаться с нами', 'Оставьте контакты, и мы перезвоним.', 'Город и название компании', 'Отправить заявку'],
+    audit: ['Запросить аудит управления', 'Проанализируем эффективность текущей управляющей компании и предложим рекомендации.', 'Город и адрес склада', 'Запросить аудит'],
+    tariff: ['Тарифы для нового проекта (build-to-suit)', 'Узнайте, сколько будет стоить профессиональное управление новым складом.', 'Город и адрес склада', 'Получить тарифы']
+  };
+  function set(k) {
+    [].forEach.call(document.querySelectorAll('#kind button'), function (b) { b.setAttribute('aria-pressed', b.dataset.kind === k); });
+    document.getElementById('f-title').textContent = T[k][0];
+    document.getElementById('f-text').textContent = T[k][1];
+    document.getElementById('f-place-l').textContent = T[k][2];
+    document.getElementById('f-btn').textContent = T[k][3];
+  }
+  document.addEventListener('click', function (e) { var el = e.target.closest('[data-kind]'); if (el) set(el.dataset.kind); });
+  document.getElementById('form').addEventListener('submit', function (e) { e.preventDefault(); this.classList.add('is-sent'); });
+})();
+</script>
+</body>
+</html>
