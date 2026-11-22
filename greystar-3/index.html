@@ -45,7 +45,7 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 .top__logo { position: relative; flex: none; width: 150px; height: 22px; } .top__logo img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .3s ease; } .top__logo .c { opacity: 0; }
 .top__name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; opacity: 0.9; }
 .top nav { margin-left: auto; display: flex; gap: clamp(16px, 2.2vw, 32px); }
-.top nav a { font-size: 14.5px; text-decoration: none; opacity: 0.86; transition: opacity .25s; } .top nav a:hover { opacity: 1; }
+.top nav a { font-size: 14.5px; text-decoration: none; white-space: nowrap; opacity: 0.86; transition: opacity .25s; } .top nav a:hover { opacity: 1; }
 .top .btn { background: var(--wine); color: #fff; margin-left: 8px; } .top .btn:hover { background: #8a0a12; }
 .top.is-solid { background: #fff; color: var(--ink); box-shadow: 0 1px 0 var(--line); }
 .top.is-solid .top__logo .w { opacity: 0; } .top.is-solid .top__logo .c { opacity: 1; }
@@ -111,11 +111,12 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 .chips button { padding: 14px 14px 16px; text-align: left; background: transparent; border: 0; color: #fff; cursor: pointer; transition: background-color .25s ease, color .25s ease; } .chips button + button { border-left: 1px solid var(--lw); }
 .chips b { display: block; font-size: 15px; font-weight: 600; } .chips span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; opacity: 0.66; }
 .chips button:hover { background: rgba(255,255,255,0.07); } .chips button[aria-pressed=true] { background: #fff; color: var(--navy); } .chips button[aria-pressed=true] span { opacity: 0.8; }
-.sumbar { grid-column: 1 / -1; display: grid; grid-template-columns: 1.8fr 0.95fr 0.85fr 0.5fr auto; border-top: 1px solid var(--lw); background: rgba(255,255,255,0.045); }
+.sumbar { grid-column: 1 / -1; display: grid; grid-template-columns: 1.6fr 1.1fr 0.9fr 0.5fr auto; border-top: 1px solid var(--lw); background: rgba(255,255,255,0.045); }
 .sumbar > div { padding: clamp(20px, 2.2vw, 30px) clamp(18px, 2vw, 28px); min-width: 0; } .sumbar > div + div { border-left: 1px solid var(--lw); }
 .sumbar .mono { display: block; color: var(--ice); }
 .sumbar b { display: block; margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
-.sumbar__rent b { margin-top: 8px; font-size: clamp(36px, 3.6vw, 54px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; }
+#r-names { white-space: normal; }
+.sumbar__rent b { margin-top: 8px; font-size: clamp(32px, 3.1vw, 50px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.05; }
 .sumbar__rent small { display: block; margin-top: 8px; font-size: 13px; opacity: 0.62; }
 .sumbar__go { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
 .link { background: none; border: 0; padding: 0; font-size: 14px; color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,0.4); cursor: pointer; }
@@ -151,7 +152,13 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 .ruler { position: relative; height: 34px; margin-top: clamp(40px, 5vw, 68px); border-bottom: 1px solid var(--navy); }
 .ruler i { position: absolute; bottom: -5px; left: calc(var(--n) * 20%); width: 9px; height: 9px; background: var(--navy); transform: scale(0); transition: transform .5s var(--ease) calc(var(--n) * .14s + .3s); } .ruler i:first-of-type { background: var(--wine); }
 .ruler u { position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--wine); transition: width 1.5s var(--ease) .2s; }
-.ruler.in i { transform: none; } .ruler.in u { width: 100%; }
+.ruler.in i { transform: none; animation: ping 9s ease-out calc(1.8s + var(--n) * 1.8s) infinite; } .ruler.in u { width: 100%; }
+.ruler .run { position: absolute; left: 0; bottom: 0; width: 44px; height: 23px; color: var(--wine); opacity: 0; }
+.ruler.in .run { animation: ride 9s linear 1.8s infinite; }
+@keyframes ride { 0% { left: 0; opacity: 0; } 3% { opacity: 1; } 95% { opacity: 1; } 100% { left: calc(100% - 44px); opacity: 0; } }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(105,1,7,0.55); background: var(--wine); } 14% { box-shadow: 0 0 0 10px rgba(105,1,7,0); } 22%, 100% { box-shadow: 0 0 0 0 rgba(105,1,7,0); } }
+.grid5 .rv.in b { animation: tint 9s linear calc(1.8s + var(--n) * 1.8s) infinite; }
+@keyframes tint { 0%, 12% { color: var(--wine); } 22%, 100% { color: var(--navy); } }
 .grid5 { display: grid; grid-template-columns: repeat(5, 1fr); }
 .grid5 div { padding: 28px 20px 4px 0; min-width: 0; } .grid5 div + div { padding-left: 20px; border-left: 1px solid var(--line); }
 .grid5 b { display: block; font-size: clamp(30px, 3vw, 44px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; color: var(--navy); white-space: nowrap; } .grid5 b i { font-family: var(--mono); font-style: normal; font-size: 11px; margin-left: 6px; color: var(--steel); vertical-align: 0.9em; }
@@ -183,8 +190,9 @@ input[type=range]:focus-visible { outline: 1px solid #fff; outline-offset: 4px; 
 /* контакты и запрос */
 .ask__in { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 56px clamp(32px, 7vw, 120px); }
 .people { margin-top: 34px; border-top: 1px solid var(--lw); }
-.people a { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--lw); text-decoration: none; }
+.people a { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--lw); text-decoration: none; }
 .people img { width: 56px; height: 56px; object-fit: cover; } .people b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; } .people span span { display: block; margin-top: 3px; font-size: 14px; opacity: 0.7; line-height: 1.35; }
+.people .qr { display: grid; justify-items: center; gap: 7px; } .people .qr img { width: 84px; height: 84px; padding: 4px; background: #fff; object-fit: contain; }
 .people u { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ice); }
 .deck { margin-top: 26px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; } .deck .mono { opacity: 0.6; }
 .form { background: #fff; color: var(--ink); padding: clamp(24px, 3vw, 44px); }
@@ -210,6 +218,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
 .toast { position: fixed; left: 50%; bottom: 26px; z-index: 80; transform: translate(-50%, 20px); padding: 13px 20px; background: #fff; color: var(--navy); font-size: 14.5px; font-weight: 600; box-shadow: 0 10px 40px rgba(5,12,60,0.35); opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease; max-width: calc(100vw - 32px); }
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 
+@media (max-width: 1400px) { .top__name { display: none; } }
 @media (max-width: 1180px) {
   .top nav { display: none; } .top .btn { margin-left: auto; }
   .sumbar { grid-template-columns: repeat(3, 1fr); } .sumbar__rent, .sumbar__go { grid-column: 1 / -1; } .sumbar > div + div { border-left: 0; border-top: 1px solid var(--lw); } .sumbar > div:nth-child(3), .sumbar > div:nth-child(4) { border-left: 1px solid var(--lw); }
@@ -242,11 +251,12 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   .strip { height: 62vw; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .strip::-webkit-scrollbar { display: none; } .strip .shot, .strip .shot:nth-child(n) { flex: 0 0 86vw; scroll-snap-align: center; }
   .steps { grid-template-columns: 1fr 1fr; gap: 30px 0; }
   .terms dd { font-size: 18px; }
+  .people .qr img { display: none; }
   .form__grid { grid-template-columns: 1fr; } .form__go .btn { flex: 1 1 100%; }
   .foot__in { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__media { animation: none; } .rv, .up { opacity: 1; transform: none; transition: none; animation: none; } .mk-area { stroke-dashoffset: 0; animation: none; } .mk { opacity: 1; animation: none; }
+  .hero__media { animation: none; } .ruler .run { display: none; } .ruler.in i, .grid5 .rv.in b { animation: none; } .rv, .up { opacity: 1; transform: none; transition: none; animation: none; } .mk-area { stroke-dashoffset: 0; animation: none; } .mk { opacity: 1; animation: none; }
 }
 </style>
 </head>
@@ -350,7 +360,7 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     </div>
     <div class="sumbar">
       <div class="sumbar__rent"><span class="mono" id="r-rent-l">Аренда за месяц</span><b id="r-rent">$149 940</b><small>ставка $132 и сервисный сбор $15 за м² в год</small></div>
-      <div><span class="mono" id="r-label">Наш подбор</span><b id="r-names">Блок B</b></div>
+      <div><span class="mono" id="r-label">Блоки: наш подбор</span><b id="r-names">B</b></div>
       <div><span class="mono">Площадь</span><b><span id="r-area">12 240</span> м²</b></div>
       <div><span class="mono">Доки</span><b id="r-docks">30</b></div>
       <div class="sumbar__go">
@@ -414,13 +424,13 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     </div>
     <p class="lead rv" style="--dl:.1s">Главная транспортная артерия Ташкента. Инфраструктура парка полностью подключена: электричество от отдельной подстанции, вода, канализация, связь.</p>
   </div>
-  <div class="ruler" id="ruler"><u></u><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i></div>
+  <div class="ruler" id="ruler"><u></u><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><span class="run" aria-hidden="true"><svg viewBox="0 0 34 18" fill="currentColor"><rect x="0" y="1" width="21" height="11"/><path d="M23 4h6l4 4v4H23z"/><circle cx="6" cy="14.6" r="2.6"/><circle cx="15" cy="14.6" r="2.6"/><circle cx="28" cy="14.6" r="2.6"/></svg></span></div>
   <div class="grid5">
-    <div class="rv"><b>0<i>КМ</i></b><span>Ташкентская кольцевая M39</span><small>прямой выезд с территории</small></div>
-    <div class="rv" style="--dl:.06s"><b>8<i>КМ</i></b><span>Сухой порт и таможенный терминал</span></div>
-    <div class="rv" style="--dl:.12s"><b>12<i>КМ</i></b><span>Центр города</span></div>
-    <div class="rv" style="--dl:.18s"><b>15<i>КМ</i></b><span>Грузовой железнодорожный узел</span><small>транскаспийский и транссибирский коридоры</small></div>
-    <div class="rv" style="--dl:.24s"><b>18<i>КМ</i></b><span>Международный аэропорт</span><small>около 25 минут</small></div>
+    <div class="rv" style="--n:0"><b>0<i>КМ</i></b><span>Ташкентская кольцевая M39</span><small>прямой выезд с территории</small></div>
+    <div class="rv" style="--dl:.06s;--n:1"><b><em data-to="8" style="font-style:normal">8</em><i>КМ</i></b><span>Сухой порт и таможенный терминал</span></div>
+    <div class="rv" style="--dl:.12s;--n:2"><b><em data-to="12" style="font-style:normal">12</em><i>КМ</i></b><span>Центр города</span></div>
+    <div class="rv" style="--dl:.18s;--n:3"><b><em data-to="15" style="font-style:normal">15</em><i>КМ</i></b><span>Грузовой железнодорожный узел</span><small>транскаспийский и транссибирский коридоры</small></div>
+    <div class="rv" style="--dl:.24s;--n:4"><b><em data-to="18" style="font-style:normal">18</em><i>КМ</i></b><span>Международный аэропорт</span><small>около 25 минут</small></div>
   </div>
 </section>
 
@@ -472,8 +482,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
       <h2 class="h2 rv">Обсудим<span>Вашу площадь</span></h2>
       <p class="lead rv" style="--dl:.08s">Объект ведут консультанты IBC Global. Покажем планировки, ответим на вопросы и подготовим предложение.</p>
       <div class="people rv" style="--dl:.1s">
-        <a href="https://card.ibc-global.asia/assel/"><img src="img/asel.jpg" alt="" width="56" height="56"><span><b>Асель Жунусова</b><span>Директор по развитию, IBC Global по Центральной Азии</span></span><u>Визитка</u></a>
-        <a href="https://card.ibc-global.asia/roman/"><img src="img/roman.jpg" alt="" width="56" height="56"><span><b>Роман Пак</b><span>Директор представительства, IBC Global по Центральной Азии</span></span><u>Визитка</u></a>
+        <a href="https://card.ibc-global.asia/assel/"><img src="img/asel.jpg" alt="" width="56" height="56"><span><b>Асель Жунусова</b><span>Директор по развитию, IBC Global по Центральной Азии</span></span><span class="qr"><img src="img/qr-assel.svg" alt="QR-код визитки Асель Жунусовой" width="72" height="72" loading="lazy"><u>Визитка</u></span></a>
+        <a href="https://card.ibc-global.asia/roman/"><img src="img/roman.jpg" alt="" width="56" height="56"><span><b>Роман Пак</b><span>Директор представительства, IBC Global по Центральной Азии</span></span><span class="qr"><img src="img/qr-roman.svg" alt="QR-код визитки Романа Пака" width="72" height="72" loading="lazy"><u>Визитка</u></span></a>
       </div>
       <div class="deck rv" style="--dl:.15s">
         <button class="btn btn--line" type="button" data-ask="deck">Получить презентацию</button>
@@ -554,8 +564,8 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
     $('need').innerHTML = fmt(need) + '<small>м²</small>';
     plan.setActive(st.picked);
     for (var k in chips) chips[k].setAttribute('aria-pressed', st.picked.indexOf(k) !== -1);
-    $('r-label').textContent = st.picked.length ? (st.auto ? 'Наш подбор' : 'Ваш выбор') : 'Блоки не выбраны';
-    $('r-names').textContent = title || 'Нажмите на блок';
+    $('r-label').textContent = st.picked.length ? (st.auto ? 'Блоки: наш подбор' : 'Блоки: Ваш выбор') : 'Блоки не выбраны';
+    $('r-names').textContent = names || 'Нажмите на блок';
     $('r-area').textContent = fmt(area);
     $('r-docks').textContent = docks;
     $('r-rent-l').textContent = st.per === 'month' ? 'Аренда за месяц' : 'Аренда за год';
@@ -629,9 +639,20 @@ dialog.lb img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; cu
   steps.forEach(function (d, i) { if (new Date(d.dataset.at + 'T00:00:00').getTime() <= now) { d.classList.add('done'); last = i; } });
   if (last > -1 && last < steps.length - 1) steps[last].classList.add('now');
 
-  /* появление блоков */
+  /* появление блоков и счет километров */
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el) {
+    var to = +el.dataset.to, t0 = null;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 1300); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
   var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (!still) [].forEach.call(e.target.querySelectorAll('[data-to]'), count);
+      io.unobserve(e.target);
+    });
   }, { rootMargin: '0px 0px -10% 0px' });
   [].forEach.call(document.querySelectorAll('.rv, .ruler'), function (n) { io.observe(n); });
 })();
